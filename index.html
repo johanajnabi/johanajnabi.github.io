@@ -7,81 +7,58 @@
 
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       max-width: 900px;
       margin: auto;
-      padding: 40px 24px;
-      line-height: 1.75;
-      color: #1f2937;
-      background-color: #ffffff;
+      padding: 30px;
+      line-height: 1.7;
+      color: #222;
     }
 
-    header h1 {
-      margin-bottom: 4px;
-      font-size: 34px;
-      font-weight: 600;
+    .header-container {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 24px;
     }
 
-    header p {
-      margin-top: 0;
-      font-size: 18px;
-      color: #4b5563;
+    .profile-photo {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 12px;
     }
 
-    h2 {
-      margin-top: 48px;
-      margin-bottom: 12px;
-      font-size: 22px;
-      font-weight: 600;
-      border-bottom: 1px solid #e5e7eb;
-      padding-bottom: 6px;
-    }
+    @media (max-width: 600px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-    p {
-      margin-top: 12px;
-      margin-bottom: 12px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    section {
-      margin-bottom: 32px;
-    }
-
-    footer {
-      margin-top: 60px;
-      font-size: 14px;
-      color: #6b7280;
-    }
-
-    ol li {
-      margin-bottom: 18px;
+      .profile-photo {
+        width: 120px;
+        height: 120px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Johan Ajnabi</h1>
-    <p>Researcher · Wound Healing · Mechanobiology · Epigenetics</p>
+  <header class="header-container">
+    <img
+      src="profile.jpg"
+      alt="Johan Ajnabi"
+      class="profile-photo"
+    >
+
+    <div>
+      <h1>Johan Ajnabi</h1>
+      <p><strong>Researcher | Wound Healing | Mechanobiology | Epigenetics</strong></p>
+    </div>
   </header>
+
+  <hr>
 
   <section>
     <h2>About Me</h2>
@@ -104,7 +81,7 @@
       <li>Mechanobiology and mechanotransduction</li>
       <li>Actin cytoskeleton dynamics</li>
       <li>Epigenetic regulation (DNMT3A)</li>
-      <li>ERK / MAPK signaling</li>
+      <li>ERK / MAPK signaling pathways</li>
     </ul>
   </section>
 
@@ -113,8 +90,8 @@
     <p>
       I have hands-on experience with keratinocyte differentiation and wound-healing models,
       pharmacological perturbations, confocal microscopy, and quantitative image analysis.
-      My work integrates cell biology, signaling, and imaging approaches to study epithelial
-      tissue repair.
+      My work integrates cell biology, signaling, and imaging approaches to understand
+      epithelial tissue repair.
     </p>
   </section>
 
@@ -128,8 +105,7 @@
         <em>
           Actin-dependent mechanotransduction controls nucleocytoplasmic partitioning
           of DNMT3A through ERK1/2 signaling during cutaneous wound healing.
-        </em>
-        <br>
+        </em><br>
         <span style="font-style:italic;">bioRxiv, 2026.</span>
       </li>
 
@@ -137,8 +113,7 @@
         Dam, B., <strong>Ajnabi, J.</strong>, et al.
         <em>
           Mindin mediated αM-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness.
-        </em>
-        <br>
+        </em><br>
         <span style="font-style:italic;">bioRxiv, 2025.</span>
       </li>
 
@@ -147,9 +122,16 @@
         <em>
           Harmonizing plant resilience: unveiling the symphony of membrane lipid dynamics
           in response to abiotic stresses.
-        </em>
-        <br>
+        </em><br>
         <span style="font-style:italic;">Discover Plants, 2025.</span>
+      </li>
+
+      <li>
+        Bhatt, T., et al., <strong>Ajnabi, J.</strong>
+        <em>
+          Niacinamide enhances cathelicidin mediated SARS-CoV-2 membrane disruption.
+        </em><br>
+        <span style="font-style:italic;">Frontiers in Immunology, 2023.</span>
       </li>
     </ol>
   </section>
@@ -163,7 +145,7 @@
           scholar.google.com/citations?user=4yT9DRcAAAAJ
         </a>
         <br>
-        <span style="font-size:14px; color:#6b7280;">
+        <span style="font-size:14px; color:#555;">
           Cited by ~60 · Mechanobiology · Wound Healing · Cell Biology
         </span>
       </li>
@@ -178,11 +160,13 @@
 
   <section>
     <h2>Contact</h2>
-    <p>Email: <strong>your_email@example.com</strong></p>
+    <p>Email: <strong>johan@outlook.in</strong></p>
   </section>
 
+  <hr>
+
   <footer>
-    © 2026 Johan Ajnabi
+    <p style="font-size:14px;">© 2026 Johan Ajnabi</p>
   </footer>
 
 </body>
