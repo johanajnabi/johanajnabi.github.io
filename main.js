@@ -57,5 +57,15 @@ async function loadText(path) {
     </div>
   `).join("")}
 `;
+document.querySelectorAll(".pub-toggle").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const id = btn.dataset.id;
+    const el = document.getElementById(`details-${id}`);
+
+    const isOpen = el.style.display === "block";
+    el.style.display = isOpen ? "none" : "block";
+    btn.textContent = isOpen ? "Show details" : "Hide details";
+  });
+});
 
 })();
