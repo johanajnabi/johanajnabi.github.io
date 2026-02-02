@@ -23,10 +23,12 @@ async function loadText(path) {
   const interests = await loadJSON("data/interests.json");
   const pubs = await loadJSON("data/publications.json");
 
-  // Profile
+  /* =====================
+     PROFILE
+  ====================== */
   document.getElementById("profile").innerHTML = `
     <div class="profile">
-      <img src="assets/profile.jpg">
+      <img src="assets/profile.jpg" alt="Johan Ajnabi">
       <div>
         <h1>${profile.name}</h1>
         <div class="subtitle">${profile.title}</div>
@@ -36,13 +38,17 @@ async function loadText(path) {
     </div>
   `;
 
-  // About
+  /* =====================
+     ABOUT
+  ====================== */
   document.getElementById("about").innerHTML = `
     <h2>About</h2>
     <p>${about.replace(/\n\n/g, "</p><p>")}</p>
   `;
 
-  // Research Interests (safe)
+  /* =====================
+     RESEARCH INTERESTS
+  ====================== */
   if (Array.isArray(interests)) {
     document.getElementById("interests").innerHTML = `
       <h2>Research Interests</h2>
@@ -54,7 +60,9 @@ async function loadText(path) {
     console.error("Interests JSON is not an array:", interests);
   }
 
-  // Publications
+  /* =====================
+     PUBLICATIONS
+  ====================== */
   document.getElementById("publications").innerHTML = `
     <h2>Publications</h2>
     ${pubs.map((p, i) => `
@@ -87,5 +95,19 @@ async function loadText(path) {
       btn.textContent = isOpen ? "Show details" : "Hide details";
     });
   });
+
+  /* =====================
+     LINKS (Scholar / ORCID / LinkedIn / Bluesky)
+  ====================== */
+  if (profile.links) {
+    document.getElementById("links").innerHTML = `
+      <h2>Links</h2>
+      <p>
+        ${Object.entries(profile.links)
+          .map(([name, url]) => `<a href="${url}" target="_blank">${name}</a>`)
+          .join(" · ")}
+      </p>
+    `;
+  }
 
 })();
