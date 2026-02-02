@@ -47,6 +47,7 @@ async function loadText(path) {
   const profile = await loadJSON("data/profile.json");
   const about = await loadText("content/about.md");
   const interests = await loadJSON("data/interests.json");
+   const experience = await loadJSON("data/experience.json");
   const pubs = await loadJSON("data/publications.json");
 
   /* =====================
@@ -83,6 +84,25 @@ async function loadText(path) {
       </ul>
     `;
   }
+   /* =====================
+   RESEARCH EXPERIENCE
+====================== */
+document.getElementById("experience").innerHTML = `
+  <h2>Research Experience</h2>
+
+  ${experience.map(exp => `
+    <p>
+      <strong>${exp.role}</strong><br>
+      ${exp.institution}<br>
+      <em>${exp.period}</em><br>
+      Supervisor: ${exp.supervisor}
+    </p>
+
+    <ul>
+      ${exp.points.map(p => `<li>${p}</li>`).join("")}
+    </ul>
+  `).join("")}
+`;
 
   /* =====================
      PUBLICATIONS
