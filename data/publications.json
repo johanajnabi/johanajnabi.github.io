@@ -5,7 +5,8 @@
     "journal": "bioRxiv (preprint)",
     "year": "2026",
     "link": "https://doi.org/10.64898/2026.01.15.699481",
-    "details": "This study demonstrates how wound-induced mechanical cues regulate DNMT3a nucleocytoplasmic localization through actin remodeling and ERK1/2 signaling, revealing a mechanotransduction-driven epigenetic control mechanism during cutaneous wound healing."
+    "summary": "This study demonstrates how wound-induced mechanical cues regulate DNMT3a nucleocytoplasmic localization through actin remodeling and ERK1/2 signaling, revealing a mechanotransduction-driven epigenetic control mechanism during cutaneous wound healing.",
+    "abstract": "Cutaneous wound healing is a multifaceted physiological process that requires a cell state transition from homeostasis to tissue repair. An important contributor to this reprogramming is the wound-induced mechanical cues that are perceived by epidermal keratinocytes. Previously we identified that the nuclear translocation of the de novo DNA methyltransferase 3A (DNMT3a) upon wounding as an important regulator of this cell-state transition. However, the molecular mechanisms linking mechanotransduction to epigenetic regulation remain incompletely understood. Here we show that under homeostasis, active ERK1/2 phosphorylates DNMT3a, intramolecularly masking its nuclear localization signal (NLS), resulting in its cytoplasmic sequestration. Upon wounding actin cytoskeleton remodeling leads to the downregulation of the Extracellular Signal-Related Kinase 1/2 (ERK 1/2) pathway. Wound-induced ERK1/2 inactivation unmasks the NLS, enabling DNMT3a nuclear translocation. Collectively, these findings define a mechanotransduction-driven signaling axis linking cytoskeletal dynamics to epigenetic regulation and confirms an active role for differentiated keratinocytes in initiating early wound repair programs."
   },
   {
     "authors": "Dam, B., Ajnabi, J., Saha, T., Shrivastava, A., Badarinathan, K., Hegde, A., Dutta, A., Jasoria, S., Kataria, S., Singh, A., et al.",
@@ -13,7 +14,8 @@
     "journal": "bioRxiv (preprint)",
     "year": "2025",
     "link": "https://doi.org/10.1101/2025.08.24.669246",
-    "details": "This work uncovers a Mindin–integrin–STAT3 signaling axis that sustains keratinocyte stemness through integrin endocytosis and downstream transcriptional activation."
+    "summary": "This work uncovers a Mindin–integrin–STAT3 signaling axis that sustains keratinocyte stemness through integrin endocytosis and downstream transcriptional activation.",
+    "abstract": "Signalling networks rely not only on specific protein interactions but also on the subcellular locales at which these occur. Such spatial control is fundamental to cellular behaviour in both physiological and pathological scenarios. In studying keratinocyte stemness, we previously identified a Mindin–αMβ2 (CD11b/CD18) interaction that triggers STAT3 activation. Here, we delineate the mechanism underlying this response and show that the F-Spondin domain of Mindin constitutes the minimal integrin-binding module required to initiate downstream signalling. F-Spondin binding to the integrin at the plasma membrane does not elicit the full activation state of the integrin. Instead, it promotes Src-kinase dependent endocytosis of the integrin receptor to the early endosomes. Analysis of integrin conformational dynamics reveals that this compartmental shift is essential as the acidic environment of early endosomes drives the transition into a signalling-competent state. This mechanism extends to pathological contexts, as we demonstrate a requirement for endocytosis in activating STAT3 signalling and preserving stem-like properties in a cancer stem cell model. Together, these findings highlight a previously unrecognized layer of spatial control in integrin signalling, confirming endosomal trafficking as a critical determinant of stem cell behaviour and offering new conceptual and therapeutic opportunities across regenerative biology and cancer."
   },
   {
     "authors": "Dutta, S., Islam, Z., Das, S., Barman, A., Chowdhury, M., Mondal, B. P., Ajnabi, J., Manna, D.",
@@ -21,7 +23,8 @@
     "journal": "Discover Plants",
     "year": "2025",
     "link": "https://link.springer.com/article/10.1007/s44372-025-00152-0",
-    "details": "A comprehensive review of membrane lipid remodeling in plants under abiotic stress, highlighting lipid-mediated signaling mechanisms that contribute to stress tolerance."
+    "summary": "A comprehensive review of membrane lipid remodeling in plants under abiotic stress, highlighting lipid-mediated signaling mechanisms that contribute to stress tolerance.",
+    "abstract": "Abiotic stresses, such as drought, heat and cold stress, high salinity, and heavy metal toxicity, are detrimental to plants for growth and development, leading to significant economic loss due to crop yield penalties worldwide. All living organisms including plants are sensitive to stress. Abiotic stress caused by climate change and human intervention influences both the physical and chemical organization of biological membranes. In this context, fatty acid composition and degree of unsaturation are integral components for maintaining membrane integrity under stress conditions. This review presents a critical synthesis of lipid classes and their dynamics in response to different abiotic stress conditions. Plants utilize multiple adaptive mechanisms to neutralize adverse environmental conditions. Elucidation of the biochemical basis of such mechanism in plants is of great interest among research communities in this domain. Therefore, we outline the consequences of several stresses on the membrane fluidity and stability. Furthermore, we discuss various tools and techniques to investigate membrane dynamics under different abiotic stresses. An improved understanding of plants’ tolerance mechanisms under different stresses is essential and should assist researchers in developing model plant varieties to secure a sustainable food supply."
   },
   {
     "authors": "Bhatt, T., Dam, B., Khedkar, S. U., Lall, S., Pandey, S., Kataria, S., Ajnabi, J., Gulzar, S.-E.-J., Dias, P. M., Waskar, M., et al.",
@@ -29,7 +32,8 @@
     "journal": "Frontiers in Immunology",
     "year": "2023",
     "link": "https://doi.org/10.3389/fimmu.2023.1255478",
-    "details": "This study shows that niacinamide potentiates cathelicidin-mediated antiviral activity by enhancing membrane disruption of SARS-CoV-2, providing mechanistic insight into host defense enhancement."
+    "summary": "This study shows that niacinamide potentiates cathelicidin-mediated antiviral activity by enhancing membrane disruption of SARS-CoV-2, providing mechanistic insight into host defense enhancement.",
+    "abstract": "The continual emergence of SARS-CoV-2 variants threatens to compromise the effectiveness of worldwide vaccination programs, and highlights the need for complementary strategies for a sustainable containment plan. An effective approach is to mobilize the body’s own antimicrobial peptides (AMPs), to combat SARS-CoV-2 infection and propagation. We have found that human cathelicidin (LL37), an AMP found at epithelial barriers as well as in various bodily fluids, has the capacity to neutralise multiple strains of SARS-CoV-2. Biophysical and computational studies indicate that LL37’s mechanism of action is through the disruption of the viral membrane. This antiviral activity of LL37 is enhanced by the hydrotropic action of niacinamide, which may increase the bioavailability of the AMP. Interestingly, we observed an inverse correlation between LL37 levels and disease severity of COVID-19 positive patients, suggesting enhancement of AMP response as a potential therapeutic avenue to mitigate disease severity. The combination of niacinamide and LL37 is a potent antiviral formulation that targets viral membranes of various variants and can be an effective strategy to overcome vaccine escape."
   },
   {
     "authors": "Rana, I., Kataria, S., Tan, T. L., Hajam, E. Y., Kashyap, D. K., Saha, D., Ajnabi, J., Paul, S., Jayappa, S., Ananthan, A. S. H. P., et al.",
@@ -37,7 +41,8 @@
     "journal": "Journal of Investigative Dermatology",
     "year": "2023",
     "link": "https://doi.org/10.1016/j.jid.2022.10.011",
-    "details": "This paper establishes Mindin as a critical regulator of dermal fibrogenesis, demonstrating its requirement for extracellular matrix remodeling in systemic sclerosis."
+    "summary": "This paper establishes Mindin as a critical regulator of dermal fibrogenesis, demonstrating its requirement for extracellular matrix remodeling in systemic sclerosis.",
+    "abstract": "Systemic sclerosis is a fibrotic disease that initiates in the skin and progresses to internal organs, leading to a poor prognosis. Unraveling the etiology of a chronic, multifactorial disease such as systemic sclerosis has been aided by various animal models that recapitulate certain aspects of the human pathology. We found that the transcription factor SNAI1 is overexpressed in the epidermis of patients with systemic sclerosis, and a transgenic mouse recapitulating this expression pattern is sufficient to induce many clinical features of the human disease. Using this mouse model as a discovery platform, we have uncovered a critical role for the matricellular protein Mindin (SPON2) in fibrogenesis. Mindin is produced by SNAI1 transgenic skin keratinocytes and aids fibrogenesis by inducing early inflammatory cytokine production and collagen secretion in resident dermal fibroblasts. Given the dispensability of Mindin in normal tissue physiology, targeting this protein holds promise as an effective therapy for fibrosis."
   },
   {
     "authors": "Badarinath, K., Dam, B., Kataria, S., Zirmire, R. K., Dey, R., Kansagara, G., Ajnabi, J., Hegde, A., Singh, R., Masudi, T., et al.",
@@ -45,15 +50,8 @@
     "journal": "Cell Reports",
     "year": "2022",
     "link": "https://doi.org/10.1016/j.celrep.2022.111390",
-    "details": "This study identifies an autocrine Snail–Mindin signaling loop that sustains epithelial stemness in both normal skin and carcinoma contexts."
-  },
-  {
-    "authors": "Rana, I., Kataria, S., Tan, T. L., Hajam, E. Y., Kashyap, D. K., Saha, D., Ajnabi, J., Paul, S., Jayappa, S., Ananthan, A. S. H. P., et al.",
-    "title": "Mindin is essential for cutaneous fibrogenesis in a new mouse model of systemic sclerosis",
-    "journal": "bioRxiv (preprint)",
-    "year": "2022",
-    "link": "https://doi.org/10.1101/2022.01.26.477822",
-    "details": "An initial preprint report describing the role of Mindin in regulating dermal fibrosis using a newly developed mouse model of systemic sclerosis."
+    "summary": "This study identifies an autocrine Snail–Mindin signaling loop that sustains epithelial stemness in both normal skin and carcinoma contexts.",
+    "abstract": "Preservation of a small population of cancer stem cells (CSCs) within a heterogeneous carcinoma serves as a paradigm to understand how select cells in a tissue maintain their undifferentiated status. In both embryogenesis and cancer, Snail has been correlated with stemness, but the molecular underpinning of this phenomenon remains largely ill-defined. In models of cutaneous squamous cell carcinoma (cSCC), we discovered a non-epithelial-mesenchymal transition function for the transcription factor Snail in maintaining the stemness of epidermal keratinocytes. Snail-expressing cells secrete the matricellular protein Mindin, which functions in an autocrine fashion to activate a Src-STAT3 pathway to reinforce their stem/progenitor phenotype. This pathway is activated by the engagement of Mindin with the leukocyte-specific integrin, CD11b (ITGAM), which is also unexpectedly expressed by epidermal keratinocytes. Interestingly, disruption of this signaling module in human cSCC attenuates tumorigenesis, suggesting that targeting Mindin would be a promising therapeutic approach to hinder cancer recurrence."
   },
   {
     "authors": "Ajnabi, J.",
@@ -61,6 +59,7 @@
     "journal": "MSc Thesis, ICAR – Indian Agricultural Research Institute",
     "year": "2019",
     "link": "http://krishikosh.egranth.ac.in/handle/1/5810146216",
-    "details": "Master’s thesis identifying cis-regulatory elements controlling PM19 gene expression in wheat, contributing to understanding of stress-responsive transcriptional regulation in plants."
+    "summary": "Master’s thesis identifying cis-regulatory elements controlling PM19 gene expression in wheat, contributing to understanding of stress-responsive transcriptional regulation in plants.",
+    "abstract": "PM19   is   an   ABA   induced   plasma   membrane   protein   which   is   involved   in seed  dormancy,  embryo  development  and  influx  of  ABA  in  plants.  Preliminary studies  on PM19gene  from  wheat  in  our  lab  showed  that  it  is  an  early  drought responsive  gene with significantly higher expression in roots under drought stress. A ∼2.5  kb  promoter  of PM19  gene  has  been  cloned  from  wheat  genotype  Raj3765.  Inthe  present  study,  to  identify  the cis-regulatory  regions  regulating  the  expression of PM19gene,  four  promoter  deletion  fragments  viz. PM19p1 (-1481), PM19p2 (-672), PM19p3 (-301)  and PM19p4 (PM19p3 with  66  bp  5′  UTR)  of PM19genefrom   Raj3765   were   fused  with GUSreporter    gene.    The    response    of    the promoter   deletion   fragments   to hormones  such  as  ABA,  IAA,  and  osmotic  stress (15%  PEG)  was  analysed  at  two time points (2 h and 16 h) by transient expression in N.  benthamiana  leaves.  Promoter  fragments PM19p1and PM19p2showed  GUS activity  after  2  h  of  treatment  which  increased  significantly  in  16  h  treated  leaf tissues. PM19p3 and  PM19p4 showed  very  low  GUS  activity  after  2  h.  However, after  16  h,  moderate  GUS  staining  was  visible in PM19p3 and  PM19p4 infiltrated tissues.   The   GUS   activityby  PM19p3 and PM19p4 was significantly   lower than    that    of    tissues    infiltrated    withPM19p1 and   PM19p2.The   transient expression  analysis  of  these  four  constructs  revealed  that  the  region  between  -302 to  -1481  may  be  responsible  for  higher  and  early  expression  of PM19gene.  The region   of   -301   bp   upstream   to   5′    UTR   might   be   the   minimal  promoter   ofPM19gene. A detailed functional characterization would help in understanding   the   role   of   these cis-regulatory   regions   in   spatio-temporal   and abiotic stress mediated regulation of PM19 gene in wheat."
   }
 ]
