@@ -5,245 +5,30 @@
   <title>Johan Ajnabi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 48px 20px;
-      line-height: 1.75;
-      color: #111;
-      background: #fff;
-    }
-
-    h1 {
-      font-size: 32px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    h2 {
-      font-size: 20px;
-      font-weight: 600;
-      margin-top: 56px;
-      margin-bottom: 16px;
-    }
-
-    p {
-      margin: 10px 0;
-    }
-
-    a {
-      color: #1a5cff;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .header {
-      margin-bottom: 48px;
-    }
-
-    .header-top {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .profile-photo {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .subtitle {
-      color: #444;
-      font-size: 15px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    ol li {
-      margin-bottom: 18px;
-    }
-
-    footer {
-      margin-top: 80px;
-      font-size: 14px;
-      color: #666;
-    }
-
-    @media (max-width: 600px) {
-      .header-top {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="header-top">
-      <img src="profile.jpg" alt="Johan Ajnabi" class="profile-photo">
+  <main id="app">
 
-      <div>
-        <h1>Johan Ajnabi</h1>
-        <p class="subtitle">PhD Candidate</p>
-        <p class="subtitle">Wound Healing · Mechanobiology · Epigenetics</p>
-        <p class="subtitle">
-          Prof. Colin Jamora Laboratory<br>
-          BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem), India
-        </p>
-      </div>
-    </div>
-  </div>
+    <!-- Header injected here -->
+    <section id="profile"></section>
 
-  <!-- ABOUT -->
-  <h2>About</h2>
-  <p>
-    I am a life science researcher interested in understanding how mechanical cues regulate
-    cell-state transitions during cutaneous wound healing. My work focuses on epithelial
-    mechanotransduction, cytoskeletal dynamics, and epigenetic regulation.
-  </p>
-  <p>
-    My research explores how actin-dependent mechanical signaling influences the nuclear
-    localization and function of epigenetic regulators such as DNMT3A during tissue repair
-    and regeneration.
-  </p>
+    <!-- About -->
+    <section id="about"></section>
 
-  <!-- INTERESTS -->
-  <h2>Research Interests</h2>
-  <ul>
-    <li>Cutaneous wound healing</li>
-    <li>Mechanobiology and mechanotransduction</li>
-    <li>Actin cytoskeleton dynamics</li>
-    <li>Epigenetic regulation (DNMT3A)</li>
-    <li>ERK / MAPK signaling</li>
-  </ul>
+    <!-- Research -->
+    <section id="interests"></section>
 
-  <!-- EXPERIENCE -->
-  <h2>Research Experience</h2>
-  <p>
-    I have hands-on experience with keratinocyte differentiation and wound-healing models,
-    pharmacological perturbations, confocal microscopy, and quantitative image analysis.
-    My work integrates cell biology, signaling, and imaging approaches to study epithelial
-    tissue repair.
-  </p>
+    <!-- Publications -->
+    <section id="publications"></section>
 
-  <!-- PUBLICATIONS -->
-  <h2>Publications</h2>
-  <ol>
+    <!-- Links -->
+    <section id="links"></section>
 
-    <li>
-      <strong>Ajnabi, J.</strong>, Dam, B., Gupta, E., Saha, T., Dutta, A., Kumar, S.,
-      Gupta, A., Palakodeti, D., Jamora, C.
-      <em>
-        Actin-dependent mechanotransduction controls nucleocytoplasmic partitioning
-        of DNMT3a through ERK1/2 signaling during cutaneous wound healing.
-      </em><br>
-      bioRxiv (preprint), 2026.
-      <a href="https://doi.org/10.64898/2026.01.15.699481" target="_blank">[bioRxiv]</a>
-    </li>
+  </main>
 
-    <li>
-      Dam, B., <strong>Ajnabi, J.</strong>, Saha, T., Shrivastava, A., Badarinathan, K.,
-      Hegde, A., Dutta, A., Jasoria, S., Kataria, S., Singh, A., et al.
-      <em>
-        Mindin mediated αM-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness.
-      </em><br>
-      bioRxiv (preprint), 2025.
-      <a href="https://doi.org/10.1101/2025.08.24.669246" target="_blank">[bioRxiv]</a>
-    </li>
-
-    <li>
-      Dutta, S., Islam, Z., Das, S., Barman, A., Chowdhury, M., Mondal, B. P.,
-      <strong>Ajnabi, J.</strong>, Manna, D.
-      <em>
-        Harmonizing plant resilience: unveiling the symphony of membrane lipid dynamics
-        in response to abiotic stresses.
-      </em><br>
-      Discover Plants, 2(1):61, 2025.
-      <a href="https://link.springer.com/article/10.1007/s44372-025-00152-0" target="_blank">[DOI]</a>
-    </li>
-
-    <li>
-      Bhatt, T., Dam, B., Khedkar, S. U., Lall, S., Pandey, S., Kataria, S.,
-      <strong>Ajnabi, J.</strong>, Gulzar, S.-E.-J., Dias, P. M., Waskar, M., et al.
-      <em>
-        Niacinamide enhances cathelicidin mediated SARS-CoV-2 membrane disruption.
-      </em><br>
-      Frontiers in Immunology, 14:1255478, 2023.
-      <a href="https://doi.org/10.3389/fimmu.2023.1255478" target="_blank">[DOI]</a>
-    </li>
-
-    <li>
-      Rana, I., Kataria, S., Tan, T. L., Hajam, E. Y., Kashyap, D. K., Saha, D.,
-      <strong>Ajnabi, J.</strong>, Paul, S., Jayappa, S., Ananthan, A. S. H. P., et al.
-      <em>
-        Mindin (SPON2) is essential for cutaneous fibrogenesis in a mouse model
-        of systemic sclerosis.
-      </em><br>
-      Journal of Investigative Dermatology, 143(5):699–710, 2023.
-      <a href="https://doi.org/10.1016/j.jid.2022.10.011" target="_blank">[DOI]</a>
-    </li>
-
-    <li>
-      Badarinath, K., Dam, B., Kataria, S., Zirmire, R. K., Dey, R., Kansagara, G.,
-      <strong>Ajnabi, J.</strong>, Hegde, A., Singh, R., Masudi, T., et al.
-      <em>
-        Snail maintains the stem/progenitor state of skin epithelial cells and carcinomas
-        through the autocrine effect of matricellular protein Mindin.
-      </em><br>
-      Cell Reports, 40(12), 2022.
-      <a href="https://doi.org/10.1016/j.celrep.2022.111390" target="_blank">[DOI]</a>
-    </li>
-
-    <li>
-      Rana, I., Kataria, S., Tan, T. L., Hajam, E. Y., Kashyap, D. K., Saha, D.,
-      <strong>Ajnabi, J.</strong>, Paul, S., Jayappa, S., Ananthan, A. S. H. P., et al.
-      <em>
-        Mindin is essential for cutaneous fibrogenesis in a new mouse model
-        of systemic sclerosis.
-      </em><br>
-      bioRxiv, 2022.
-      <a href="https://doi.org/10.1101/2022.01.26.477822" target="_blank">[bioRxiv]</a>
-    </li>
-
-    <li>
-      <strong>Ajnabi, J.</strong>
-      <em>
-        Identification of cis-regulatory regions regulating the expression of PM19 gene in wheat.
-      </em><br>
-      MSc Thesis, ICAR–Indian Agricultural Research Institute, 2019.
-      <a href="http://krishikosh.egranth.ac.in/handle/1/5810146216" target="_blank">[Repository]</a>
-    </li>
-
-  </ol>
-
-  <!-- LINKS -->
-  <h2>Links</h2>
-  <p>
-    <a href="https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en" target="_blank">Google Scholar</a> ·
-    <a href="https://orcid.org/0000-0002-9437-9300" target="_blank">ORCID</a> ·
-    <a href="https://in.linkedin.com/in/johanajnabi" target="_blank">LinkedIn</a>
-  </p>
-
-  <!-- CONTACT -->
-  <h2>Contact</h2>
-  <p>Email: johan@outlook.in</p>
-
-  <footer>
-    © 2026 Johan Ajnabi
-  </footer>
-
+  <script src="main.js"></script>
 </body>
 </html>
