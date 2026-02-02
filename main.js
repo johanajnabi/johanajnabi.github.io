@@ -38,15 +38,24 @@ async function loadText(path) {
   `;
 
   document.getElementById("publications").innerHTML = `
-    <h2>Publications</h2>
-    ${pubs.map(p => `
-      <div class="pub">
-        <strong>${p.authors}</strong><br>
-        <em>${p.title}</em><br>
-        ${p.journal}, ${p.year}.
-        <a href="${p.link}" target="_blank">[link]</a>
-      </div>
-    `).join("")}
-  `;
+  <h2>Publications</h2>
+  ${pubs.map((p, i) => `
+    <div class="pub">
+      <strong>${p.authors}</strong><br>
+      <em>${p.title}</em><br>
+      ${p.journal}, ${p.year}.
+      <a href="${p.link}" target="_blank">[link]</a>
+      ${p.details ? `
+        <br>
+        <button class="pub-toggle" data-id="${i}">
+          Show details
+        </button>
+        <div class="pub-details" id="details-${i}">
+          ${p.details}
+        </div>
+      ` : ``}
+    </div>
+  `).join("")}
+`;
 
 })();
