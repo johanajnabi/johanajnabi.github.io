@@ -65,3 +65,22 @@ a:hover {
 .pub-toggle:hover {
   text-decoration: underline;
 }
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.links svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
