@@ -89,4 +89,7 @@ a:hover {
   color: #444;
   margin-left: 6px;
 }
+.pub-details p {
+  margin: 0.6em 0;
+}
 
