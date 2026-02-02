@@ -84,3 +84,9 @@ a:hover {
   height: 16px;
   fill: currentColor;
 }
+.first-author {
+  font-size: 13px;
+  color: #444;
+  margin-left: 6px;
+}
+
