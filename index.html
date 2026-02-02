@@ -39,7 +39,14 @@
         width: 120px;
         height: 120px;
       }
-    }
+      @media (min-width: 900px) {
+  .two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
   </style>
 </head>
 
@@ -54,17 +61,13 @@
 
     <div>
   <h1>Johan Ajnabi</h1>
-      <p>(PhD Candidate)</p>
+      <p style="margin:4px 0;">PhD Candidate</p>
   <p><strong>Wound Healing | Mechanobiology | Epigenetics</strong></p>
   <p style="margin-top:6px; font-size:14px; color:#555;">
     BRIC-Institute for Stem Cell Science and Regenerative Medicine (inStem), Bengaluru, India<br>
     Prof. Colin Jamora Laboratory
   </p>
-</div>
-
-  </header>
-
-  <hr>
+<div class="two-column">
 
   <section>
     <h2>About Me</h2>
@@ -73,6 +76,8 @@
       cell-state transitions during cutaneous wound healing. My work focuses on epithelial
       mechanotransduction, cytoskeletal dynamics, and epigenetic regulation.
     </p>
+    </section>
+  <section>
     <p>
       My research explores how actin-dependent mechanical signaling influences the nuclear
       localization and function of epigenetic regulators such as DNMT3A, and how these
