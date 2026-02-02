@@ -7,7 +7,10 @@
     "BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem), India"
   ],
   "email": "johan@outlook.in",
-  "scholar": "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
-  "orcid": "https://orcid.org/0000-0002-9437-9300",
-  "linkedin": "https://in.linkedin.com/in/johanajnabi"
+  "links": {
+    "Google Scholar": "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
+    "ORCID": "https://orcid.org/0000-0002-9437-9300",
+    "LinkedIn": "https://in.linkedin.com/in/johanajnabi",
+    "BlueSky": "https://bsky.app/profile/johanajnabi.bsky.social"
+  }
 }
