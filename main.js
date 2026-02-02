@@ -178,7 +178,7 @@ async function loadText(path) {
         <a href="${profile.links["Google Scholar"]}" target="_blank">🎓 Scholar</a>
         <a href="${profile.links["ORCID"]}" target="_blank">🆔 ORCID</a>
         <a href="${profile.links["LinkedIn"]}" target="_blank">💼 LinkedIn</a>
-        <a href="${profile.links["Bluesky"]}" target="_blank">🦋 Bluesky</a>
+        <a href="${profile.links["BlueSky"]}" target="_blank">🦋 BlueSky</a>
       </div>
     `;
   }
