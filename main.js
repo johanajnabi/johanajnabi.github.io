@@ -32,10 +32,16 @@ async function loadText(path) {
     <p>${about.replace(/\n\n/g, "</p><p>")}</p>
   `;
 
+ if (Array.isArray(interests)) {
   document.getElementById("interests").innerHTML = `
     <h2>Research Interests</h2>
-    <ul>${interests.map(i => `<li>${i}</li>`).join("")}</ul>
+    <ul>
+      ${interests.map(i => `<li>${i}</li>`).join("")}
+    </ul>
   `;
+} else {
+  console.error("Interests JSON is not an array:", interests);
+}
 
   document.getElementById("publications").innerHTML = `
   <h2>Publications</h2>
