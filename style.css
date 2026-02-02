@@ -46,3 +46,22 @@ a:hover {
 .pub {
   margin-bottom: 20px;
 }
+.pub-details {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #444;
+  display: none;
+}
+
+.pub-toggle {
+  background: none;
+  border: none;
+  color: #1a5cff;
+  padding: 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pub-toggle:hover {
+  text-decoration: underline;
+}
