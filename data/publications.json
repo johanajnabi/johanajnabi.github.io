@@ -1,9 +1,66 @@
 [
   {
-    "authors": "Ajnabi, J., Dam, B., et al.",
+    "authors": "Ajnabi, J., Dam, B., Gupta, E., Saha, T., Dutta, A., Kumar, S., Gupta, A., Palakodeti, D., Jamora, C.",
     "title": "Actin-dependent mechanotransduction controls nucleocytoplasmic partitioning of DNMT3a through ERK1/2 signaling during cutaneous wound healing",
-    "year": "2026",
     "journal": "bioRxiv (preprint)",
-    "link": "https://doi.org/10.64898/2026.01.15.699481"
+    "year": "2026",
+    "link": "https://doi.org/10.64898/2026.01.15.699481",
+    "details": "This study demonstrates how wound-induced mechanical cues regulate DNMT3a nucleocytoplasmic localization through actin remodeling and ERK1/2 signaling, revealing a mechanotransduction-driven epigenetic control mechanism during cutaneous wound healing."
+  },
+  {
+    "authors": "Dam, B., Ajnabi, J., Saha, T., Shrivastava, A., Badarinathan, K., Hegde, A., Dutta, A., Jasoria, S., Kataria, S., Singh, A., et al.",
+    "title": "Mindin mediated αM-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness",
+    "journal": "bioRxiv (preprint)",
+    "year": "2025",
+    "link": "https://doi.org/10.1101/2025.08.24.669246",
+    "details": "This work uncovers a Mindin–integrin–STAT3 signaling axis that sustains keratinocyte stemness through integrin endocytosis and downstream transcriptional activation."
+  },
+  {
+    "authors": "Dutta, S., Islam, Z., Das, S., Barman, A., Chowdhury, M., Mondal, B. P., Ajnabi, J., Manna, D.",
+    "title": "Harmonizing plant resilience: unveiling the symphony of membrane lipid dynamics in response to abiotic stresses",
+    "journal": "Discover Plants",
+    "year": "2025",
+    "link": "https://link.springer.com/article/10.1007/s44372-025-00152-0",
+    "details": "A comprehensive review of membrane lipid remodeling in plants under abiotic stress, highlighting lipid-mediated signaling mechanisms that contribute to stress tolerance."
+  },
+  {
+    "authors": "Bhatt, T., Dam, B., Khedkar, S. U., Lall, S., Pandey, S., Kataria, S., Ajnabi, J., Gulzar, S.-E.-J., Dias, P. M., Waskar, M., et al.",
+    "title": "Niacinamide enhances cathelicidin mediated SARS-CoV-2 membrane disruption",
+    "journal": "Frontiers in Immunology",
+    "year": "2023",
+    "link": "https://doi.org/10.3389/fimmu.2023.1255478",
+    "details": "This study shows that niacinamide potentiates cathelicidin-mediated antiviral activity by enhancing membrane disruption of SARS-CoV-2, providing mechanistic insight into host defense enhancement."
+  },
+  {
+    "authors": "Rana, I., Kataria, S., Tan, T. L., Hajam, E. Y., Kashyap, D. K., Saha, D., Ajnabi, J., Paul, S., Jayappa, S., Ananthan, A. S. H. P., et al.",
+    "title": "Mindin (SPON2) is essential for cutaneous fibrogenesis in a mouse model of systemic sclerosis",
+    "journal": "Journal of Investigative Dermatology",
+    "year": "2023",
+    "link": "https://doi.org/10.1016/j.jid.2022.10.011",
+    "details": "This paper establishes Mindin as a critical regulator of dermal fibrogenesis, demonstrating its requirement for extracellular matrix remodeling in systemic sclerosis."
+  },
+  {
+    "authors": "Badarinath, K., Dam, B., Kataria, S., Zirmire, R. K., Dey, R., Kansagara, G., Ajnabi, J., Hegde, A., Singh, R., Masudi, T., et al.",
+    "title": "Snail maintains the stem/progenitor state of skin epithelial cells and carcinomas through the autocrine effect of matricellular protein Mindin",
+    "journal": "Cell Reports",
+    "year": "2022",
+    "link": "https://doi.org/10.1016/j.celrep.2022.111390",
+    "details": "This study identifies an autocrine Snail–Mindin signaling loop that sustains epithelial stemness in both normal skin and carcinoma contexts."
+  },
+  {
+    "authors": "Rana, I., Kataria, S., Tan, T. L., Hajam, E. Y., Kashyap, D. K., Saha, D., Ajnabi, J., Paul, S., Jayappa, S., Ananthan, A. S. H. P., et al.",
+    "title": "Mindin is essential for cutaneous fibrogenesis in a new mouse model of systemic sclerosis",
+    "journal": "bioRxiv (preprint)",
+    "year": "2022",
+    "link": "https://doi.org/10.1101/2022.01.26.477822",
+    "details": "An initial preprint report describing the role of Mindin in regulating dermal fibrosis using a newly developed mouse model of systemic sclerosis."
+  },
+  {
+    "authors": "Ajnabi, J.",
+    "title": "Identification of cis-regulatory regions regulating the expression of PM19 gene in wheat",
+    "journal": "MSc Thesis, ICAR – Indian Agricultural Research Institute",
+    "year": "2019",
+    "link": "http://krishikosh.egranth.ac.in/handle/1/5810146216",
+    "details": "Master’s thesis identifying cis-regulatory elements controlling PM19 gene expression in wheat, contributing to understanding of stress-responsive transcriptional regulation in plants."
   }
 ]
