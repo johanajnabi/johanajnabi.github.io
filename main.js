@@ -16,10 +16,10 @@ function getPubType(pub) {
   return "peer";
 }
 
-// Detect first authorship
+// Detect first authorship (ROBUST)
 function isFirstAuthor(authors) {
-  const first = authors.split(",")[0].trim();
-  return /^(Ajnabi\s*,\s*J\.?|J\.?\s*Ajnabi)$/i.test(first);
+  // Matches: "Ajnabi, J., ..." OR "J. Ajnabi, ..."
+  return /^(\s*)?(Ajnabi,\s*J\.?|J\.?\s*Ajnabi)\b/i.test(authors);
 }
 
 async function loadJSON(path) {
@@ -37,10 +37,10 @@ async function loadText(path) {
 ====================== */
 (async function () {
 
-  // Pattern to match "Ajnabi, J." or "J. Ajnabi"
+  // Pattern to match "Ajnabi, J." or "J. Ajnabi" anywhere
   const MY_NAME_REGEX = /\bAjnabi,\s*J\.?\b|\bJ\.?\s*Ajnabi\b/g;
 
-  // Publication state
+  // Publication UI state
   let currentType = "all";   // all | peer | preprint
   let sortOrder = "desc";    // newest first
 
@@ -91,10 +91,12 @@ async function loadText(path) {
 
     let filtered = pubs.slice();
 
+    // Filter by type
     if (currentType !== "all") {
       filtered = filtered.filter(p => getPubType(p) === currentType);
     }
 
+    // Sort by year
     filtered.sort((a, b) =>
       sortOrder === "desc" ? b.year - a.year : a.year - b.year
     );
@@ -119,7 +121,9 @@ async function loadText(path) {
       ${filtered.map((p, i) => `
         <div class="pub">
           ${highlightAuthor(p.authors, MY_NAME_REGEX)}
-          ${isFirstAuthor(p.authors) ? `<span class="first-author">★ First author</span>` : ``}
+          ${isFirstAuthor(p.authors)
+            ? `<span class="first-author">★ First author</span>`
+            : ``}
           <br>
           <em>${p.title}</em><br>
           ${p.journal}, ${p.year}.
@@ -137,7 +141,7 @@ async function loadText(path) {
       `).join("")}
     `;
 
-    // Toggle details
+    // Toggle abstract/details
     document.querySelectorAll(".pub-toggle").forEach(btn => {
       btn.onclick = () => {
         const el = document.getElementById(`details-${btn.dataset.id}`);
@@ -147,7 +151,7 @@ async function loadText(path) {
       };
     });
 
-    // Filters
+    // Type filters
     document.querySelectorAll(".type-btn").forEach(btn => {
       btn.onclick = () => {
         currentType = btn.dataset.type;
@@ -155,6 +159,7 @@ async function loadText(path) {
       };
     });
 
+    // Sort toggle
     document.getElementById("sort-toggle").onclick = () => {
       sortOrder = sortOrder === "desc" ? "asc" : "desc";
       renderPublications();
