@@ -109,4 +109,10 @@ a:hover {
 html {
   scroll-behavior: smooth;
 }
+.nav {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 8px 0;
+}
 
