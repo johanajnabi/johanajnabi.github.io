@@ -92,4 +92,18 @@ a:hover {
 .pub-details p {
   margin: 0.6em 0;
 }
+.nav {
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+.nav a {
+  margin-right: 16px;
+  color: #1a5cff;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
 
