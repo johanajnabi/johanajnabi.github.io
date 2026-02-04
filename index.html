@@ -11,31 +11,31 @@
 <body>
 
   <main id="app">
-   <nav class="nav">
-  <a href="#about">About</a>
-  <a href="#interests">Research</a>
-  <a href="#experience">Experience</a>
-  <a href="#publications">Publications</a>
-  <a href="assets/resume.pdf" target="_blank">Résumé (PDF)</a>
-  <a href="assets/JA_CV2025.pdf" target="_blank">CV (PDF)</a>
-</nav>
 
-
-
-    <!-- Header injected here -->
+    <!-- Header injected via main.js -->
     <section id="profile"></section>
+
+    <!-- Pill-style navigation -->
+    <nav class="nav-pills">
+      <a href="#about" class="pill active">About</a>
+      <a href="#interests" class="pill">Research</a>
+      <a href="#experience" class="pill">Experience</a>
+      <a href="#publications" class="pill">Publications</a>
+      <a href="assets/resume.pdf" class="pill" target="_blank">Résumé</a>
+      <a href="assets/JA_CV2025.pdf" class="pill" target="_blank">CV</a>
+    </nav>
 
     <!-- About -->
     <section id="about"></section>
 
-   <!-- Research -->
-<section id="interests"></section>
+    <!-- Research -->
+    <section id="interests"></section>
 
-<!-- Research Experience -->
-<section id="experience"></section>
+    <!-- Research Experience -->
+    <section id="experience"></section>
 
-<!-- Publications -->
-<section id="publications"></section>
+    <!-- Publications -->
+    <section id="publications"></section>
 
     <!-- Links -->
     <section id="links"></section>
@@ -43,5 +43,17 @@
   </main>
 
   <script src="main.js"></script>
+
+  <!-- Optional: active pill toggle -->
+  <script>
+    document.querySelectorAll(".nav-pills .pill").forEach(pill => {
+      pill.addEventListener("click", () => {
+        document.querySelectorAll(".nav-pills .pill")
+          .forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+      });
+    });
+  </script>
+
 </body>
 </html>
