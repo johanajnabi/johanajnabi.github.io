@@ -129,7 +129,9 @@ async function loadText(path) {
       ${filtered.map((p, i) => `
         <div class="pub">
           ${highlightAuthor(p.authors, MY_NAME_REGEX)}
-          ${isFirstAuthor(p.authors) ? `<span class="first-author">★ First author</span>` : ``}
+          ${isFirstAuthor(p.authors)
+            ? `<span class="first-author">★ First author</span>`
+            : ``}
           <br>
           <em>${p.title}</em><br>
           ${p.journal}, ${p.year}.
@@ -141,7 +143,9 @@ async function loadText(path) {
             <div class="pub-details" id="details-${i}">
               ${p.summary ? `<p><strong>Summary:</strong> ${p.summary}</p>` : ``}
               ${p.abstract ? `<p><strong>Abstract:</strong> ${p.abstract}</p>` : ``}
-              ${(!p.summary && !p.abstract && p.details) ? `<p>${p.details}</p>` : ``}
+              ${(!p.summary && !p.abstract && p.details)
+                ? `<p>${p.details}</p>`
+                : ``}
             </div>
           ` : ``}
         </div>
@@ -207,6 +211,46 @@ async function loadText(path) {
         link.classList.add("active");
       }
     });
+  });
+
+  /* =====================
+     FADE-IN SECTIONS ON SCROLL
+  ====================== */
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll("section").forEach(section => {
+    observer.observe(section);
+  });
+
+  /* =====================
+     KEYBOARD NAV FOR PILLS
+  ====================== */
+  const pills = Array.from(document.querySelectorAll(".nav-pills .pill"));
+
+  document.addEventListener("keydown", e => {
+    if (!["ArrowLeft", "ArrowRight"].includes(e.key)) return;
+
+    const activeIndex = pills.findIndex(p =>
+      p.classList.contains("active")
+    );
+    if (activeIndex === -1) return;
+
+    const nextIndex =
+      e.key === "ArrowRight"
+        ? (activeIndex + 1) % pills.length
+        : (activeIndex - 1 + pills.length) % pills.length;
+
+    pills[nextIndex].focus();
+    pills[nextIndex].click();
   });
 
 })();
