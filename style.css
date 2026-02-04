@@ -26,6 +26,19 @@ body {
 }
 
 /* =========================
+   BULLETPROOF ANCHOR OFFSET
+========================= */
+
+section::before {
+  content: "";
+  display: block;
+  height: 120px;      /* MUST match nav height */
+  margin-top: -120px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* =========================
    HEADINGS
 ========================= */
 
@@ -38,11 +51,6 @@ h2 {
   margin-top: 64px;
   font-size: 20px;
   letter-spacing: 0.2px;
-}
-
-/* Fix anchor offset for sticky nav */
-section > h2 {
-  scroll-margin-top: 120px;
 }
 
 /* =========================
@@ -115,21 +123,12 @@ a:hover {
   font-weight: 600;
 }
 
-.nav-pills .pill:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
 /* =========================
    PUBLICATIONS
 ========================= */
 
 .pub {
   margin-bottom: 22px;
-}
-
-.pub em {
-  font-style: italic;
 }
 
 .first-author {
@@ -145,64 +144,11 @@ a:hover {
   display: none;
 }
 
-.pub-details p {
-  margin: 0.6em 0;
-}
-
 .pub-toggle {
   background: none;
   border: none;
   color: var(--accent);
-  padding: 0;
-  font-size: 14px;
   cursor: pointer;
-}
-
-.pub-toggle:hover {
-  text-decoration: underline;
-}
-
-/* Publication controls */
-
-.pub-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 16px 0 28px 0;
-  font-size: 14px;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.pub-controls button {
-  background: none;
-  border: none;
-  color: var(--accent);
-  cursor: pointer;
-  margin-right: 12px;
-  font-size: 14px;
-}
-
-.pub-controls button:hover {
-  text-decoration: underline;
-}
-
-/* =========================
-   LINKS / ICONS
-========================= */
-
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  align-items: center;
-}
-
-.links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 500;
 }
 
 /* =========================
@@ -214,12 +160,7 @@ a:hover {
 }
 
 #experience ul {
-  margin-top: 6px;
   margin-bottom: 22px;
-}
-
-#experience li {
-  margin-bottom: 6px;
 }
 
 /* =========================
@@ -235,6 +176,40 @@ section {
 section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* =========================
+   BACK TO TOP PILL
+========================= */
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  z-index: 20;
+
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: var(--bg-pill);
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--bg-pill-hover);
 }
 
 /* =========================
@@ -256,53 +231,7 @@ section.visible {
     width: 100px;
   }
 
-  .nav-pills {
-    padding-top: 8px;
-  }
-
   h2 {
     margin-top: 56px;
   }
-   /* Bulletproof anchor offset */
-section::before {
-  content: "";
-  display: block;
-  height: 120px;      /* must match nav height */
-  margin-top: -120px;
-  visibility: hidden;
-  pointer-events: none;
-}
-/* =========================
-   BACK TO TOP PILL
-========================= */
-
-.back-to-top {
-  position: fixed;
-  right: 20px;
-  bottom: 24px;
-  z-index: 20;
-
-  padding: 8px 14px;
-  border-radius: 12px;
-  background: #e6e6e6;
-  color: #111;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(10px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-.back-to-top:hover {
-  background: #d4d4d4;
-}
 }
