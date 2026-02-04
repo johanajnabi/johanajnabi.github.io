@@ -18,7 +18,6 @@ function getPubType(pub) {
 
 // Detect first authorship (ROBUST)
 function isFirstAuthor(authors) {
-  // Matches: "Ajnabi, J., ..." OR "J. Ajnabi, ..."
   return /^(\s*)?(Ajnabi,\s*J\.?|J\.?\s*Ajnabi)\b/i.test(authors);
 }
 
@@ -37,17 +36,15 @@ async function loadText(path) {
 ====================== */
 (async function () {
 
-  // Pattern to match "Ajnabi, J." or "J. Ajnabi" anywhere
   const MY_NAME_REGEX = /\bAjnabi,\s*J\.?\b|\bJ\.?\s*Ajnabi\b/g;
 
-  // Publication UI state
-  let currentType = "all";   // all | peer | preprint
-  let sortOrder = "desc";    // newest first
+  let currentType = "all";
+  let sortOrder = "desc";
 
   const profile = await loadJSON("data/profile.json");
   const about = await loadText("content/about.md");
   const interests = await loadJSON("data/interests.json");
-   const experience = await loadJSON("data/experience.json");
+  const experience = await loadJSON("data/experience.json");
   const pubs = await loadJSON("data/publications.json");
 
   /* =====================
@@ -76,33 +73,26 @@ async function loadText(path) {
   /* =====================
      RESEARCH INTERESTS
   ====================== */
-  if (Array.isArray(interests)) {
-    document.getElementById("interests").innerHTML = `
-      <h2>Research Interests</h2>
-      <ul>
-        ${interests.map(i => `<li>${i}</li>`).join("")}
-      </ul>
-    `;
-  }
-   /* =====================
-   RESEARCH EXPERIENCE
-====================== */
-document.getElementById("experience").innerHTML = `
-  <h2>Research Experience</h2>
+  document.getElementById("interests").innerHTML = `
+    <h2>Research Interests</h2>
+    <ul>${interests.map(i => `<li>${i}</li>`).join("")}</ul>
+  `;
 
-  ${experience.map(exp => `
-    <p>
-      <strong>${exp.role}</strong><br>
-      ${exp.institution}<br>
-      <em>${exp.period}</em><br>
-      Supervisor: ${exp.supervisor}
-    </p>
-
-    <ul>
-      ${exp.points.map(p => `<li>${p}</li>`).join("")}
-    </ul>
-  `).join("")}
-`;
+  /* =====================
+     EXPERIENCE
+  ====================== */
+  document.getElementById("experience").innerHTML = `
+    <h2>Research Experience</h2>
+    ${experience.map(exp => `
+      <p>
+        <strong>${exp.role}</strong><br>
+        ${exp.institution}<br>
+        <em>${exp.period}</em><br>
+        Supervisor: ${exp.supervisor}
+      </p>
+      <ul>${exp.points.map(p => `<li>${p}</li>`).join("")}</ul>
+    `).join("")}
+  `;
 
   /* =====================
      PUBLICATIONS
@@ -111,12 +101,10 @@ document.getElementById("experience").innerHTML = `
 
     let filtered = pubs.slice();
 
-    // Filter by type
     if (currentType !== "all") {
       filtered = filtered.filter(p => getPubType(p) === currentType);
     }
 
-    // Sort by year
     filtered.sort((a, b) =>
       sortOrder === "desc" ? b.year - a.year : a.year - b.year
     );
@@ -141,32 +129,25 @@ document.getElementById("experience").innerHTML = `
       ${filtered.map((p, i) => `
         <div class="pub">
           ${highlightAuthor(p.authors, MY_NAME_REGEX)}
-          ${isFirstAuthor(p.authors)
-            ? `<span class="first-author">★ First author</span>`
-            : ``}
+          ${isFirstAuthor(p.authors) ? `<span class="first-author">★ First author</span>` : ``}
           <br>
           <em>${p.title}</em><br>
           ${p.journal}, ${p.year}.
           <a href="${p.link}" target="_blank">[link]</a>
-         ${(p.summary || p.abstract || p.details) ? `
-  <br>
-  <button class="pub-toggle" data-id="${i}">
-    Show details
-  </button>
-  <div class="pub-details" id="details-${i}">
-    ${p.summary ? `<p><strong>Summary:</strong> ${p.summary}</p>` : ``}
-    ${p.abstract ? `<p><strong>Abstract:</strong> ${p.abstract}</p>` : ``}
-    ${(!p.summary && !p.abstract && p.details)
-      ? `<p>${p.details}</p>`
-      : ``}
-  </div>
-` : ``}
 
+          ${(p.summary || p.abstract || p.details) ? `
+            <br>
+            <button class="pub-toggle" data-id="${i}">Show details</button>
+            <div class="pub-details" id="details-${i}">
+              ${p.summary ? `<p><strong>Summary:</strong> ${p.summary}</p>` : ``}
+              ${p.abstract ? `<p><strong>Abstract:</strong> ${p.abstract}</p>` : ``}
+              ${(!p.summary && !p.abstract && p.details) ? `<p>${p.details}</p>` : ``}
+            </div>
+          ` : ``}
         </div>
       `).join("")}
     `;
 
-    // Toggle abstract/details
     document.querySelectorAll(".pub-toggle").forEach(btn => {
       btn.onclick = () => {
         const el = document.getElementById(`details-${btn.dataset.id}`);
@@ -176,7 +157,6 @@ document.getElementById("experience").innerHTML = `
       };
     });
 
-    // Type filters
     document.querySelectorAll(".type-btn").forEach(btn => {
       btn.onclick = () => {
         currentType = btn.dataset.type;
@@ -184,7 +164,6 @@ document.getElementById("experience").innerHTML = `
       };
     });
 
-    // Sort toggle
     document.getElementById("sort-toggle").onclick = () => {
       sortOrder = sortOrder === "desc" ? "asc" : "desc";
       renderPublications();
@@ -196,16 +175,38 @@ document.getElementById("experience").innerHTML = `
   /* =====================
      LINKS
   ====================== */
-  if (profile.links) {
-    document.getElementById("links").innerHTML = `
-      <h2>Links</h2>
-      <div class="links">
-        <a href="${profile.links["Google Scholar"]}" target="_blank">🎓 Scholar</a>
-        <a href="${profile.links["ORCID"]}" target="_blank">🆔 ORCID</a>
-        <a href="${profile.links["LinkedIn"]}" target="_blank">💼 LinkedIn</a>
-        <a href="${profile.links["BlueSky"]}" target="_blank">🦋 BlueSky</a>
-      </div>
-    `;
-  }
+  document.getElementById("links").innerHTML = `
+    <h2>Links</h2>
+    <div class="links">
+      <a href="${profile.links["Google Scholar"]}" target="_blank">🎓 Scholar</a>
+      <a href="${profile.links["ORCID"]}" target="_blank">🆔 ORCID</a>
+      <a href="${profile.links["LinkedIn"]}" target="_blank">💼 LinkedIn</a>
+      <a href="${profile.links["BlueSky"]}" target="_blank">🦋 BlueSky</a>
+    </div>
+  `;
+
+  /* =====================
+     AUTO-HIGHLIGHT NAV PILLS ON SCROLL
+  ====================== */
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-pills .pill");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      if (window.scrollY >= sectionTop) {
+        current = section.id;
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
 
 })();
