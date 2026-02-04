@@ -233,4 +233,8 @@ section.visible {
   opacity: 1;
   transform: translateY(0);
 }
+   /* Offset anchor scroll for sticky nav */
+section {
+  scroll-margin-top: 120px; /* match nav height */
+}
 }
