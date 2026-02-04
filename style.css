@@ -4,51 +4,12 @@
 
 :root {
   --nav-height: 80px;
-
-  /* Light mode colors */
-  --bg-main: #ffffff;
-  --bg-soft: #f7f7f7;
-  --bg-pill: #e6e6e6;
-  --bg-pill-hover: #d4d4d4;
-
   --accent: #1a5cff;
   --accent-soft: #ffd88a;
-
   --text-main: #111;
   --text-muted: #444;
-  --border-soft: #e0e0e0;
-}
-/* =========================
-   DARK MODE
-========================= */
-
-[data-theme="dark"] {
-  --bg-main: #0f1115;
-  --bg-soft: #161922;
-  --bg-pill: #1f2430;
-  --bg-pill-hover: #2a3040;
-
-  --accent: #7aa2ff;
-  --accent-soft: #3a4a7a;
-
-  --text-main: #e6e8ee;
-  --text-muted: #a0a4b8;
-  --border-soft: #2a2f3d;
-}
-
-/* Apply variables */
-
-body {
-  background: var(--bg-main);
-  color: var(--text-main);
-}
-
-.nav-pills {
-  background: var(--bg-main);
-}
-
-.pub-details {
-  color: var(--text-muted);
+  --bg-pill: #e6e6e6;
+  --bg-pill-hover: #d4d4d4;
 }
 
 html {
