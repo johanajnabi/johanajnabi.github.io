@@ -36,6 +36,14 @@ async function loadText(path) {
 ====================== */
 (async function () {
 
+  // Read nav height from CSS (single source of truth)
+  const NAV_HEIGHT =
+    parseInt(
+      getComputedStyle(document.documentElement)
+        .getPropertyValue("--nav-height")
+    ) || 80;
+
+  // Pattern to match your name
   const MY_NAME_REGEX = /\bAjnabi,\s*J\.?\b|\bJ\.?\s*Ajnabi\b/g;
 
   let currentType = "all";
@@ -199,7 +207,7 @@ async function loadText(path) {
     let current = "";
 
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
+      const sectionTop = section.offsetTop - NAV_HEIGHT - 10;
       if (window.scrollY >= sectionTop) {
         current = section.id;
       }
