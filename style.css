@@ -1,16 +1,26 @@
 /* =========================
-   GLOBAL
+   CSS VARIABLES
 ========================= */
 
 :root {
   --nav-height: 80px;
+
   --accent: #1a5cff;
   --accent-soft: #ffd88a;
+
   --text-main: #111;
   --text-muted: #444;
+
+  --bg-main: #ffffff;
   --bg-pill: #e6e6e6;
   --bg-pill-hover: #d4d4d4;
+
+  --border-soft: #e5e5e5;
 }
+
+/* =========================
+   GLOBAL
+========================= */
 
 html {
   scroll-behavior: smooth;
@@ -19,11 +29,14 @@ html {
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                Roboto, Helvetica, Arial, sans-serif;
+
   max-width: 760px;
   margin: 0 auto;
   padding: 48px 20px;
+
   line-height: 1.75;
   color: var(--text-main);
+  background: var(--bg-main);
 }
 
 /* =========================
@@ -95,33 +108,56 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: white;
+
+  background: var(--bg-main);
   padding: 12px 0 20px 0;
 
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+
+  border-bottom: 1px solid var(--border-soft);
 }
 
 .nav-pills .pill {
   padding: 8px 14px;
   border-radius: 12px;
+
   background: var(--bg-pill);
   color: var(--text-main);
+
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
-  transition: background 0.2s ease, transform 0.1s ease;
+
+  transition: background 0.2s ease;
 }
 
 .nav-pills .pill:hover {
   background: var(--bg-pill-hover);
-  transform: translateY(-1px);
 }
 
 .nav-pills .pill.active {
   background: var(--accent-soft);
   font-weight: 600;
+}
+
+.nav-pills .pill:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* =========================
+   SECTION FADE-IN
+========================= */
+
+section {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+section.visible {
+  opacity: 1;
 }
 
 /* =========================
@@ -191,6 +227,11 @@ a:hover {
   text-decoration: underline;
 }
 
+.pub-controls button.active {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 /* =========================
    EXPERIENCE
 ========================= */
@@ -203,23 +244,30 @@ a:hover {
   margin-bottom: 22px;
 }
 
+#experience li {
+  margin-bottom: 6px;
+}
+
 /* =========================
-   SECTION FADE-IN
+   LINKS / ICONS
 ========================= */
 
-section {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
 }
 
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
 }
 
 /* =========================
-   BACK TO TOP PILL
+   BACK TO TOP
 ========================= */
 
 .back-to-top {
@@ -230,15 +278,18 @@ section.visible {
 
   padding: 8px 14px;
   border-radius: 12px;
+
   background: var(--bg-pill);
   color: var(--text-main);
+
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
 
   opacity: 0;
   pointer-events: none;
-  transform: translateY(10px);
+  transform: translateY(6px);
+
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
