@@ -265,5 +265,29 @@ window.addEventListener("scroll", () => {
     backToTop.classList.remove("visible");
   }
 });
+/* =====================
+   DARK MODE TOGGLE
+====================== */
+
+const toggle = document.getElementById("theme-toggle");
+const root = document.documentElement;
+
+// Load saved theme or system preference
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+  root.setAttribute("data-theme", savedTheme);
+} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  root.setAttribute("data-theme", "dark");
+}
+
+// Toggle handler
+toggle?.addEventListener("click", e => {
+  e.preventDefault();
+  const isDark = root.getAttribute("data-theme") === "dark";
+  const newTheme = isDark ? "light" : "dark";
+  root.setAttribute("data-theme", newTheme);
+  localStorage.setItem("theme", newTheme);
+  toggle.textContent = isDark ? "🌙" : "☀️";
+});
 
 })();
