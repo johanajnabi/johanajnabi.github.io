@@ -3,6 +3,7 @@
 ========================= */
 
 :root {
+  --nav-height: 96px;
   --accent: #1a5cff;
   --accent-soft: #ffd88a;
   --text-main: #111;
