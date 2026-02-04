@@ -1,3 +1,11 @@
+/* =========================
+   GLOBAL
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                Roboto, Helvetica, Arial, sans-serif;
@@ -7,6 +15,10 @@ body {
   line-height: 1.75;
   color: #111;
 }
+
+/* =========================
+   HEADINGS
+========================= */
 
 h1 {
   font-size: 32px;
@@ -18,6 +30,10 @@ h2 {
   font-size: 20px;
 }
 
+/* =========================
+   LINKS
+========================= */
+
 a {
   color: #1a5cff;
   text-decoration: none;
@@ -26,6 +42,10 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* =========================
+   PROFILE
+========================= */
 
 .profile {
   display: flex;
@@ -43,14 +63,69 @@ a:hover {
   font-size: 15px;
 }
 
-.pub {
-  margin-bottom: 20px;
+/* =========================
+   NAVIGATION (PILLS)
+========================= */
+
+.nav-pills {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: white;
+  padding: 12px 0 20px 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
+
+.nav-pills .pill {
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: #e6e6e6;
+  color: #111;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.nav-pills .pill:hover {
+  background: #d4d4d4;
+  text-decoration: none;
+}
+
+.nav-pills .pill.active {
+  background: #ffd88a;
+  font-weight: 600;
+}
+
+/* =========================
+   PUBLICATIONS
+========================= */
+
+.pub {
+  margin-bottom: 22px;
+}
+
+.pub em {
+  font-style: italic;
+}
+
+.first-author {
+  font-size: 13px;
+  color: #444;
+  margin-left: 6px;
+}
+
 .pub-details {
-  margin-top: 6px;
+  margin-top: 8px;
   font-size: 14px;
   color: #444;
   display: none;
+}
+
+.pub-details p {
+  margin: 0.6em 0;
 }
 
 .pub-toggle {
@@ -65,6 +140,34 @@ a:hover {
 .pub-toggle:hover {
   text-decoration: underline;
 }
+
+/* Publication controls */
+
+.pub-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0 24px 0;
+  font-size: 14px;
+}
+
+.pub-controls button {
+  background: none;
+  border: none;
+  color: #1a5cff;
+  cursor: pointer;
+  margin-right: 12px;
+  font-size: 14px;
+}
+
+.pub-controls button:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   LINKS / ICONS
+========================= */
+
 .links {
   display: flex;
   flex-wrap: wrap;
@@ -84,35 +187,39 @@ a:hover {
   height: 16px;
   fill: currentColor;
 }
-.first-author {
-  font-size: 13px;
-  color: #444;
-  margin-left: 6px;
-}
-.pub-details p {
-  margin: 0.6em 0;
-}
-.nav {
-  margin-bottom: 24px;
-  font-size: 15px;
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+#experience p {
+  margin-bottom: 6px;
 }
 
-.nav a {
-  margin-right: 16px;
-  color: #1a5cff;
-  text-decoration: none;
+#experience ul {
+  margin-top: 6px;
+  margin-bottom: 20px;
 }
 
-.nav a:hover {
-  text-decoration: underline;
-}
-html {
-  scroll-behavior: smooth;
-}
-.nav {
-  position: sticky;
-  top: 0;
-  background: white;
-  padding: 8px 0;
+#experience li {
+  margin-bottom: 6px;
 }
 
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile img {
+    width: 100px;
+  }
+
+  .nav-pills {
+    padding-top: 8px;
+  }
+}
