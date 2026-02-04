@@ -32,8 +32,8 @@ body {
 section::before {
   content: "";
   display: block;
-  height: 120px;      /* MUST match nav height */
-  margin-top: -120px;
+  height: var(--nav-height);
+  margin-top: calc(-1 * var(--nav-height));
   visibility: hidden;
   pointer-events: none;
 }
