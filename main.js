@@ -19,23 +19,32 @@ function isFirstAuthor(authors) {
   return /^(\s*)?(Ajnabi,\s*J\.?|J\.?\s*Ajnabi)\b/i.test(authors);
 }
 
-// Render a single experience bullet (NO inline citation parsing)
-function renderExperiencePoint(point) {
-  // Plain text bullet
+// Replace {citation_key} → clickable citation
+function linkCitations(text, citationMap) {
+  return text.replace(/\{([^}]+)\}/g, (_, key) => {
+    const pub = citationMap[key];
+    if (!pub) return key;
+    return `<a href="${pub.link}" target="_blank">
+      ${pub.authors.split(",")[0]} et al., ${pub.year}
+    </a>`;
+  });
+}
+
+// Render experience bullet
+function renderExperiencePoint(point, citationMap) {
   if (typeof point === "string") {
-    return `<li>${point}</li>`;
+    return `<li>${linkCitations(point, citationMap)}</li>`;
   }
 
-  // Bullet with linked paper
   if (typeof point === "object" && point.paper) {
     const p = point.paper;
     return `
       <li>
         ${point.text}
         <br>
-        (<strong>${p.journal}</strong>:
+        (<strong>${p.journal}</strong>,
         <a href="${p.link}" target="_blank">
-          ${p.authors} et al., ${p.year}
+          ${p.authors}, ${p.year}
         </a>)
       </li>
     `;
@@ -78,6 +87,20 @@ async function loadText(path) {
   const pubs       = await loadJSON("data/publications.json");
 
   /* =====================
+     BUILD CITATION MAP
+  ====================== */
+
+  // Example key: ajnabi_2026 → publication object
+  const citationMap = {};
+  pubs.forEach(p => {
+    const firstAuthor = p.authors
+      .split(",")[0]
+      .toLowerCase()
+      .replace(/\s+/g, "");
+    citationMap[`${firstAuthor}_${p.year}`] = p;
+  });
+
+  /* =====================
      PROFILE
   ====================== */
   document.getElementById("profile").innerHTML = `
@@ -109,7 +132,7 @@ async function loadText(path) {
   `;
 
   /* =====================
-     EXPERIENCE
+     EXPERIENCE (FIXED)
   ====================== */
   document.getElementById("experience").innerHTML = `
     <h2>Research Experience</h2>
@@ -124,7 +147,9 @@ async function loadText(path) {
         </p>
 
         <ul>
-          ${exp.points.map(p => renderExperiencePoint(p)).join("")}
+          ${exp.points
+            .map(p => renderExperiencePoint(p, citationMap))
+            .join("")}
         </ul>
       </div>
     `).join("")}
