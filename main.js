@@ -32,20 +32,25 @@ function linkCitations(text, citationMap) {
 
 // Render experience bullet
 function renderExperiencePoint(point, citationMap) {
+  // Case 1: plain string with {citation_key}
   if (typeof point === "string") {
     return `<li>${linkCitations(point, citationMap)}</li>`;
   }
 
+  // Case 2: structured paper object
   if (typeof point === "object" && point.paper) {
     const p = point.paper;
+
     return `
       <li>
         ${point.text}
         <br>
-        (<strong>${p.journal}</strong>,
-        <a href="${p.link}" target="_blank">
-          ${p.authors}, ${p.year}
-        </a>)
+        <span class="exp-citation">
+          <strong>${p.journal}</strong>, ${p.year}.
+          <a href="${p.link}" target="_blank">
+            [${p.authors} et al., ${p.year}]
+          </a>
+        </span>
       </li>
     `;
   }
