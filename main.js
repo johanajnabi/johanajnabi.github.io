@@ -19,30 +19,23 @@ function isFirstAuthor(authors) {
   return /^(\s*)?(Ajnabi,\s*J\.?|J\.?\s*Ajnabi)\b/i.test(authors);
 }
 
-// Replace {citation_key} → clickable links
-function linkCitations(text, citationMap) {
-  return text.replace(/\{([^}]+)\}/g, (_, key) => {
-    const p = citationMap[key];
-    if (!p) return _;
-    return `<a href="${p.link}" target="_blank">${p.authors}, ${p.year}</a>`;
-  });
-}
-
-// Render experience bullet safely
-function renderExperiencePoint(point, citationMap) {
+// Render a single experience bullet (NO inline citation parsing)
+function renderExperiencePoint(point) {
+  // Plain text bullet
   if (typeof point === "string") {
-    return `<li>${linkCitations(point, citationMap)}</li>`;
+    return `<li>${point}</li>`;
   }
 
+  // Bullet with linked paper
   if (typeof point === "object" && point.paper) {
     const p = point.paper;
     return `
       <li>
         ${point.text}
         <br>
-        (<strong>${p.journal}</strong>,
+        (<strong>${p.journal}</strong>:
         <a href="${p.link}" target="_blank">
-          ${p.authors}, ${p.year}
+          ${p.authors} et al., ${p.year}
         </a>)
       </li>
     `;
@@ -83,18 +76,6 @@ async function loadText(path) {
   const interests  = await loadJSON("data/interests.json");
   const experience = await loadJSON("data/experience.json");
   const pubs       = await loadJSON("data/publications.json");
-
-  /* =====================
-     BUILD CITATION MAP
-  ====================== */
-
-  // ajnabi_2026 → publication
-  const citationMap = {};
-  pubs.forEach(p => {
-    const firstAuthor =
-      p.authors.split(",")[0].toLowerCase().replace(/\s+/g, "");
-    citationMap[`${firstAuthor}_${p.year}`] = p;
-  });
 
   /* =====================
      PROFILE
@@ -143,9 +124,7 @@ async function loadText(path) {
         </p>
 
         <ul>
-          ${exp.points
-            .map(p => renderExperiencePoint(p, citationMap))
-            .join("")}
+          ${exp.points.map(p => renderExperiencePoint(p)).join("")}
         </ul>
       </div>
     `).join("")}
@@ -192,7 +171,9 @@ async function loadText(path) {
           <br>
           <em>${p.title}</em><br>
           ${p.journal}, ${p.year}.
-          <a href="${p.link}" target="_blank">[${p.authors.split(",")[0]} et al., ${p.year}]</a>
+          <a href="${p.link}" target="_blank">
+            [${p.authors.split(",")[0]} et al., ${p.year}]
+          </a>
 
           ${(p.summary || p.abstract) ? `
             <br>
@@ -269,7 +250,10 @@ async function loadText(path) {
      FADE-IN
   ====================== */
   const observer = new IntersectionObserver(
-    entries => entries.forEach(e => e.isIntersecting && e.target.classList.add("visible")),
+    entries =>
+      entries.forEach(e =>
+        e.isIntersecting && e.target.classList.add("visible")
+      ),
     { threshold: 0.1 }
   );
 
