@@ -25,7 +25,8 @@ function isFirstAuthor(authors) {
 
 // Replace (Author et al., YEAR) with formatted + linked citation
 function linkInlineCitations(text, pubs) {
-  return text.replace(/\(([^()]+_\d{4})\)/g, (match, key) => {
+  return text.replace(/\(\{([a-z0-9_]+)\}\)/gi, (match, key) => {
+
     const pub = pubs.find(p => {
       const firstAuthor = p.authors
         .split(",")[0]
@@ -50,7 +51,6 @@ function linkInlineCitations(text, pubs) {
     `;
   });
 }
-
 // Render one experience bullet
 function renderExperiencePoint(point, pubs) {
   if (typeof point === "string") {
