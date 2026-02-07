@@ -123,18 +123,19 @@ document.getElementById("experience").innerHTML = `
 
           // Bullet with linked paper
           if (typeof point === "object" && point.paper) {
-            const p = point.paper;
-            return `
-              <li>
-                ${point.text}
-                <br>
-                (<strong>${p.journal}</strong>,
-                ${p.authors},
-                ${p.year}
-                ${p.link ? `· <a href="${p.link}" target="_blank">link</a>` : ``})
-              </li>
-            `;
-          }
+  const p = point.paper;
+  return `
+    <li>
+      ${point.text}
+      <br>
+      (<strong>${p.journal}</strong>,
+      <a href="${p.link}" target="_blank">
+        ${p.authors}, ${p.year}
+      </a>)
+    </li>
+  `;
+}
+
 
           return "";
         }).join("")}
