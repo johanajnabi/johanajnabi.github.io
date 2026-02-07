@@ -2,7 +2,7 @@
    HELPERS
 ====================== */
 
-// Highlight my name in author lists
+// Highlight your name in author lists
 function highlightAuthor(authors, nameRegex) {
   return authors.replace(nameRegex, match => `<strong>${match}</strong>`);
 }
@@ -17,6 +17,38 @@ function getPubType(pub) {
 // Detect first authorship
 function isFirstAuthor(authors) {
   return /^(\s*)?(Ajnabi,\s*J\.?|J\.?\s*Ajnabi)\b/i.test(authors);
+}
+
+// Replace {citation_key} → clickable links
+function linkCitations(text, citationMap) {
+  return text.replace(/\{([^}]+)\}/g, (_, key) => {
+    const p = citationMap[key];
+    if (!p) return _;
+    return `<a href="${p.link}" target="_blank">${p.authors}, ${p.year}</a>`;
+  });
+}
+
+// Render experience bullet safely
+function renderExperiencePoint(point, citationMap) {
+  if (typeof point === "string") {
+    return `<li>${linkCitations(point, citationMap)}</li>`;
+  }
+
+  if (typeof point === "object" && point.paper) {
+    const p = point.paper;
+    return `
+      <li>
+        ${point.text}
+        <br>
+        (<strong>${p.journal}</strong>,
+        <a href="${p.link}" target="_blank">
+          ${p.authors}, ${p.year}
+        </a>)
+      </li>
+    `;
+  }
+
+  return "";
 }
 
 async function loadJSON(path) {
@@ -34,9 +66,7 @@ async function loadText(path) {
 ====================== */
 (async function () {
 
-  /* ---------------------
-     GLOBAL CONSTANTS
-  --------------------- */
+  /* --- CSS-driven nav height --- */
   const NAV_HEIGHT =
     parseInt(
       getComputedStyle(document.documentElement)
@@ -48,42 +78,23 @@ async function loadText(path) {
   let currentType = "all";
   let sortOrder = "desc";
 
-  /* ---------------------
-     LOAD DATA
-  --------------------- */
-  const profile = await loadJSON("data/profile.json");
-  const about = await loadText("content/about.md");
-  const interests = await loadJSON("data/interests.json");
+  const profile    = await loadJSON("data/profile.json");
+  const about      = await loadText("content/about.md");
+  const interests  = await loadJSON("data/interests.json");
   const experience = await loadJSON("data/experience.json");
-  const pubs = await loadJSON("data/publications.json");
+  const pubs       = await loadJSON("data/publications.json");
 
-  /* ---------------------
+  /* =====================
      BUILD CITATION MAP
-     {ajnabi_2026 → pub}
-  --------------------- */
-  const citationMap = {};
+  ====================== */
 
+  // ajnabi_2026 → publication
+  const citationMap = {};
   pubs.forEach(p => {
     const firstAuthor =
       p.authors.split(",")[0].toLowerCase().replace(/\s+/g, "");
-    const key = `${firstAuthor}_${p.year}`;
-    citationMap[key] = p;
+    citationMap[`${firstAuthor}_${p.year}`] = p;
   });
-
-  function linkCitations(text) {
-    return text.replace(/\{([a-z]+_\d{4})\}/gi, (match, key) => {
-      const pub = citationMap[key.toLowerCase()];
-      if (!pub) return match;
-
-      const firstAuthor = pub.authors.split(",")[0];
-      const authorText = `${firstAuthor} et al., ${pub.year}`;
-
-      return `(
-        <strong>${pub.journal}</strong>,
-        <a href="${pub.link}" target="_blank">${authorText}</a>
-      )`;
-    });
-  }
 
   /* =====================
      PROFILE
@@ -109,7 +120,7 @@ async function loadText(path) {
   `;
 
   /* =====================
-     RESEARCH INTERESTS
+     INTERESTS
   ====================== */
   document.getElementById("interests").innerHTML = `
     <h2>Research Interests</h2>
@@ -132,9 +143,9 @@ async function loadText(path) {
         </p>
 
         <ul>
-          ${exp.points.map(p =>
-            `<li>${linkCitations(p)}</li>`
-          ).join("")}
+          ${exp.points
+            .map(p => renderExperiencePoint(p, citationMap))
+            .join("")}
         </ul>
       </div>
     `).join("")}
@@ -145,7 +156,7 @@ async function loadText(path) {
   ====================== */
   function renderPublications() {
 
-    let filtered = [...pubs];
+    let filtered = pubs.slice();
 
     if (currentType !== "all") {
       filtered = filtered.filter(p => getPubType(p) === currentType);
@@ -220,6 +231,19 @@ async function loadText(path) {
   renderPublications();
 
   /* =====================
+     LINKS
+  ====================== */
+  document.getElementById("links").innerHTML = `
+    <h2>Links</h2>
+    <div class="links">
+      <a href="${profile.links["Google Scholar"]}" target="_blank">🎓 Scholar</a>
+      <a href="${profile.links["ORCID"]}" target="_blank">🆔 ORCID</a>
+      <a href="${profile.links["LinkedIn"]}" target="_blank">💼 LinkedIn</a>
+      <a href="${profile.links["BlueSky"]}" target="_blank">🦋 BlueSky</a>
+    </div>
+  `;
+
+  /* =====================
      NAV HIGHLIGHT
   ====================== */
   const sections = document.querySelectorAll("section[id]");
@@ -227,7 +251,6 @@ async function loadText(path) {
 
   window.addEventListener("scroll", () => {
     let current = "";
-
     sections.forEach(section => {
       if (window.scrollY >= section.offsetTop - NAV_HEIGHT - 10) {
         current = section.id;
@@ -241,5 +264,25 @@ async function loadText(path) {
       );
     });
   });
+
+  /* =====================
+     FADE-IN
+  ====================== */
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => e.isIntersecting && e.target.classList.add("visible")),
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll("section").forEach(s => observer.observe(s));
+
+  /* =====================
+     BACK TO TOP
+  ====================== */
+  const backToTop = document.getElementById("back-to-top");
+  if (backToTop) {
+    window.addEventListener("scroll", () => {
+      backToTop.classList.toggle("visible", window.scrollY > 400);
+    });
+  }
 
 })();
