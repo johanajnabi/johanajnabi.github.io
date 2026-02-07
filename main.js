@@ -19,28 +19,47 @@ function isFirstAuthor(authors) {
   return /^(\s*)?(Ajnabi,\s*J\.?|J\.?\s*Ajnabi)\b/i.test(authors);
 }
 
-// Replace {citation_key} → clickable citation
-function linkCitations(text, citationMap) {
-  return text.replace(/\{([^}]+)\}/g, (_, key) => {
-    const pub = citationMap[key];
-    if (!pub) return key;
-    return `<a href="${pub.link}" target="_blank">
-      ${pub.authors.split(",")[0]} et al., ${pub.year}
-    </a>`;
+/* =====================
+   EXPERIENCE CITATION FIX
+====================== */
+
+// Replace (Author et al., YEAR) with formatted + linked citation
+function linkInlineCitations(text, pubs) {
+  return text.replace(/\(([^()]+ et al\., \d{4})\)/g, (match, cite) => {
+    const year = cite.match(/\d{4}/)?.[0];
+    const author = cite.split(" et al")[0];
+
+    const pub = pubs.find(p =>
+      p.authors.includes(author) && String(p.year) === year
+    );
+
+    if (!pub) return match;
+
+    const type =
+      pub.journal.toLowerCase().includes("biorxiv") ||
+      pub.journal.toLowerCase().includes("preprint")
+        ? "preprint"
+        : "journal";
+
+    return `
+      <span class="exp-citation">
+        <strong>${pub.journal}${type === "preprint" ? " (preprint)" : ""}</strong>, ${pub.year}.
+        <a href="${pub.link}" target="_blank">
+          [${cite}]
+        </a>
+      </span>
+    `;
   });
 }
 
-// Render experience bullet
-function renderExperiencePoint(point, citationMap) {
-  // Case 1: plain string with {citation_key}
+// Render one experience bullet
+function renderExperiencePoint(point, pubs) {
   if (typeof point === "string") {
-    return `<li>${linkCitations(point, citationMap)}</li>`;
+    return `<li>${linkInlineCitations(point, pubs)}</li>`;
   }
 
-  // Case 2: structured paper object
   if (typeof point === "object" && point.paper) {
     const p = point.paper;
-
     return `
       <li>
         ${point.text}
@@ -92,20 +111,6 @@ async function loadText(path) {
   const pubs       = await loadJSON("data/publications.json");
 
   /* =====================
-     BUILD CITATION MAP
-  ====================== */
-
-  // Example key: ajnabi_2026 → publication object
-  const citationMap = {};
-  pubs.forEach(p => {
-    const firstAuthor = p.authors
-      .split(",")[0]
-      .toLowerCase()
-      .replace(/\s+/g, "");
-    citationMap[`${firstAuthor}_${p.year}`] = p;
-  });
-
-  /* =====================
      PROFILE
   ====================== */
   document.getElementById("profile").innerHTML = `
@@ -137,11 +142,10 @@ async function loadText(path) {
   `;
 
   /* =====================
-     EXPERIENCE (FIXED)
+     EXPERIENCE
   ====================== */
   document.getElementById("experience").innerHTML = `
     <h2>Research Experience</h2>
-
     ${experience.map(exp => `
       <div class="experience-block">
         <p>
@@ -150,11 +154,8 @@ async function loadText(path) {
           <em>${exp.period}</em><br>
           Supervisor: ${exp.supervisor}
         </p>
-
         <ul>
-          ${exp.points
-            .map(p => renderExperiencePoint(p, citationMap))
-            .join("")}
+          ${exp.points.map(p => renderExperiencePoint(p, pubs)).join("")}
         </ul>
       </div>
     `).join("")}
