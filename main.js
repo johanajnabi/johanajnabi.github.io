@@ -17,6 +17,18 @@ function getPubType(pub) {
 // Detect first authorship
 function isFirstAuthor(authors) {
   return /^(\s*)?(Ajnabi,\s*J\.?|J\.?\s*Ajnabi)\b/i.test(authors);
+   function formatCitationAuthors(authors, year) {
+  const authorList = authors.split(",").map(a => a.trim());
+
+  // Single-author paper (thesis case)
+  if (authorList.length === 1) {
+    return `${authorList[0]}, ${year}`;
+  }
+
+  // Multi-author paper
+  const firstAuthor = authorList[0];
+  return `${firstAuthor} et al., ${year}`;
+}
 }
 
 /* =====================
@@ -47,13 +59,13 @@ function linkInlineCitations(text, pubs) {
       .trim();
 
     return `
-      <span class="exp-citation">
-        <strong>${cleanJournal}${isPreprint ? " (preprint)" : ""}</strong>, ${pub.year}.
-        <a href="${pub.link}" target="_blank">
-          [${pub.authors.split(",")[0]} et al., ${pub.year}]
-        </a>
-      </span>
-    `;
+  <span class="exp-citation">
+    <strong>${pub.journal}</strong>, ${pub.year}
+    <a href="${pub.link}" target="_blank">
+      [${formatCitationAuthors(pub.authors, pub.year)}]
+    </a>
+  </span>
+`;
   });
 }
 // Render one experience bullet
@@ -207,7 +219,7 @@ async function loadText(path) {
           <em>${p.title}</em><br>
           ${p.journal}, ${p.year}.
           <a href="${p.link}" target="_blank">
-            [${p.authors.split(",")[0]} et al., ${p.year}]
+            [${formatCitationAuthors(p.authors, p.year)}]
           </a>
 
           ${(p.summary || p.abstract) ? `
