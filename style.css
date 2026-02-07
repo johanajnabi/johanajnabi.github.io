@@ -59,7 +59,11 @@ section::before {
 .section-divider {
   border: none;
   border-top: 1px solid var(--border-soft);
-  margin: 36px 0 32px;
+
+  margin: 32px 0;   /* perfectly symmetric spacing */
+}
+section {
+  margin-bottom: 32px;
 }
 
 /* =========================
@@ -72,11 +76,11 @@ h1 {
 }
 
 h2 {
-  margin-top: 36px;      /* reduced from 64px */
-  margin-bottom: 10px;
+  margin: 0 0 12px;   /* NO top margin */
   font-size: 20px;
   letter-spacing: 0.2px;
 }
+
 
 /* =========================
    LINKS
