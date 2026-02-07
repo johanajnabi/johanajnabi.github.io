@@ -9,6 +9,15 @@
     "abstract": "Cutaneous wound healing is a multifaceted physiological process that requires a cell state transition from homeostasis to tissue repair. An important contributor to this reprogramming is the wound-induced mechanical cues that are perceived by epidermal keratinocytes. Previously we identified that the nuclear translocation of the de novo DNA methyltransferase 3A (DNMT3a) upon wounding as an important regulator of this cell-state transition. However, the molecular mechanisms linking mechanotransduction to epigenetic regulation remain incompletely understood. Here we show that under homeostasis, active ERK1/2 phosphorylates DNMT3a, intramolecularly masking its nuclear localization signal (NLS), resulting in its cytoplasmic sequestration. Upon wounding actin cytoskeleton remodeling leads to the downregulation of the Extracellular Signal-Related Kinase 1/2 (ERK 1/2) pathway. Wound-induced ERK1/2 inactivation unmasks the NLS, enabling DNMT3a nuclear translocation. Collectively, these findings define a mechanotransduction-driven signaling axis linking cytoskeletal dynamics to epigenetic regulation and confirms an active role for differentiated keratinocytes in initiating early wound repair programs."
   },
   {
+  "authors": "Dutta, A., Gupta, D., Ajnabi, J., Dam, B., P, S., Jamora, C.",
+  "title": "Spatial transcriptomic analysis of the immune landscape following NB-UVB treatment of vitiligo skin",
+  "journal": "Clinical & Translational Immunology (In press)",
+  "year": "2026",
+  "link": "",
+  "summary": "This study employs spatial transcriptomic approaches to resolve immune cell states in vitiligo patient skin before and after narrowband UV-B therapy, revealing treatment-induced remodeling of the cutaneous immune landscape.",
+  "abstract": ""
+},
+  {
     "authors": "Dam, B., Ajnabi, J., Saha, T., Shrivastava, A., Badarinathan, K., Hegde, A., Dutta, A., Jasoria, S., Kataria, S., Singh, A., et al.",
     "title": "Mindin mediated αM-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness",
     "journal": "bioRxiv (preprint)",
