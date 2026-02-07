@@ -32,9 +32,9 @@ body {
 
   max-width: 760px;
   margin: 0 auto;
-  padding: 48px 20px;
+  padding: 40px 20px;
 
-  line-height: 1.75;
+  line-height: 1.7;
   color: var(--text-main);
   background: var(--bg-main);
 }
@@ -53,6 +53,16 @@ section::before {
 }
 
 /* =========================
+   SECTION DIVIDER (SUBTLE)
+========================= */
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border-soft);
+  margin: 36px 0 32px;
+}
+
+/* =========================
    HEADINGS
 ========================= */
 
@@ -62,8 +72,8 @@ h1 {
 }
 
 h2 {
-  margin-top: 64px;
-  margin-bottom: 12px;
+  margin-top: 36px;      /* reduced from 64px */
+  margin-bottom: 10px;
   font-size: 20px;
   letter-spacing: 0.2px;
 }
@@ -112,7 +122,7 @@ a:hover {
   z-index: 10;
 
   background: var(--bg-main);
-  padding: 12px 0 18px 0;
+  padding: 10px 0 16px;
 
   display: flex;
   flex-wrap: wrap;
@@ -155,7 +165,7 @@ a:hover {
 
 section {
   opacity: 0;
-  transition: opacity 0.45s ease;
+  transition: opacity 0.4s ease;
 }
 
 section.visible {
@@ -167,7 +177,7 @@ section.visible {
 ========================= */
 
 .pub {
-  margin-bottom: 26px;
+  margin-bottom: 22px;
 }
 
 .pub em {
@@ -181,14 +191,14 @@ section.visible {
 }
 
 .pub-details {
-  margin-top: 10px;
+  margin-top: 8px;
   font-size: 14px;
   color: var(--text-muted);
   display: none;
 }
 
 .pub-details p {
-  margin: 0.6em 0;
+  margin: 0.5em 0;
 }
 
 .pub-toggle {
@@ -210,7 +220,7 @@ section.visible {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 16px 0 28px 0;
+  margin: 12px 0 24px;
   font-size: 14px;
   flex-wrap: wrap;
   gap: 8px;
@@ -221,7 +231,7 @@ section.visible {
   border: none;
   color: var(--accent);
   cursor: pointer;
-  margin-right: 12px;
+  margin-right: 10px;
   font-size: 14px;
 }
 
@@ -239,11 +249,11 @@ section.visible {
 ========================= */
 
 .experience-block {
-  margin-bottom: 40px;
+  margin-bottom: 28px;   /* reduced from 40px */
 }
 
 .experience-block p {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   line-height: 1.5;
 }
 
@@ -257,13 +267,13 @@ section.visible {
 }
 
 .experience-block ul {
-  margin-top: 10px;
-  padding-left: 22px;
+  margin-top: 8px;
+  padding-left: 20px;
 }
 
 .experience-block li {
-  margin-bottom: 12px;
-  line-height: 1.65;
+  margin-bottom: 10px;
+  line-height: 1.6;
 }
 
 /* Citation line inside experience bullets */
@@ -361,6 +371,6 @@ section.visible {
   }
 
   h2 {
-    margin-top: 56px;
+    margin-top: 48px; /* mobile needs more air */
   }
 }
