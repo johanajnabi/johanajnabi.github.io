@@ -25,27 +25,26 @@ function isFirstAuthor(authors) {
 
 // Replace (Author et al., YEAR) with formatted + linked citation
 function linkInlineCitations(text, pubs) {
-  return text.replace(/\(([^()]+ et al\., \d{4})\)/g, (match, cite) => {
-    const year = cite.match(/\d{4}/)?.[0];
-    const author = cite.split(" et al")[0];
-
-    const pub = pubs.find(p =>
-      p.authors.includes(author) && String(p.year) === year
-    );
+  return text.replace(/\(([^()]+_\d{4})\)/g, (match, key) => {
+    const pub = pubs.find(p => {
+      const firstAuthor = p.authors
+        .split(",")[0]
+        .toLowerCase()
+        .replace(/\s+/g, "");
+      return `${firstAuthor}_${p.year}` === key.toLowerCase();
+    });
 
     if (!pub) return match;
 
-    const type =
+    const isPreprint =
       pub.journal.toLowerCase().includes("biorxiv") ||
-      pub.journal.toLowerCase().includes("preprint")
-        ? "preprint"
-        : "journal";
+      pub.journal.toLowerCase().includes("preprint");
 
     return `
       <span class="exp-citation">
-        <strong>${pub.journal}${type === "preprint" ? " (preprint)" : ""}</strong>, ${pub.year}.
+        <strong>${pub.journal}${isPreprint ? " (preprint)" : ""}</strong>, ${pub.year}.
         <a href="${pub.link}" target="_blank">
-          [${cite}]
+          [${pub.authors.split(",")[0]} et al., ${pub.year}]
         </a>
       </span>
     `;
