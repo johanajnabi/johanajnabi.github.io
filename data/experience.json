@@ -15,66 +15,12 @@
     "period": "August 2019 – Present",
     "supervisor": "Prof. Colin Jamora",
     "points": [
-      {
-        "text": "Investigated how wound-induced mechanical cues regulate the subcellular localization and activity of the de novo DNA methyltransferase DNMT3A during epidermal repair. Employed primary keratinocytes and established cell lines, integrating molecular biology, biochemistry, fluorescence microscopy, and genetic engineering approaches.",
-        "paper": {
-          "title": "Actin-dependent mechanotransduction controls nucleocytoplasmic partitioning of DNMT3a through ERK1/2 signaling during cutaneous wound healing",
-          "journal": "bioRxiv",
-          "authors": "Ajnabi et al.",
-          "year": 2026,
-          "link": "https://doi.org/10.64898/2026.01.15.699481"
-        }
-      },
-      {
-        "text": "Profiled immune cell states in patient skin before and after narrowband UV-B (NB-UVB) treatment using spatial transcriptomic approaches to resolve transcriptional heterogeneity within tissue. Complemented sequencing analyses with immunofluorescence and qPCR validation.",
-        "paper": {
-          "title": "Spatial transcriptomic analysis of the immune landscape of vitiligo skin",
-          "journal": "In press",
-          "authors": "Dutta et al.",
-          "year": 2026,
-          "link": ""
-        }
-      },
-      {
-        "text": "Studied a Mindin–integrin–STAT3 signaling axis that sustains keratinocyte stemness through integrin endocytosis and downstream transcriptional activation.",
-        "paper": {
-          "title": "Mindin mediated αM-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness",
-          "journal": "bioRxiv",
-          "authors": "Dam et al.",
-          "year": 2025,
-          "link": "https://doi.org/10.1101/2025.08.24.669246"
-        }
-      },
-      {
-        "text": "Investigated the role of the extracellular matrix protein Mindin in skin fibrotic conditions.",
-        "paper": {
-          "title": "Mindin (SPON2) is essential for cutaneous fibrogenesis in a mouse model of systemic sclerosis",
-          "journal": "Journal of Investigative Dermatology",
-          "authors": "Rana et al.",
-          "year": 2023,
-          "link": "https://doi.org/10.1016/j.jid.2022.10.011"
-        }
-      },
-      {
-        "text": "Studied antimicrobial peptide–mediated antiviral responses to SARS-CoV-2.",
-        "paper": {
-          "title": "Niacinamide enhances cathelicidin mediated SARS-CoV-2 membrane disruption",
-          "journal": "Frontiers in Immunology",
-          "authors": "Bhatt et al.",
-          "year": 2023,
-          "link": "https://doi.org/10.3389/fimmu.2023.1255478"
-        }
-      },
-      {
-        "text": "Explored maintenance of epithelial stem/progenitor states via autocrine matricellular signaling.",
-        "paper": {
-          "title": "Snail maintains the stem/progenitor state of skin epithelial cells and carcinomas through the autocrine effect of matricellular protein Mindin",
-          "journal": "Cell Reports",
-          "authors": "Badarinath et al.",
-          "year": 2022,
-          "link": "https://doi.org/10.1016/j.celrep.2022.111390"
-        }
-      }
+      "Investigated how wound-induced mechanical cues regulate the subcellular localization and activity of the de novo DNA methyltransferase DNMT3A during epidermal repair, integrating molecular biology, biochemistry, fluorescence microscopy, and genetic engineering approaches ({ajnabi_2026}).",
+      "Profiled immune cell states in patient skin before and after narrowband UV-B (NB-UVB) treatment using spatial transcriptomic approaches to resolve transcriptional heterogeneity within tissue, complemented by immunofluorescence and qPCR validation ({dutta_2026}).",
+      "Studied a Mindin–integrin–STAT3 signaling axis that sustains keratinocyte stemness through integrin endocytosis and downstream transcriptional activation ({dam_2025}).",
+      "Investigated the role of the extracellular matrix protein Mindin in skin fibrotic conditions ({rana_2023}).",
+      "Studied antimicrobial peptide–mediated antiviral responses to SARS-CoV-2 ({bhatt_2023}).",
+      "Explored maintenance of epithelial stem/progenitor states via autocrine matricellular signaling ({badarinath_2022})."
     ]
   },
   {
@@ -83,16 +29,7 @@
     "period": "January 2018 – July 2019",
     "supervisor": "Dr. Monika Dalal",
     "points": [
-      {
-        "text": "Master’s research focused on identifying cis-regulatory regions controlling PM19 gene expression in wheat.",
-        "paper": {
-          "title": "Identification of cis-regulatory regions regulating the expression of PM19 gene in wheat",
-          "journal": "MSc Thesis, ICAR – Indian Agricultural Research Institute",
-          "authors": "Ajnabi",
-          "year": 2019,
-          "link": "http://krishikosh.egranth.ac.in/handle/1/5810146216"
-        }
-      },
+      "Master’s research focused on identifying cis-regulatory regions controlling PM19 gene expression in wheat ({ajnabi_2019}).",
       "Experience in in-silico genome analysis, gene/promoter cloning, transient GUS assays, plant tissue culture, and plant transformation."
     ]
   }
