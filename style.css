@@ -236,16 +236,46 @@ section.visible {
    EXPERIENCE
 ========================= */
 
-#experience p {
-  margin-bottom: 6px;
+.experience-block {
+  margin-bottom: 36px;
 }
 
-#experience ul {
-  margin-bottom: 22px;
+.experience-block p {
+  margin-bottom: 8px;
 }
 
-#experience li {
-  margin-bottom: 6px;
+.experience-block strong {
+  font-weight: 600;
+}
+
+.experience-block em {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.experience-block ul {
+  margin-top: 8px;
+  padding-left: 20px;
+}
+
+.experience-block li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Journal / citation styling inside experience bullets */
+
+.experience-block li strong {
+  font-weight: 600;
+}
+
+.experience-block li a {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.experience-block li a:hover {
+  text-decoration: underline;
 }
 
 /* =========================
