@@ -17,25 +17,22 @@ function getPubType(pub) {
 // Detect first authorship
 function isFirstAuthor(authors) {
   return /^(\s*)?(Ajnabi,\s*J\.?|J\.?\s*Ajnabi)\b/i.test(authors);
-   function formatCitationAuthors(authors, year) {
-  const authorList = authors.split(",").map(a => a.trim());
-
-  // Single-author paper (thesis case)
-  if (authorList.length === 1) {
-    return `${authorList[0]}, ${year}`;
-  }
-
-  // Multi-author paper
-  const firstAuthor = authorList[0];
-  return `${firstAuthor} et al., ${year}`;
 }
+
+// Format authors correctly (NO et al. for single-author)
+function formatCitationAuthors(authors, year) {
+  const list = authors.split(",").map(a => a.trim());
+  if (list.length === 1) {
+    return `${list[0]}, ${year}`;
+  }
+  return `${list[0]} et al., ${year}`;
 }
 
 /* =====================
    EXPERIENCE CITATION FIX
 ====================== */
 
-// Replace (Author et al., YEAR) with formatted + linked citation
+// Replace ({key}) with formatted + linked citation
 function linkInlineCitations(text, pubs) {
   return text.replace(/\(\{([a-z0-9_]+)\}\)/gi, (match, key) => {
 
@@ -54,20 +51,22 @@ function linkInlineCitations(text, pubs) {
       journalLower.includes("biorxiv") ||
       journalLower.includes("preprint");
 
+    // Remove any existing "(preprint)" to avoid duplication
     const cleanJournal = pub.journal
       .replace(/\s*\(preprint\)\s*/i, "")
       .trim();
 
     return `
-  <span class="exp-citation">
-    <strong>${pub.journal}</strong>, ${pub.year}
-    <a href="${pub.link}" target="_blank">
-      [${formatCitationAuthors(pub.authors, pub.year)}]
-    </a>
-  </span>
-`;
+      <span class="exp-citation">
+        <strong>${cleanJournal}${isPreprint ? " (preprint)" : ""}</strong>, ${pub.year}
+        <a href="${pub.link}" target="_blank">
+          [${formatCitationAuthors(pub.authors, pub.year)}]
+        </a>
+      </span>
+    `;
   });
 }
+
 // Render one experience bullet
 function renderExperiencePoint(point, pubs) {
   if (typeof point === "string") {
@@ -81,9 +80,9 @@ function renderExperiencePoint(point, pubs) {
         ${point.text}
         <br>
         <span class="exp-citation">
-          <strong>${p.journal}</strong>, ${p.year}.
+          <strong>${p.journal}</strong>, ${p.year}
           <a href="${p.link}" target="_blank">
-            [${p.authors} et al., ${p.year}]
+            [${formatCitationAuthors(p.authors, p.year)}]
           </a>
         </span>
       </li>
@@ -108,7 +107,6 @@ async function loadText(path) {
 ====================== */
 (async function () {
 
-  /* --- CSS-driven nav height --- */
   const NAV_HEIGHT =
     parseInt(
       getComputedStyle(document.documentElement)
@@ -217,7 +215,7 @@ async function loadText(path) {
             : ``}
           <br>
           <em>${p.title}</em><br>
-          ${p.journal}, ${p.year}.
+          ${p.journal}, ${p.year}
           <a href="${p.link}" target="_blank">
             [${formatCitationAuthors(p.authors, p.year)}]
           </a>
