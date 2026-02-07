@@ -54,6 +54,19 @@ async function loadText(path) {
   const interests = await loadJSON("data/interests.json");
   const experience = await loadJSON("data/experience.json");
   const pubs = await loadJSON("data/publications.json");
+   /* =====================
+   BUILD CITATION MAP
+====================== */
+
+// auto-generate citation keys: {ajnabi_2026 → pub}
+const citationMap = {};
+
+pubs.forEach(p => {
+  const firstAuthor = p.authors.split(",")[0].toLowerCase();
+  const year = p.year;
+  const key = `${firstAuthor}_${year}`;
+  citationMap[key] = p;
+});
 
   /* =====================
      PROFILE
