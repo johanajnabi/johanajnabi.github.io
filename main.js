@@ -87,20 +87,48 @@ async function loadText(path) {
   `;
 
   /* =====================
-     EXPERIENCE
-  ====================== */
-  document.getElementById("experience").innerHTML = `
-    <h2>Research Experience</h2>
-    ${experience.map(exp => `
+   EXPERIENCE (UPGRADED)
+====================== */
+document.getElementById("experience").innerHTML = `
+  <h2>Research Experience</h2>
+
+  ${experience.map(exp => `
+    <div class="experience-block">
       <p>
         <strong>${exp.role}</strong><br>
         ${exp.institution}<br>
         <em>${exp.period}</em><br>
         Supervisor: ${exp.supervisor}
       </p>
-      <ul>${exp.points.map(p => `<li>${p}</li>`).join("")}</ul>
-    `).join("")}
-  `;
+
+      <ul>
+        ${exp.points.map(point => {
+          // Plain string bullet
+          if (typeof point === "string") {
+            return `<li>${point}</li>`;
+          }
+
+          // Bullet with linked paper
+          if (typeof point === "object" && point.paper) {
+            const p = point.paper;
+            return `
+              <li>
+                ${point.text}
+                <br>
+                (<strong>${p.journal}</strong>,
+                ${p.authors},
+                ${p.year}
+                ${p.link ? `· <a href="${p.link}" target="_blank">link</a>` : ``})
+              </li>
+            `;
+          }
+
+          return "";
+        }).join("")}
+      </ul>
+    </div>
+  `).join("")}
+`;
 
   /* =====================
      PUBLICATIONS
