@@ -3,60 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <title>Johan Ajnabi</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Johan Ajnabi — PhD researcher studying mechanotransduction and epigenetic regulation in skin biology and wound repair.">
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- Mark JS availability early -->
+  <script>
+    document.documentElement.classList.add("js");
+  </script>
 </head>
 
 <body>
 
-  <main id="app">
+<main id="app">
 
-    <!-- Header injected via main.js -->
-    <section id="profile"></section>
+  <!-- =====================
+       PROFILE (FALLBACK)
+  ====================== -->
+  <section id="profile">
+    <!-- This content is replaced by main.js when JS loads -->
+    <h1>Johan Ajnabi</h1>
+    <p>
+      PhD Research Scholar<br>
+      BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem), Bengaluru, India
+    </p>
+    <p>
+      <a href="assets/JA_CV2026.pdf" target="_blank">CV (PDF)</a> ·
+      <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
+    </p>
+  </section>
 
-    <!-- Pill-style navigation -->
-    <nav class="nav-pills">
-      <a href="#about" class="pill active">About</a>
-      <a href="#interests" class="pill">Interests</a>
-      <a href="#experience" class="pill">Experience</a>
-      <a href="#publications" class="pill">Publications</a>
-      <a href="assets/JA_CV2026.pdf" class="pill" target="_blank">CV</a>
-    </nav>
+  <!-- =====================
+       NAVIGATION
+  ====================== -->
+  <nav class="nav-pills" aria-label="Primary navigation">
+    <a href="#about" class="pill active">About</a>
+    <a href="#interests" class="pill">Interests</a>
+    <a href="#experience" class="pill">Experience</a>
+    <a href="#publications" class="pill">Publications</a>
+    <a href="assets/JA_CV2026.pdf" class="pill" target="_blank" rel="noopener">
+      CV
+    </a>
+  </nav>
 
-    <!-- About -->
-    <section id="about"></section>
+  <!-- =====================
+       ABOUT (FALLBACK)
+  ====================== -->
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I study how mechanical cues and epigenetic regulation coordinate cell-state
+      transitions during cutaneous wound repair, with a focus on epidermal
+      keratinocytes and tissue regeneration.
+    </p>
+  </section>
 
-    <!-- Research Interests -->
-    <section id="interests"></section>
-    <hr class="section-divider">
+  <!-- =====================
+       INTERESTS (FALLBACK)
+  ====================== -->
+  <section id="interests">
+    <h2>Research Interests</h2>
+    <ul>
+      <li>Cutaneous wound healing</li>
+      <li>Mechanotransduction and cytoskeletal dynamics</li>
+      <li>Epigenetic regulation of cell-state transitions</li>
+      <li>Skin stem cell biology and regeneration</li>
+    </ul>
+  </section>
 
-    <!-- Research Experience -->
-    <section id="experience"></section>
-    <hr class="section-divider">
+  <hr class="section-divider">
 
-    <!-- Publications -->
-    <section id="publications"></section>
-    <hr class="section-divider">
+  <!-- =====================
+       EXPERIENCE
+  ====================== -->
+  <section id="experience">
+    <h2>Research Experience</h2>
+    <p class="fallback-only">
+      Loading detailed experience…
+    </p>
+  </section>
 
-    <!-- Links -->
-    <section id="links"></section>
+  <hr class="section-divider">
 
-  </main>
+  <!-- =====================
+       PUBLICATIONS
+  ====================== -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <p class="fallback-only">
+      Interactive publication list loading.
+      <br>
+      Full list available in <a href="assets/JA_CV2026.pdf">CV (PDF)</a>.
+    </p>
+  </section>
 
-  <script src="main.js"></script>
+  <hr class="section-divider">
 
-  <!-- Optional: active pill toggle -->
-  <script>
-    document.querySelectorAll(".nav-pills .pill").forEach(pill => {
-      pill.addEventListener("click", () => {
-        document.querySelectorAll(".nav-pills .pill")
-          .forEach(p => p.classList.remove("active"));
-        pill.classList.add("active");
-      });
-    });
-  </script>
-<a href="#profile" id="back-to-top" class="pill back-to-top">
+  <!-- =====================
+       LINKS
+  ====================== -->
+  <section id="links">
+    <h2>Links</h2>
+    <ul>
+      <li><a href="https://scholar.google.com/" target="_blank">Google Scholar</a></li>
+      <li><a href="https://orcid.org/" target="_blank">ORCID</a></li>
+      <li><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- =====================
+     NO-JS MESSAGE
+====================== -->
+<noscript>
+  <div style="max-width:760px;margin:40px auto;font-family:system-ui;">
+    <p><strong>Note:</strong> This website uses JavaScript for interactive features.</p>
+    <p>
+      A simplified version is shown.  
+      You can download my <a href="assets/JA_CV2026.pdf">CV here</a>.
+    </p>
+  </div>
+</noscript>
+
+<!-- =====================
+     MAIN SCRIPT
+====================== -->
+<script src="main.js" defer></script>
+
+<!-- =====================
+     BACK TO TOP
+====================== -->
+<a href="#profile" id="back-to-top" class="pill back-to-top" aria-label="Back to top">
   ↑ Top
 </a>
 
