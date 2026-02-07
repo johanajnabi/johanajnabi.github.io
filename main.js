@@ -10,13 +10,11 @@ function highlightAuthor(authors, nameRegex) {
 // Determine publication type
 function getPubType(pub) {
   const j = pub.journal.toLowerCase();
-  if (j.includes("biorxiv") || j.includes("preprint")) {
-    return "preprint";
-  }
+  if (j.includes("biorxiv") || j.includes("preprint")) return "preprint";
   return "peer";
 }
 
-// Detect first authorship (ROBUST)
+// Detect first authorship
 function isFirstAuthor(authors) {
   return /^(\s*)?(Ajnabi,\s*J\.?|J\.?\s*Ajnabi)\b/i.test(authors);
 }
@@ -36,37 +34,56 @@ async function loadText(path) {
 ====================== */
 (async function () {
 
-  // Read nav height from CSS (single source of truth)
+  /* ---------------------
+     GLOBAL CONSTANTS
+  --------------------- */
   const NAV_HEIGHT =
     parseInt(
       getComputedStyle(document.documentElement)
         .getPropertyValue("--nav-height")
     ) || 80;
 
-  // Pattern to match your name
   const MY_NAME_REGEX = /\bAjnabi,\s*J\.?\b|\bJ\.?\s*Ajnabi\b/g;
 
   let currentType = "all";
   let sortOrder = "desc";
 
+  /* ---------------------
+     LOAD DATA
+  --------------------- */
   const profile = await loadJSON("data/profile.json");
   const about = await loadText("content/about.md");
   const interests = await loadJSON("data/interests.json");
   const experience = await loadJSON("data/experience.json");
   const pubs = await loadJSON("data/publications.json");
-   /* =====================
-   BUILD CITATION MAP
-====================== */
 
-// auto-generate citation keys: {ajnabi_2026 → pub}
-const citationMap = {};
+  /* ---------------------
+     BUILD CITATION MAP
+     {ajnabi_2026 → pub}
+  --------------------- */
+  const citationMap = {};
 
-pubs.forEach(p => {
-  const firstAuthor = p.authors.split(",")[0].toLowerCase();
-  const year = p.year;
-  const key = `${firstAuthor}_${year}`;
-  citationMap[key] = p;
-});
+  pubs.forEach(p => {
+    const firstAuthor =
+      p.authors.split(",")[0].toLowerCase().replace(/\s+/g, "");
+    const key = `${firstAuthor}_${p.year}`;
+    citationMap[key] = p;
+  });
+
+  function linkCitations(text) {
+    return text.replace(/\{([a-z]+_\d{4})\}/gi, (match, key) => {
+      const pub = citationMap[key.toLowerCase()];
+      if (!pub) return match;
+
+      const firstAuthor = pub.authors.split(",")[0];
+      const authorText = `${firstAuthor} et al., ${pub.year}`;
+
+      return `(
+        <strong>${pub.journal}</strong>,
+        <a href="${pub.link}" target="_blank">${authorText}</a>
+      )`;
+    });
+  }
 
   /* =====================
      PROFILE
@@ -100,56 +117,35 @@ pubs.forEach(p => {
   `;
 
   /* =====================
-   EXPERIENCE (UPGRADED)
-====================== */
-document.getElementById("experience").innerHTML = `
-  <h2>Research Experience</h2>
+     EXPERIENCE
+  ====================== */
+  document.getElementById("experience").innerHTML = `
+    <h2>Research Experience</h2>
 
-  ${experience.map(exp => `
-    <div class="experience-block">
-      <p>
-        <strong>${exp.role}</strong><br>
-        ${exp.institution}<br>
-        <em>${exp.period}</em><br>
-        Supervisor: ${exp.supervisor}
-      </p>
+    ${experience.map(exp => `
+      <div class="experience-block">
+        <p>
+          <strong>${exp.role}</strong><br>
+          ${exp.institution}<br>
+          <em>${exp.period}</em><br>
+          Supervisor: ${exp.supervisor}
+        </p>
 
-      <ul>
-        ${exp.points.map(point => {
-          // Plain string bullet
-          if (typeof point === "string") {
-            return `<li>${point}</li>`;
-          }
-
-          // Bullet with linked paper
-          if (typeof point === "object" && point.paper) {
-  const p = point.paper;
-  return `
-    <li>
-      ${point.text}
-      <br>
-      (<strong>${p.journal}</strong>,
-      <a href="${p.link}" target="_blank">
-        ${p.authors}, ${p.year}
-      </a>)
-    </li>
+        <ul>
+          ${exp.points.map(p =>
+            `<li>${linkCitations(p)}</li>`
+          ).join("")}
+        </ul>
+      </div>
+    `).join("")}
   `;
-}
-
-
-          return "";
-        }).join("")}
-      </ul>
-    </div>
-  `).join("")}
-`;
 
   /* =====================
      PUBLICATIONS
   ====================== */
   function renderPublications() {
 
-    let filtered = pubs.slice();
+    let filtered = [...pubs];
 
     if (currentType !== "all") {
       filtered = filtered.filter(p => getPubType(p) === currentType);
@@ -185,17 +181,14 @@ document.getElementById("experience").innerHTML = `
           <br>
           <em>${p.title}</em><br>
           ${p.journal}, ${p.year}.
-          <a href="${p.link}" target="_blank">[link]</a>
+          <a href="${p.link}" target="_blank">[${p.authors.split(",")[0]} et al., ${p.year}]</a>
 
-          ${(p.summary || p.abstract || p.details) ? `
+          ${(p.summary || p.abstract) ? `
             <br>
             <button class="pub-toggle" data-id="${i}">Show details</button>
             <div class="pub-details" id="details-${i}">
               ${p.summary ? `<p><strong>Summary:</strong> ${p.summary}</p>` : ``}
               ${p.abstract ? `<p><strong>Abstract:</strong> ${p.abstract}</p>` : ``}
-              ${(!p.summary && !p.abstract && p.details)
-                ? `<p>${p.details}</p>`
-                : ``}
             </div>
           ` : ``}
         </div>
@@ -227,20 +220,7 @@ document.getElementById("experience").innerHTML = `
   renderPublications();
 
   /* =====================
-     LINKS
-  ====================== */
-  document.getElementById("links").innerHTML = `
-    <h2>Links</h2>
-    <div class="links">
-      <a href="${profile.links["Google Scholar"]}" target="_blank">🎓 Scholar</a>
-      <a href="${profile.links["ORCID"]}" target="_blank">🆔 ORCID</a>
-      <a href="${profile.links["LinkedIn"]}" target="_blank">💼 LinkedIn</a>
-      <a href="${profile.links["BlueSky"]}" target="_blank">🦋 BlueSky</a>
-    </div>
-  `;
-
-  /* =====================
-     AUTO-HIGHLIGHT NAV PILLS ON SCROLL
+     NAV HIGHLIGHT
   ====================== */
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".nav-pills .pill");
@@ -249,71 +229,17 @@ document.getElementById("experience").innerHTML = `
     let current = "";
 
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - NAV_HEIGHT - 10;
-      if (window.scrollY >= sectionTop) {
+      if (window.scrollY >= section.offsetTop - NAV_HEIGHT - 10) {
         current = section.id;
       }
     });
 
     navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active");
-      }
+      link.classList.toggle(
+        "active",
+        link.getAttribute("href") === `#${current}`
+      );
     });
   });
-
-  /* =====================
-     FADE-IN SECTIONS ON SCROLL
-  ====================== */
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-
-  document.querySelectorAll("section").forEach(section => {
-    observer.observe(section);
-  });
-
-  /* =====================
-     KEYBOARD NAV FOR PILLS
-  ====================== */
-  const pills = Array.from(document.querySelectorAll(".nav-pills .pill"));
-
-  document.addEventListener("keydown", e => {
-    if (!["ArrowLeft", "ArrowRight"].includes(e.key)) return;
-
-    const activeIndex = pills.findIndex(p =>
-      p.classList.contains("active")
-    );
-    if (activeIndex === -1) return;
-
-    const nextIndex =
-      e.key === "ArrowRight"
-        ? (activeIndex + 1) % pills.length
-        : (activeIndex - 1 + pills.length) % pills.length;
-
-    pills[nextIndex].focus();
-    pills[nextIndex].click();
-  });
-/* =====================
-   BACK TO TOP VISIBILITY
-====================== */
-
-const backToTop = document.getElementById("back-to-top");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 400) {
-    backToTop.classList.add("visible");
-  } else {
-    backToTop.classList.remove("visible");
-  }
-});
 
 })();
