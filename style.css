@@ -58,11 +58,12 @@ section::before {
 
 h1 {
   font-size: 32px;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 h2 {
   margin-top: 64px;
+  margin-bottom: 12px;
   font-size: 20px;
   letter-spacing: 0.2px;
 }
@@ -98,6 +99,7 @@ a:hover {
 .subtitle {
   color: var(--text-muted);
   font-size: 15px;
+  line-height: 1.5;
 }
 
 /* =========================
@@ -110,7 +112,7 @@ a:hover {
   z-index: 10;
 
   background: var(--bg-main);
-  padding: 12px 0 20px 0;
+  padding: 12px 0 18px 0;
 
   display: flex;
   flex-wrap: wrap;
@@ -128,13 +130,13 @@ a:hover {
 
   font-size: 14px;
   font-weight: 500;
-  text-decoration: none;
 
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 .nav-pills .pill:hover {
   background: var(--bg-pill-hover);
+  transform: translateY(-1px);
 }
 
 .nav-pills .pill.active {
@@ -165,7 +167,7 @@ section.visible {
 ========================= */
 
 .pub {
-  margin-bottom: 22px;
+  margin-bottom: 26px;
 }
 
 .pub em {
@@ -179,7 +181,7 @@ section.visible {
 }
 
 .pub-details {
-  margin-top: 8px;
+  margin-top: 10px;
   font-size: 14px;
   color: var(--text-muted);
   display: none;
@@ -237,11 +239,12 @@ section.visible {
 ========================= */
 
 .experience-block {
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
 .experience-block p {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 
 .experience-block strong {
@@ -254,27 +257,33 @@ section.visible {
 }
 
 .experience-block ul {
-  margin-top: 8px;
-  padding-left: 20px;
+  margin-top: 10px;
+  padding-left: 22px;
 }
 
 .experience-block li {
-  margin-bottom: 10px;
-  line-height: 1.6;
+  margin-bottom: 12px;
+  line-height: 1.65;
 }
 
-/* Journal / citation styling inside experience bullets */
+/* Citation line inside experience bullets */
 
-.experience-block li strong {
+.exp-citation {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.exp-citation strong {
   font-weight: 600;
 }
 
-.experience-block li a {
+.exp-citation a {
   color: var(--accent);
-  font-size: 14px;
 }
 
-.experience-block li a:hover {
+.exp-citation a:hover {
   text-decoration: underline;
 }
 
@@ -314,7 +323,6 @@ section.visible {
 
   font-size: 14px;
   font-weight: 500;
-  text-decoration: none;
 
   opacity: 0;
   pointer-events: none;
