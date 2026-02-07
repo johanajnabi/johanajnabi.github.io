@@ -32,9 +32,9 @@ body {
 
   max-width: 760px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 36px 20px;
 
-  line-height: 1.7;
+  line-height: 1.65;
   color: var(--text-main);
   background: var(--bg-main);
 }
@@ -53,17 +53,19 @@ section::before {
 }
 
 /* =========================
-   SECTION DIVIDER (SUBTLE)
+   SECTION LAYOUT (UNIFORM)
 ========================= */
 
+/* One source of truth for vertical rhythm */
+section {
+  margin-bottom: 28px;
+}
+
+/* Divider carries spacing, not sections */
 .section-divider {
   border: none;
   border-top: 1px solid var(--border-soft);
-
-  margin: 32px 0;   /* perfectly symmetric spacing */
-}
-section {
-  margin-bottom: 32px;
+  margin: 28px 0;
 }
 
 /* =========================
@@ -76,11 +78,10 @@ h1 {
 }
 
 h2 {
-  margin: 0 0 12px;   /* NO top margin */
+  margin: 0 0 12px;
   font-size: 20px;
   letter-spacing: 0.2px;
 }
-
 
 /* =========================
    LINKS
@@ -101,7 +102,7 @@ a:hover {
 
 .profile {
   display: flex;
-  gap: 24px;
+  gap: 22px;
   align-items: center;
 }
 
@@ -113,7 +114,7 @@ a:hover {
 .subtitle {
   color: var(--text-muted);
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 /* =========================
@@ -126,7 +127,7 @@ a:hover {
   z-index: 10;
 
   background: var(--bg-main);
-  padding: 10px 0 16px;
+  padding: 8px 0 14px;
 
   display: flex;
   flex-wrap: wrap;
@@ -164,15 +165,16 @@ a:hover {
 }
 
 /* =========================
-   SECTION FADE-IN
+   SECTION FADE-IN (JS ONLY)
 ========================= */
 
-section {
+/* Progressive enhancement: content visible without JS */
+.js section {
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.35s ease;
 }
 
-section.visible {
+.js section.visible {
   opacity: 1;
 }
 
@@ -181,7 +183,7 @@ section.visible {
 ========================= */
 
 .pub {
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .pub em {
@@ -224,7 +226,7 @@ section.visible {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 12px 0 24px;
+  margin: 12px 0 22px;
   font-size: 14px;
   flex-wrap: wrap;
   gap: 8px;
@@ -253,7 +255,7 @@ section.visible {
 ========================= */
 
 .experience-block {
-  margin-bottom: 28px;   /* reduced from 40px */
+  margin-bottom: 26px;
 }
 
 .experience-block p {
@@ -280,7 +282,7 @@ section.visible {
   line-height: 1.6;
 }
 
-/* Citation line inside experience bullets */
+/* Citation line */
 
 .exp-citation {
   display: inline-block;
@@ -362,7 +364,7 @@ section.visible {
 @media (max-width: 600px) {
 
   body {
-    padding-top: 32px;
+    padding-top: 28px;
   }
 
   .profile {
@@ -374,7 +376,11 @@ section.visible {
     width: 100px;
   }
 
-  h2 {
-    margin-top: 48px; /* mobile needs more air */
+  section {
+    margin-bottom: 32px;
+  }
+
+  .section-divider {
+    margin: 32px 0;
   }
 }
