@@ -37,13 +37,18 @@ function linkInlineCitations(text, pubs) {
 
     if (!pub) return match;
 
+    const journalLower = pub.journal.toLowerCase();
     const isPreprint =
-      pub.journal.toLowerCase().includes("biorxiv") ||
-      pub.journal.toLowerCase().includes("preprint");
+      journalLower.includes("biorxiv") ||
+      journalLower.includes("preprint");
+
+    const cleanJournal = pub.journal
+      .replace(/\s*\(preprint\)\s*/i, "")
+      .trim();
 
     return `
       <span class="exp-citation">
-        <strong>${pub.journal}${isPreprint ? " (preprint)" : ""}</strong>, ${pub.year}.
+        <strong>${cleanJournal}${isPreprint ? " (preprint)" : ""}</strong>, ${pub.year}.
         <a href="${pub.link}" target="_blank">
           [${pub.authors.split(",")[0]} et al., ${pub.year}]
         </a>
