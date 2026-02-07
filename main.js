@@ -21,11 +21,17 @@ function isFirstAuthor(authors) {
 
 // Format authors correctly (NO et al. for single-author)
 function formatCitationAuthors(authors, year) {
-  const list = authors.split(",").map(a => a.trim());
-  if (list.length === 1) {
-    return `${list[0]}, ${year}`;
+  // Split by comma, remove initials-only fragments
+  const names = authors
+    .split(",")
+    .map(a => a.trim())
+    .filter(a => a.length > 1 && !/^[A-Z]\.?$/.test(a));
+
+  if (names.length === 1) {
+    return `${names[0]}, ${year}`;
   }
-  return `${list[0]} et al., ${year}`;
+
+  return `${names[0]} et al., ${year}`;
 }
 
 /* =====================
