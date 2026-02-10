@@ -3,8 +3,10 @@
 ========================= */
 
 :root {
+  /* Sticky nav height (desktop default) */
   --nav-height: 80px;
 
+  /* Color system */
   --accent: #1a5cff;
   --accent-soft: #ffd88a;
 
@@ -16,6 +18,9 @@
   --bg-pill-hover: #d4d4d4;
 
   --border-soft: #e5e5e5;
+
+  /* Vertical rhythm */
+  --section-gap: 28px;
 }
 
 /* =========================
@@ -56,16 +61,16 @@ section::before {
    SECTION LAYOUT (UNIFORM)
 ========================= */
 
-/* One source of truth for vertical rhythm */
+/* One source of truth for spacing */
 section {
-  margin-bottom: 28px;
+  margin-bottom: var(--section-gap);
 }
 
-/* Divider carries spacing, not sections */
+/* Divider carries separation, not sections */
 .section-divider {
   border: none;
   border-top: 1px solid var(--border-soft);
-  margin: 28px 0;
+  margin: var(--section-gap) 0;
 }
 
 /* =========================
@@ -168,7 +173,10 @@ a:hover {
    SECTION FADE-IN (JS ONLY)
 ========================= */
 
-/* Progressive enhancement: content visible without JS */
+/* Progressive enhancement:
+   without JS → visible
+   with JS (.js class) → fade-in */
+
 .js section {
   opacity: 0;
   transition: opacity 0.35s ease;
@@ -363,6 +371,12 @@ a:hover {
 
 @media (max-width: 600px) {
 
+  /* Sticky nav is taller on mobile → fix anchor offset */
+  :root {
+    --nav-height: 112px;
+    --section-gap: 32px;
+  }
+
   body {
     padding-top: 28px;
   }
@@ -374,13 +388,5 @@ a:hover {
 
   .profile img {
     width: 100px;
-  }
-
-  section {
-    margin-bottom: 32px;
-  }
-
-  .section-divider {
-    margin: 32px 0;
   }
 }
