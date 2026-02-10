@@ -3,7 +3,7 @@
 ========================= */
 
 :root {
-  /* Sticky nav height (desktop) */
+  /* Sticky navigation height */
   --nav-height: 80px;
 
   /* Color system */
@@ -45,15 +45,16 @@ body {
 }
 
 /* =========================
-   ANCHOR OFFSET (ROBUST)
+   ANCHOR OFFSET (MODERN + SAFE)
 ========================= */
 
+/* Works better than ::before hack */
 section {
   scroll-margin-top: var(--nav-height);
 }
 
 /* =========================
-   SECTION LAYOUT (UNIFORM)
+   SECTION LAYOUT (ONE SOURCE OF TRUTH)
 ========================= */
 
 section {
@@ -95,20 +96,17 @@ a:hover {
 }
 
 /* =========================
-   PROFILE / HEADER
+   HEADER / PROFILE
 ========================= */
+
+#profile {
+  margin-bottom: 18px; /* header is not a content section */
+}
 
 .profile {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-.profile-text {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .subtitle {
@@ -118,7 +116,7 @@ a:hover {
 }
 
 /* =========================
-   PROFILE ICON LINKS
+   HEADER ICON LINKS (INLINE SVG)
 ========================= */
 
 .profile-links {
@@ -200,9 +198,10 @@ a:hover {
 }
 
 /* =========================
-   SECTION FADE-IN (JS ONLY)
+   JS FADE-IN (PROGRESSIVE)
 ========================= */
 
+/* Content is visible by default */
 .js section {
   opacity: 0;
   transition: opacity 0.35s ease;
@@ -210,6 +209,11 @@ a:hover {
 
 .js section.visible {
   opacity: 1;
+}
+
+/* Hide fallback hints once JS renders */
+.js .fallback-only {
+  display: none;
 }
 
 /* =========================
@@ -253,14 +257,12 @@ a:hover {
 .pub-controls button {
   background: none;
   border: none;
-
   padding: 0;
-  margin: 0;
 
   font-size: 14px;
   font-weight: 500;
-
   color: var(--accent);
+
   cursor: pointer;
 }
 
@@ -346,10 +348,6 @@ a:hover {
   gap: 14px;
 }
 
-.links a {
-  font-weight: 500;
-}
-
 /* =========================
    BACK TO TOP
 ========================= */
@@ -403,9 +401,5 @@ a:hover {
 
   .profile-links {
     gap: 16px;
-  }
-
-  .nav-pills {
-    padding-bottom: 18px;
   }
 }
