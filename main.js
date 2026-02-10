@@ -128,7 +128,13 @@ const loadText = path => fetch(path).then(r => r.text());
   ====================== */
 
   document.getElementById("profile").innerHTML = `
-    <div class="profile">
+  <div class="profile">
+    <img src="assets/profile.jpg"
+         alt="Johan Ajnabi"
+         loading="lazy"
+         class="profile-photo">
+
+    <div class="profile-text">
       <h1>${profile.name}</h1>
       <div class="subtitle">${profile.title}</div>
       <div class="subtitle">${profile.focus}</div>
@@ -154,7 +160,8 @@ const loadText = path => fetch(path).then(r => r.text());
         </a>
       </div>
     </div>
-  `;
+  </div>
+`;
 
   /* =====================
      ABOUT
