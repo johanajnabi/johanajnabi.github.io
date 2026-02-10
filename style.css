@@ -3,7 +3,7 @@
 ========================= */
 
 :root {
-  /* Sticky navigation height */
+  /* Sticky navigation height (desktop) */
   --nav-height: 80px;
 
   /* Color system */
@@ -45,16 +45,15 @@ body {
 }
 
 /* =========================
-   ANCHOR OFFSET (MODERN + SAFE)
+   ANCHOR OFFSET (MODERN)
 ========================= */
 
-/* Works better than ::before hack */
 section {
   scroll-margin-top: var(--nav-height);
 }
 
 /* =========================
-   SECTION LAYOUT (ONE SOURCE OF TRUTH)
+   SECTION LAYOUT (ONE SOURCE)
 ========================= */
 
 section {
@@ -100,13 +99,27 @@ a:hover {
 ========================= */
 
 #profile {
-  margin-bottom: 18px; /* header is not a content section */
+  margin-bottom: 18px;
 }
 
 .profile {
   display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 14px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.profile-text {
+  display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 .subtitle {
@@ -116,13 +129,13 @@ a:hover {
 }
 
 /* =========================
-   HEADER ICON LINKS (INLINE SVG)
+   HEADER ICON LINKS (SVG)
 ========================= */
 
 .profile-links {
   display: flex;
   gap: 14px;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 .profile-links a {
@@ -201,7 +214,6 @@ a:hover {
    JS FADE-IN (PROGRESSIVE)
 ========================= */
 
-/* Content is visible by default */
 .js section {
   opacity: 0;
   transition: opacity 0.35s ease;
@@ -211,7 +223,6 @@ a:hover {
   opacity: 1;
 }
 
-/* Hide fallback hints once JS renders */
 .js .fallback-only {
   display: none;
 }
@@ -234,7 +245,7 @@ a:hover {
   margin-left: 6px;
 }
 
-/* ---------- Publication controls ---------- */
+/* Publication controls */
 
 .pub-controls {
   display: flex;
@@ -275,7 +286,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ---------- Publication details ---------- */
+/* Publication details */
 
 .pub-details {
   margin-top: 8px;
@@ -397,6 +408,16 @@ a:hover {
 
   body {
     padding-top: 28px;
+  }
+
+  .profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-photo {
+    width: 96px;
+    height: 96px;
   }
 
   .profile-links {
