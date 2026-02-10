@@ -1,85 +1,78 @@
 /* =====================
-   HELPERS
+   UTILITIES
 ====================== */
 
-// Highlight your name in author lists
-function highlightAuthor(authors, nameRegex) {
-  return authors.replace(nameRegex, match => `<strong>${match}</strong>`);
+function highlightAuthor(authors, regex) {
+  return authors.replace(regex, m => `<strong>${m}</strong>`);
 }
 
-// Determine publication type
 function getPubType(pub) {
   const j = pub.journal.toLowerCase();
-  if (j.includes("biorxiv") || j.includes("preprint")) return "preprint";
-  return "peer";
+  return (j.includes("biorxiv") || j.includes("preprint"))
+    ? "preprint"
+    : "peer";
 }
 
-// Detect first authorship
 function isFirstAuthor(authors) {
   return /^(\s*)?(Ajnabi,\s*J\.?|J\.?\s*Ajnabi)\b/i.test(authors);
 }
 
-// Format authors correctly (NO et al. for single-author)
-function formatCitationAuthors(authors, year) {
-  // Split by comma, remove initials-only fragments
-  const names = authors
+/* =====================
+   CITATION FORMATTING
+====================== */
+
+function parseAuthors(authors) {
+  return authors
     .split(",")
     .map(a => a.trim())
-    .filter(a => a.length > 1 && !/^[A-Z]\.?$/.test(a));
+    .filter(a => a.length > 1);
+}
 
+function formatCitation(authors, year) {
+  const names = parseAuthors(authors);
   if (names.length === 1) {
     return `${names[0]}, ${year}`;
   }
-
   return `${names[0]} et al., ${year}`;
 }
 
 /* =====================
-   EXPERIENCE CITATION FIX
+   EXPERIENCE CITATIONS
 ====================== */
 
-// Replace ({key}) with formatted + linked citation
 function linkInlineCitations(text, pubs) {
-  return text.replace(/\(\{([a-z0-9_]+)\}\)/gi, (match, key) => {
+  return text.replace(/\(\{([a-z0-9_]+)\}\)/gi, (_, key) => {
 
     const pub = pubs.find(p => {
-      const firstAuthor = p.authors
+      const first = p.authors
         .split(",")[0]
         .toLowerCase()
         .replace(/\s+/g, "");
-      return `${firstAuthor}_${p.year}` === key.toLowerCase();
+      return `${first}_${p.year}` === key.toLowerCase();
     });
 
-    if (!pub) return match;
+    if (!pub) return "";
 
-    const journalLower = pub.journal.toLowerCase();
-    const isPreprint =
-      journalLower.includes("biorxiv") ||
-      journalLower.includes("preprint");
-
-    // Remove any existing "(preprint)" to avoid duplication
-    const cleanJournal = pub.journal
-      .replace(/\s*\(preprint\)\s*/i, "")
-      .trim();
+    const isPreprint = /biorxiv|preprint/i.test(pub.journal);
+    const journal = pub.journal.replace(/\s*\(preprint\)/i, "").trim();
 
     return `
       <span class="exp-citation">
-        <strong>${cleanJournal}${isPreprint ? " (preprint)" : ""}</strong>, ${pub.year}
-        <a href="${pub.link}" target="_blank">
-          [${formatCitationAuthors(pub.authors, pub.year)}]
+        <strong>${journal}${isPreprint ? " (preprint)" : ""}</strong>, ${pub.year}
+        <a href="${pub.link}" target="_blank" rel="noopener">
+          [${formatCitation(pub.authors, pub.year)}]
         </a>
       </span>
     `;
   });
 }
 
-// Render one experience bullet
 function renderExperiencePoint(point, pubs) {
   if (typeof point === "string") {
     return `<li>${linkInlineCitations(point, pubs)}</li>`;
   }
 
-  if (typeof point === "object" && point.paper) {
+  if (point.paper) {
     const p = point.paper;
     return `
       <li>
@@ -87,8 +80,8 @@ function renderExperiencePoint(point, pubs) {
         <br>
         <span class="exp-citation">
           <strong>${p.journal}</strong>, ${p.year}
-          <a href="${p.link}" target="_blank">
-            [${formatCitationAuthors(p.authors, p.year)}]
+          <a href="${p.link}" target="_blank" rel="noopener">
+            [${formatCitation(p.authors, p.year)}]
           </a>
         </span>
       </li>
@@ -98,49 +91,67 @@ function renderExperiencePoint(point, pubs) {
   return "";
 }
 
-async function loadJSON(path) {
-  const res = await fetch(path);
-  return res.json();
-}
+/* =====================
+   DATA LOADERS
+====================== */
 
-async function loadText(path) {
-  const res = await fetch(path);
-  return res.text();
-}
+const loadJSON = path => fetch(path).then(r => r.json());
+const loadText = path => fetch(path).then(r => r.text());
 
 /* =====================
    MAIN
 ====================== */
+
 (async function () {
 
-  const NAV_HEIGHT =
-    parseInt(
-      getComputedStyle(document.documentElement)
-        .getPropertyValue("--nav-height")
-    ) || 80;
-
-  const MY_NAME_REGEX = /\bAjnabi,\s*J\.?\b|\bJ\.?\s*Ajnabi\b/g;
+  const NAME_REGEX = /\bAjnabi,\s*J\.?\b|\bJ\.?\s*Ajnabi\b/g;
 
   let currentType = "all";
   let sortOrder = "desc";
 
-  const profile    = await loadJSON("data/profile.json");
-  const about      = await loadText("content/about.md");
-  const interests  = await loadJSON("data/interests.json");
-  const experience = await loadJSON("data/experience.json");
-  const pubs       = await loadJSON("data/publications.json");
+  const [
+    profile,
+    about,
+    interests,
+    experience,
+    publications
+  ] = await Promise.all([
+    loadJSON("data/profile.json"),
+    loadText("content/about.md"),
+    loadJSON("data/interests.json"),
+    loadJSON("data/experience.json"),
+    loadJSON("data/publications.json")
+  ]);
 
   /* =====================
      PROFILE
   ====================== */
+
   document.getElementById("profile").innerHTML = `
     <div class="profile">
-      <img src="assets/profile.jpg" alt="Johan Ajnabi">
-      <div>
-        <h1>${profile.name}</h1>
-        <div class="subtitle">${profile.title}</div>
-        <div class="subtitle">${profile.focus}</div>
-        <div class="subtitle">${profile.affiliation.join("<br>")}</div>
+      <h1>${profile.name}</h1>
+      <div class="subtitle">${profile.title}</div>
+      <div class="subtitle">${profile.focus}</div>
+      <div class="subtitle">${profile.affiliation.join("<br>")}</div>
+
+      <div class="profile-links">
+        ${profile.email ? `
+          <a href="mailto:${profile.email}" aria-label="Email">
+            ${iconMail()}
+          </a>` : ``}
+
+        <a href="${profile.links["Google Scholar"]}" target="_blank" aria-label="Google Scholar">
+          ${iconScholar()}
+        </a>
+        <a href="${profile.links["ORCID"]}" target="_blank" aria-label="ORCID">
+          ${iconORCID()}
+        </a>
+        <a href="${profile.links["LinkedIn"]}" target="_blank" aria-label="LinkedIn">
+          ${iconLinkedIn()}
+        </a>
+        <a href="${profile.links["BlueSky"]}" target="_blank" aria-label="BlueSky">
+          ${iconBlueSky()}
+        </a>
       </div>
     </div>
   `;
@@ -148,6 +159,7 @@ async function loadText(path) {
   /* =====================
      ABOUT
   ====================== */
+
   document.getElementById("about").innerHTML = `
     <h2>About</h2>
     <p>${about.replace(/\n\n/g, "</p><p>")}</p>
@@ -156,6 +168,7 @@ async function loadText(path) {
   /* =====================
      INTERESTS
   ====================== */
+
   document.getElementById("interests").innerHTML = `
     <h2>Research Interests</h2>
     <ul>${interests.map(i => `<li>${i}</li>`).join("")}</ul>
@@ -164,6 +177,7 @@ async function loadText(path) {
   /* =====================
      EXPERIENCE
   ====================== */
+
   document.getElementById("experience").innerHTML = `
     <h2>Research Experience</h2>
     ${experience.map(exp => `
@@ -175,7 +189,7 @@ async function loadText(path) {
           Supervisor: ${exp.supervisor}
         </p>
         <ul>
-          ${exp.points.map(p => renderExperiencePoint(p, pubs)).join("")}
+          ${exp.points.map(p => renderExperiencePoint(p, publications)).join("")}
         </ul>
       </div>
     `).join("")}
@@ -184,15 +198,16 @@ async function loadText(path) {
   /* =====================
      PUBLICATIONS
   ====================== */
+
   function renderPublications() {
 
-    let filtered = pubs.slice();
+    let list = publications.slice();
 
     if (currentType !== "all") {
-      filtered = filtered.filter(p => getPubType(p) === currentType);
+      list = list.filter(p => getPubType(p) === currentType);
     }
 
-    filtered.sort((a, b) =>
+    list.sort((a, b) =>
       sortOrder === "desc" ? b.year - a.year : a.year - b.year
     );
 
@@ -201,10 +216,15 @@ async function loadText(path) {
 
       <div class="pub-controls">
         <div>
-          <button class="type-btn" data-type="all">All</button>
-          <button class="type-btn" data-type="peer">Peer-reviewed</button>
-          <button class="type-btn" data-type="preprint">Preprints</button>
+          ${["all","peer","preprint"].map(t => `
+            <button class="type-btn ${currentType===t?"active":""}"
+                    data-type="${t}">
+              ${t === "all" ? "All" :
+                t === "peer" ? "Peer-reviewed" : "Preprints"}
+            </button>
+          `).join("")}
         </div>
+
         <div>
           Sort:
           <button id="sort-toggle">
@@ -213,17 +233,15 @@ async function loadText(path) {
         </div>
       </div>
 
-      ${filtered.map((p, i) => `
+      ${list.map((p, i) => `
         <div class="pub">
-          ${highlightAuthor(p.authors, MY_NAME_REGEX)}
-          ${isFirstAuthor(p.authors)
-            ? `<span class="first-author">★ First author</span>`
-            : ``}
+          ${highlightAuthor(p.authors, NAME_REGEX)}
+          ${isFirstAuthor(p.authors) ? `<span class="first-author">★ First author</span>` : ``}
           <br>
           <em>${p.title}</em><br>
           ${p.journal}, ${p.year}
           <a href="${p.link}" target="_blank">
-            [${formatCitationAuthors(p.authors, p.year)}]
+            [${formatCitation(p.authors, p.year)}]
           </a>
 
           ${(p.summary || p.abstract) ? `
@@ -263,48 +281,31 @@ async function loadText(path) {
   renderPublications();
 
   /* =====================
-     LINKS
-  ====================== */
-  document.getElementById("links").innerHTML = `
-    <h2>Links</h2>
-    <div class="links">
-      <a href="${profile.links["Google Scholar"]}" target="_blank">🎓 Scholar</a>
-      <a href="${profile.links["ORCID"]}" target="_blank">🆔 ORCID</a>
-      <a href="${profile.links["LinkedIn"]}" target="_blank">💼 LinkedIn</a>
-      <a href="${profile.links["BlueSky"]}" target="_blank">🦋 BlueSky</a>
-    </div>
-  `;
-
-  /* =====================
      NAV HIGHLIGHT
   ====================== */
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-pills .pill");
+
+  const sections = [...document.querySelectorAll("section[id]")];
+  const pills = document.querySelectorAll(".nav-pills .pill");
 
   window.addEventListener("scroll", () => {
+    const pos = window.scrollY + 120;
     let current = "";
-    sections.forEach(section => {
-      if (window.scrollY >= section.offsetTop - NAV_HEIGHT - 10) {
-        current = section.id;
-      }
-    });
 
-    navLinks.forEach(link => {
-      link.classList.toggle(
-        "active",
-        link.getAttribute("href") === `#${current}`
-      );
-    });
+    for (const s of sections) {
+      if (pos >= s.offsetTop) current = s.id;
+    }
+
+    pills.forEach(p =>
+      p.classList.toggle("active", p.getAttribute("href") === `#${current}`)
+    );
   });
 
   /* =====================
      FADE-IN
   ====================== */
+
   const observer = new IntersectionObserver(
-    entries =>
-      entries.forEach(e =>
-        e.isIntersecting && e.target.classList.add("visible")
-      ),
+    entries => entries.forEach(e => e.isIntersecting && e.target.classList.add("visible")),
     { threshold: 0.1 }
   );
 
@@ -313,11 +314,30 @@ async function loadText(path) {
   /* =====================
      BACK TO TOP
   ====================== */
+
   const backToTop = document.getElementById("back-to-top");
-  if (backToTop) {
-    window.addEventListener("scroll", () => {
-      backToTop.classList.toggle("visible", window.scrollY > 400);
-    });
-  }
+  window.addEventListener("scroll", () =>
+    backToTop.classList.toggle("visible", window.scrollY > 400)
+  );
 
 })();
+
+/* =====================
+   INLINE SVG ICONS
+====================== */
+
+function iconMail() {
+  return `<svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 6 8-6"/></svg>`;
+}
+function iconScholar() {
+  return `<svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M5 13v4c0 1.5 3 3 7 3s7-1.5 7-3v-4"/></svg>`;
+}
+function iconORCID() {
+  return `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 8v8M13 8h2a3 3 0 010 6h-2z"/></svg>`;
+}
+function iconLinkedIn() {
+  return `<svg viewBox="0 0 24 24"><path d="M6 9v9M6 6v.01M10 9v9M10 13c0-4 6-4 6 0v5"/></svg>`;
+}
+function iconBlueSky() {
+  return `<svg viewBox="0 0 24 24"><path d="M12 12c-2-4-6-6-8-7 0 7 4 10 8 12 4-2 8-5 8-12-2 1-6 3-8 7z"/></svg>`;
+}
