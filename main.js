@@ -291,21 +291,7 @@ const loadText = path => fetch(path).then(r => r.text());
    NAV HIGHLIGHT (ROBUST)
 ====================== */
 
-const sections = document.querySelectorAll("section[id]");
-const pills = document.querySelectorAll(".nav-pills .pill");
-
-const navHeight = parseInt(
-  getComputedStyle(document.documentElement)
-    .getPropertyValue("--nav-height")
-) || 80;
-
-const observerOptions = {
-  root: null,
-  rootMargin: `-${navHeight + 20}px 0px -60% 0px`,
-  threshold: 0
-};
-
-const observer = new IntersectionObserver((entries) => {
+const navObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const id = entry.target.id;
@@ -320,18 +306,22 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-sections.forEach(section => observer.observe(section));
+sections.forEach(section => navObserver.observe(section));
 
   /* =====================
-     FADE-IN
-  ====================== */
+   FADE-IN
+====================== */
 
-  const observer = new IntersectionObserver(
-    entries => entries.forEach(e => e.isIntersecting && e.target.classList.add("visible")),
-    { threshold: 0.1 }
-  );
+const fadeObserver = new IntersectionObserver(
+  entries =>
+    entries.forEach(e =>
+      e.isIntersecting && e.target.classList.add("visible")
+    ),
+  { threshold: 0.1 }
+);
 
-  document.querySelectorAll("section").forEach(s => observer.observe(s));
+document.querySelectorAll("section")
+  .forEach(s => fadeObserver.observe(s));
 
   /* =====================
      BACK TO TOP
