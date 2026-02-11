@@ -287,25 +287,40 @@ const loadText = path => fetch(path).then(r => r.text());
 
   renderPublications();
 
-  /* =====================
-     NAV HIGHLIGHT
-  ====================== */
+/* =====================
+   NAV HIGHLIGHT (ROBUST)
+====================== */
 
-  const sections = [...document.querySelectorAll("section[id]")];
-  const pills = document.querySelectorAll(".nav-pills .pill");
+const sections = document.querySelectorAll("section[id]");
+const pills = document.querySelectorAll(".nav-pills .pill");
 
-  window.addEventListener("scroll", () => {
-    const pos = window.scrollY + 120;
-    let current = "";
+const navHeight = parseInt(
+  getComputedStyle(document.documentElement)
+    .getPropertyValue("--nav-height")
+) || 80;
 
-    for (const s of sections) {
-      if (pos >= s.offsetTop) current = s.id;
+const observerOptions = {
+  root: null,
+  rootMargin: `-${navHeight + 20}px 0px -60% 0px`,
+  threshold: 0
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+
+      pills.forEach(pill => {
+        pill.classList.toggle(
+          "active",
+          pill.getAttribute("href") === `#${id}`
+        );
+      });
     }
-
-    pills.forEach(p =>
-      p.classList.toggle("active", p.getAttribute("href") === `#${current}`)
-    );
   });
+}, observerOptions);
+
+sections.forEach(section => observer.observe(section));
 
   /* =====================
      FADE-IN
