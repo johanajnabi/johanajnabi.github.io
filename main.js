@@ -287,41 +287,36 @@ const loadText = path => fetch(path).then(r => r.text());
 
   renderPublications();
 
-/* =====================
-   NAV HIGHLIGHT (ROBUST)
-====================== */
+  /* =====================
+     NAV HIGHLIGHT
+  ====================== */
 
-const navObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.id;
+  const sections = [...document.querySelectorAll("section[id]")];
+  const pills = document.querySelectorAll(".nav-pills .pill");
 
-      pills.forEach(pill => {
-        pill.classList.toggle(
-          "active",
-          pill.getAttribute("href") === `#${id}`
-        );
-      });
+  window.addEventListener("scroll", () => {
+    const pos = window.scrollY + 120;
+    let current = "";
+
+    for (const s of sections) {
+      if (pos >= s.offsetTop) current = s.id;
     }
-  });
-}, observerOptions);
 
-sections.forEach(section => navObserver.observe(section));
+    pills.forEach(p =>
+      p.classList.toggle("active", p.getAttribute("href") === `#${current}`)
+    );
+  });
 
   /* =====================
-   FADE-IN
-====================== */
+     FADE-IN
+  ====================== */
 
-const fadeObserver = new IntersectionObserver(
-  entries =>
-    entries.forEach(e =>
-      e.isIntersecting && e.target.classList.add("visible")
-    ),
-  { threshold: 0.1 }
-);
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => e.isIntersecting && e.target.classList.add("visible")),
+    { threshold: 0.1 }
+  );
 
-document.querySelectorAll("section")
-  .forEach(s => fadeObserver.observe(s));
+  document.querySelectorAll("section").forEach(s => observer.observe(s));
 
   /* =====================
      BACK TO TOP
