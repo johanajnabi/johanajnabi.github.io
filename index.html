@@ -8,6 +8,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               img-src 'self' https: data:;
+               script-src 'self';
+               style-src 'self';
+               connect-src 'self';
+               font-src 'self' https:;
+               object-src 'none';">
 
   <title>Johan Ajnabi | Mechanotransduction & Epigenetic Regulation Research</title>
 
@@ -17,13 +26,15 @@
   <meta name="author" content="Johan Ajnabi">
   <meta name="keywords"
         content="Johan Ajnabi, mechanotransduction, epigenetics, wound healing, keratinocytes, skin biology, DNMT3a, ERK signaling, regenerative medicine">
-<meta name="description"
-      content="Johan Ajnabi is a PhD researcher studying mechanotransduction, cytoskeletal dynamics, and epigenetic regulation in cutaneous wound healing and skin biology.">
 
   <!-- =====================
        CANONICAL
   ====================== -->
   <link rel="canonical" href="https://johanajnabi.github.io/">
+  <!-- =====================
+     PERFORMANCE
+====================== -->
+<link rel="preload" as="image" href="assets/profile.jpg">
 
   <!-- =====================
        OPEN GRAPH (LinkedIn / Slack / Facebook)
@@ -242,7 +253,7 @@
     </ul>
   </section>
   <footer class="site-footer">
-  © 2026 Johan Ajnabi
+  © 2026 Johan Ajnabi · Last updated February 2026
 </footer>
 
 </main>
