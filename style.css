@@ -386,7 +386,7 @@ p a:hover {
 }
 
 /* =========================
-   CONTACT (MINIMAL ICON STYLE)
+   CONTACT SECTION
 ========================= */
 
 .contact-list {
@@ -396,26 +396,27 @@ p a:hover {
 }
 
 .contact-list li {
-  margin-bottom: 12px;
+  margin-bottom: 10px;   /* Reduced from 14px */
 }
 
 .contact-list a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 15px;
-  color: var(--text-main);
+  gap: 10px;             /* Slightly tighter */
   text-decoration: none;
+  color: var(--text-main);
+  transition: color 0.15s ease, transform 0.15s ease;
 }
 
 .contact-list a:hover {
   color: var(--accent);
+  transform: translateX(2px);
 }
 
 .contact-icon {
   width: 20px;
   height: 20px;
-  display: inline-flex;
+  flex-shrink: 0;
 }
 
 .contact-icon svg {
@@ -426,9 +427,20 @@ p a:hover {
   stroke-width: 1.6;
 }
 
-/* Official ORCID green accent */
-.contact-icon.orcid {
-  color: #A6CE39;
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.contact-text strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact-text span {
+  font-size: 14px;
+  color: var(--text-muted);
 }
 
 
