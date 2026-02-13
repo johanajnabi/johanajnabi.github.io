@@ -9,16 +9,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy"
-      content="default-src 'self';
-               img-src 'self' https: data:;
-               script-src 'self';
-               style-src 'self';
-               connect-src 'self';
-               font-src 'self' https:;
-               object-src 'none';">
+<meta http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        img-src 'self' https: data:;
+        script-src 'self' https:;
+        style-src 'self' 'unsafe-inline' https:;
+        connect-src 'self' https:;
+        font-src 'self' https:;
+        frame-src https:;
+        object-src 'none';
+      ">
 
-  <title>Johan Ajnabi | Mechanotransduction & Epigenetic Regulation Research</title>
+  <title>Johan Ajnabi, PhD Candidate | Mechanotransduction & Epigenetic Regulation in Skin Biology</title>
 
   <meta name="description"
         content="Johan Ajnabi is a PhD researcher studying mechanotransduction, cytoskeletal dynamics, and epigenetic regulation in cutaneous wound repair and skin biology.">
@@ -58,6 +61,7 @@
         content="Research on mechanotransduction, cytoskeletal dynamics, and epigenetic regulation in skin biology.">
   <meta name="twitter:image"
         content="https://johanajnabi.com/assets/profile.jpg">
+  <meta name="twitter:creator" content="@jo_ajnabi">
 
   <!-- =====================
        FAVICON (Optional but recommended)
@@ -78,7 +82,7 @@
     "@type": "Person",
     "name": "Johan Ajnabi",
     "url": "https://johanajnabi.com/",
-    "email": "mailto:johan@outlook.in",
+    "email": "mailto:johanajnabi.gmail.com",
     "affiliation": {
       "@type": "Organization",
       "name": "BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem)"
