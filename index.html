@@ -1,212 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <!-- =====================
-       BASIC META
+       CORE META
   ====================== -->
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light dark">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy"
-      content="
-        default-src 'self';
-        img-src 'self' https: data:;
-        script-src 'self' https:;
-        style-src 'self' 'unsafe-inline' https:;
-        connect-src 'self' https:;
-        font-src 'self' https:;
-        frame-src https:;
-        object-src 'none';
-      ">
+  <meta name="robots" content="index, follow, max-image-preview:large">
 
-  <title>Johan Ajnabi, PhD Candidate | Mechanotransduction & Epigenetic Regulation in Skin Biology</title>
+  <!-- =====================
+       CONTENT SECURITY POLICY
+  ====================== -->
+  <meta http-equiv="Content-Security-Policy"
+        content="
+          default-src 'self';
+          img-src 'self' https: data:;
+          script-src 'self';
+          style-src 'self' 'unsafe-inline';
+          connect-src 'self';
+          font-src 'self' https:;
+          frame-src https:;
+          object-src 'none';
+        ">
+
+  <!-- =====================
+       SEO
+  ====================== -->
+  <title>Johan Ajnabi | Mechanotransduction & Epigenetic Regulation in Skin Biology</title>
 
   <meta name="description"
-        content="Johan Ajnabi is a PhD researcher studying mechanotransduction, cytoskeletal dynamics, and epigenetic regulation in cutaneous wound repair and skin biology.">
+        content="Johan Ajnabi is a PhD researcher at inStem studying mechanotransduction, cytoskeletal dynamics, epigenetic regulation, and epidermal wound repair in skin biology.">
 
-  <meta name="author" content="Johan Ajnabi">
-  <meta name="keywords"
-        content="Johan Ajnabi, mechanotransduction, epigenetics, wound healing, keratinocytes, skin biology, DNMT3a, ERK signaling, regenerative medicine">
-
-  <!-- =====================
-       CANONICAL
-  ====================== -->
   <link rel="canonical" href="https://johanajnabi.com/">
   <link rel="alternate" hreflang="en" href="https://johanajnabi.com/">
-  <!-- =====================
-     PERFORMANCE
-====================== -->
-<link rel="preload" as="image" href="assets/profile.jpg">
 
   <!-- =====================
-       OPEN GRAPH (LinkedIn / Slack / Facebook)
+       PERFORMANCE
+  ====================== -->
+  <link rel="preload"
+        as="image"
+        href="https://johanajnabi.com/assets/profile.jpg"
+        fetchpriority="high">
+
+  <!-- =====================
+       OPEN GRAPH
   ====================== -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Johan Ajnabi">
   <meta property="og:title"
         content="Johan Ajnabi | Mechanotransduction & Epigenetic Regulation Research">
   <meta property="og:description"
-        content="PhD researcher investigating how mechanical cues regulate epigenetic control during cutaneous wound repair.">
+        content="Research on mechanotransduction, chromatin regulation, keratinocyte biology, and skin regeneration.">
   <meta property="og:url" content="https://johanajnabi.com/">
   <meta property="og:image"
         content="https://johanajnabi.com/assets/profile.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- =====================
-       TWITTER CARD
+       TWITTER
   ====================== -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title"
         content="Johan Ajnabi | Mechanotransduction Research">
   <meta name="twitter:description"
-        content="Research on mechanotransduction, cytoskeletal dynamics, and epigenetic regulation in skin biology.">
+        content="PhD researcher investigating mechanical signaling and epigenetic regulation during cutaneous wound repair.">
   <meta name="twitter:image"
         content="https://johanajnabi.com/assets/profile.jpg">
   <meta name="twitter:creator" content="@jo_ajnabi">
 
   <!-- =====================
-       FAVICON (Optional but recommended)
+       ICON + STYLES
   ====================== -->
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/style.css">
 
   <!-- =====================
-       STYLES
+       STRUCTURED DATA
   ====================== -->
-  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
 
-  <!-- =====================
-     STRUCTURED DATA (Elite Academic Schema)
-====================== -->
-
-  <!-- =====================
-     PUBLICATION SCHEMA
-====================== -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-
-    {
-      "@type": "Person",
-      "@id": "https://johanajnabi.com/#johan",
-      "name": "Johan Ajnabi",
-      "url": "https://johanajnabi.com/",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://johanajnabi.com/"
-      },
-      "email": "mailto:johanajnabi@gmail.com",
-      "jobTitle": "PhD Candidate",
-      "description": "PhD researcher studying mechanotransduction, cytoskeletal dynamics, and epigenetic regulation in cutaneous wound repair and skin biology.",
-      "image": "https://johanajnabi.com/assets/profile.jpg",
-
-      "affiliation": {
+      {
         "@type": "Organization",
+        "@id": "https://johanajnabi.com/#instem",
         "name": "BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem)",
-        "url": "https://instem.res.in/"
+        "url": "https://instem.res.in/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bengaluru",
+          "addressCountry": "India"
+        }
       },
 
-      "knowsAbout": [
-        "Mechanotransduction",
-        "Epigenetic regulation",
-        "Cutaneous wound healing",
-        "Keratinocyte biology",
-        "Actin cytoskeleton dynamics"
-      ],
-
-      "sameAs": [
-        "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
-        "https://orcid.org/0000-0002-9437-9300",
-        "https://in.linkedin.com/in/johanajnabi",
-        "https://bsky.app/profile/johanajnabi.bsky.social"
-      ]
-    },
-
-    {
-      "@type": "ScholarlyArticle",
-      "headline": "Mindin mediated αM-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness",
-      "author": [
-        { "@id": "https://johanajnabi.com/#johan" }
-      ],
-      "datePublished": "2025",
-      "identifier": "https://doi.org/10.1101/2025.08.24.669246",
-      "isPartOf": {
-        "@type": "Periodical",
-        "name": "bioRxiv"
-      },
-      "description": "Identification of a Mindin–integrin–STAT3 signaling axis sustaining keratinocyte stemness."
-    },
-
-    {
-      "@type": "ScholarlyArticle",
-      "headline": "Niacinamide enhances cathelicidin mediated SARS-CoV-2 membrane disruption",
-      "author": [
-        { "@id": "https://johanajnabi.com/#johan" }
-      ],
-      "datePublished": "2023",
-      "identifier": "https://doi.org/10.3389/fimmu.2023.1255478",
-      "isPartOf": {
-        "@type": "Periodical",
-        "name": "Frontiers in Immunology"
-      }
-    },
-
-    {
-      "@type": "ScholarlyArticle",
-      "headline": "Mindin (SPON2) is essential for cutaneous fibrogenesis in a mouse model of systemic sclerosis",
-      "author": [
-        { "@id": "https://johanajnabi.com/#johan" }
-      ],
-      "datePublished": "2023",
-      "identifier": "https://doi.org/10.1016/j.jid.2022.10.011",
-      "isPartOf": {
-        "@type": "Periodical",
-        "name": "Journal of Investigative Dermatology"
-      }
-    },
-
-    {
-      "@type": "ScholarlyArticle",
-      "headline": "Snail maintains the stem/progenitor state of skin epithelial cells and carcinomas through the autocrine effect of matricellular protein Mindin",
-      "author": [
-        { "@id": "https://johanajnabi.com/#johan" }
-      ],
-      "datePublished": "2022",
-      "identifier": "https://doi.org/10.1016/j.celrep.2022.111390",
-      "isPartOf": {
-        "@type": "Periodical",
-        "name": "Cell Reports"
-      }
-    },
-
-    {
-      "@type": "Thesis",
-      "headline": "Identification of cis-regulatory regions regulating the expression of PM19 gene in wheat",
-      "author": [
-        { "@id": "https://johanajnabi.com/#johan" }
-      ],
-      "datePublished": "2019",
-      "publisher": {
+      {
         "@type": "Organization",
+        "@id": "https://johanajnabi.com/#iari",
         "name": "ICAR – Indian Agricultural Research Institute"
       },
-      "url": "http://krishikosh.egranth.ac.in/handle/1/5810146216"
-    }
 
-  ]
-}
-</script>
+      {
+        "@type": "Person",
+        "@id": "https://johanajnabi.com/#johan",
+        "name": "Johan Ajnabi",
+        "url": "https://johanajnabi.com/",
+        "image": "https://johanajnabi.com/assets/profile.jpg",
+        "email": "mailto:johanajnabi@gmail.com",
+        "jobTitle": "PhD Candidate",
+        "affiliation": { "@id": "https://johanajnabi.com/#instem" },
+        "alumniOf": { "@id": "https://johanajnabi.com/#iari" },
+        "mainEntityOfPage": { "@id": "https://johanajnabi.com/#homepage" },
+        "knowsAbout": [
+          "Mechanotransduction",
+          "Epigenetic regulation",
+          "Cutaneous wound healing",
+          "Keratinocyte stem cells",
+          "Chromatin remodeling",
+          "Actin cytoskeleton dynamics"
+        ],
+        "sameAs": [
+          "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
+          "https://orcid.org/0000-0002-9437-9300",
+          "https://in.linkedin.com/in/johanajnabi",
+          "https://bsky.app/profile/johanajnabi.bsky.social"
+        ]
+      },
 
+      {
+        "@type": "WebSite",
+        "@id": "https://johanajnabi.com/#website",
+        "url": "https://johanajnabi.com/",
+        "name": "Johan Ajnabi",
+        "publisher": { "@id": "https://johanajnabi.com/#johan" }
+      },
 
-  <!-- =====================
-       PROGRESSIVE JS FLAG
-  ====================== -->
+      {
+        "@type": "WebPage",
+        "@id": "https://johanajnabi.com/#homepage",
+        "url": "https://johanajnabi.com/",
+        "name": "Johan Ajnabi | Mechanotransduction Research",
+        "isPartOf": { "@id": "https://johanajnabi.com/#website" },
+        "about": { "@id": "https://johanajnabi.com/#johan" }
+      },
+
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://johanajnabi.com/"
+        }]
+      },
+
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.1101/2025.08.24.669246",
+        "headline": "Mindin mediated αM-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness",
+        "author": { "@id": "https://johanajnabi.com/#johan" },
+        "datePublished": "2025",
+        "identifier": "https://doi.org/10.1101/2025.08.24.669246",
+        "publisher": { "@type": "Organization", "name": "Cold Spring Harbor Laboratory" },
+        "isPartOf": { "@type": "Periodical", "name": "bioRxiv" },
+        "about": ["Keratinocyte stemness", "Integrin signaling", "STAT3 activation"]
+      },
+
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.3389/fimmu.2023.1255478",
+        "headline": "Niacinamide enhances cathelicidin mediated SARS-CoV-2 membrane disruption",
+        "author": { "@id": "https://johanajnabi.com/#johan" },
+        "datePublished": "2023",
+        "identifier": "https://doi.org/10.3389/fimmu.2023.1255478",
+        "publisher": { "@type": "Organization", "name": "Frontiers Media SA" },
+        "isPartOf": { "@type": "Periodical", "name": "Frontiers in Immunology" },
+        "about": ["Antimicrobial peptides", "SARS-CoV-2", "Innate immunity"]
+      },
+
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.1016/j.jid.2022.10.011",
+        "headline": "Mindin (SPON2) is essential for cutaneous fibrogenesis in a mouse model of systemic sclerosis",
+        "author": { "@id": "https://johanajnabi.com/#johan" },
+        "datePublished": "2023",
+        "identifier": "https://doi.org/10.1016/j.jid.2022.10.011",
+        "publisher": { "@type": "Organization", "name": "Elsevier" },
+        "isPartOf": { "@type": "Periodical", "name": "Journal of Investigative Dermatology" },
+        "about": ["Fibrosis", "Systemic sclerosis", "Skin pathology"]
+      },
+
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.1016/j.celrep.2022.111390",
+        "headline": "Snail maintains the stem/progenitor state of skin epithelial cells and carcinomas through the autocrine effect of matricellular protein Mindin",
+        "author": { "@id": "https://johanajnabi.com/#johan" },
+        "datePublished": "2022",
+        "identifier": "https://doi.org/10.1016/j.celrep.2022.111390",
+        "publisher": { "@type": "Organization", "name": "Cell Press" },
+        "isPartOf": { "@type": "Periodical", "name": "Cell Reports" },
+        "about": ["Snail transcription factor", "Epithelial stem cells", "Matricellular proteins"]
+      },
+
+      {
+        "@type": "Thesis",
+        "@id": "http://krishikosh.egranth.ac.in/handle/1/5810146216",
+        "headline": "Identification of cis-regulatory regions regulating the expression of PM19 gene in wheat",
+        "author": { "@id": "https://johanajnabi.com/#johan" },
+        "datePublished": "2019",
+        "publisher": { "@id": "https://johanajnabi.com/#iari" },
+        "url": "http://krishikosh.egranth.ac.in/handle/1/5810146216"
+      }
+
+    ]
+  }
+  </script>
+
   <script>
     document.documentElement.classList.add("js");
   </script>
 
 </head>
+
 
 <body>
 
