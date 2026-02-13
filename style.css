@@ -386,13 +386,22 @@ p a:hover {
 }
 
 /* =========================
-   LINKS SECTION
+   CONTACT SECTION
 ========================= */
 
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
+#links ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+#links li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+#links li:first-child a {
+  font-weight: 600; /* Emphasize email */
 }
 
 /* =========================
