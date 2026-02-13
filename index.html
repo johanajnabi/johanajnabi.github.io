@@ -79,147 +79,197 @@
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="stylesheet" href="/style.css">
 
-  <!-- =====================
-       STRUCTURED DATA
-  ====================== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
+ <!-- =====================
+     STRUCTURED DATA
+====================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
 
-      {
-        "@type": "Organization",
-        "@id": "https://johanajnabi.com/#instem",
-        "name": "BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem)",
-        "url": "https://instem.res.in/",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Bengaluru",
-          "addressCountry": "India"
-        }
-      },
-
-      {
-        "@type": "Organization",
-        "@id": "https://johanajnabi.com/#iari",
-        "name": "ICAR – Indian Agricultural Research Institute"
-      },
-
-      {
-        "@type": "Person",
-        "@id": "https://johanajnabi.com/#johan",
-        "name": "Johan Ajnabi",
-        "url": "https://johanajnabi.com/",
-        "image": "https://johanajnabi.com/assets/profile.jpg",
-        "email": "mailto:johanajnabi@gmail.com",
-        "jobTitle": "PhD Candidate",
-        "affiliation": { "@id": "https://johanajnabi.com/#instem" },
-        "alumniOf": { "@id": "https://johanajnabi.com/#iari" },
-        "mainEntityOfPage": { "@id": "https://johanajnabi.com/#homepage" },
-        "knowsAbout": [
-          "Mechanotransduction",
-          "Epigenetic regulation",
-          "Cutaneous wound healing",
-          "Keratinocyte stem cells",
-          "Chromatin remodeling",
-          "Actin cytoskeleton dynamics"
-        ],
-        "sameAs": [
-          "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
-          "https://orcid.org/0000-0002-9437-9300",
-          "https://in.linkedin.com/in/johanajnabi",
-          "https://bsky.app/profile/johanajnabi.bsky.social"
-        ]
-      },
-
-      {
-        "@type": "WebSite",
-        "@id": "https://johanajnabi.com/#website",
-        "url": "https://johanajnabi.com/",
-        "name": "Johan Ajnabi",
-        "publisher": { "@id": "https://johanajnabi.com/#johan" }
-      },
-
-      {
-        "@type": "WebPage",
-        "@id": "https://johanajnabi.com/#homepage",
-        "url": "https://johanajnabi.com/",
-        "name": "Johan Ajnabi | Mechanotransduction Research",
-        "isPartOf": { "@id": "https://johanajnabi.com/#website" },
-        "about": { "@id": "https://johanajnabi.com/#johan" }
-      },
-
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://johanajnabi.com/"
-        }]
-      },
-
-      {
-        "@type": "ScholarlyArticle",
-        "@id": "https://doi.org/10.1101/2025.08.24.669246",
-        "headline": "Mindin mediated αM-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness",
-        "author": { "@id": "https://johanajnabi.com/#johan" },
-        "datePublished": "2025",
-        "identifier": "https://doi.org/10.1101/2025.08.24.669246",
-        "publisher": { "@type": "Organization", "name": "Cold Spring Harbor Laboratory" },
-        "isPartOf": { "@type": "Periodical", "name": "bioRxiv" },
-        "about": ["Keratinocyte stemness", "Integrin signaling", "STAT3 activation"]
-      },
-
-      {
-        "@type": "ScholarlyArticle",
-        "@id": "https://doi.org/10.3389/fimmu.2023.1255478",
-        "headline": "Niacinamide enhances cathelicidin mediated SARS-CoV-2 membrane disruption",
-        "author": { "@id": "https://johanajnabi.com/#johan" },
-        "datePublished": "2023",
-        "identifier": "https://doi.org/10.3389/fimmu.2023.1255478",
-        "publisher": { "@type": "Organization", "name": "Frontiers Media SA" },
-        "isPartOf": { "@type": "Periodical", "name": "Frontiers in Immunology" },
-        "about": ["Antimicrobial peptides", "SARS-CoV-2", "Innate immunity"]
-      },
-
-      {
-        "@type": "ScholarlyArticle",
-        "@id": "https://doi.org/10.1016/j.jid.2022.10.011",
-        "headline": "Mindin (SPON2) is essential for cutaneous fibrogenesis in a mouse model of systemic sclerosis",
-        "author": { "@id": "https://johanajnabi.com/#johan" },
-        "datePublished": "2023",
-        "identifier": "https://doi.org/10.1016/j.jid.2022.10.011",
-        "publisher": { "@type": "Organization", "name": "Elsevier" },
-        "isPartOf": { "@type": "Periodical", "name": "Journal of Investigative Dermatology" },
-        "about": ["Fibrosis", "Systemic sclerosis", "Skin pathology"]
-      },
-
-      {
-        "@type": "ScholarlyArticle",
-        "@id": "https://doi.org/10.1016/j.celrep.2022.111390",
-        "headline": "Snail maintains the stem/progenitor state of skin epithelial cells and carcinomas through the autocrine effect of matricellular protein Mindin",
-        "author": { "@id": "https://johanajnabi.com/#johan" },
-        "datePublished": "2022",
-        "identifier": "https://doi.org/10.1016/j.celrep.2022.111390",
-        "publisher": { "@type": "Organization", "name": "Cell Press" },
-        "isPartOf": { "@type": "Periodical", "name": "Cell Reports" },
-        "about": ["Snail transcription factor", "Epithelial stem cells", "Matricellular proteins"]
-      },
-
-      {
-        "@type": "Thesis",
-        "@id": "http://krishikosh.egranth.ac.in/handle/1/5810146216",
-        "headline": "Identification of cis-regulatory regions regulating the expression of PM19 gene in wheat",
-        "author": { "@id": "https://johanajnabi.com/#johan" },
-        "datePublished": "2019",
-        "publisher": { "@id": "https://johanajnabi.com/#iari" },
-        "url": "http://krishikosh.egranth.ac.in/handle/1/5810146216"
+    {
+      "@type": "Organization",
+      "@id": "https://johanajnabi.com/#instem",
+      "name": "BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem)",
+      "url": "https://instem.res.in/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bengaluru",
+        "addressCountry": "India"
       }
+    },
 
-    ]
-  }
-  </script>
+    {
+      "@type": "Organization",
+      "@id": "https://johanajnabi.com/#iari",
+      "name": "ICAR – Indian Agricultural Research Institute"
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://johanajnabi.com/#johan",
+      "name": "Johan Ajnabi",
+      "url": "https://johanajnabi.com/",
+      "image": "https://johanajnabi.com/assets/profile.jpg",
+      "email": "mailto:johanajnabi@gmail.com",
+      "jobTitle": "PhD Candidate",
+      "description": "PhD researcher studying mechanotransduction, cytoskeletal dynamics, and epigenetic regulation during cutaneous wound repair and skin regeneration.",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ORCID",
+        "value": "0000-0002-9437-9300",
+        "url": "https://orcid.org/0000-0002-9437-9300"
+      },
+      "affiliation": { "@id": "https://johanajnabi.com/#instem" },
+      "alumniOf": { "@id": "https://johanajnabi.com/#iari" },
+      "mainEntityOfPage": { "@id": "https://johanajnabi.com/#homepage" },
+      "knowsAbout": [
+        "Mechanotransduction",
+        "Epigenetic regulation",
+        "Cutaneous wound healing",
+        "Keratinocyte stem cells",
+        "Chromatin remodeling",
+        "Actin cytoskeleton dynamics"
+      ],
+      "sameAs": [
+        "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
+        "https://orcid.org/0000-0002-9437-9300",
+        "https://in.linkedin.com/in/johanajnabi",
+        "https://bsky.app/profile/johanajnabi.bsky.social"
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://johanajnabi.com/#website",
+      "url": "https://johanajnabi.com/",
+      "name": "Johan Ajnabi",
+      "publisher": { "@id": "https://johanajnabi.com/#johan" },
+      "inLanguage": "en"
+    },
+
+    {
+      "@type": "WebPage",
+      "@id": "https://johanajnabi.com/#homepage",
+      "url": "https://johanajnabi.com/",
+      "name": "Johan Ajnabi | Mechanotransduction Research",
+      "isPartOf": { "@id": "https://johanajnabi.com/#website" },
+      "about": { "@id": "https://johanajnabi.com/#johan" },
+      "inLanguage": "en",
+      "dateModified": "2026-02-13"
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://johanajnabi.com/"
+      }]
+    },
+
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.1101/2025.08.24.669246",
+      "headline": "Mindin mediated αM-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness",
+      "author": { "@id": "https://johanajnabi.com/#johan" },
+      "datePublished": "2025-08-24",
+      "identifier": "https://doi.org/10.1101/2025.08.24.669246",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cold Spring Harbor Laboratory"
+      },
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "bioRxiv"
+      },
+      "about": [
+        "Keratinocyte stemness",
+        "Integrin signaling",
+        "STAT3 activation"
+      ]
+    },
+
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.3389/fimmu.2023.1255478",
+      "headline": "Niacinamide enhances cathelicidin mediated SARS-CoV-2 membrane disruption",
+      "author": { "@id": "https://johanajnabi.com/#johan" },
+      "datePublished": "2023",
+      "identifier": "https://doi.org/10.3389/fimmu.2023.1255478",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Frontiers Media SA"
+      },
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "Frontiers in Immunology"
+      },
+      "about": [
+        "Antimicrobial peptides",
+        "SARS-CoV-2",
+        "Innate immunity"
+      ]
+    },
+
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.1016/j.jid.2022.10.011",
+      "headline": "Mindin (SPON2) is essential for cutaneous fibrogenesis in a mouse model of systemic sclerosis",
+      "author": { "@id": "https://johanajnabi.com/#johan" },
+      "datePublished": "2023",
+      "identifier": "https://doi.org/10.1016/j.jid.2022.10.011",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Elsevier"
+      },
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "Journal of Investigative Dermatology"
+      },
+      "about": [
+        "Fibrosis",
+        "Systemic sclerosis",
+        "Skin pathology"
+      ]
+    },
+
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.1016/j.celrep.2022.111390",
+      "headline": "Snail maintains the stem/progenitor state of skin epithelial cells and carcinomas through the autocrine effect of matricellular protein Mindin",
+      "author": { "@id": "https://johanajnabi.com/#johan" },
+      "datePublished": "2022",
+      "identifier": "https://doi.org/10.1016/j.celrep.2022.111390",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cell Press"
+      },
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "Cell Reports"
+      },
+      "about": [
+        "Snail transcription factor",
+        "Epithelial stem cells",
+        "Matricellular proteins"
+      ]
+    },
+
+    {
+      "@type": "Thesis",
+      "@id": "http://krishikosh.egranth.ac.in/handle/1/5810146216",
+      "headline": "Identification of cis-regulatory regions regulating the expression of PM19 gene in wheat",
+      "author": { "@id": "https://johanajnabi.com/#johan" },
+      "datePublished": "2019",
+      "publisher": { "@id": "https://johanajnabi.com/#iari" },
+      "url": "http://krishikosh.egranth.ac.in/handle/1/5810146216"
+    }
+
+  ]
+}
+</script>
 
   <script>
     document.documentElement.classList.add("js");
