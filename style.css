@@ -197,6 +197,7 @@ p a:hover {
 
   background: var(--bg-main);
   padding: 10px 0 14px;
+  margin-bottom: var(--section-gap);
 
   display: flex;
   flex-wrap: wrap;
