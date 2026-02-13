@@ -59,7 +59,7 @@ function linkInlineCitations(text, pubs) {
     return `
       <span class="exp-citation">
         <strong>${journal}${isPreprint ? " (preprint)" : ""}</strong>, ${pub.year}
-        <a href="${pub.link}" target="_blank" rel="noopener">
+        <a href="${pub.link}" target="_blank" rel="noopener noreferrer">
           [${formatCitation(pub.authors, pub.year)}]
         </a>
       </span>
@@ -80,7 +80,7 @@ function renderExperiencePoint(point, pubs) {
         <br>
         <span class="exp-citation">
           <strong>${p.journal}</strong>, ${p.year}
-          <a href="${p.link}" target="_blank" rel="noopener">
+          <a href="${p.link}" target="_blank" rel="noopener noreferrer">
             [${formatCitation(p.authors, p.year)}]
           </a>
         </span>
@@ -131,7 +131,7 @@ const loadText = path => fetch(path).then(r => r.text());
   <div class="profile">
     <img src="assets/profile.jpg"
          alt="Johan Ajnabi"
-         loading="lazy"
+         fetchpriority="high"
          class="profile-photo">
 
     <div class="profile-text">
@@ -146,18 +146,34 @@ const loadText = path => fetch(path).then(r => r.text());
             ${iconMail()}
           </a>` : ``}
 
-        <a href="${profile.links["Google Scholar"]}" target="_blank" aria-label="Google Scholar">
-          ${iconScholar()}
-        </a>
-        <a href="${profile.links["ORCID"]}" target="_blank" aria-label="ORCID">
-          ${iconORCID()}
-        </a>
-        <a href="${profile.links["LinkedIn"]}" target="_blank" aria-label="LinkedIn">
-          ${iconLinkedIn()}
-        </a>
-        <a href="${profile.links["BlueSky"]}" target="_blank" aria-label="BlueSky">
-          ${iconBlueSky()}
-        </a>
+     <a href="${profile.links["Google Scholar"]}"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Google Scholar">
+  ${iconScholar()}
+</a>
+
+<a href="${profile.links["ORCID"]}"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="ORCID">
+  ${iconORCID()}
+</a>
+
+<a href="${profile.links["LinkedIn"]}"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="LinkedIn">
+  ${iconLinkedIn()}
+</a>
+
+<a href="${profile.links["BlueSky"]}"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="BlueSky">
+  ${iconBlueSky()}
+</a>
+
       </div>
     </div>
   </div>
@@ -214,10 +230,11 @@ const loadText = path => fetch(path).then(r => r.text());
       list = list.filter(p => getPubType(p) === currentType);
     }
 
-    list.sort((a, b) =>
-      sortOrder === "desc" ? b.year - a.year : a.year - b.year
-    );
-
+   list.sort((a, b) =>
+  sortOrder === "desc"
+    ? new Date(b.year, 0, 1) - new Date(a.year, 0, 1)
+    : new Date(a.year, 0, 1) - new Date(b.year, 0, 1)
+);
     document.getElementById("publications").innerHTML = `
       <h2>Publications</h2>
 
@@ -247,9 +264,9 @@ const loadText = path => fetch(path).then(r => r.text());
           <br>
           <em>${p.title}</em><br>
           ${p.journal}, ${p.year}
-          <a href="${p.link}" target="_blank">
-            [${formatCitation(p.authors, p.year)}]
-          </a>
+         <a href="${p.link}" target="_blank" rel="noopener noreferrer">
+  [${formatCitation(p.authors, p.year)}]
+</a>
 
           ${(p.summary || p.abstract) ? `
             <br>
