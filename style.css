@@ -389,20 +389,25 @@ p a:hover {
    CONTACT SECTION
 ========================= */
 
-#links ul {
+.contact-list {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
   margin: 0;
 }
 
-#links li {
+.contact-list li {
+  display: flex;
+  gap: 12px;
   margin-bottom: 10px;
   font-size: 15px;
 }
 
-#links li:first-child a {
-  font-weight: 600; /* Emphasize email */
+.contact-label {
+  min-width: 120px;
+  font-weight: 600;
+  color: var(--text-muted);
 }
+
 
 /* =========================
    BACK TO TOP
