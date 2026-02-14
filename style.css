@@ -22,6 +22,30 @@
   /* Vertical rhythm */
   --section-gap: 28px;
 }
+/* =========================
+   HOMEPAGE HERO (PREMIUM)
+========================= */
+
+.home {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(26,92,255,0.04), transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(26,92,255,0.04), transparent 40%),
+    linear-gradient(180deg, #f8faff 0%, #ffffff 60%);
+}
+
+.home-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.home-inner {
+  max-width: 720px;
+  text-align: center;
+}
+
 
 /* =========================
    GLOBAL
@@ -78,6 +102,29 @@ h2 {
   margin: 0 0 12px;
   font-size: 20px;
   letter-spacing: 0.2px;
+}
+/* =========================
+   HOMEPAGE TYPOGRAPHY
+========================= */
+
+.home-title {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+.home-tagline {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.home-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--border-soft);
+  margin: 0 auto 32px;
 }
 
 /* =========================
@@ -609,6 +656,101 @@ p a:hover {
 
   border-top: 1px solid var(--border-soft);
 }
+/* =========================
+   HOMEPAGE BUTTONS
+========================= */
+
+.home-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.home-btn {
+  position: relative;
+  padding: 12px 20px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.home-btn.primary {
+  background: var(--accent);
+  color: white;
+}
+
+.home-btn.secondary {
+  background: var(--bg-pill);
+  color: var(--text-main);
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.home-btn::after {
+  content: "";
+  position: absolute;
+  left: 20%;
+  bottom: 8px;
+  width: 60%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.home-btn:hover::after {
+  transform: scaleX(1);
+}
+
+/* =========================
+   HOMEPAGE TEXT
+========================= */
+
+.home-description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin: 0 auto 16px;
+}
+
+.home-signature {
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   FADE-IN SEQUENCE
+========================= */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* =========================
    MOBILE
