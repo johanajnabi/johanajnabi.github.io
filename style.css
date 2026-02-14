@@ -38,7 +38,8 @@
 .home-nav {
   justify-content: center;
   border-bottom: none;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
 }
 
 body.home {
