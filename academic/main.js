@@ -109,19 +109,20 @@ const loadText = path => fetch(path).then(r => r.text());
   let currentType = "all";
   let sortOrder = "desc";
 
-  const [
-    profile,
-    about,
-    interests,
-    experience,
-    publications
-  ] = await Promise.all([
-   loadJSON("data/profile.json")
-loadText("content/about.md")
-loadJSON("data/interests.json")
-loadJSON("data/experience.json")
-loadJSON("data/publications.json")
-  ]);
+ const [
+  profile,
+  about,
+  interests,
+  experience,
+  publications
+] = await Promise.all([
+  loadJSON("data/profile.json"),
+  loadText("content/about.md"),
+  loadJSON("data/interests.json"),
+  loadJSON("data/experience.json"),
+  loadJSON("data/publications.json")
+]);
+
 
   /* =====================
      PROFILE
