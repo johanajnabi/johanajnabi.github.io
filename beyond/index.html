@@ -1,33 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- =====================
+       CORE META
+  ====================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index, follow">
+
+  <!-- =====================
+       SEO
+  ====================== -->
   <title>Beyond Research | Johan Ajnabi</title>
+
+  <meta name="description"
+        content="Creative pursuits of Johan Ajnabi including piano performance and wildlife photography.">
+
+  <link rel="canonical" href="https://johanajnabi.com/beyond/">
+
+  <!-- =====================
+       OPEN GRAPH
+  ====================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Beyond Research | Johan Ajnabi">
+  <meta property="og:description"
+        content="Piano performance and wildlife photography.">
+  <meta property="og:url" content="https://johanajnabi.com/beyond/">
+  <meta property="og:image"
+        content="https://johanajnabi.com/assets/profile.jpg">
+
   <link rel="stylesheet" href="/style.css">
+
 </head>
+
 <body>
 
-<div class="layout">
+<div class="site-layout">
 
+  <!-- =====================
+       SIDEBAR
+  ====================== -->
   <aside class="sidebar">
-    <h1>Johan Ajnabi</h1>
-    <nav>
-      <a href="/academic/" class="nav-link">Academic</a>
-      <a href="/beyond/" class="nav-link active">Beyond Research</a>
-    </nav>
+    <div class="sidebar-inner">
+      <a href="/academic/" class="sidebar-logo">
+        Johan Ajnabi
+      </a>
+
+      <nav class="sidebar-nav">
+        <a href="/academic/" class="sidebar-link">Academic</a>
+        <a href="/beyond/" class="sidebar-link active">Beyond</a>
+      </nav>
+    </div>
   </aside>
 
+  <!-- =====================
+       MAIN CONTENT
+  ====================== -->
   <main class="content">
+
+    <header style="margin-bottom: 32px;">
+      <h1>Beyond Research</h1>
+      <p style="color: var(--text-muted); max-width: 560px;">
+        Creative disciplines that cultivate attention, structure, and perception —
+        extending inquiry beyond the laboratory.
+      </p>
+    </header>
+
+    <!-- =====================
+         PIANO
+    ====================== -->
     <section>
       <h2>Piano</h2>
-      <p>I perform classical and contemporary piano repertoire with focus on expressive interpretation and technical precision.</p>
+      <p>
+        I perform classical and contemporary repertoire through my channel
+        <strong>Jo's Pianoscope</strong>, exploring interpretative depth,
+        phrasing architecture, and tonal clarity.
+      </p>
+
+      <!-- YouTube Playlist Embed -->
+      <div class="video-embed">
+  <iframe
+    src="https://www.youtube.com/embed/videoseries?list=PLaWJAthnVk-7YN0nSukZZ2ZHeVaY5iyYD"
+    title="Jo's Pianoscope YouTube Playlist"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+
+      <p style="margin-top: 10px;">
+        <a href="https://www.youtube.com/@JosPianoscope"
+           target="_blank" rel="noopener noreferrer">
+          Visit YouTube Channel →
+        </a>
+      </p>
     </section>
 
+    <hr class="section-divider">
+
+    <!-- =====================
+         WILDLIFE PHOTOGRAPHY
+    ====================== -->
     <section>
       <h2>Wildlife Photography</h2>
-      <p>Wildlife photography allows me to explore ecosystems closely and engage with natural environments beyond the laboratory.</p>
+      <p>
+        Through wildlife photography under the handle
+        <strong>@jopxls</strong>, I document ecological textures,
+        animal behaviour, and natural light dynamics.
+      </p>
+
+      <!-- Instagram Embed (Lightweight iframe method) -->
+      <div style="margin-top: 20px;">
+        <iframe
+          src="https://www.instagram.com/jopxls/embed"
+          width="100%"
+          height="600"
+          frameborder="0"
+          scrolling="no"
+          allowtransparency="true">
+        </iframe>
+      </div>
+
+      <p style="margin-top: 10px;">
+        <a href="https://www.instagram.com/jopxls/"
+           target="_blank" rel="noopener noreferrer">
+          View Instagram Profile →
+        </a>
+      </p>
     </section>
+
+    <footer class="site-footer">
+      © 2026 Johan Ajnabi
+    </footer>
+
   </main>
 
 </div>
