@@ -1,3 +1,6 @@
+// Enable JS-enhanced styles
+document.documentElement.classList.add("js");
+
 /* =====================
    UTILITIES
 ====================== */
