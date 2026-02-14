@@ -145,7 +145,7 @@ p a:hover {
   width: 200px;
   flex-shrink: 0;
   position: sticky;
-  top: 40px;
+  top: 36px;
 }
 
 .sidebar-inner {
@@ -203,7 +203,35 @@ p a:hover {
   height: 100%;
   border: 0;
 }
+/* =========================
+   BEYOND PAGE
+========================= */
 
+.page-header {
+  margin-bottom: 32px;
+}
+
+.page-intro {
+  color: var(--text-muted);
+  max-width: 560px;
+}
+
+
+/* Instagram */
+.instagram-embed {
+  margin-top: 20px;
+}
+
+.instagram-embed iframe {
+  width: 100%;
+  height: 600px;
+  border: 0;
+  border-radius: 12px;
+}
+
+.external-link {
+  margin-top: 12px;
+}
 
 /* =========================
    HEADER / PROFILE
@@ -593,13 +621,45 @@ p a:hover {
     --section-gap: 32px;
   }
 
-  body {
-    padding-top: 28px;
+  /* Layout stack */
+  .site-layout {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 16px;
   }
 
+  /* Remove desktop content border */
+  .content {
+    border-left: none;
+    padding-left: 0;
+    max-width: 100%;
+  }
+
+  /* Sidebar becomes top navigation bar */
+  .sidebar {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+
+  .sidebar-inner {
+    gap: 12px;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .sidebar-link {
+    font-size: 15px;
+  }
+
+  /* Profile layout */
   .profile {
     flex-direction: column;
     align-items: flex-start;
+    gap: 16px;
   }
 
   .profile-photo {
@@ -608,21 +668,43 @@ p a:hover {
   }
 
   .profile-links {
-    gap: 16px;
-  }
-     .site-layout {
-    flex-direction: column;
-    gap: 20px;
+    gap: 18px;
   }
 
-  .sidebar {
-    width: 100%;
-    position: relative;
-    top: 0;
+  /* Improve nav pills wrapping */
+  .nav-pills {
+    gap: 8px;
+    padding-bottom: 12px;
   }
 
-  .sidebar-nav {
-    flex-direction: row;
-    gap: 16px;
+  .nav-pills .pill {
+    font-size: 13px;
+    padding: 7px 12px;
   }
+
+  /* Improve typography scaling */
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  /* Video embeds */
+  .video-embed {
+    margin-top: 16px;
+  }
+
+  /* Instagram height adjustment */
+  .instagram-embed iframe {
+    height: 480px;
+  }
+
+  /* Back to top adjustment */
+  .back-to-top {
+    right: 14px;
+    bottom: 18px;
+  }
+
 }
