@@ -116,11 +116,11 @@ const loadText = path => fetch(path).then(r => r.text());
     experience,
     publications
   ] = await Promise.all([
-    loadJSON("data/profile.json"),
-    loadText("content/about.md"),
-    loadJSON("data/interests.json"),
-    loadJSON("data/experience.json"),
-    loadJSON("data/publications.json")
+    loadJSON("academic/data/profile.json"),
+    loadText("academic/content/about.md"),
+    loadJSON("academic/data/interests.json"),
+    loadJSON("academic/data/experience.json"),
+    loadJSON("academic/data/publications.json")
   ]);
 
   /* =====================
