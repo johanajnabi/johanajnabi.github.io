@@ -1,9 +1,9 @@
 /* =====================
    UTILITIES
 ====================== */
-
-function highlightAuthor(authors, regex) {
-  return authors.replace(regex, m => `<strong>${m}</strong>`);
+const NAME_REGEX = /\bAjnabi,\s*J\.?\b|\bJ\.?\s*Ajnabi\b/g;
+function highlightAuthor(authors) {
+  return authors.replace(NAME_REGEX, m => `<strong>${m}</strong>`);
 }
 
 function getPubType(pub) {
@@ -95,8 +95,11 @@ function renderExperiencePoint(point, pubs) {
    DATA LOADERS
 ====================== */
 
-const loadJSON = path => fetch(path).then(r => r.json());
-const loadText = path => fetch(path).then(r => r.text());
+const loadJSON = async path => {
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`Failed to load ${path}`);
+  return res.json();
+};
 
 /* =====================
    MAIN
@@ -104,99 +107,18 @@ const loadText = path => fetch(path).then(r => r.text());
 
 (async function () {
 
-  const NAME_REGEX = /\bAjnabi,\s*J\.?\b|\bJ\.?\s*Ajnabi\b/g;
 
   let currentType = "all";
   let sortOrder = "desc";
 
  const [
-  profile,
-  about,
-  interests,
   experience,
   publications
 ] = await Promise.all([
-  loadJSON("data/profile.json"),
-  loadText("content/about.md"),
-  loadJSON("data/interests.json"),
   loadJSON("data/experience.json"),
   loadJSON("data/publications.json")
 ]);
 
-
-  /* =====================
-     PROFILE
-  ====================== */
-
-  document.getElementById("profile").innerHTML = `
-  <div class="profile">
-    <img src="/assets/profile.jpg"
-         alt="Johan Ajnabi"
-         fetchpriority="high"
-         class="profile-photo">
-
-    <div class="profile-text">
-      <h1>${profile.name}</h1>
-      <div class="subtitle">${profile.title}</div>
-      <div class="subtitle">${profile.focus}</div>
-      <div class="subtitle">${profile.affiliation.join("<br>")}</div>
-
-      <div class="profile-links">
-        ${profile.email ? `
-          <a href="mailto:${profile.email}" aria-label="Email">
-            ${iconMail()}
-          </a>` : ``}
-
-     <a href="${profile.links["Google Scholar"]}"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Google Scholar">
-  ${iconScholar()}
-</a>
-
-<a href="${profile.links["ORCID"]}"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="ORCID">
-  ${iconORCID()}
-</a>
-
-<a href="${profile.links["LinkedIn"]}"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="LinkedIn">
-  ${iconLinkedIn()}
-</a>
-
-<a href="${profile.links["BlueSky"]}"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="BlueSky">
-  ${iconBlueSky()}
-</a>
-
-      </div>
-    </div>
-  </div>
-`;
-
-  /* =====================
-     ABOUT
-  ====================== */
-
-  document.getElementById("about").innerHTML = `
-    <h2>About</h2>
-    <p>${about.replace(/\n\n/g, "</p><p>")}</p>
-  `;
-
-  /* =====================
-     INTERESTS
-  ====================== */
-
-  document.getElementById("interests").innerHTML = `
-    <h2>Research Interests</h2>
-    <ul>${interests.map(i => `<li>${i}</li>`).join("")}</ul>
-  `;
 
   /* =====================
      EXPERIENCE
@@ -260,7 +182,7 @@ const loadText = path => fetch(path).then(r => r.text());
 
       ${list.map((p, i) => `
         <div class="pub">
-          ${highlightAuthor(p.authors, NAME_REGEX)}
+          ${highlightAuthor(p.authors)}
           ${isFirstAuthor(p.authors) ? `<span class="first-author">★ First author</span>` : ``}
           <br>
           <em>${p.title}</em><br>
@@ -346,23 +268,3 @@ const loadText = path => fetch(path).then(r => r.text());
   );
 
 })();
-
-/* =====================
-   INLINE SVG ICONS
-====================== */
-
-function iconMail() {
-  return `<svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 6 8-6"/></svg>`;
-}
-function iconScholar() {
-  return `<svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M5 13v4c0 1.5 3 3 7 3s7-1.5 7-3v-4"/></svg>`;
-}
-function iconORCID() {
-  return `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 8v8M13 8h2a3 3 0 010 6h-2z"/></svg>`;
-}
-function iconLinkedIn() {
-  return `<svg viewBox="0 0 24 24"><path d="M6 9v9M6 6v.01M10 9v9M10 13c0-4 6-4 6 0v5"/></svg>`;
-}
-function iconBlueSky() {
-  return `<svg viewBox="0 0 24 24"><path d="M12 12c-2-4-6-6-8-7 0 7 4 10 8 12 4-2 8-5 8-12-2 1-6 3-8 7z"/></svg>`;
-}
