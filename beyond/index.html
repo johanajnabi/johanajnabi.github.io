@@ -13,6 +13,21 @@
   <meta name="robots" content="index, follow">
 
   <!-- =====================
+       CONTENT SECURITY POLICY
+  ====================== -->
+  <meta http-equiv="Content-Security-Policy"
+        content="
+          default-src 'self';
+          img-src 'self' https: data:;
+          script-src 'self';
+          style-src 'self' 'unsafe-inline';
+          connect-src 'self';
+          font-src 'self' https:;
+          frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.instagram.com;
+          object-src 'none';
+        ">
+
+  <!-- =====================
        SEO
   ====================== -->
   <title>Beyond Research | Johan Ajnabi</title>
@@ -62,9 +77,12 @@
   ====================== -->
   <main class="content">
 
-    <header style="margin-bottom: 32px;">
+    <!-- =====================
+         PAGE HEADER
+    ====================== -->
+    <header class="page-header">
       <h1>Beyond Research</h1>
-      <p style="color: var(--text-muted); max-width: 560px;">
+      <p class="page-intro">
         Creative disciplines that cultivate attention, structure, and perception —
         extending inquiry beyond the laboratory.
       </p>
@@ -81,19 +99,22 @@
         phrasing architecture, and tonal clarity.
       </p>
 
-      <!-- YouTube Playlist Embed -->
+      <!-- Responsive YouTube Playlist Embed -->
       <div class="video-embed">
-  <iframe
-    src="https://www.youtube.com/embed/videoseries?list=PLaWJAthnVk-7YN0nSukZZ2ZHeVaY5iyYD"
-    title="Jo's Pianoscope YouTube Playlist"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-</div>
+        <iframe
+          src="https://www.youtube.com/embed/videoseries?list=PLaWJAthnVk-7YN0nSukZZ2ZHeVaY5iyYD"
+          title="Jo's Pianoscope YouTube Playlist"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
 
-      <p style="margin-top: 10px;">
+      <p class="external-link">
         <a href="https://www.youtube.com/@JosPianoscope"
-           target="_blank" rel="noopener noreferrer">
+           target="_blank"
+           rel="noopener noreferrer">
           Visit YouTube Channel →
         </a>
       </p>
@@ -112,21 +133,20 @@
         animal behaviour, and natural light dynamics.
       </p>
 
-      <!-- Instagram Embed (Lightweight iframe method) -->
-      <div style="margin-top: 20px;">
+      <!-- Instagram Embed -->
+      <div class="instagram-embed">
         <iframe
           src="https://www.instagram.com/jopxls/embed"
-          width="100%"
-          height="600"
-          frameborder="0"
-          scrolling="no"
-          allowtransparency="true">
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          scrolling="no">
         </iframe>
       </div>
 
-      <p style="margin-top: 10px;">
+      <p class="external-link">
         <a href="https://www.instagram.com/jopxls/"
-           target="_blank" rel="noopener noreferrer">
+           target="_blank"
+           rel="noopener noreferrer">
           View Instagram Profile →
         </a>
       </p>
