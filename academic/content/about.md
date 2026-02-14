@@ -1,1 +1,0 @@
-I am a life science researcher working at the interface of mechanobiology, cell biology, and epigenetics. My research examines how mechanical cues at wounds regulate cytoskeletal dynamics and epigenetic programs to control epidermal cell-state transitions during tissue repair and regeneration.
