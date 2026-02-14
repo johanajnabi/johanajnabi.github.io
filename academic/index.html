@@ -284,69 +284,52 @@
 
   <!-- =====================
        HEADER / PROFILE
-       (JS-enhanced, fallback-safe)
   ====================== -->
   <header id="profile" class="profile">
 
-    <!-- Fallback content (replaced by main.js) -->
+    <img src="/assets/profile.jpg"
+         alt="Johan Ajnabi"
+         fetchpriority="high"
+         class="profile-photo">
+
     <div class="profile-text">
       <h1>Johan Ajnabi</h1>
+
+      <div class="subtitle">PhD Candidate</div>
+      <div class="subtitle">Wound Healing · Mechanobiology · Epigenetics</div>
       <div class="subtitle">
-        PhD Research Scholar<br>
-        BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem),
-        Bengaluru, India
+        Prof. Colin Jamora Laboratory<br>
+        BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem), India
       </div>
 
-      <!-- Minimal icon links -->
       <div class="profile-links" aria-label="Profile links">
 
         <a href="mailto:johanajnabi@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-            <path d="M3 7l9 6 9-6"></path>
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 6l8 6 8-6"/></svg>
         </a>
 
         <a href="https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en"
-           target="_blank" rel="noopener" aria-label="Google Scholar">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 3l9 6-9 6-9-6z"></path>
-            <path d="M6 12v4c0 2 3 4 6 4s6-2 6-4v-4"></path>
-          </svg>
+           target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+          <svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M5 13v4c0 1.5 3 3 7 3s7-1.5 7-3v-4"/></svg>
         </a>
 
         <a href="https://orcid.org/0000-0002-9437-9300"
-           target="_blank" rel="noopener" aria-label="ORCID">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"></circle>
-            <path d="M9 7v10"></path>
-            <path d="M13 7c3 0 4 2 4 5s-1 5-4 5"></path>
-          </svg>
+           target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 8v8M13 8h2a3 3 0 010 6h-2z"/></svg>
         </a>
 
         <a href="https://in.linkedin.com/in/johanajnabi"
-           target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="4" cy="4" r="2"></circle>
-            <path d="M3 8h2v13H3z"></path>
-            <path d="M9 8h2v2c.4-.9 1.6-2 3.6-2
-                     3 0 4.4 1.9 4.4 5.4V21h-2v-7
-                     c0-2-.7-3.4-2.6-3.4S11 12 11 14v7H9z"></path>
-          </svg>
+           target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M6 9v9M6 6v.01M10 9v9M10 13c0-4 6-4 6 0v5"/></svg>
         </a>
 
         <a href="https://bsky.app/profile/johanajnabi.bsky.social"
-           target="_blank" rel="noopener" aria-label="BlueSky">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M6 4c3 0 6 4 6 4s3-4 6-4
-                     c2 0 3 2 3 4 0 5-9 12-9 12
-                     S3 13 3 8c0-2 1-4 3-4z"></path>
-          </svg>
+           target="_blank" rel="noopener noreferrer" aria-label="BlueSky">
+          <svg viewBox="0 0 24 24"><path d="M12 12c-2-4-6-6-8-7 0 7 4 10 8 12 4-2 8-5 8-12-2 1-6 3-8 7z"/></svg>
         </a>
 
       </div>
     </div>
-
   </header>
 
   <!-- =====================
@@ -358,7 +341,7 @@
     <a href="#experience" class="pill">Experience</a>
     <a href="#publications" class="pill">Publications</a>
     <a href="#links" class="pill">Contact</a>
-    <a href="assets/JA_CV2026.pdf" class="pill" target="_blank" rel="noopener">
+    <a href="/assets/JA_CV2026.pdf" class="pill" target="_blank" rel="noopener noreferrer">
       CV
     </a>
   </nav>
@@ -369,9 +352,10 @@
   <section id="about">
     <h2>About</h2>
     <p>
-      I study how mechanical cues and epigenetic regulation coordinate cell-state
-      transitions during cutaneous wound repair, with a focus on epidermal
-      keratinocytes and tissue regeneration.
+      I am a life science researcher working at the interface of mechanobiology,
+      cell biology, and epigenetics. My research examines how mechanical cues at
+      wounds regulate cytoskeletal dynamics and epigenetic programs to control
+      epidermal cell-state transitions during tissue repair and regeneration.
     </p>
   </section>
 
@@ -382,164 +366,138 @@
     <h2>Research Interests</h2>
     <ul>
       <li>Cutaneous wound healing</li>
-      <li>Mechanotransduction and cytoskeletal dynamics</li>
-      <li>Epigenetic regulation of cell-state transitions</li>
-      <li>Skin stem cell biology and regeneration</li>
+      <li>Regeneration</li>
+      <li>Mechanobiology</li>
+      <li>Cellular signaling</li>
+      <li>Actin cytoskeleton dynamics</li>
+      <li>Epigenetic regulation</li>
     </ul>
   </section>
 
   <hr class="section-divider">
 
   <!-- =====================
-       EXPERIENCE
+       EXPERIENCE (Dynamic)
   ====================== -->
   <section id="experience">
     <h2>Research Experience</h2>
     <p class="fallback-only">
-      Loading detailed experience…
+      Detailed experience is loading…
     </p>
   </section>
 
   <hr class="section-divider">
 
   <!-- =====================
-       PUBLICATIONS
+       PUBLICATIONS (Dynamic)
   ====================== -->
   <section id="publications">
     <h2>Publications</h2>
     <p class="fallback-only">
       Interactive publication list loading.
       <br>
-      Full list available in <a href="assets/JA_CV2026.pdf">CV (PDF)</a>.
+      Full list available in <a href="/assets/JA_CV2026.pdf">CV (PDF)</a>.
     </p>
   </section>
 
   <hr class="section-divider">
 
- <!-- =====================
-     CONTACT
-====================== -->
-<section id="links">
-  <h2>Contact</h2>
+  <!-- =====================
+       CONTACT
+  ====================== -->
+  <section id="links">
+    <h2>Contact</h2>
 
-  <ul class="contact-list">
+    <ul class="contact-list">
 
-    <li>
-      <a href="mailto:johanajnabi@gmail.com" aria-label="Email">
-        <span class="contact-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M4 6h16v12H4z"/>
-            <path d="M4 6l8 6 8-6"/>
-          </svg>
-        </span>
-        <span class="contact-text">
-          <strong>Email</strong>
-          <span>johanajnabi@gmail.com</span>
-        </span>
-      </a>
-    </li>
+      <li>
+        <a href="mailto:johanajnabi@gmail.com" aria-label="Email">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 6h16v12H4z"/>
+              <path d="M4 6l8 6 8-6"/>
+            </svg>
+          </span>
+          <span class="contact-text">
+            <strong>Email</strong>
+            <span>johanajnabi@gmail.com</span>
+          </span>
+        </a>
+      </li>
 
-    <li>
-      <a href="https://orcid.org/0000-0002-9437-9300"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="ORCID">
-        <span class="contact-icon">
-          <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9"/>
-            <circle cx="9" cy="9" r="1.3" fill="currentColor"/>
-            <path d="M9 12v4M12 10h2a3 3 0 010 6h-2z"/>
-          </svg>
-        </span>
-        <span class="contact-text">
-          <strong>ORCID</strong>
-          <span>0000-0002-9437-9300</span>
-        </span>
-      </a>
-    </li>
+      <li>
+        <a href="https://orcid.org/0000-0002-9437-9300"
+           target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M9 8v8M13 8h2a3 3 0 010 6h-2z"/>
+            </svg>
+          </span>
+          <span class="contact-text">
+            <strong>ORCID</strong>
+            <span>0000-0002-9437-9300</span>
+          </span>
+        </a>
+      </li>
 
-    <li>
-      <a href="https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="Google Scholar">
-        <span class="contact-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 3l9 5-9 5-9-5z"/>
-            <path d="M5 13v4c0 1.5 3 3 7 3s7-1.5 7-3v-4"/>
-          </svg>
-        </span>
-        <span class="contact-text">
-          <strong>Google Scholar</strong>
-          <span>View Publications</span>
-        </span>
-      </a>
-    </li>
+      <li>
+        <a href="https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en"
+           target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3l9 5-9 5-9-5z"/>
+              <path d="M5 13v4c0 1.5 3 3 7 3s7-1.5 7-3v-4"/>
+            </svg>
+          </span>
+          <span class="contact-text">
+            <strong>Google Scholar</strong>
+            <span>View publications</span>
+          </span>
+        </a>
+      </li>
 
-    <li>
-      <a href="https://in.linkedin.com/in/johanajnabi"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="LinkedIn">
-        <span class="contact-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M6 9v9M6 6v.01M10 9v9M10 13c0-4 6-4 6 0v5"/>
-          </svg>
-        </span>
-        <span class="contact-text">
-          <strong>LinkedIn</strong>
-          <span>Professional Profile</span>
-        </span>
-      </a>
-    </li>
+      <li>
+        <a href="https://in.linkedin.com/in/johanajnabi"
+           target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M6 9v9M6 6v.01M10 9v9M10 13c0-4 6-4 6 0v5"/>
+            </svg>
+          </span>
+          <span class="contact-text">
+            <strong>LinkedIn</strong>
+            <span>Professional profile</span>
+          </span>
+        </a>
+      </li>
 
-    <li>
-      <a href="https://bsky.app/profile/johanajnabi.bsky.social"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="BlueSky">
-        <span class="contact-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 12c-2-4-6-6-8-7 0 7 4 10 8 12 4-2 8-5 8-12-2 1-6 3-8 7z"/>
-          </svg>
-        </span>
-        <span class="contact-text">
-          <strong>BlueSky</strong>
-          <span>@johanajnabi</span>
-        </span>
-      </a>
-    </li>
+      <li>
+        <a href="https://bsky.app/profile/johanajnabi.bsky.social"
+           target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 12c-2-4-6-6-8-7 0 7 4 10 8 12 4-2 8-5 8-12-2 1-6 3-8 7z"/>
+            </svg>
+          </span>
+          <span class="contact-text">
+            <strong>BlueSky</strong>
+            <span>@johanajnabi</span>
+          </span>
+        </a>
+      </li>
 
-  </ul>
-</section>
+    </ul>
+  </section>
 
   <footer class="site-footer">
-  © 2026 Johan Ajnabi · Last updated February 2026
-</footer>
+    © 2026 Johan Ajnabi · Last updated February 2026
+  </footer>
 
 </main>
 
-<!-- =====================
-     NO-JS NOTICE
-====================== -->
-<noscript>
-  <div style="max-width:760px;margin:40px auto;font-family:system-ui;">
-    <p><strong>Note:</strong> This website uses JavaScript for interactive features.</p>
-    <p>
-      A simplified version is shown.
-      You can download my <a href="assets/JA_CV2026.pdf">CV here</a>.
-    </p>
-  </div>
-</noscript>
-
-<!-- =====================
-     MAIN SCRIPT
-====================== -->
 <script src="/academic/main.js" defer></script>
 
-<!-- =====================
-     BACK TO TOP
-====================== -->
 <a href="#profile" id="back-to-top" class="pill back-to-top" aria-label="Back to top">
   ↑ Top
 </a>
