@@ -1,12 +1,8 @@
-/* =========================
-   GLOBAL SITE JS (PRO)
-========================= */
+/* =========================================
+   GLOBAL SITE JS (PRODUCTION SAFE)
+========================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-
-  /* =====================
-     ELEMENT REFERENCES
-  ====================== */
 
   const body = document.body;
   const toggle = document.querySelector(".menu-toggle");
@@ -14,17 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.getElementById("menuOverlay");
   const backToTop = document.getElementById("back-to-top");
 
-  /* =====================
-     SAFE GUARD
-  ====================== */
-
-  const hasMobileMenu = toggle && menu && overlay;
-
-  /* =====================
+  /* =========================================
      MOBILE MENU SYSTEM
-  ====================== */
+  ========================================= */
 
-  if (hasMobileMenu) {
+  if (toggle && menu && overlay) {
+
+    // Accessibility baseline
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-controls", "mobileMenu");
 
     const openMenu = () => {
       menu.classList.add("open");
@@ -41,47 +35,50 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const toggleMenu = () => {
-      const isOpen = menu.classList.contains("open");
-      isOpen ? closeMenu() : openMenu();
+      menu.classList.contains("open")
+        ? closeMenu()
+        : openMenu();
     };
 
-    /* Click hamburger */
+    /* Hamburger click */
     toggle.addEventListener("click", toggleMenu);
 
-    /* Click overlay */
+    /* Overlay click */
     overlay.addEventListener("click", closeMenu);
 
-    /* Click any link inside menu */
+    /* Close on link click */
     menu.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", closeMenu);
     });
 
-    /* Close with ESC key */
-    document.addEventListener("keydown", (e) => {
+    /* ESC key */
+    document.addEventListener("keydown", e => {
       if (e.key === "Escape") closeMenu();
     });
 
-    /* Auto-reset if resizing to desktop */
+    /* Auto close if resizing to desktop */
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 600) {
-        closeMenu();
-      }
+      if (window.innerWidth > 600) closeMenu();
     });
+
+  } else {
+    console.warn("Mobile menu elements not found on this page.");
   }
 
-  /* =====================
-     BACK TO TOP BUTTON
-  ====================== */
+  /* =========================================
+     BACK TO TOP
+  ========================================= */
 
   if (backToTop) {
     window.addEventListener("scroll", () => {
-      backToTop.classList.toggle("visible", window.scrollY > 400);
+      const show = window.scrollY > 400;
+      backToTop.classList.toggle("visible", show);
     });
   }
 
-  /* =====================
-     SECTION FADE-IN
-  ====================== */
+  /* =========================================
+     FADE IN SECTIONS
+  ========================================= */
 
   if ("IntersectionObserver" in window) {
 
@@ -90,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // performance boost
           }
         });
       },
