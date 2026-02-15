@@ -245,73 +245,73 @@ p a {
 p a:hover {
   text-decoration-color: var(--accent);
 }
-
 /* =========================
-   SITE LAYOUT (SIDEBAR)
+   CONTENT LAYOUT (NO SIDEBAR)
 ========================= */
-
-.site-layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 48px;
-
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 36px 20px;
-}
 
 .content {
-  flex: 1;
   max-width: 760px;
-  border-left: 1px solid var(--border-soft);
-  padding-left: 40px;
+  margin: 48px auto;
+  padding: 0 20px;
 }
-
 /* =========================
-   SIDEBAR
+   TOP NAVIGATION
 ========================= */
 
-.sidebar {
-  width: 200px;
-  flex-shrink: 0;
+.top-nav {
   position: sticky;
-  top: 36px;
+  top: 0;
+  z-index: 30;
+
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-soft);
 }
 
-.sidebar-inner {
+.top-nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 20px;
+
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.sidebar-logo {
+.brand {
   font-weight: 600;
   font-size: 16px;
   color: var(--text-main);
   text-decoration: none;
 }
 
-.sidebar-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.brand:hover {
+  color: var(--accent);
 }
 
-.sidebar-link {
+.top-links {
+  display: flex;
+  gap: 28px;
+}
+
+.top-links a {
   font-size: 14px;
   color: var(--text-muted);
   text-decoration: none;
+  padding-bottom: 4px;
   transition: color 0.15s ease;
 }
 
-.sidebar-link:hover {
+.top-links a:hover {
   color: var(--accent);
 }
 
-.sidebar-link.active {
+.top-links a.active {
   color: var(--accent);
   font-weight: 600;
 }
+
+
 /* =========================
    VIDEO EMBED (RESPONSIVE)
 ========================= */
@@ -838,56 +838,116 @@ p a:hover {
 
 
 /* =========================
-   MOBILE
+   MOBILE (UPGRADED)
 ========================= */
 
 @media (max-width: 600px) {
 
   :root {
-    --nav-height: 112px;
+    --nav-height: 72px;
     --section-gap: 32px;
   }
 
-.home-photo {
-  width: 110px;
-  height: 110px;
-}
+  /* =====================
+     TOP NAV MOBILE
+  ====================== */
 
-  /* Layout stack */
-  .site-layout {
-    flex-direction: column;
-    gap: 24px;
-    padding: 24px 16px;
+  .top-nav-inner {
+    padding: 14px 16px;
   }
 
-  /* Remove desktop content border */
+  /* Hide desktop links */
+  .top-links {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-main);
+    z-index: 60;
+  }
+
+  /* =====================
+     MOBILE SLIDE MENU
+  ====================== */
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 260px;
+    height: 100vh;
+
+    background: #ffffff;
+    border-left: 1px solid var(--border-soft);
+    box-shadow: -10px 0 40px rgba(0,0,0,0.08);
+
+    padding: 90px 24px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    transition: right 0.35s cubic-bezier(.4,.0,.2,1);
+    z-index: 55;
+  }
+
+  .mobile-menu.open {
+    right: 0;
+  }
+
+  .mobile-menu a {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.15s ease;
+  }
+
+  .mobile-menu a:hover {
+    color: var(--accent);
+    transform: translateX(4px);
+  }
+
+  /* =====================
+     DARK OVERLAY
+  ====================== */
+
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    z-index: 50;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* =====================
+     CONTENT LAYOUT
+  ====================== */
+
   .content {
-    border-left: none;
-    padding-left: 0;
+    margin: 32px auto;
+    padding: 0 16px;
     max-width: 100%;
   }
 
-  /* Sidebar becomes top navigation bar */
-  .sidebar {
-    width: 100%;
-    position: relative;
-    top: 0;
-  }
+  /* =====================
+     PROFILE STACK
+  ====================== */
 
-  .sidebar-inner {
-    gap: 12px;
-  }
-
-  .sidebar-nav {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .sidebar-link {
-    font-size: 15px;
-  }
-
-  /* Profile layout */
   .profile {
     flex-direction: column;
     align-items: flex-start;
@@ -903,7 +963,10 @@ p a:hover {
     gap: 18px;
   }
 
-  /* Improve nav pills wrapping */
+  /* =====================
+     NAV PILLS
+  ====================== */
+
   .nav-pills {
     gap: 8px;
     padding-bottom: 12px;
@@ -914,7 +977,10 @@ p a:hover {
     padding: 7px 12px;
   }
 
-  /* Improve typography scaling */
+  /* =====================
+     TYPOGRAPHY
+  ====================== */
+
   h1 {
     font-size: 26px;
   }
@@ -923,23 +989,36 @@ p a:hover {
     font-size: 18px;
   }
 
-  /* Video embeds */
+  /* =====================
+     MEDIA EMBEDS
+  ====================== */
+
   .video-embed {
     margin-top: 16px;
   }
 
-  /* Instagram height adjustment */
   .instagram-embed iframe {
     height: 480px;
   }
 
-   /* Back to top adjustment */
+  /* =====================
+     BACK TO TOP
+  ====================== */
+
   .back-to-top {
     right: 14px;
     bottom: 18px;
   }
 
-  /* Homepage hero mobile refinement */
+  /* =====================
+     HOMEPAGE HERO
+  ====================== */
+
+  .home-photo {
+    width: 110px;
+    height: 110px;
+  }
+
   .home-inner {
     padding: 48px 24px;
     border-radius: 16px;
