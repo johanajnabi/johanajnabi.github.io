@@ -187,49 +187,73 @@ p a:hover {
 }
 
 /* =========================
-   NAVIGATION (PILLS)
+   NAVIGATION (PILLS) – PRO
 ========================= */
 
+/* Container */
 .nav-pills {
   position: sticky;
-  top: 0;
-  z-index: 10;
-
-  background: var(--bg-main);
-  padding: 10px 0 14px;
-  margin-bottom: var(--section-gap);
+  top: var(--nav-height);
+  z-index: 15;
 
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 
+  padding: 12px 0 16px;
+  margin-bottom: var(--section-gap);
+
+  background: var(--bg-main);
   border-bottom: 1px solid var(--border-soft);
 }
 
+/* Remove sticky behavior on homepage */
+body.home .nav-pills {
+  position: static;
+  top: auto;
+  border-bottom: none;
+}
+
+/* Individual pill */
 .nav-pills .pill {
-  padding: 8px 14px;
-  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 16px;
+  border-radius: 999px;
 
   background: var(--bg-pill);
   color: var(--text-main);
 
   font-size: 14px;
   font-weight: 500;
+  letter-spacing: 0.2px;
 
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
 }
 
+/* Hover */
 .nav-pills .pill:hover {
-  background: var(--bg-pill);
-  color: #4da3ff;   /* light blue text */
-  transform: translateY(-1px);
-}
-
-.nav-pills .pill.active {
   background: var(--accent-soft);
-  font-weight: 600;
+  color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
 }
 
+/* Active state */
+.nav-pills .pill.active {
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(26,92,255,0.25);
+}
+
+/* Focus accessibility */
 .nav-pills .pill:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
