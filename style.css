@@ -15,7 +15,7 @@
 
   --bg-main: #ffffff;
   --bg-pill: #e6e6e6;
-  --bg-pill-hover: #d4d4d4;
+  --bg-pill-hover: var(--accent);
 
   --border-soft: #e5e5e5;
 
@@ -467,11 +467,13 @@ p a:hover {
 
 .nav-pills .pill:hover {
   background: var(--bg-pill-hover);
+  color: white;
   transform: translateY(-1px);
 }
 
 .nav-pills .pill.active {
-  background: var(--accent-soft);
+  background: var(--accent);
+  color: white;
   font-weight: 600;
 }
 
