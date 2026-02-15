@@ -10,539 +10,182 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light dark">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-
-  <!-- =====================
-       CONTENT SECURITY POLICY
-  ====================== -->
-  <meta http-equiv="Content-Security-Policy"
-        content="
-          default-src 'self';
-          img-src 'self' https: data:;
-          script-src 'self';
-          style-src 'self' 'unsafe-inline';
-          connect-src 'self';
-          font-src 'self' https:;
-          frame-src https:;
-          object-src 'none';
-        ">
+  <meta name="robots" content="index, follow">
 
   <!-- =====================
        SEO
   ====================== -->
-  <title>Johan Ajnabi | Mechanotransduction & Epigenetic Regulation in Skin Biology</title>
+  <title>Johan Ajnabi</title>
 
   <meta name="description"
-        content="Johan Ajnabi is a PhD researcher at inStem studying mechanotransduction, cytoskeletal dynamics, epigenetic regulation, and epidermal wound repair in skin biology.">
+        content="Johan Ajnabi — PhD candidate studying mechanobiology and epigenetic regulation in skin biology. Pianist and wildlife photographer.">
 
   <link rel="canonical" href="https://johanajnabi.com/">
-  <link rel="alternate" hreflang="en" href="https://johanajnabi.com/">
 
-  <!-- =====================
-       PERFORMANCE
-  ====================== -->
-  <link rel="preload"
-        as="image"
-        href="https://johanajnabi.com/assets/profile.jpg"
-        fetchpriority="high">
-
-  <!-- =====================
-       OPEN GRAPH
-  ====================== -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Johan Ajnabi">
-  <meta property="og:title"
-        content="Johan Ajnabi | Mechanotransduction & Epigenetic Regulation Research">
+  <meta property="og:title" content="Johan Ajnabi">
   <meta property="og:description"
-        content="Research on mechanotransduction, chromatin regulation, keratinocyte biology, and skin regeneration.">
+        content="Mechanobiology · Epigenetics · Creative Discipline">
   <meta property="og:url" content="https://johanajnabi.com/">
   <meta property="og:image"
-        content="https://johanajnabi.com/assets/profile.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+        content="https://johanajnabi.com/assets/profile.webp">
 
-  <!-- =====================
-       TWITTER
-  ====================== -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title"
-        content="Johan Ajnabi | Mechanotransduction Research">
-  <meta name="twitter:description"
-        content="PhD researcher investigating mechanical signaling and epigenetic regulation during cutaneous wound repair.">
-  <meta name="twitter:image"
-        content="https://johanajnabi.com/assets/profile.jpg">
-  <meta name="twitter:creator" content="@jo_ajnabi">
-
-  <!-- =====================
-       ICON + STYLES
-  ====================== -->
-  <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="stylesheet" href="/style.css">
-
- <!-- =====================
-     STRUCTURED DATA
-====================== -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-
-    {
-      "@type": "Organization",
-      "@id": "https://johanajnabi.com/#instem",
-      "name": "BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem)",
-      "url": "https://instem.res.in/",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bengaluru",
-        "addressCountry": "India"
-      }
-    },
-
-    {
-      "@type": "Organization",
-      "@id": "https://johanajnabi.com/#iari",
-      "name": "ICAR – Indian Agricultural Research Institute"
-    },
-
-    {
-      "@type": "Person",
-      "@id": "https://johanajnabi.com/#johan",
-      "name": "Johan Ajnabi",
-      "url": "https://johanajnabi.com/",
-      "image": "https://johanajnabi.com/assets/profile.jpg",
-      "email": "mailto:johanajnabi@gmail.com",
-      "jobTitle": "PhD Candidate",
-      "description": "PhD researcher studying mechanotransduction, cytoskeletal dynamics, and epigenetic regulation during cutaneous wound repair and skin regeneration.",
-      "identifier": {
-        "@type": "PropertyValue",
-        "propertyID": "ORCID",
-        "value": "0000-0002-9437-9300",
-        "url": "https://orcid.org/0000-0002-9437-9300"
-      },
-      "affiliation": { "@id": "https://johanajnabi.com/#instem" },
-      "alumniOf": { "@id": "https://johanajnabi.com/#iari" },
-      "mainEntityOfPage": { "@id": "https://johanajnabi.com/#homepage" },
-      "knowsAbout": [
-        "Mechanotransduction",
-        "Epigenetic regulation",
-        "Cutaneous wound healing",
-        "Keratinocyte stem cells",
-        "Chromatin remodeling",
-        "Actin cytoskeleton dynamics"
-      ],
-      "sameAs": [
-        "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
-        "https://orcid.org/0000-0002-9437-9300",
-        "https://in.linkedin.com/in/johanajnabi",
-        "https://bsky.app/profile/johanajnabi.bsky.social"
-      ]
-    },
-
-    {
-      "@type": "WebSite",
-      "@id": "https://johanajnabi.com/#website",
-      "url": "https://johanajnabi.com/",
-      "name": "Johan Ajnabi",
-      "publisher": { "@id": "https://johanajnabi.com/#johan" },
-      "inLanguage": "en"
-    },
-
-    {
-      "@type": "WebPage",
-      "@id": "https://johanajnabi.com/#homepage",
-      "url": "https://johanajnabi.com/",
-      "name": "Johan Ajnabi | Mechanotransduction Research",
-      "isPartOf": { "@id": "https://johanajnabi.com/#website" },
-      "about": { "@id": "https://johanajnabi.com/#johan" },
-      "inLanguage": "en",
-      "dateModified": "2026-02-13"
-    },
-
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://johanajnabi.com/"
-      }]
-    },
-
-    {
-      "@type": "ScholarlyArticle",
-      "@id": "https://doi.org/10.1101/2025.08.24.669246",
-      "headline": "Mindin mediated αM-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness",
-      "author": { "@id": "https://johanajnabi.com/#johan" },
-      "datePublished": "2025-08-24",
-      "identifier": "https://doi.org/10.1101/2025.08.24.669246",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Cold Spring Harbor Laboratory"
-      },
-      "isPartOf": {
-        "@type": "Periodical",
-        "name": "bioRxiv"
-      },
-      "about": [
-        "Keratinocyte stemness",
-        "Integrin signaling",
-        "STAT3 activation"
-      ]
-    },
-
-    {
-      "@type": "ScholarlyArticle",
-      "@id": "https://doi.org/10.3389/fimmu.2023.1255478",
-      "headline": "Niacinamide enhances cathelicidin mediated SARS-CoV-2 membrane disruption",
-      "author": { "@id": "https://johanajnabi.com/#johan" },
-      "datePublished": "2023",
-      "identifier": "https://doi.org/10.3389/fimmu.2023.1255478",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Frontiers Media SA"
-      },
-      "isPartOf": {
-        "@type": "Periodical",
-        "name": "Frontiers in Immunology"
-      },
-      "about": [
-        "Antimicrobial peptides",
-        "SARS-CoV-2",
-        "Innate immunity"
-      ]
-    },
-
-    {
-      "@type": "ScholarlyArticle",
-      "@id": "https://doi.org/10.1016/j.jid.2022.10.011",
-      "headline": "Mindin (SPON2) is essential for cutaneous fibrogenesis in a mouse model of systemic sclerosis",
-      "author": { "@id": "https://johanajnabi.com/#johan" },
-      "datePublished": "2023",
-      "identifier": "https://doi.org/10.1016/j.jid.2022.10.011",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Elsevier"
-      },
-      "isPartOf": {
-        "@type": "Periodical",
-        "name": "Journal of Investigative Dermatology"
-      },
-      "about": [
-        "Fibrosis",
-        "Systemic sclerosis",
-        "Skin pathology"
-      ]
-    },
-
-    {
-      "@type": "ScholarlyArticle",
-      "@id": "https://doi.org/10.1016/j.celrep.2022.111390",
-      "headline": "Snail maintains the stem/progenitor state of skin epithelial cells and carcinomas through the autocrine effect of matricellular protein Mindin",
-      "author": { "@id": "https://johanajnabi.com/#johan" },
-      "datePublished": "2022",
-      "identifier": "https://doi.org/10.1016/j.celrep.2022.111390",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Cell Press"
-      },
-      "isPartOf": {
-        "@type": "Periodical",
-        "name": "Cell Reports"
-      },
-      "about": [
-        "Snail transcription factor",
-        "Epithelial stem cells",
-        "Matricellular proteins"
-      ]
-    },
-
-    {
-      "@type": "Thesis",
-      "@id": "http://krishikosh.egranth.ac.in/handle/1/5810146216",
-      "headline": "Identification of cis-regulatory regions regulating the expression of PM19 gene in wheat",
-      "author": { "@id": "https://johanajnabi.com/#johan" },
-      "datePublished": "2019",
-      "publisher": { "@id": "https://johanajnabi.com/#iari" },
-      "url": "http://krishikosh.egranth.ac.in/handle/1/5810146216"
-    }
-
-  ]
-}
-</script>
-
-  <script>
-    document.documentElement.classList.add("js");
-  </script>
 
 </head>
 
+<body class="home">
 
-<body>
+<main class="home-hero">
 
-<main id="app">
+  <div class="home-inner">
 
-  <!-- =====================
-       HEADER / PROFILE
-       (JS-enhanced, fallback-safe)
-  ====================== -->
-  <header id="profile" class="profile">
+    <!-- Profile Photo -->
+    <img src="/assets/profile.webp"
+         alt="Johan Ajnabi"
+         class="home-photo fade-in">
 
-    <!-- Fallback content (replaced by main.js) -->
-    <div class="profile-text">
-      <h1>Johan Ajnabi</h1>
-      <div class="subtitle">
-        PhD Research Scholar<br>
-        BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem),
-        Bengaluru, India
-      </div>
+    <!-- Name -->
+    <h1 class="home-title fade-in delay-1">
+      Johan Ajnabi
+    </h1>
+<!-- =====================
+     CONTACT ICONS
+===================== -->
+<div class="home-icons fade-in delay-2" aria-label="Contact links">
 
-      <!-- Minimal icon links -->
-      <div class="profile-links" aria-label="Profile links">
+  <!-- Email -->
+  <a href="mailto:johanajnabi@gmail.com"
+     class="home-icon"
+     aria-label="Email">
+    <svg viewBox="0 0 24 24" stroke="currentColor" fill="none"
+         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+      <path d="M3 7l9 6 9-6"></path>
+    </svg>
+  </a>
 
-        <a href="mailto:johanajnabi@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-            <path d="M3 7l9 6 9-6"></path>
-          </svg>
-        </a>
+  <!-- Google Scholar -->
+  <a href="https://scholar.google.com/citations?user=4yT9DRcAAAAJ"
+     target="_blank" rel="noopener noreferrer"
+     class="home-icon"
+     aria-label="Google Scholar">
+    <svg viewBox="0 0 24 24" stroke="currentColor" fill="none"
+         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3l9 5-9 5-9-5z"></path>
+      <path d="M5 13v4c0 1.5 3 3 7 3s7-1.5 7-3v-4"></path>
+    </svg>
+  </a>
 
-        <a href="https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en"
-           target="_blank" rel="noopener" aria-label="Google Scholar">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 3l9 6-9 6-9-6z"></path>
-            <path d="M6 12v4c0 2 3 4 6 4s6-2 6-4v-4"></path>
-          </svg>
-        </a>
+  <!-- ORCID -->
+  <a href="https://orcid.org/0000-0002-9437-9300"
+     target="_blank" rel="noopener noreferrer"
+     class="home-icon"
+     aria-label="ORCID">
+    <svg viewBox="0 0 24 24" stroke="currentColor" fill="none"
+         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M9 8v8M13 8h2a3 3 0 010 6h-2z"></path>
+    </svg>
+  </a>
 
-        <a href="https://orcid.org/0000-0002-9437-9300"
-           target="_blank" rel="noopener" aria-label="ORCID">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"></circle>
-            <path d="M9 7v10"></path>
-            <path d="M13 7c3 0 4 2 4 5s-1 5-4 5"></path>
-          </svg>
-        </a>
+  <!-- LinkedIn -->
+  <a href="https://in.linkedin.com/in/johanajnabi"
+     target="_blank" rel="noopener noreferrer"
+     class="home-icon"
+     aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24" stroke="currentColor" fill="none"
+         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 9v9"></path>
+      <path d="M6 6v.01"></path>
+      <path d="M10 9v9"></path>
+      <path d="M10 13c0-4 6-4 6 0v5"></path>
+    </svg>
+  </a>
 
-        <a href="https://in.linkedin.com/in/johanajnabi"
-           target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="4" cy="4" r="2"></circle>
-            <path d="M3 8h2v13H3z"></path>
-            <path d="M9 8h2v2c.4-.9 1.6-2 3.6-2
-                     3 0 4.4 1.9 4.4 5.4V21h-2v-7
-                     c0-2-.7-3.4-2.6-3.4S11 12 11 14v7H9z"></path>
-          </svg>
-        </a>
+  <!-- GitHub -->
+  <a href="https://github.com/johanajnabi"
+     target="_blank" rel="noopener noreferrer"
+     class="home-icon"
+     aria-label="GitHub">
+    <svg viewBox="0 0 24 24" stroke="currentColor" fill="none"
+         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 19c-4 1.5-4-2-6-2"></path>
+      <path d="M15 22v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7
+               A5.44 5.44 0 0019 4.77 5.07 5.07 0 0018.91 1
+               S17.73.65 15 2.48a13.38 13.38 0 00-6 0
+               C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77
+               5.44 5.44 0 003.5 8.52c0 5.42 3.3 6.61 6.44 7
+               A3.37 3.37 0 009 18.13V22"></path>
+    </svg>
+  </a>
 
-        <a href="https://bsky.app/profile/johanajnabi.bsky.social"
-           target="_blank" rel="noopener" aria-label="BlueSky">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M6 4c3 0 6 4 6 4s3-4 6-4
-                     c2 0 3 2 3 4 0 5-9 12-9 12
-                     S3 13 3 8c0-2 1-4 3-4z"></path>
-          </svg>
-        </a>
+  <!-- BlueSky -->
+  <a href="https://bsky.app/profile/johanajnabi.bsky.social"
+     target="_blank" rel="noopener noreferrer"
+     class="home-icon"
+     aria-label="BlueSky">
+    <svg viewBox="0 0 24 24" stroke="currentColor" fill="none"
+         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 12c-2-4-6-6-8-7 0 7 4 10 8 12
+               4-2 8-5 8-12-2 1-6 3-8 7z"></path>
+    </svg>
+  </a>
 
-      </div>
-    </div>
+</div>
 
-  </header>
 
-  <!-- =====================
-       NAVIGATION
-  ====================== -->
-  <nav class="nav-pills" aria-label="Primary navigation">
-    <a href="#about" class="pill active">About</a>
-    <a href="#interests" class="pill">Interests</a>
-    <a href="#experience" class="pill">Experience</a>
-    <a href="#publications" class="pill">Publications</a>
-    <a href="#links" class="pill">Contact</a>
-    <a href="assets/JA_CV2026.pdf" class="pill" target="_blank" rel="noopener">
-      CV
-    </a>
-  </nav>
-
-  <!-- =====================
-       ABOUT
-  ====================== -->
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      I study how mechanical cues and epigenetic regulation coordinate cell-state
-      transitions during cutaneous wound repair, with a focus on epidermal
-      keratinocytes and tissue regeneration.
+    <!-- Tagline -->
+    <p class="home-tagline fade-in delay-2">
+      Mechanobiology · Epigenetics · Creative Discipline
     </p>
-  </section>
 
-  <!-- =====================
-       INTERESTS
-  ====================== -->
-  <section id="interests">
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Cutaneous wound healing</li>
-      <li>Mechanotransduction and cytoskeletal dynamics</li>
-      <li>Epigenetic regulation of cell-state transitions</li>
-      <li>Skin stem cell biology and regeneration</li>
-    </ul>
-  </section>
+    <div class="home-divider fade-in delay-3"></div>
 
-  <hr class="section-divider">
+    <!-- Navigation Pills -->
+    <nav class="nav-pills home-nav fade-in delay-4" aria-label="Primary navigation">
 
-  <!-- =====================
-       EXPERIENCE
-  ====================== -->
-  <section id="experience">
-    <h2>Research Experience</h2>
-    <p class="fallback-only">
-      Loading detailed experience…
+  <a href="/academic/#about" class="pill">
+    About
+  </a>
+
+  <a href="/academic/#interests" class="pill">
+    Research Interests
+  </a>
+
+  <a href="/academic/#experience" class="pill">
+    Experience
+  </a>
+
+  <a href="/academic/#publications" class="pill">
+    Publications
+  </a>
+
+  <a href="/beyond/" class="pill">
+    Beyond Research
+  </a>
+
+  <a href="/academic/#links" class="pill">
+    Contact
+  </a>
+
+</nav>
+
+    <!-- Description -->
+    <p class="home-description fade-in delay-5">
+      PhD candidate investigating mechanical signaling and epigenetic regulation
+      in skin biology. Pianist and wildlife photographer exploring structure,
+      perception, and expressive form beyond the laboratory.
     </p>
-  </section>
 
-  <hr class="section-divider">
-
-  <!-- =====================
-       PUBLICATIONS
-  ====================== -->
-  <section id="publications">
-    <h2>Publications</h2>
-    <p class="fallback-only">
-      Interactive publication list loading.
-      <br>
-      Full list available in <a href="assets/JA_CV2026.pdf">CV (PDF)</a>.
+    <p class="home-signature fade-in delay-5">
+      Bengaluru · India
     </p>
-  </section>
 
-  <hr class="section-divider">
-
- <!-- =====================
-     CONTACT
-====================== -->
-<section id="links">
-  <h2>Contact</h2>
-
-  <ul class="contact-list">
-
-    <li>
-      <a href="mailto:johanajnabi@gmail.com" aria-label="Email">
-        <span class="contact-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M4 6h16v12H4z"/>
-            <path d="M4 6l8 6 8-6"/>
-          </svg>
-        </span>
-        <span class="contact-text">
-          <strong>Email</strong>
-          <span>johanajnabi@gmail.com</span>
-        </span>
-      </a>
-    </li>
-
-    <li>
-      <a href="https://orcid.org/0000-0002-9437-9300"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="ORCID">
-        <span class="contact-icon">
-          <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9"/>
-            <circle cx="9" cy="9" r="1.3" fill="currentColor"/>
-            <path d="M9 12v4M12 10h2a3 3 0 010 6h-2z"/>
-          </svg>
-        </span>
-        <span class="contact-text">
-          <strong>ORCID</strong>
-          <span>0000-0002-9437-9300</span>
-        </span>
-      </a>
-    </li>
-
-    <li>
-      <a href="https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="Google Scholar">
-        <span class="contact-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 3l9 5-9 5-9-5z"/>
-            <path d="M5 13v4c0 1.5 3 3 7 3s7-1.5 7-3v-4"/>
-          </svg>
-        </span>
-        <span class="contact-text">
-          <strong>Google Scholar</strong>
-          <span>View Publications</span>
-        </span>
-      </a>
-    </li>
-
-    <li>
-      <a href="https://in.linkedin.com/in/johanajnabi"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="LinkedIn">
-        <span class="contact-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M6 9v9M6 6v.01M10 9v9M10 13c0-4 6-4 6 0v5"/>
-          </svg>
-        </span>
-        <span class="contact-text">
-          <strong>LinkedIn</strong>
-          <span>Professional Profile</span>
-        </span>
-      </a>
-    </li>
-
-    <li>
-      <a href="https://bsky.app/profile/johanajnabi.bsky.social"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="BlueSky">
-        <span class="contact-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 12c-2-4-6-6-8-7 0 7 4 10 8 12 4-2 8-5 8-12-2 1-6 3-8 7z"/>
-          </svg>
-        </span>
-        <span class="contact-text">
-          <strong>BlueSky</strong>
-          <span>@johanajnabi</span>
-        </span>
-      </a>
-    </li>
-
-  </ul>
-</section>
-
-  <footer class="site-footer">
-  © 2026 Johan Ajnabi · Last updated February 2026
-</footer>
+  </div>
 
 </main>
-
-<!-- =====================
-     NO-JS NOTICE
-====================== -->
-<noscript>
-  <div style="max-width:760px;margin:40px auto;font-family:system-ui;">
-    <p><strong>Note:</strong> This website uses JavaScript for interactive features.</p>
-    <p>
-      A simplified version is shown.
-      You can download my <a href="assets/JA_CV2026.pdf">CV here</a>.
-    </p>
-  </div>
-</noscript>
-
-<!-- =====================
-     MAIN SCRIPT
-====================== -->
-<script src="main.js" defer></script>
-
-<!-- =====================
-     BACK TO TOP
-====================== -->
-<a href="#profile" id="back-to-top" class="pill back-to-top" aria-label="Back to top">
-  ↑ Top
-</a>
 
 </body>
 </html>

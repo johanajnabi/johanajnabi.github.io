@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- =====================
+       CORE META
+  ====================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index, follow">
+
+  <!-- =====================
+       CONTENT SECURITY POLICY
+  ====================== -->
+  <meta http-equiv="Content-Security-Policy"
+        content="
+          default-src 'self';
+          img-src 'self' https: data:;
+          script-src 'self';
+          style-src 'self' 'unsafe-inline';
+          connect-src 'self';
+          font-src 'self' https:;
+          frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.instagram.com;
+          object-src 'none';
+        ">
+
+  <!-- =====================
+       SEO
+  ====================== -->
+  <title>Beyond Research | Johan Ajnabi</title>
+
+  <meta name="description"
+        content="Creative pursuits of Johan Ajnabi including piano performance and wildlife photography.">
+
+  <link rel="canonical" href="https://johanajnabi.com/beyond/">
+
+  <!-- =====================
+       OPEN GRAPH
+  ====================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Beyond Research | Johan Ajnabi">
+  <meta property="og:description"
+        content="Piano performance and wildlife photography.">
+  <meta property="og:url" content="https://johanajnabi.com/beyond/">
+  <meta property="og:image"
+        content="https://johanajnabi.com/assets/profile.jpg">
+
+  <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<header class="top-nav">
+  <div class="top-nav-inner">
+
+    <a href="/" class="brand">Johan Ajnabi</a>
+
+    <!-- Hamburger (mobile only) -->
+    <button class="menu-toggle" aria-label="Open menu">
+      ☰
+    </button>
+
+    <!-- Desktop navigation -->
+    <nav class="top-links">
+      <a href="/academic/">Academic</a>
+      <a href="/beyond/" class="active">Beyond Research</a>
+      <a href="/assets/JA_CV2026.pdf"
+         target="_blank"
+         rel="noopener noreferrer">
+        CV
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- Mobile Slide Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/academic/">Academic</a>
+  <a href="/beyond/" class="active">Beyond Research</a>
+  <a href="/assets/JA_CV2026.pdf" target="_blank">CV</a>
+</div>
+
+<!-- Overlay -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<main class="content">
+
+  <!-- =====================
+       PAGE HEADER
+  ====================== -->
+  <header class="page-header">
+    <h1>Beyond Research</h1>
+    <p class="page-intro">
+      Creative disciplines that cultivate attention, structure, and perception —
+      extending inquiry beyond the laboratory.
+    </p>
+  </header>
+
+  <!-- =====================
+       PIANO
+  ====================== -->
+  <section>
+    <h2>Piano</h2>
+    <p>
+      I perform classical and contemporary repertoire through my channel
+      <strong>Jo's Pianoscope</strong>, exploring interpretative depth,
+      phrasing architecture, and tonal clarity.
+    </p>
+
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube.com/embed/videoseries?list=PLaWJAthnVk-7YN0nSukZZ2ZHeVaY5iyYD"
+        title="Jo's Pianoscope YouTube Playlist"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <p class="external-link">
+      <a href="https://www.youtube.com/@JosPianoscope"
+         target="_blank"
+         rel="noopener noreferrer">
+        Visit YouTube Channel →
+      </a>
+    </p>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- =====================
+       WILDLIFE
+  ====================== -->
+  <section>
+    <h2>Wildlife Photography</h2>
+    <p>
+      Through wildlife photography under the handle
+      <strong>@jopxls</strong>, I document ecological textures,
+      animal behaviour, and natural light dynamics.
+    </p>
+
+    <div class="instagram-embed">
+      <iframe
+        src="https://www.instagram.com/jopxls/embed"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        scrolling="no">
+      </iframe>
+    </div>
+
+    <p class="external-link">
+      <a href="https://www.instagram.com/jopxls/"
+         target="_blank"
+         rel="noopener noreferrer">
+        View Instagram Profile →
+      </a>
+    </p>
+  </section>
+
+  <footer class="site-footer">
+    © 2026 Johan Ajnabi
+  </footer>
+
+</main>
+
+<!-- JS -->
+<script src="/js/global.js" defer></script>
+
+</body>
+</html>
