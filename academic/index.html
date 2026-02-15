@@ -311,28 +311,30 @@
 <div class="menu-overlay" id="menuOverlay"></div>
 
 
-<main class="content">
+<main class="content academic-layout">
 
-    <!-- =====================
-         HEADER / PROFILE
-    ====================== -->
-   <header id="profile" class="profile academic">
+  <!-- =====================
+       HEADER / PROFILE
+  ====================== -->
+  <header id="profile" class="profile academic">
+    <div class="profile-text">
+      <h1>Johan Ajnabi</h1>
 
-      <div class="profile-text">
-        <h1>Johan Ajnabi</h1>
-
-        <div class="subtitle">PhD Candidate</div>
-        <div class="subtitle">Wound Healing · Mechanobiology · Epigenetics</div>
-        <div class="subtitle">
-          Prof. Colin Jamora Laboratory<br>
-          BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem), India
-        </div>
+      <div class="subtitle">PhD Candidate</div>
+      <div class="subtitle">Wound Healing · Mechanobiology · Epigenetics</div>
+      <div class="subtitle">
+        Prof. Colin Jamora Laboratory<br>
+        BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem), India
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- =====================
-         NAVIGATION
-    ====================== -->
+  <!-- =====================
+       ACADEMIC GRID LAYOUT
+  ====================== -->
+  <div class="academic-grid">
+
+    <!-- LEFT / TOP NAVIGATION -->
     <nav class="nav-pills" aria-label="Primary navigation">
       <a href="#about" class="pill active">About</a>
       <a href="#interests" class="pill">Interests</a>
@@ -346,6 +348,9 @@
         CV
       </a>
     </nav>
+
+    <!-- MAIN CONTENT COLUMN -->
+    <div class="academic-sections">
 
     <!-- =====================
          ABOUT
@@ -492,10 +497,13 @@
     </section>
 
     <footer class="site-footer">
-      © 2026 Johan Ajnabi · Last updated February 2026
-    </footer>
+  © 2026 Johan Ajnabi · Last updated February 2026
+</footer>
 
-  </main>
+    </div> <!-- academic-sections -->
+  </div> <!-- academic-grid -->
+
+</main>
 
 <script src="/js/global.js" defer></script>
 <script src="/academic/main.js" defer></script>
