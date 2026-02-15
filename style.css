@@ -98,6 +98,34 @@ body.home {
   );
   pointer-events: none;
 }
+/* =========================
+   HOMEPAGE CONTACT ICONS
+========================= */
+
+.home-icons {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin: 20px 0 28px;
+}
+
+.home-icon {
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  color: var(--text-muted);
+  transition: color 0.2s ease, transform 0.15s ease;
+}
+
+.home-icon:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.home-icon svg {
+  width: 100%;
+  height: 100%;
+}
 
 /* =========================
    GLOBAL
