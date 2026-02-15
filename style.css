@@ -220,7 +220,8 @@ p a:hover {
 }
 
 .nav-pills .pill:hover {
-  background: var(--bg-pill-hover);
+  background: var(--bg-pill);
+  color: #4da3ff;   /* light blue text */
   transform: translateY(-1px);
 }
 
