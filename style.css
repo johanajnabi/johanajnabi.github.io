@@ -377,7 +377,10 @@ p a:hover {
 #profile {
   margin-bottom: 18px;
 }
-
+/* Academic profile without photo */
+.profile.academic {
+  display: block;
+}
 .profile {
   display: flex;
   gap: 20px;
