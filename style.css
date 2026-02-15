@@ -310,6 +310,10 @@ p a:hover {
   color: var(--accent);
   font-weight: 600;
 }
+/* Hide hamburger by default (desktop) */
+.menu-toggle {
+  display: none;
+}
 
 
 /* =========================
