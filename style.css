@@ -447,40 +447,24 @@ p a:hover {
 ========================= */
 
 .nav-pills {
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 10;
+
+  background: var(--bg-main);
+  padding: 10px 0 14px;
+  margin-bottom: var(--section-gap);
+
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 
-  padding: 12px 0 16px;
-  margin-bottom: var(--section-gap);
-
-  background: var(--bg-main);
   border-bottom: 1px solid var(--border-soft);
 }
 
-/* Academic page alignment */
-.content .nav-pills {
-  justify-content: flex-start;
-}
-
-/* Homepage alignment */
-.home-nav {
-  justify-content: center;
-  border-bottom: none;
-  margin-bottom: 36px;
-}
-
-/* =========================
-   INDIVIDUAL PILL
-========================= */
-
 .nav-pills .pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
   padding: 8px 14px;
-  border-radius: 999px; /* smoother look */
+  border-radius: 12px;
 
   background: var(--bg-pill);
   color: var(--text-main);
@@ -488,35 +472,24 @@ p a:hover {
   font-size: 14px;
   font-weight: 500;
 
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    transform 0.15s ease;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
-/* Hover */
 .nav-pills .pill:hover {
   background: var(--bg-pill-hover);
   color: white;
   transform: translateY(-1px);
 }
 
-/* Active */
 .nav-pills .pill.active {
   background: var(--accent);
   color: white;
   font-weight: 600;
 }
 
-/* Focus accessibility */
 .nav-pills .pill:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
-}
-
-/* Active press feedback */
-.nav-pills .pill:active {
-  transform: scale(0.96);
 }
 
 /* =========================
