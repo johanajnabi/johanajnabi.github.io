@@ -260,6 +260,28 @@ const loadJSON = async path => {
   );
 
   document.querySelectorAll("section").forEach(s => observer.observe(s));
+   /* =====================
+   MOBILE NAVIGATION
+====================== */
+
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("menuOverlay");
+
+function toggleMenu() {
+  menu.classList.toggle("open");
+  overlay.classList.toggle("active");
+  document.body.classList.toggle("no-scroll");
+}
+
+if (toggle && menu && overlay) {
+  toggle.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", toggleMenu);
+
+  menu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", toggleMenu);
+  });
+}
 
   /* =====================
      BACK TO TOP
