@@ -494,6 +494,121 @@ p a:hover {
 
   border-top: 1px solid var(--border-soft);
 }
+/* =========================
+   TOP NAVIGATION
+========================= */
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg-main);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.top-nav-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.top-links {
+  display: flex;
+  gap: 24px;
+}
+
+.top-links a {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.top-links a:hover {
+  color: var(--accent);
+}
+
+.top-links a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Hide hamburger on desktop */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE SLIDE MENU
+========================= */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 240px;
+  height: 100vh;
+
+  background: var(--bg-main);
+  box-shadow: -4px 0 20px rgba(0,0,0,0.08);
+  padding: 80px 24px 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  transition: right 0.3s ease;
+  z-index: 100;
+}
+
+.mobile-menu a {
+  font-size: 16px;
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.mobile-menu a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 90;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
 
 /* =========================
    MOBILE
@@ -508,6 +623,16 @@ p a:hover {
 
   body {
     padding-top: 28px;
+  }
+
+  /* Hide desktop nav */
+  .top-links {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
   }
 
   .profile {
