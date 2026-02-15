@@ -442,7 +442,7 @@ p a:hover {
 
 .nav-pills {
   position: sticky;
-  top: 0;
+  top: var(--nav-height);
   z-index: 10;
 
   background: var(--bg-main);
