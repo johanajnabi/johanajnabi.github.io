@@ -551,6 +551,12 @@ p a:hover {
   font-size: 20px;
   cursor: pointer;
 }
+/* Hide mobile menu completely on desktop */
+.mobile-menu,
+.menu-overlay {
+  display: none;
+}
+
 
 /* =========================
    MOBILE SLIDE MENU
@@ -632,6 +638,12 @@ p a:hover {
 
   /* Show hamburger */
   .menu-toggle {
+    display: block;
+  }
+
+  /* Enable mobile system */
+  .mobile-menu,
+  .menu-overlay {
     display: block;
   }
 
