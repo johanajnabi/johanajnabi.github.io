@@ -1,45 +1,77 @@
 /* =========================
-   GLOBAL SITE JS
+   GLOBAL SITE JS (PRO)
 ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =====================
-     MOBILE MENU
+     ELEMENT REFERENCES
   ====================== */
 
+  const body = document.body;
   const toggle = document.querySelector(".menu-toggle");
   const menu = document.getElementById("mobileMenu");
   const overlay = document.getElementById("menuOverlay");
+  const backToTop = document.getElementById("back-to-top");
 
-  if (toggle && menu && overlay) {
+  /* =====================
+     SAFE GUARD
+  ====================== */
 
-    toggle.addEventListener("click", () => {
-      menu.classList.toggle("open");
-      overlay.classList.toggle("active");
-      document.body.classList.toggle("no-scroll");
-    });
+  const hasMobileMenu = toggle && menu && overlay;
 
-    overlay.addEventListener("click", () => {
+  /* =====================
+     MOBILE MENU SYSTEM
+  ====================== */
+
+  if (hasMobileMenu) {
+
+    const openMenu = () => {
+      menu.classList.add("open");
+      overlay.classList.add("active");
+      body.classList.add("no-scroll");
+      toggle.setAttribute("aria-expanded", "true");
+    };
+
+    const closeMenu = () => {
       menu.classList.remove("open");
       overlay.classList.remove("active");
-      document.body.classList.remove("no-scroll");
+      body.classList.remove("no-scroll");
+      toggle.setAttribute("aria-expanded", "false");
+    };
+
+    const toggleMenu = () => {
+      const isOpen = menu.classList.contains("open");
+      isOpen ? closeMenu() : openMenu();
+    };
+
+    /* Click hamburger */
+    toggle.addEventListener("click", toggleMenu);
+
+    /* Click overlay */
+    overlay.addEventListener("click", closeMenu);
+
+    /* Click any link inside menu */
+    menu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeMenu);
     });
 
-    menu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        menu.classList.remove("open");
-        overlay.classList.remove("active");
-        document.body.classList.remove("no-scroll");
-      });
+    /* Close with ESC key */
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    /* Auto-reset if resizing to desktop */
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 600) {
+        closeMenu();
+      }
     });
   }
 
   /* =====================
-     BACK TO TOP
+     BACK TO TOP BUTTON
   ====================== */
-
-  const backToTop = document.getElementById("back-to-top");
 
   if (backToTop) {
     window.addEventListener("scroll", () => {
@@ -48,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =====================
-     FADE-IN (OPTIONAL)
+     SECTION FADE-IN
   ====================== */
 
   if ("IntersectionObserver" in window) {
@@ -61,7 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      { threshold: 0.1 }
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+      }
     );
 
     document.querySelectorAll("section").forEach(section => {
