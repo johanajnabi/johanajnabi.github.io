@@ -61,18 +61,17 @@ body.home {
 }
 
 .home-hero {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .home-inner {
-  max-width: 760px;
+  max-width: 700px;
   text-align: center;
 
-  padding: 84px 64px;
+  padding: 64px 56px;
   border-radius: 28px;
 
   background: rgba(255,255,255,0.85);
