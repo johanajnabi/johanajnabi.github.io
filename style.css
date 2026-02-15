@@ -223,7 +223,8 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color: #4da3ff; /* soft academic blue */
 }
 
 a:focus-visible {
