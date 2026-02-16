@@ -669,6 +669,27 @@ p a:hover {
   font-size: 14px;
   color: var(--text-muted);
 }
+/* =========================
+   TALKS & PRESENTATIONS
+========================= */
+
+.talk-block {
+  margin-bottom: 24px;
+}
+
+.talk-block p {
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.talk-block strong {
+  font-weight: 600;
+}
+
+.talk-block em {
+  font-style: italic;
+  color: var(--text-muted);
+}
 
 /* =========================
    CONTACT SECTION
