@@ -127,7 +127,7 @@ body.home {
   display: flex;
   justify-content: center;
   gap: 28px;
-  margin: 14px 0 18px;
+  margin: 12px 0 12px;
 }
 
 .home-icon {
@@ -227,7 +227,7 @@ h2 {
   width: 60px;
   height: 1px;
   background: var(--border-soft);
-  margin: 0 auto 32px;
+  margin: 18px auto;
 }
 
 /* =========================
