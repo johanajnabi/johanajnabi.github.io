@@ -35,13 +35,6 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-.home-nav {
-  justify-content: center;
-  border-bottom: none;
-  margin-bottom: 36px;
-  flex-wrap: wrap;
-}
-
 body.home {
   background:
     radial-gradient(circle at 20% 20%, rgba(26,92,255,0.05), transparent 45%),
@@ -61,17 +54,19 @@ body.home {
 }
 
 .home-hero {
+  min-height: calc(100vh - var(--nav-height));
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 20px;
+  padding: 40px 20px;
 }
 
 .home-inner {
   max-width: 700px;
+   margin: auto;
   text-align: center;
 
-  padding: 64px 56px;
+  padding: 48px 52px;
   border-radius: 28px;
 
   background: rgba(255,255,255,0.85);
@@ -80,8 +75,8 @@ body.home {
   border: 1px solid rgba(255,255,255,0.6);
 
   box-shadow:
-    0 30px 80px rgba(0,0,0,0.06),
-    0 10px 30px rgba(0,0,0,0.04);
+  0 40px 100px rgba(0,0,0,0.08),
+  0 15px 40px rgba(0,0,0,0.05);
 
   position: relative;
 }
@@ -108,6 +103,7 @@ body.home {
 .home-role {
   font-size: 17px;
   font-weight: 600;
+   letter-spacing: 0.2px;
   margin-bottom: 4px;
 }
 
@@ -131,7 +127,7 @@ body.home {
   display: flex;
   justify-content: center;
   gap: 28px;
-  margin: 20px 0 28px;
+  margin: 14px 0 18px;
 }
 
 .home-icon {
@@ -200,6 +196,8 @@ section {
 
 h1 {
   font-size: 32px;
+  letter-spacing: -0.4px;
+  font-weight: 700;
   margin-bottom: 6px;
 }
 
@@ -577,7 +575,7 @@ p a:hover {
 .home-nav {
   justify-content: center;
   border-bottom: none;
-  margin-bottom: 36px;
+  margin-bottom: 22px;
 }
 
 /* =========================
@@ -591,6 +589,7 @@ p a:hover {
 
   padding: 8px 14px;
   border-radius: 999px; /* smoother look */
+   box-shadow: 0 1px 0 rgba(0,0,0,0.04);
 
   background: var(--bg-pill);
   color: var(--text-main);
@@ -609,6 +608,7 @@ p a:hover {
   background: var(--bg-pill-hover);
   color: white;
   transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(26,92,255,0.18);
 }
 
 /* Active */
