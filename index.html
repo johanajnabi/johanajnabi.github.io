@@ -10,28 +10,143 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light dark">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large">
 
   <!-- =====================
        SEO
   ====================== -->
-  <title>Johan Ajnabi</title>
+ <title>Johan Ajnabi | Mechanobiology & Epigenetic Regulation</title>
 
   <meta name="description"
-        content="Johan Ajnabi — PhD candidate studying mechanobiology and epigenetic regulation in skin biology. Pianist and wildlife photographer.">
+content="Johan Ajnabi is a PhD candidate studying mechanobiology and epigenetic regulation in skin biology at inStem, India. Pianist and wildlife photographer.">
+
 
   <link rel="canonical" href="https://johanajnabi.com/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Johan Ajnabi">
+  <meta property="og:site_name" content="Johan Ajnabi">
+  <meta property="og:title" content="Johan Ajnabi | Mechanobiology & Epigenetic Regulation">
   <meta property="og:description"
-        content="Mechanobiology · Epigenetics · Creative Discipline">
+      content="PhD candidate researching mechanobiology and epigenetic regulation in skin biology at inStem, India.">
   <meta property="og:url" content="https://johanajnabi.com/">
   <meta property="og:image"
         content="https://johanajnabi.com/assets/profile.webp">
+  <meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
+  <!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Johan Ajnabi | Mechanobiology & Epigenetic Regulation">
+<meta name="twitter:description"
+      content="PhD candidate studying mechanobiology and epigenetic regulation in skin biology at inStem, India.">
+<meta name="twitter:image"
+      content="https://johanajnabi.com/assets/profile.webp">
+  <meta name="twitter:creator" content="@jo_ajnabi">
+  <meta name="twitter:site" content="@jo_ajnabi">
   <link rel="stylesheet" href="/style.css">
+  <!-- =====================
+     STRUCTURED DATA
+====================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "ResearchOrganization",
+      "@id": "https://johanajnabi.com/#instem",
+      "name": "BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem)",
+      "url": "https://instem.res.in/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bengaluru",
+        "addressCountry": "India"
+      }
+    },
+
+    {
+  "@type": "Person",
+  "@id": "https://johanajnabi.com/#johan",
+  "name": "Johan Ajnabi",
+  "givenName": "Johan",
+  "familyName": "Ajnabi",
+  "alternateName": "J. Ajnabi",
+
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://johanajnabi.com/#webpage"
+  },
+
+  "url": "https://johanajnabi.com/",
+
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://johanajnabi.com/assets/profile.webp"
+  },
+
+  "jobTitle": "PhD Candidate",
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Biomedical Researcher"
+  },
+
+  "affiliation": { "@id": "https://johanajnabi.com/#instem" },
+
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "ORCID",
+    "value": "0000-0002-9437-9300",
+    "url": "https://orcid.org/0000-0002-9437-9300"
+  },
+
+  "sameAs": [
+    "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
+    "https://orcid.org/0000-0002-9437-9300",
+    "https://in.linkedin.com/in/johanajnabi",
+    "https://bsky.app/profile/johanajnabi.bsky.social",
+    "https://github.com/johanajnabi"
+  ],
+
+  "knowsAbout": [
+    "Mechanobiology",
+    "Epigenetic regulation",
+    "Cutaneous wound healing",
+    "Skin regeneration"
+  ],
+
+  "subjectOf": {
+    "@type": "WebPage",
+    "@id": "https://johanajnabi.com/academic/#webpage"
+  }
+},
+
+    {
+      "@type": "WebSite",
+      "@id": "https://johanajnabi.com/#website",
+      "url": "https://johanajnabi.com/",
+      "name": "Johan Ajnabi",
+      "publisher": { "@id": "https://johanajnabi.com/#johan" },
+      "inLanguage": "en"
+    },
+
+    {
+      "@type": "WebPage",
+      "@id": "https://johanajnabi.com/#webpage",
+      "url": "https://johanajnabi.com/",
+      "name": "Johan Ajnabi",
+      "about": { "@id": "https://johanajnabi.com/#johan" },
+      "isPartOf": { "@id": "https://johanajnabi.com/#website" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://johanajnabi.com/assets/profile.webp"
+      },
+      "inLanguage": "en"
+    }
+
+  ]
+}
+</script>
 
 </head>
 
@@ -146,29 +261,13 @@
     <!-- Navigation Pills -->
     <nav class="nav-pills home-nav fade-in delay-4" aria-label="Primary navigation">
 
-  <a href="/academic/#about" class="pill">
-    About
-  </a>
-
-  <a href="/academic/#interests" class="pill">
-    Research Interests
-  </a>
-
-  <a href="/academic/#experience" class="pill">
-    Experience
-  </a>
-
-  <a href="/academic/#publications" class="pill">
-    Publications
-  </a>
-
-  <a href="/beyond/" class="pill">
-    Beyond Research
-  </a>
-
-  <a href="/academic/#links" class="pill">
-    Contact
-  </a>
+<a href="/academic/#about" class="pill">About</a>
+<a href="/academic/#interests" class="pill">Research Interests</a>
+<a href="/academic/#experience" class="pill">Experience</a>
+<a href="/academic/#publications" class="pill">Publications</a>
+<a href="/academic/#talks" class="pill">Talks & Presentations</a>
+<a href="/beyond/" class="pill">Beyond Research</a>
+<a href="/academic/#links" class="pill">Contact</a>
 
 </nav>
 
