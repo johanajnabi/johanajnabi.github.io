@@ -575,7 +575,7 @@ p a:hover {
 .home-nav {
   justify-content: center;
   border-bottom: none;
-  margin-bottom: 22px;
+  margin-bottom: 18px 0;
 }
 
 /* =========================
@@ -980,7 +980,7 @@ p a:hover {
   line-height: 1.7;
   color: var(--text-muted);
   max-width: 640px;
-  margin: 0 auto 16px;
+  margin: 18px auto;
 }
 
 .home-signature {
