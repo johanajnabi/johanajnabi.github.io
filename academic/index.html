@@ -81,7 +81,7 @@
   "@graph": [
 
     {
-      "@type": "Organization",
+      "@type": "ResearchOrganization",
       "@id": "https://johanajnabi.com/#instem",
       "name": "BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem)",
       "url": "https://instem.res.in/",
@@ -93,7 +93,7 @@
     },
 
     {
-      "@type": "Organization",
+      "@type": "ResearchOrganization",
       "@id": "https://johanajnabi.com/#iari",
       "name": "ICAR – Indian Agricultural Research Institute"
     },
@@ -102,8 +102,23 @@
       "@type": "Person",
       "@id": "https://johanajnabi.com/#johan",
       "name": "Johan Ajnabi",
+      "givenName": "Johan",
+"familyName": "Ajnabi",
+"alternateName": "J. Ajnabi",
+"nationality": {
+  "@type": "Country",
+  "name": "India"
+},
+"hasOccupation": {
+  "@type": "Occupation",
+  "name": "Biomedical Researcher"
+},
       "url": "https://johanajnabi.com/",
-      "image": "https://johanajnabi.com/assets/profile.jpg",
+      "image": {
+  "@type": "ImageObject",
+  "url": "https://johanajnabi.com/assets/profile.webp"
+},
+
       "email": "mailto:johanajnabi@gmail.com",
       "jobTitle": "PhD Candidate",
       "description": "PhD researcher studying mechanotransduction, cytoskeletal dynamics, and epigenetic regulation during cutaneous wound repair and skin regeneration.",
@@ -130,12 +145,19 @@
         "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
         "https://orcid.org/0000-0002-9437-9300",
         "https://in.linkedin.com/in/johanajnabi",
-        "https://bsky.app/profile/johanajnabi.bsky.social"
-      ]
+        "https://bsky.app/profile/johanajnabi.bsky.social",
+        "https://github.com/johanajnabi",
+        "https://johanajnabi.com/"
+      ],
+"subjectOf": [
+  { "@id": "https://doi.org/10.1101/2025.08.24.669246" },
+  { "@id": "https://doi.org/10.3389/fimmu.2023.1255478" }
+]
     },
 
     {
       "@type": "WebSite",
+  "about": { "@id": "https://johanajnabi.com/#johan" },
       "@id": "https://johanajnabi.com/#website",
       "url": "https://johanajnabi.com/",
       "name": "Johan Ajnabi",
@@ -151,6 +173,10 @@
   "isPartOf": { "@id": "https://johanajnabi.com/#website" },
   "about": { "@id": "https://johanajnabi.com/#johan" },
   "inLanguage": "en",
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://johanajnabi.com/assets/profile.webp"
+  },
   "dateModified": "2026-02-14"
 },
 
@@ -180,7 +206,7 @@
       "datePublished": "2025-08-24",
       "identifier": "https://doi.org/10.1101/2025.08.24.669246",
       "publisher": {
-        "@type": "Organization",
+        "@type": "ResearchOrganization",
         "name": "Cold Spring Harbor Laboratory"
       },
       "isPartOf": {
@@ -202,7 +228,7 @@
       "datePublished": "2023",
       "identifier": "https://doi.org/10.3389/fimmu.2023.1255478",
       "publisher": {
-        "@type": "Organization",
+        "@type": "ResearchOrganization",
         "name": "Frontiers Media SA"
       },
       "isPartOf": {
@@ -269,12 +295,12 @@
       "publisher": { "@id": "https://johanajnabi.com/#iari" },
       "url": "http://krishikosh.egranth.ac.in/handle/1/5810146216"
     },
-  ,
 {
   "@type": "Event",
   "@id": "https://johanajnabi.com/academic/#mbi2023",
   "name": "MBI Conference 2023: Mechanobiology in Health and Disease",
-  "startDate": "2023-09",
+  "additionalType": "https://schema.org/PresentationDigitalDocument",
+  "startDate": "2023-09-26",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "eventStatus": "https://schema.org/EventCompleted",
   "location": {
@@ -287,7 +313,7 @@
     }
   },
   "organizer": {
-    "@type": "Organization",
+    "@type": "ResearchOrganization",
     "name": "National University of Singapore"
   },
   "performer": {
@@ -300,7 +326,8 @@
   "@type": "Event",
   "@id": "https://johanajnabi.com/academic/#lasa2022",
   "name": "10th International Conference of Laboratory Animal Scientists’ Association (LASA)",
-  "startDate": "2022-06",
+  "additionalType": "https://schema.org/PresentationDigitalDocument",
+  "startDate": "2022-06-01",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "eventStatus": "https://schema.org/EventCompleted",
   "location": {
@@ -326,7 +353,8 @@
   "@type": "Event",
   "@id": "https://johanajnabi.com/academic/#nasc2019",
   "name": "National Agricultural Science Congress",
-  "startDate": "2019-02",
+  "additionalType": "https://schema.org/PresentationDigitalDocument",
+  "startDate": "2019-02-01",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "eventStatus": "https://schema.org/EventCompleted",
   "location": {
