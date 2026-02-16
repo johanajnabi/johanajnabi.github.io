@@ -47,6 +47,8 @@
   <meta property="og:url" content="https://johanajnabi.com/beyond/">
   <meta property="og:image"
         content="https://johanajnabi.com/assets/profile.webp">
+  <meta property="og:image:alt" content="Portrait of Johan Ajnabi">
+  <meta name="twitter:image:alt" content="Portrait of Johan Ajnabi">
 
   <link rel="stylesheet" href="/style.css">
   
@@ -64,17 +66,57 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "https://johanajnabi.com/beyond/#webpage",
-  "url": "https://johanajnabi.com/beyond/",
-  "name": "Beyond Research | Johan Ajnabi",
-  "isPartOf": {
-    "@id": "https://johanajnabi.com/#website"
-  },
-  "about": {
-    "@id": "https://johanajnabi.com/#johan"
-  },
-  "inLanguage": "en"
+  "@graph": [
+
+    {
+      "@type": "WebPage",
+      "@id": "https://johanajnabi.com/beyond/#webpage",
+      "url": "https://johanajnabi.com/beyond/",
+      "name": "Beyond Research | Johan Ajnabi",
+      "description": "Creative work by Johan Ajnabi including piano performance and wildlife photography.",
+      "isPartOf": {
+        "@id": "https://johanajnabi.com/#website"
+      },
+      "about": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "inLanguage": "en",
+      "hasPart": [
+        {
+          "@id": "https://johanajnabi.com/beyond/#piano"
+        },
+        {
+          "@id": "https://johanajnabi.com/beyond/#wildlife"
+        }
+      ]
+    },
+
+    {
+      "@type": "MusicGroup",
+      "@id": "https://johanajnabi.com/beyond/#piano",
+      "name": "Jo's Pianoscope",
+      "url": "https://www.youtube.com/@JosPianoscope",
+      "genre": ["Classical", "Contemporary Piano"],
+      "sameAs": [
+        "https://www.youtube.com/@JosPianoscope",
+        "https://www.instagram.com/jopianotes/"
+      ],
+      "creator": {
+        "@id": "https://johanajnabi.com/#johan"
+      }
+    },
+
+    {
+      "@type": "CreativeWork",
+      "@id": "https://johanajnabi.com/beyond/#wildlife",
+      "name": "Wildlife Photography - @jopxls",
+      "url": "https://www.instagram.com/jopxls/",
+      "creator": {
+        "@id": "https://johanajnabi.com/#johan"
+      }
+    }
+
+  ]
 }
 </script>
 
@@ -95,6 +137,7 @@
 
     <!-- Desktop navigation -->
     <nav class="top-links">
+      <a href="/">Home</a>
       <a href="/academic/">Academic</a>
       <a href="/beyond/" class="active">Beyond Research</a>
       <a href="/assets/JA_CV2026.pdf"
@@ -109,6 +152,7 @@
 
 <!-- Mobile Slide Menu -->
 <div class="mobile-menu" id="mobileMenu">
+  <a href="/">Home</a>
   <a href="/academic/">Academic</a>
   <a href="/beyond/" class="active">Beyond Research</a>
   <a href="/assets/JA_CV2026.pdf" target="_blank">CV</a>
@@ -124,21 +168,22 @@
   ====================== -->
   <header class="page-header" id="top">
     <h1>Beyond Research</h1>
-    <p class="page-intro">
-      Creative disciplines that cultivate attention, structure, and perception —
-      extending inquiry beyond the laboratory.
-    </p>
+   <p class="page-intro">
+  Research trains precision. Music and photography train perception. 
+  This is where I explore rhythm, light, and expression beyond the laboratory.
+</p>
   </header>
 
   <!-- =====================
        PIANO
   ====================== -->
-  <section>
+  <section id="piano">
     <h2>Piano</h2>
     <p>
-      I perform classical and contemporary repertoire through my channel
-      <strong>Jo's Pianoscope</strong>, exploring interpretative depth,
-      phrasing architecture, and tonal clarity.
+      Piano is where I slow down and listen more carefully - a study of structure, 
+      how phrasing, tension, and silence create meaning.
+      I share performances through <strong>Jo's Pianoscope</strong> on YouTube and 
+      <strong>@jopianotes</strong> on Instagram.
     </p>
 
     <div class="video-embed">
@@ -156,9 +201,17 @@
       <a href="https://www.youtube.com/@JosPianoscope"
          target="_blank"
          rel="noopener noreferrer">
-        Visit YouTube Channel →
+        Watch full performances on YouTube →
       </a>
     </p>
+    <p class="external-link">
+      <a href="https://www.instagram.com/jopianotes/"
+        target="_blank"
+        rel="noopener noreferrer">
+        Follow @jopianotes on Instagram →
+  </a>
+</p>
+
   </section>
 
   <hr class="section-divider">
@@ -166,12 +219,12 @@
   <!-- =====================
        WILDLIFE
   ====================== -->
-  <section>
+  <section id="wildlife">
     <h2>Wildlife Photography</h2>
     <p>
-      Through wildlife photography under the handle
-      <strong>@jopxls</strong>, I document ecological textures,
-      animal behaviour, and natural light dynamics.
+      Through wildlife photography under the handle 
+      <strong>@jopxls</strong>, I try to capture fleeting moments — 
+      light, movement, stillness, and the quiet intensity of natural spaces.
     </p>
 
     <div class="instagram-embed">
@@ -187,13 +240,17 @@
       <a href="https://www.instagram.com/jopxls/"
          target="_blank"
          rel="noopener noreferrer">
-        View Instagram Profile →
+        Explore wildlife photographs →
       </a>
     </p>
   </section>
 
+  <p class="home-signature" style="margin-top: 40px;">
+  Creative work informs scientific work — and vice versa.
+</p>
+
   <footer class="site-footer">
-    © 2026 Johan Ajnabi
+    © 2026 Johan Ajnabi · Last updated February 2026
   </footer>
 
 </main>
@@ -202,6 +259,7 @@
 <script src="/js/global.js" defer></script>
   
  <a href="#top"
+   id="back-to-top"
    class="back-to-top"
    aria-label="Back to top">
   ↑ Top

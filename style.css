@@ -35,13 +35,6 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-.home-nav {
-  justify-content: center;
-  border-bottom: none;
-  margin-bottom: 36px;
-  flex-wrap: wrap;
-}
-
 body.home {
   background:
     radial-gradient(circle at 20% 20%, rgba(26,92,255,0.05), transparent 45%),
@@ -61,17 +54,19 @@ body.home {
 }
 
 .home-hero {
+  min-height: calc(100vh - var(--nav-height));
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 20px;
+  padding: 24px 20px;
 }
 
 .home-inner {
-  max-width: 700px;
+  max-width: 720px;
+   margin: auto;
   text-align: center;
 
-  padding: 64px 56px;
+  padding: 42px 48px;
   border-radius: 28px;
 
   background: rgba(255,255,255,0.85);
@@ -80,8 +75,8 @@ body.home {
   border: 1px solid rgba(255,255,255,0.6);
 
   box-shadow:
-    0 30px 80px rgba(0,0,0,0.06),
-    0 10px 30px rgba(0,0,0,0.04);
+  0 40px 100px rgba(0,0,0,0.08),
+  0 15px 40px rgba(0,0,0,0.05);
 
   position: relative;
 }
@@ -108,6 +103,7 @@ body.home {
 .home-role {
   font-size: 17px;
   font-weight: 600;
+   letter-spacing: 0.2px;
   margin-bottom: 4px;
 }
 
@@ -119,6 +115,7 @@ body.home {
 
 .home-focus {
   font-size: 14px;
+  font-weight: 500;
   color: var(--text-muted);
   letter-spacing: 0.2px;
 }
@@ -131,7 +128,7 @@ body.home {
   display: flex;
   justify-content: center;
   gap: 28px;
-  margin: 20px 0 28px;
+  margin: 12px 0 12px;
 }
 
 .home-icon {
@@ -200,6 +197,8 @@ section {
 
 h1 {
   font-size: 32px;
+  letter-spacing: -0.4px;
+  font-weight: 700;
   margin-bottom: 6px;
 }
 
@@ -229,7 +228,7 @@ h2 {
   width: 60px;
   height: 1px;
   background: var(--border-soft);
-  margin: 0 auto 32px;
+  margin: 18px auto;
 }
 
 /* =========================
@@ -274,7 +273,7 @@ p a:hover {
 
 .content {
   max-width: 760px;
-  margin: 48px auto;
+  margin: 56px auto;
   padding: 0 20px;
 }
 /* =========================
@@ -577,7 +576,7 @@ p a:hover {
 .home-nav {
   justify-content: center;
   border-bottom: none;
-  margin-bottom: 36px;
+  margin: 18px 0;
 }
 
 /* =========================
@@ -591,6 +590,7 @@ p a:hover {
 
   padding: 8px 14px;
   border-radius: 999px; /* smoother look */
+   box-shadow: 0 1px 0 rgba(0,0,0,0.04);
 
   background: var(--bg-pill);
   color: var(--text-main);
@@ -609,6 +609,7 @@ p a:hover {
   background: var(--bg-pill-hover);
   color: white;
   transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(26,92,255,0.18);
 }
 
 /* Active */
@@ -786,6 +787,27 @@ p a:hover {
   font-size: 14px;
   color: var(--text-muted);
 }
+/* =========================
+   TALKS & PRESENTATIONS
+========================= */
+
+.talk-block {
+  margin-bottom: 24px;
+}
+
+.talk-block p {
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.talk-block strong {
+  font-weight: 600;
+}
+
+.talk-block em {
+  font-style: italic;
+  color: var(--text-muted);
+}
 
 /* =========================
    CONTACT SECTION
@@ -847,29 +869,43 @@ p a:hover {
 
 
 /* =========================
-   BACK TO TOP
+   BACK TO TOP (V2 POLISHED)
 ========================= */
 
 .back-to-top {
   position: fixed;
   right: 20px;
   bottom: 24px;
-  z-index: 20;
+  z-index: 40;
 
-  padding: 8px 14px;
-  border-radius: 12px;
+  padding: 9px 16px;
+  border-radius: 14px;
 
-  background: var(--bg-pill);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.05);
+
+  border: 1px solid rgba(0, 0, 0, 0.04);
+
   color: var(--text-main);
 
   font-size: 14px;
   font-weight: 500;
+  letter-spacing: 0.2px;
 
   opacity: 0;
   pointer-events: none;
-  transform: translateY(6px);
+  transform: translateY(8px);
 
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .back-to-top.visible {
@@ -879,9 +915,16 @@ p a:hover {
 }
 
 .back-to-top:hover {
-  background: var(--bg-pill-hover);
+  background: var(--accent);
   color: white;
+  box-shadow:
+    0 12px 32px rgba(26, 92, 255, 0.25);
 }
+.back-to-top:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 /* =========================
    FOOTER
 ========================= */
@@ -959,7 +1002,7 @@ p a:hover {
   line-height: 1.7;
   color: var(--text-muted);
   max-width: 640px;
-  margin: 0 auto 16px;
+  margin: 18px auto;
 }
 
 .home-signature {
@@ -988,6 +1031,16 @@ p a:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+   /* =========================
+   ACCESSIBILITY – REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }
 
@@ -1218,5 +1271,4 @@ p a:hover {
     padding: 48px 24px;
     border-radius: 16px;
   }
-
 }
