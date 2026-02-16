@@ -244,6 +244,30 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       renderPublications();
+/* =====================
+   FIX HASH SCROLL (ON LOAD)
+====================== */
+
+function scrollToHash() {
+  const hash = window.location.hash;
+  if (!hash) return;
+
+  const target = document.querySelector(hash);
+  if (!target) return;
+
+  const headerOffset = 100; // match your nav height exactly
+  const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+  const offsetPosition = elementPosition - headerOffset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth" // change to "smooth" if you want animation
+  });
+}
+
+setTimeout(scrollToHash, 150);
+window.addEventListener("hashchange", scrollToHash);
+
 
       /* --------------------------
          SCROLL SPY (PILL HIGHLIGHT)
