@@ -58,7 +58,7 @@ body.home {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 24px 20px;
 }
 
 .home-inner {
@@ -66,7 +66,7 @@ body.home {
    margin: auto;
   text-align: center;
 
-  padding: 48px 52px;
+  padding: 42px 48px;
   border-radius: 28px;
 
   background: rgba(255,255,255,0.85);
