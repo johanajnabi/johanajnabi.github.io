@@ -98,6 +98,32 @@ body.home {
   pointer-events: none;
 }
 /* =========================
+   HOME IDENTITY BLOCK
+========================= */
+
+.home-identity {
+  margin-bottom: 18px;
+}
+
+.home-role {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.home-lab {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.home-focus {
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: 0.2px;
+}
+
+/* =========================
    HOMEPAGE CONTACT ICONS
 ========================= */
 
@@ -403,6 +429,27 @@ p a:hover {
   height: 100%;
   border: 0;
 }
+/* Academic page first section spacing */
+.content > .nav-pills {
+  margin-top: 12px;
+}
+/* =========================
+   TALKS SECTION
+========================= */
+
+.talk-block {
+  margin-bottom: 22px;
+}
+
+.talk-block strong {
+  font-weight: 600;
+}
+
+.talk-block em {
+  font-style: italic;
+  color: var(--text-muted);
+}
+
 /* =========================
    BEYOND PAGE
 ========================= */
@@ -833,6 +880,7 @@ p a:hover {
 
 .back-to-top:hover {
   background: var(--bg-pill-hover);
+  color: white;
 }
 /* =========================
    FOOTER
