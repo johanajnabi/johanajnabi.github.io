@@ -99,62 +99,89 @@
     },
 
     {
-      "@type": "Person",
-      "@id": "https://johanajnabi.com/#johan",
-      "name": "Johan Ajnabi",
-      "givenName": "Johan",
-"familyName": "Ajnabi",
-"alternateName": "J. Ajnabi",
-"nationality": {
-  "@type": "Country",
-  "name": "India"
-},
-"hasOccupation": {
-  "@type": "Occupation",
-  "name": "Biomedical Researcher"
-},
-      "url": "https://johanajnabi.com/",
-      "image": {
-  "@type": "ImageObject",
-  "url": "https://johanajnabi.com/assets/profile.webp"
-},
+  "@type": "Person",
+  "@id": "https://johanajnabi.com/#johan",
+  "name": "Johan Ajnabi",
+  "givenName": "Johan",
+  "familyName": "Ajnabi",
+  "alternateName": "J. Ajnabi",
 
-      "email": "mailto:johanajnabi@gmail.com",
-      "jobTitle": "PhD Candidate",
-      "description": "PhD researcher studying mechanotransduction, cytoskeletal dynamics, and epigenetic regulation during cutaneous wound repair and skin regeneration.",
-      "identifier": {
-        "@type": "PropertyValue",
-        "propertyID": "ORCID",
-        "value": "0000-0002-9437-9300",
-        "url": "https://orcid.org/0000-0002-9437-9300"
-      },
-      "affiliation": { "@id": "https://johanajnabi.com/#instem" },
-      "alumniOf": { "@id": "https://johanajnabi.com/#iari" },
-      "mainEntityOfPage": {
-  "@id": "https://johanajnabi.com/academic/#webpage"
+  "nationality": {
+    "@type": "Country",
+    "name": "India"
+  },
+
+  "url": "https://johanajnabi.com/",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://johanajnabi.com/assets/profile.webp"
+  },
+
+  "email": "mailto:johanajnabi@gmail.com",
+  "jobTitle": "PhD Candidate",
+
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Biomedical Researcher"
+  },
+
+  "seeks": {
+    "@type": "Occupation",
+    "name": "Postdoctoral Researcher"
+  },
+
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "PhD",
+    "recognizedBy": {
+      "@id": "https://johanajnabi.com/#instem"
+    }
+  },
+
+  "description": "PhD researcher studying mechanotransduction, cytoskeletal dynamics, and epigenetic regulation during cutaneous wound repair and skin regeneration.",
+
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "ORCID",
+    "value": "0000-0002-9437-9300",
+    "url": "https://orcid.org/0000-0002-9437-9300"
+  },
+
+  "affiliation": { "@id": "https://johanajnabi.com/#instem" },
+  "alumniOf": { "@id": "https://johanajnabi.com/#iari" },
+
+  "mainEntityOfPage": {
+    "@id": "https://johanajnabi.com/academic/#webpage"
+  },
+
+  "knowsAbout": [
+    "Mechanobiology",
+    "Mechanotransduction",
+    "Epigenetic regulation",
+    "Chromatin remodeling",
+    "Stem cell biology",
+    "Tissue regeneration",
+    "Cutaneous wound healing",
+    "Cytoskeletal dynamics",
+    "Integrin signaling",
+    "Translational skin biology"
+  ],
+
+  "sameAs": [
+    "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
+    "https://orcid.org/0000-0002-9437-9300",
+    "https://in.linkedin.com/in/johanajnabi",
+    "https://bsky.app/profile/johanajnabi.bsky.social",
+    "https://github.com/johanajnabi",
+    "https://x.com/jo_ajnabi",
+    "https://www.researchgate.net/profile/Johan-Ajnabi"
+  ],
+
+  "subjectOf": [
+    { "@id": "https://doi.org/10.1101/2025.08.24.669246" },
+    { "@id": "https://doi.org/10.3389/fimmu.2023.1255478" }
+  ]
 },
-      "knowsAbout": [
-        "Mechanotransduction",
-        "Epigenetic regulation",
-        "Cutaneous wound healing",
-        "Keratinocyte stem cells",
-        "Chromatin remodeling",
-        "Actin cytoskeleton dynamics"
-      ],
-      "sameAs": [
-  "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
-  "https://orcid.org/0000-0002-9437-9300",
-  "https://in.linkedin.com/in/johanajnabi",
-  "https://bsky.app/profile/johanajnabi.bsky.social",
-  "https://github.com/johanajnabi",
-  "https://x.com/jo_ajnabi",
-  "https://www.researchgate.net/profile/Johan-Ajnabi"
-],
-"subjectOf": [
-  { "@id": "https://doi.org/10.1101/2025.08.24.669246" },
-  { "@id": "https://doi.org/10.3389/fimmu.2023.1255478" }
-]
-    },
 
     {
       "@type": "WebSite",
@@ -530,10 +557,13 @@
     <!-- =====================
          CONTACT
     ====================== -->
-    <section id="links">
-      <h2>Contact</h2>
+    <section id="links" class="contact-section">
+  <h2>Contact</h2>
 
-      <ul class="contact-list">
+  <div class="contact-grid">
+
+    <!-- LEFT: Contact Links -->
+    <ul class="contact-list">
 
         <li>
           <a href="mailto:johanajnabi@gmail.com">
@@ -688,8 +718,28 @@
   </a>
 </li>
 
-
       </ul>
+       <!-- RIGHT: Postdoc Card -->
+    <div class="postdoc-card">
+      <h3>Postdoctoral Opportunities</h3>
+
+      <p>
+        I am seeking postdoctoral positions at the intersection of mechanobiology and 
+        epigenetic regulation, with an emphasis on tissue regeneration and translational biology.
+      </p>
+
+      <p>
+        My work integrates mechanical signaling with chromatin dynamics
+        in skin biology. I am particularly interested in interdisciplinary
+        and translational research environments.
+      </p>
+
+      <p>
+        I welcome discussions with potential mentors and collaborators.
+      </p>
+    </div>
+
+  </div>
     </section>
 
     <footer class="site-footer">
