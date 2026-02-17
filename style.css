@@ -828,6 +828,14 @@ p a:hover {
   display: flex;
   flex-direction: column;
 }
+.postdoc-meta {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
 
 /* Stack on smaller screens */
 @media (max-width: 900px) {
