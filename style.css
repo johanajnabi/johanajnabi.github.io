@@ -819,22 +819,9 @@ p a:hover {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: 48px;
   align-items: stretch;
-}
-
-.postdoc-card {
-  display: flex;
-  flex-direction: column;
-}
-.postdoc-meta {
-  margin-top: 18px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(0,0,0,0.05);
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.5;
 }
 
 /* Stack on smaller screens */
@@ -909,52 +896,80 @@ p a:hover {
 }
 
 /* =========================
-   POSTDOC CARD
+   POSTDOC CARD (FINAL)
 ========================= */
 
 .postdoc-card {
   position: relative;
-  padding: 26px 28px;
-  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
 
-  background: rgba(26, 92, 255, 0.04);
+  padding: 32px 36px;
+  border-radius: 22px;
+
+  background: rgba(26, 92, 255, 0.045);
   border: 1px solid rgba(26, 92, 255, 0.14);
 
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 12px 40px rgba(26, 92, 255, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.03);
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
 }
 
+/* Accent bar */
 .postdoc-card::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 26px;
-  bottom: 26px;
-  width: 4px;
+  top: 28px;
+  bottom: 28px;
+  width: 5px;
   background: var(--accent);
   border-radius: 4px;
+  opacity: 0.9;
 }
 
+/* Heading */
 .postdoc-card h3 {
-  margin-top: 0;
-  margin-bottom: 14px;
-  font-size: 16px;
+  margin: 0 0 18px;
+  font-size: 17px;
   font-weight: 600;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
 }
 
+/* Body text */
 .postdoc-card p {
-  margin-bottom: 14px;
-  line-height: 1.7;
-  font-size: 14px;
+  max-width: 54ch;
+  margin-bottom: 16px;
+  line-height: 1.75;
+  font-size: 14.5px;
   color: var(--text-muted);
 }
 
-/* Optional subtle elevation */
-.postdoc-card {
-  box-shadow: 0 10px 40px rgba(26, 92, 255, 0.08);
+/* Address / affiliation block */
+.postdoc-meta {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
 }
+
+/* Hover refinement (subtle, not flashy) */
 .postdoc-card:hover {
   border-color: rgba(26, 92, 255, 0.28);
+  box-shadow:
+    0 18px 50px rgba(26, 92, 255, 0.14),
+    0 4px 10px rgba(0,0,0,0.04);
+  transform: translateY(-2px);
 }
 
 
