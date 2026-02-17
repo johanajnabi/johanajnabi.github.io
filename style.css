@@ -821,7 +821,12 @@ p a:hover {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
   gap: 48px;
-  align-items: start;
+  align-items: stretch;
+}
+
+.postdoc-card {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Stack on smaller screens */
@@ -914,8 +919,8 @@ p a:hover {
   content: "";
   position: absolute;
   left: 0;
-  top: 24px;
-  bottom: 24px;
+  top: 26px;
+  bottom: 26px;
   width: 4px;
   background: var(--accent);
   border-radius: 4px;
@@ -931,7 +936,7 @@ p a:hover {
 
 .postdoc-card p {
   margin-bottom: 14px;
-  line-height: 1.65;
+  line-height: 1.7;
   font-size: 14px;
   color: var(--text-muted);
 }
