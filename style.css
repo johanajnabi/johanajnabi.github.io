@@ -907,7 +907,7 @@ p a:hover {
   padding: 32px 36px;
   border-radius: 22px;
 
-  background: rgba(26, 92, 255, 0.045);
+  background: rgba(26, 92, 255, 0.035);
   border: 1px solid rgba(26, 92, 255, 0.14);
 
   backdrop-filter: blur(8px);
@@ -962,6 +962,22 @@ p a:hover {
   line-height: 1.6;
   color: var(--text-muted);
 }
+.meta-label {
+  font-weight: 600;
+  color: var(--text-main);
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.postdoc-card p + p {
+  margin-top: 2px;
+}
+.postdoc-lead {
+  font-size: 15.5px;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 18px;
+}
+
 
 /* Hover refinement (subtle, not flashy) */
 .postdoc-card:hover {
