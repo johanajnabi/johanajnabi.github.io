@@ -101,5 +101,60 @@ document.addEventListener("DOMContentLoaded", () => {
       observer.observe(section);
     });
   }
+     /* =========================================
+   LIGHTBOX (TALK IMAGES)
+========================================= */
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.querySelector(".lightbox-img");
+const lightboxClose = document.querySelector(".lightbox-close");
+
+if (lightbox && lightboxImg) {
+
+  // Open lightbox on image click
+  document.querySelectorAll(".talk-images img").forEach(img => {
+    img.addEventListener("click", () => {
+
+      const temp = new Image();
+      temp.src = img.src;
+
+      const openLightbox = () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || "";
+        lightbox.classList.add("active");
+        document.body.classList.add("no-scroll");
+      };
+
+      temp.onload = openLightbox;
+      temp.onerror = openLightbox;
+
+    });
+  });
+
+  // Close via X button
+  if (lightboxClose) {
+    lightboxClose.addEventListener("click", () => {
+      lightbox.classList.remove("active");
+      document.body.classList.remove("no-scroll");
+    });
+  }
+
+  // Close on background click
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove("active");
+      document.body.classList.remove("no-scroll");
+    }
+  });
+
+  // Close on ESC key (only if open)
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("active")) {
+      lightbox.classList.remove("active");
+      document.body.classList.remove("no-scroll");
+    }
+  });
+
+}
 
 });
