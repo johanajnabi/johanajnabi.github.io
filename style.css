@@ -803,7 +803,6 @@ p a:hover {
   margin-top: 12px;
   flex-wrap: wrap;
 }
-
 .talk-images img {
   width: 100%;
   max-width: 260px;
@@ -811,15 +810,42 @@ p a:hover {
   border: 1px solid var(--border-soft);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: zoom-in;
-}
 
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
 .talk-images img:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
-.talk-images img {
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+
+/* =========================
+   IMAGE CAPTIONS (ADD THIS)
+========================= */
+
+.talk-img-wrap {
+  position: relative;
+  display: inline-block;
+   max-width: 260px;
+   vertical-align: top;
+}
+
+.talk-caption {
+  position: absolute;
+   max-width: 90%;
+  bottom: 6px;
+  left: 6px;
+
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+
+  font-size: 11px;
+  padding: 4px 6px;
+  border-radius: 6px;
+
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+   backdrop-filter: blur(2px);
 }
 /* =========================
    LIGHTBOX
