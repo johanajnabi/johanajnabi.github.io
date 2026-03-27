@@ -432,22 +432,6 @@ p a:hover {
 .content > .nav-pills {
   margin-top: 12px;
 }
-/* =========================
-   TALKS SECTION
-========================= */
-
-.talk-block {
-  margin-bottom: 22px;
-}
-
-.talk-block strong {
-  font-weight: 600;
-}
-
-.talk-block em {
-  font-style: italic;
-  color: var(--text-muted);
-}
 
 /* =========================
    BEYOND PAGE
@@ -809,6 +793,34 @@ p a:hover {
   color: var(--text-muted);
 }
 
+/* =========================
+   TALK IMAGES (NEW)
+========================= */
+
+.talk-images {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.talk-images img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 10px;
+  border: 1px solid var(--border-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: zoom-in;
+}
+
+.talk-images img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.talk-images img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
 /* =========================
    CONTACT GRID LAYOUT
 ========================= */
@@ -1400,4 +1412,11 @@ p a:hover {
   padding: 22px;
   border-radius: 16px;
 }
+   .talk-images {
+    gap: 10px;
+  }
+
+  .talk-images img {
+    max-width: 100%;
+  }
 }
