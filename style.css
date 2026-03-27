@@ -846,6 +846,14 @@ p a:hover {
   line-height: 1.2;
   letter-spacing: 0.2px;
    backdrop-filter: blur(2px);
+   opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.talk-img-wrap:hover .talk-caption {
+  opacity: 1;
+  transform: translateY(0);
 }
 /* =========================
    LIGHTBOX
