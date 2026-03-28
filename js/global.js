@@ -102,69 +102,107 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 /* =========================================
-   LIGHTBOX (TALK IMAGES + NAVIGATION)
+   LIGHTBOX (PRO VERSION: NAV + STATE + UX)
 ========================================= */
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.querySelector(".lightbox-img");
 const lightboxClose = document.querySelector(".lightbox-close");
+const prevBtn = document.querySelector(".lightbox-prev");
+const nextBtn = document.querySelector(".lightbox-next");
 
 if (lightbox && lightboxImg) {
-lightboxImg.addEventListener("click", nextImage);
+
+  /* ========= STATE ========= */
   let images = [];
   let currentIndex = 0;
 
   const imageElements = document.querySelectorAll(".talk-images img");
 
-  /* ========= OPEN ========= */
-  imageElements.forEach((img, index) => {
+  /* ========= HELPERS ========= */
 
+  const openLightbox = (img) => {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt || "";
+
+    lightbox.classList.add("active");
+    document.body.classList.add("no-scroll");
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.remove("active");
+    document.body.classList.remove("no-scroll");
+  };
+
+  const showImage = (index) => {
+    if (!images.length) return;
+
+    const img = images[index];
+
+    // Optional fade effect
+    lightboxImg.style.opacity = 0;
+
+    setTimeout(() => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || "";
+      lightboxImg.style.opacity = 1;
+    }, 120);
+  };
+
+  const nextImage = () => {
+    if (!images.length) return;
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  };
+
+  const prevImage = () => {
+    if (!images.length) return;
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  };
+
+  /* ========= OPEN ========= */
+
+  imageElements.forEach((img, index) => {
     img.addEventListener("click", () => {
 
       images = Array.from(imageElements);
       currentIndex = index;
 
+      // Preload (with safe fallback)
       const temp = new Image();
       temp.src = img.src;
 
-      const openLightbox = () => {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt || "";
-        lightbox.classList.add("active");
-        document.body.classList.add("no-scroll");
-      };
-
-      temp.onload = openLightbox;
-      temp.onerror = openLightbox;
+      temp.onload = () => openLightbox(img);
+      temp.onerror = () => openLightbox(img);
 
     });
-
   });
 
-  /* ========= NAVIGATION ========= */
-  const showImage = (index) => {
-    const img = images[index];
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt || "";
-  };
+  /* ========= CLICK NAV ========= */
 
-  const nextImage = () => {
-  if (!images.length) return;
-  currentIndex = (currentIndex + 1) % images.length;
-  showImage(currentIndex);
-};
+  lightboxImg.addEventListener("click", (e) => {
+    e.stopPropagation();
+    nextImage();
+  });
 
-const prevImage = () => {
-  if (!images.length) return;
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  showImage(currentIndex);
-};
+  /* ========= BUTTON NAV ========= */
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      nextImage();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      prevImage();
+    });
+  }
 
   /* ========= CLOSE ========= */
-  const closeLightbox = () => {
-    lightbox.classList.remove("active");
-    document.body.classList.remove("no-scroll");
-  };
 
   if (lightboxClose) {
     lightboxClose.addEventListener("click", closeLightbox);
@@ -175,15 +213,22 @@ const prevImage = () => {
   });
 
   /* ========= KEYBOARD ========= */
+
   document.addEventListener("keydown", (e) => {
 
     if (!lightbox.classList.contains("active")) return;
 
-    if (e.key === "Escape") closeLightbox();
-
-    if (e.key === "ArrowRight") nextImage();
-
-    if (e.key === "ArrowLeft") prevImage();
+    switch (e.key) {
+      case "Escape":
+        closeLightbox();
+        break;
+      case "ArrowRight":
+        nextImage();
+        break;
+      case "ArrowLeft":
+        prevImage();
+        break;
+    }
 
   });
 
