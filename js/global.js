@@ -101,8 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
       observer.observe(section);
     });
   }
-     /* =========================================
-   LIGHTBOX (TALK IMAGES)
+/* =========================================
+   LIGHTBOX (TALK IMAGES + NAVIGATION)
 ========================================= */
 
 const lightbox = document.getElementById("lightbox");
@@ -110,10 +110,19 @@ const lightboxImg = document.querySelector(".lightbox-img");
 const lightboxClose = document.querySelector(".lightbox-close");
 
 if (lightbox && lightboxImg) {
+lightboxImg.addEventListener("click", nextImage);
+  let images = [];
+  let currentIndex = 0;
 
-  // Open lightbox on image click
-  document.querySelectorAll(".talk-images img").forEach(img => {
+  const imageElements = document.querySelectorAll(".talk-images img");
+
+  /* ========= OPEN ========= */
+  imageElements.forEach((img, index) => {
+
     img.addEventListener("click", () => {
+
+      images = Array.from(imageElements);
+      currentIndex = index;
 
       const temp = new Image();
       temp.src = img.src;
@@ -129,30 +138,53 @@ if (lightbox && lightboxImg) {
       temp.onerror = openLightbox;
 
     });
+
   });
 
-  // Close via X button
+  /* ========= NAVIGATION ========= */
+  const showImage = (index) => {
+    const img = images[index];
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt || "";
+  };
+
+  const nextImage = () => {
+  if (!images.length) return;
+  currentIndex = (currentIndex + 1) % images.length;
+  showImage(currentIndex);
+};
+
+const prevImage = () => {
+  if (!images.length) return;
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  showImage(currentIndex);
+};
+
+  /* ========= CLOSE ========= */
+  const closeLightbox = () => {
+    lightbox.classList.remove("active");
+    document.body.classList.remove("no-scroll");
+  };
+
   if (lightboxClose) {
-    lightboxClose.addEventListener("click", () => {
-      lightbox.classList.remove("active");
-      document.body.classList.remove("no-scroll");
-    });
+    lightboxClose.addEventListener("click", closeLightbox);
   }
 
-  // Close on background click
   lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-      lightbox.classList.remove("active");
-      document.body.classList.remove("no-scroll");
-    }
+    if (e.target === lightbox) closeLightbox();
   });
 
-  // Close on ESC key (only if open)
+  /* ========= KEYBOARD ========= */
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lightbox.classList.contains("active")) {
-      lightbox.classList.remove("active");
-      document.body.classList.remove("no-scroll");
-    }
+
+    if (!lightbox.classList.contains("active")) return;
+
+    if (e.key === "Escape") closeLightbox();
+
+    if (e.key === "ArrowRight") nextImage();
+
+    if (e.key === "ArrowLeft") prevImage();
+
   });
 
 }
