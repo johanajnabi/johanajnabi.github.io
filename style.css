@@ -794,75 +794,94 @@ p a:hover {
 }
 
 /* =========================
-   TALK IMAGES (NEW)
+   TALK IMAGES (PRO GRID)
 ========================= */
 
 .talk-images {
-  display: flex;
-  gap: 12px;
-  margin-top: 12px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 14px;
 }
-.talk-images img {
-  width: 100%;
-  max-width: 260px;
-  border-radius: 10px;
-  border: 1px solid var(--border-soft);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: zoom-in;
-
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-.talk-images img:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-/* =========================
-   IMAGE CAPTIONS (ADD THIS)
-========================= */
 
 .talk-img-wrap {
   position: relative;
-  display: inline-block;
-   max-width: 260px;
-   vertical-align: top;
+  width: 100%;
 }
+
+/* Image */
+.talk-images img {
+  width: 100%;
+  height: 160px; /* 👈 consistent thumbnail size */
+  object-fit: cover;
+
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
+
+  cursor: zoom-in;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.talk-images img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+  filter: brightness(0.95);
+}
+
+/* =========================
+   IMAGE CAPTIONS (REFINED)
+========================= */
 
 .talk-caption {
   position: absolute;
-   max-width: 90%;
-  bottom: 6px;
-  left: 6px;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
 
-  background: rgba(0, 0, 0, 0.65);
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.2)
+  );
+
   color: #fff;
 
-  font-size: 11px;
-  padding: 4px 6px;
-  border-radius: 6px;
+  font-size: 11.5px;
+  padding: 6px 8px;
+  border-radius: 8px;
 
-  line-height: 1.2;
+  line-height: 1.3;
   letter-spacing: 0.2px;
-   backdrop-filter: blur(2px);
-   opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+
+  backdrop-filter: blur(4px);
+
+  opacity: 0;
+  transform: translateY(6px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
+/* Show caption on hover */
 .talk-img-wrap:hover .talk-caption {
   opacity: 1;
   transform: translateY(0);
 }
+
 /* =========================
-   LIGHTBOX
+   LIGHTBOX (UPGRADED)
 ========================= */
 
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
+
+  background: rgba(0,0,0,0.88);
 
   display: flex;
   align-items: center;
@@ -870,6 +889,7 @@ p a:hover {
 
   opacity: 0;
   pointer-events: none;
+
   transition: opacity 0.25s ease;
 
   z-index: 200;
@@ -880,19 +900,41 @@ p a:hover {
   pointer-events: auto;
 }
 
+/* Image animation */
 .lightbox-img {
-  max-width: 90%;
+  max-width: 92%;
   max-height: 85%;
-  border-radius: 12px;
+  border-radius: 14px;
+
+  transform: scale(0.96);
+  opacity: 0;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
+.lightbox.active .lightbox-img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Close button */
 .lightbox-close {
   position: absolute;
-  top: 24px;
-  right: 32px;
-  font-size: 32px;
+  top: 26px;
+  right: 34px;
+
+  font-size: 34px;
   color: white;
+
   cursor: pointer;
+
+  transition: opacity 0.2s ease;
+}
+
+.lightbox-close:hover {
+  opacity: 0.7;
 }
 
 /* =========================
@@ -1487,10 +1529,11 @@ p a:hover {
   border-radius: 16px;
 }
    .talk-images {
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .talk-images img {
-    max-width: 100%;
+    height: auto;
   }
 }
