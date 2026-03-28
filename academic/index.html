@@ -561,9 +561,20 @@
 </div>
 
 <!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox">
-  <span class="lightbox-close">&times;</span>
-  <img class="lightbox-img" src="">
+<div id="lightbox" class="lightbox" aria-hidden="true">
+
+  <!-- Close -->
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+
+  <!-- Previous -->
+  <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
+
+  <!-- Image -->
+  <img class="lightbox-img" src="" alt="">
+
+  <!-- Next -->
+  <button class="lightbox-next" aria-label="Next image">&#10095;</button>
+
 </div>
 
   <div class="talk-block">
