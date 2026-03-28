@@ -1019,7 +1019,7 @@ p a:hover {
 
 .lightbox-caption {
   position: absolute;
-  bottom: 32px;
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
 
@@ -1035,7 +1035,7 @@ p a:hover {
 
   border-radius: 10px;
 
-  max-width: 75%;
+  max-width: 70%;
   text-align: center;
 
   z-index: 1000;
