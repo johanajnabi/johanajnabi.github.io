@@ -840,13 +840,18 @@ p a:hover {
   position: absolute;
   inset: auto 0 0 0;
 
-  padding: 10px 12px;
+  padding: 10px 14px;
 
   font-size: 12px;
-  line-height: 1.35;
+  line-height: 1.4;
   letter-spacing: 0.2px;
 
   color: #fff;
+
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   background: linear-gradient(
     to top,
