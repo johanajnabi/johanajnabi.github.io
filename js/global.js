@@ -102,111 +102,115 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 /* =========================================
-   LIGHTBOX (PRO VERSION: NAV + STATE + UX)
+   LIGHTBOX (PRO+ : NAV + CAPTION + UX)
 ========================================= */
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.querySelector(".lightbox-img");
+const lightboxCaption = document.querySelector(".lightbox-caption");
 const lightboxClose = document.querySelector(".lightbox-close");
-const prevBtn = document.querySelector(".lightbox-prev");
-const nextBtn = document.querySelector(".lightbox-next");
+const btnNext = document.querySelector(".lightbox-next");
+const btnPrev = document.querySelector(".lightbox-prev");
 
 if (lightbox && lightboxImg) {
 
   /* ========= STATE ========= */
-  let images = [];
+  let items = [];
   let currentIndex = 0;
 
-  const imageElements = document.querySelectorAll(".talk-images img");
+  const wrappers = document.querySelectorAll(".talk-img-wrap");
 
-  /* ========= HELPERS ========= */
+  /* ========= INIT ========= */
+  items = Array.from(wrappers).map(wrap => ({
+    img: wrap.querySelector("img"),
+    caption: wrap.querySelector(".talk-caption")?.textContent || ""
+  }));
 
-  const openLightbox = (img) => {
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt || "";
+  /* ========= CORE ========= */
+
+  const showImage = (index) => {
+    const item = items[index];
+
+    if (!item) return;
+
+    // Smooth fade
+    lightboxImg.style.opacity = 0;
+
+    setTimeout(() => {
+      lightboxImg.src = item.img.src;
+      lightboxImg.alt = item.img.alt || "";
+      lightboxCaption.textContent = item.caption;
+
+      lightboxImg.style.opacity = 1;
+    }, 120);
+  };
+
+  const openLightbox = (index) => {
+    currentIndex = index;
+
+    showImage(currentIndex);
 
     lightbox.classList.add("active");
     document.body.classList.add("no-scroll");
+
+    // accessibility
+    lightbox.setAttribute("aria-hidden", "false");
   };
 
   const closeLightbox = () => {
     lightbox.classList.remove("active");
     document.body.classList.remove("no-scroll");
-  };
 
-  const showImage = (index) => {
-    if (!images.length) return;
-
-    const img = images[index];
-
-    // Optional fade effect
-    lightboxImg.style.opacity = 0;
-
-    setTimeout(() => {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt || "";
-      lightboxImg.style.opacity = 1;
-    }, 120);
+    lightbox.setAttribute("aria-hidden", "true");
   };
 
   const nextImage = () => {
-    if (!images.length) return;
-    currentIndex = (currentIndex + 1) % images.length;
+    currentIndex = (currentIndex + 1) % items.length;
     showImage(currentIndex);
   };
 
   const prevImage = () => {
-    if (!images.length) return;
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
     showImage(currentIndex);
   };
 
   /* ========= OPEN ========= */
 
-  imageElements.forEach((img, index) => {
-    img.addEventListener("click", () => {
+  wrappers.forEach((wrap, index) => {
+    wrap.addEventListener("click", () => {
 
-      images = Array.from(imageElements);
-      currentIndex = index;
-
-      // Preload (with safe fallback)
       const temp = new Image();
-      temp.src = img.src;
+      temp.src = items[index].img.src;
 
-      temp.onload = () => openLightbox(img);
-      temp.onerror = () => openLightbox(img);
+      const safeOpen = () => openLightbox(index);
 
+      temp.onload = safeOpen;
+      temp.onerror = safeOpen;
     });
   });
 
-  /* ========= CLICK NAV ========= */
+  /* ========= BUTTON NAV ========= */
+
+  btnNext?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    nextImage();
+  });
+
+  btnPrev?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    prevImage();
+  });
+
+  /* ========= IMAGE CLICK NAV ========= */
 
   lightboxImg.addEventListener("click", (e) => {
     e.stopPropagation();
     nextImage();
   });
 
-  /* ========= BUTTON NAV ========= */
-
-  if (nextBtn) {
-    nextBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      nextImage();
-    });
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      prevImage();
-    });
-  }
-
   /* ========= CLOSE ========= */
 
-  if (lightboxClose) {
-    lightboxClose.addEventListener("click", closeLightbox);
-  }
+  lightboxClose?.addEventListener("click", closeLightbox);
 
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) closeLightbox();
@@ -233,5 +237,5 @@ if (lightbox && lightboxImg) {
   });
 
 }
-
+   
 });
