@@ -4,7 +4,8 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const publicationsSection = document.getElementById("publications");
+  const publicationsSection = document.getElementById("publication-record")
+    || document.getElementById("publications");
   const navPills = document.querySelectorAll(".nav-pills .pill");
   const sections = [...document.querySelectorAll("section[id]")];
 
@@ -79,7 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const sortWrap = document.createElement("div");
     const sortLabel = document.createTextNode("Sort:");
     const sortButton = document.createElement("button");
-    const anchor = publicationsSection.querySelector("p") || publicationsSection.querySelector("h2");
+    const anchor = publicationsSection.querySelector(".publication-record-intro")
+      || publicationsSection.querySelector("p")
+      || publicationsSection.querySelector("h2");
 
     controls.className = "pub-controls";
 
@@ -199,6 +202,10 @@ document.addEventListener("DOMContentLoaded", () => {
         current = section.id;
       }
     });
+
+    if (current === "publication-record") {
+      current = "publications";
+    }
 
     navPills.forEach(pill => {
       pill.classList.toggle("active", pill.getAttribute("href") === `#${current}`);
