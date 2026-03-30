@@ -1,302 +1,211 @@
 /* =========================
-   ACADEMIC PAGE JS (CLEAN)
+   ACADEMIC PAGE JS
 ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* --------------------------------------------------
-     PAGE GUARD
-  -------------------------------------------------- */
-
-  const experienceSection = document.getElementById("experience");
   const publicationsSection = document.getElementById("publications");
+  const navPills = document.querySelectorAll(".nav-pills .pill");
+  const sections = [...document.querySelectorAll("section[id]")];
 
-  if (!experienceSection || !publicationsSection) return;
+  if (!publicationsSection || !navPills.length || !sections.length) return;
 
   document.documentElement.classList.add("js");
 
   /* --------------------------------------------------
-     UTILITIES
+     PUBLICATION ENHANCEMENTS
   -------------------------------------------------- */
 
-  const NAME_REGEX = /\bAjnabi,\s*J\.?\b|\bJ\.?\s*Ajnabi\b/g;
+  const publicationGroups = [...publicationsSection.querySelectorAll(".pub-year-group")]
+    .map((group, originalIndex) => {
+      const heading = group.querySelector("h3");
+      const year = Number.parseInt(heading?.textContent?.trim() || "0", 10) || 0;
+      const items = [...group.querySelectorAll(".pub")].map(pub => ({
+        element: pub,
+        type: /biorxiv|preprint/i.test(pub.textContent) ? "preprint" : "peer"
+      }));
 
-  const highlightAuthor = authors =>
-    authors.replace(NAME_REGEX, m => `<strong>${m}</strong>`);
-
-  const getPubType = pub => {
-    const j = pub.journal.toLowerCase();
-    return (j.includes("biorxiv") || j.includes("preprint"))
-      ? "preprint"
-      : "peer";
-  };
-
-  const isFirstAuthor = authors =>
-    /^(\s*)?(Ajnabi,\s*J\.?|J\.?\s*Ajnabi)\b/i.test(authors);
-
-  const parseAuthors = authors =>
-    authors
-      .split(",")
-      .map(a => a.trim())
-      .filter(a => a.length > 1);
-
-  const formatCitation = (authors, year) => {
-    const names = parseAuthors(authors);
-    return names.length === 1
-      ? `${names[0]}, ${year}`
-      : `${names[0]} et al., ${year}`;
-  };
-
-  /* --------------------------------------------------
-     DATA LOADER
-  -------------------------------------------------- */
-
-  const loadJSON = async path => {
-    const res = await fetch(path);
-    if (!res.ok) throw new Error(`Failed to load ${path}`);
-    return res.json();
-  };
-
-  /* --------------------------------------------------
-     EXPERIENCE CITATIONS
-  -------------------------------------------------- */
-
-  const linkInlineCitations = (text, pubs) =>
-    text.replace(/\(\{([a-z0-9_]+)\}\)/gi, (_, key) => {
-
-      const pub = pubs.find(p => {
-        const first = p.authors
-          .split(",")[0]
-          .toLowerCase()
-          .replace(/\s+/g, "");
-        return `${first}_${p.year}` === key.toLowerCase();
-      });
-
-      if (!pub) return "";
-
-      const isPreprint = /biorxiv|preprint/i.test(pub.journal);
-      const journal = pub.journal.replace(/\s*\(preprint\)/i, "").trim();
-
-      return `
-        <span class="exp-citation">
-          <strong>${journal}${isPreprint ? " (preprint)" : ""}</strong>, ${pub.year}
-          <a href="${pub.link}" target="_blank" rel="noopener noreferrer">
-            [${formatCitation(pub.authors, pub.year)}]
-          </a>
-        </span>
-      `;
+      return {
+        element: group,
+        year,
+        originalIndex,
+        items
+      };
     });
 
-  const renderExperiencePoint = (point, pubs) => {
+  let currentType = "all";
+  let sortOrder = "desc";
 
-    if (typeof point === "string") {
-      return `<li>${linkInlineCitations(point, pubs)}</li>`;
-    }
+  const enhancePublicationDetails = () => {
+    publicationGroups.forEach(({ items }) => {
+      items.forEach(({ element }, index) => {
+        const details = [...element.children].find(child => child.tagName === "P");
 
-    if (point.paper) {
-      const p = point.paper;
-      return `
-        <li>
-          ${point.text}
-          <br>
-          <span class="exp-citation">
-            <strong>${p.journal}</strong>, ${p.year}
-            <a href="${p.link}" target="_blank" rel="noopener noreferrer">
-              [${formatCitation(p.authors, p.year)}]
-            </a>
-          </span>
-        </li>
-      `;
-    }
+        if (!details || details.classList.contains("pub-details")) return;
 
-    return "";
+        const lineBreak = document.createElement("br");
+        const toggle = document.createElement("button");
+        const detailsId = `pub-details-${index}-${Math.abs(details.textContent.length)}`;
+
+        details.classList.add("pub-details");
+        details.id = detailsId;
+        details.style.display = "none";
+
+        toggle.type = "button";
+        toggle.className = "pub-toggle";
+        toggle.textContent = "Show details";
+        toggle.setAttribute("aria-controls", detailsId);
+        toggle.setAttribute("aria-expanded", "false");
+
+        toggle.addEventListener("click", () => {
+          const isOpen = details.style.display === "block";
+
+          details.style.display = isOpen ? "none" : "block";
+          toggle.textContent = isOpen ? "Show details" : "Hide details";
+          toggle.setAttribute("aria-expanded", String(!isOpen));
+        });
+
+        element.insertBefore(lineBreak, details);
+        element.insertBefore(toggle, details);
+      });
+    });
   };
 
-  /* --------------------------------------------------
-     MAIN INIT
-  -------------------------------------------------- */
+  const insertPublicationControls = () => {
+    if (!publicationGroups.length || publicationsSection.querySelector(".pub-controls")) return;
 
-  (async function initAcademicPage() {
+    const controls = document.createElement("div");
+    const filterWrap = document.createElement("div");
+    const sortWrap = document.createElement("div");
+    const sortLabel = document.createTextNode("Sort:");
+    const sortButton = document.createElement("button");
+    const anchor = publicationsSection.querySelector("p") || publicationsSection.querySelector("h2");
 
-    try {
+    controls.className = "pub-controls";
 
-      let currentType = "all";
-      let sortOrder = "desc";
+    [
+      ["all", "All"],
+      ["peer", "Peer-reviewed"],
+      ["preprint", "Preprints"]
+    ].forEach(([type, label]) => {
+      const button = document.createElement("button");
 
-      const [experience, publications] = await Promise.all([
-        loadJSON("/academic/data/experience.json"),
-        loadJSON("/academic/data/publications.json")
-      ]);
+      button.type = "button";
+      button.className = "type-btn";
+      button.dataset.type = type;
+      button.textContent = label;
 
-      /* --------------------------
-         RENDER EXPERIENCE
-      --------------------------- */
-
-      experienceSection.innerHTML = `
-        <h2>Research Experience</h2>
-        ${experience.map(exp => `
-          <div class="experience-block">
-            <p>
-              <strong>${exp.role}</strong><br>
-              ${exp.institution}<br>
-              <em>${exp.period}</em><br>
-              Supervisor: ${exp.supervisor}
-            </p>
-            <ul>
-              ${exp.points.map(p =>
-                renderExperiencePoint(p, publications)
-              ).join("")}
-            </ul>
-          </div>
-        `).join("")}
-      `;
-
-      /* --------------------------
-         PUBLICATIONS
-      --------------------------- */
-
-      function renderPublications() {
-
-        let list = publications.slice();
-
-        if (currentType !== "all") {
-          list = list.filter(p => getPubType(p) === currentType);
-        }
-
-        list.sort((a, b) =>
-          sortOrder === "desc"
-            ? b.year - a.year
-            : a.year - b.year
-        );
-
-        publicationsSection.innerHTML = `
-          <h2>Publications</h2>
-
-          <div class="pub-controls">
-            <div>
-              ${["all","peer","preprint"].map(t => `
-                <button class="type-btn ${currentType===t?"active":""}"
-                        data-type="${t}">
-                  ${t === "all" ? "All" :
-                    t === "peer" ? "Peer-reviewed" : "Preprints"}
-                </button>
-              `).join("")}
-            </div>
-
-            <div>
-              Sort:
-              <button id="sort-toggle">
-                ${sortOrder === "desc" ? "Newest first" : "Oldest first"}
-              </button>
-            </div>
-          </div>
-
-          ${list.map((p, i) => `
-            <div class="pub">
-              ${highlightAuthor(p.authors)}
-              ${isFirstAuthor(p.authors)
-                ? `<span class="first-author">★ First author</span>`
-                : ``}
-              <br>
-              <em>${p.title}</em><br>
-              ${p.journal}, ${p.year}
-              <a href="${p.link}" target="_blank" rel="noopener noreferrer">
-                [${formatCitation(p.authors, p.year)}]
-              </a>
-
-              ${(p.summary || p.abstract) ? `
-                <br>
-                <button class="pub-toggle" data-id="${i}">
-                  Show details
-                </button>
-                <div class="pub-details" id="details-${i}">
-                  ${p.summary ? `<p><strong>Summary:</strong> ${p.summary}</p>` : ``}
-                  ${p.abstract ? `<p><strong>Abstract:</strong> ${p.abstract}</p>` : ``}
-                </div>
-              ` : ``}
-            </div>
-          `).join("")}
-        `;
-
-        /* Controls */
-
-        document.querySelectorAll(".pub-toggle").forEach(btn => {
-          btn.addEventListener("click", () => {
-            const el = document.getElementById(`details-${btn.dataset.id}`);
-            const open = el.style.display === "block";
-            el.style.display = open ? "none" : "block";
-            btn.textContent = open ? "Show details" : "Hide details";
-          });
-        });
-
-        document.querySelectorAll(".type-btn").forEach(btn => {
-          btn.addEventListener("click", () => {
-            currentType = btn.dataset.type;
-            renderPublications();
-          });
-        });
-
-        document.getElementById("sort-toggle")
-          .addEventListener("click", () => {
-            sortOrder = sortOrder === "desc" ? "asc" : "desc";
-            renderPublications();
-          });
-      }
-
-      renderPublications();
-/* =====================
-   FIX HASH SCROLL (ON LOAD)
-====================== */
-
-function scrollToHash() {
-  const hash = window.location.hash;
-  if (!hash) return;
-
-  const target = document.querySelector(hash);
-  if (!target) return;
-
-  const headerOffset = 100; // match your nav height exactly
-  const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
-  const offsetPosition = elementPosition - headerOffset;
-
-  window.scrollTo({
-    top: offsetPosition,
-    behavior: "smooth" // change to "smooth" if you want animation
-  });
-}
-
-setTimeout(scrollToHash, 150);
-window.addEventListener("hashchange", scrollToHash);
-
-
-      /* --------------------------
-         SCROLL SPY (PILL HIGHLIGHT)
-      --------------------------- */
-
-      const sections = [...document.querySelectorAll("section[id]")];
-      const pills = document.querySelectorAll(".nav-pills .pill");
-
-      window.addEventListener("scroll", () => {
-
-        const pos = window.scrollY + 140;
-        let current = "";
-
-        for (const s of sections) {
-          if (pos >= s.offsetTop) current = s.id;
-        }
-
-        pills.forEach(p => {
-          p.classList.toggle(
-            "active",
-            p.getAttribute("href") === `#${current}`
-          );
-        });
+      button.addEventListener("click", () => {
+        currentType = type;
+        updatePublicationState();
       });
 
-    } catch (err) {
-      console.error("Academic page failed to load:", err);
-    }
+      filterWrap.appendChild(button);
+    });
 
-  })();
+    sortButton.type = "button";
+    sortButton.id = "sort-toggle";
+    sortButton.addEventListener("click", () => {
+      sortOrder = sortOrder === "desc" ? "asc" : "desc";
+      updatePublicationState();
+    });
+
+    sortWrap.appendChild(sortLabel);
+    sortWrap.appendChild(sortButton);
+
+    controls.appendChild(filterWrap);
+    controls.appendChild(sortWrap);
+
+    anchor?.insertAdjacentElement("afterend", controls);
+  };
+
+  const updatePublicationState = () => {
+    const filterButtons = publicationsSection.querySelectorAll(".type-btn");
+    const sortButton = publicationsSection.querySelector("#sort-toggle");
+    const sortedGroups = [...publicationGroups].sort((a, b) => {
+      if (a.year === b.year) {
+        return a.originalIndex - b.originalIndex;
+      }
+
+      return sortOrder === "desc" ? b.year - a.year : a.year - b.year;
+    });
+
+    sortedGroups.forEach(({ element }) => {
+      publicationsSection.appendChild(element);
+    });
+
+    publicationGroups.forEach(({ element, items }) => {
+      let visibleCount = 0;
+
+      items.forEach(({ element: pub, type }) => {
+        const isVisible = currentType === "all" || currentType === type;
+
+        pub.style.display = isVisible ? "block" : "none";
+        visibleCount += isVisible ? 1 : 0;
+      });
+
+      element.style.display = visibleCount ? "" : "none";
+    });
+
+    filterButtons.forEach(button => {
+      button.classList.toggle("active", button.dataset.type === currentType);
+    });
+
+    if (sortButton) {
+      sortButton.textContent = sortOrder === "desc" ? "Newest first" : "Oldest first";
+    }
+  };
+
+  enhancePublicationDetails();
+  insertPublicationControls();
+  updatePublicationState();
+
+  /* --------------------------------------------------
+     HASH SCROLL
+  -------------------------------------------------- */
+
+  function scrollToHash() {
+    const hash = window.location.hash;
+
+    if (!hash) return;
+
+    const target = document.querySelector(hash);
+
+    if (!target) return;
+
+    const headerOffset = 100;
+    const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
+  setTimeout(scrollToHash, 150);
+  window.addEventListener("hashchange", scrollToHash);
+
+  /* --------------------------------------------------
+     SCROLL SPY
+  -------------------------------------------------- */
+
+  const updateActivePill = () => {
+    const pos = window.scrollY + 140;
+    let current = sections[0]?.id || "";
+
+    sections.forEach(section => {
+      if (pos >= section.offsetTop) {
+        current = section.id;
+      }
+    });
+
+    navPills.forEach(pill => {
+      pill.classList.toggle("active", pill.getAttribute("href") === `#${current}`);
+    });
+  };
+
+  updateActivePill();
+  window.addEventListener("scroll", updateActivePill, { passive: true });
 
 });
