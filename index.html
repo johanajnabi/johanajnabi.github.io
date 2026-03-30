@@ -14,6 +14,21 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
 
   <!-- =====================
+       CONTENT SECURITY POLICY
+  ====================== -->
+  <meta http-equiv="Content-Security-Policy"
+        content="
+          default-src 'self';
+          img-src 'self' https: data:;
+          script-src 'self';
+          style-src 'self' 'unsafe-inline';
+          connect-src 'self';
+          font-src 'self' https:;
+          frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.instagram.com;
+          object-src 'none';
+        ">
+
+  <!-- =====================
        SEO
   ====================== -->
   <title>Johan Ajnabi | Skin Mechanobiology and Wound Repair</title>
@@ -160,7 +175,43 @@
 
   <link rel="preload" as="image" href="/assets/profile.webp">
 </head>
-<body class="home">
+<body id="top" class="home">
+
+<header class="top-nav">
+  <div class="top-nav-inner">
+
+    <a href="/" class="brand">Johan Ajnabi</a>
+
+    <button class="menu-toggle" aria-label="Open menu">
+      &#9776;
+    </button>
+
+    <nav class="top-links">
+      <a href="/" class="active">Home</a>
+      <a href="/academic/">Academic</a>
+      <a href="/beyond/">Beyond Research</a>
+      <a href="/assets/JA_CV2026.pdf"
+         target="_blank"
+         rel="noopener noreferrer">
+        CV
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="/" class="active">Home</a>
+  <a href="/academic/">Academic</a>
+  <a href="/beyond/">Beyond Research</a>
+  <a href="/assets/JA_CV2026.pdf"
+     target="_blank"
+     rel="noopener noreferrer">
+    CV
+  </a>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay"></div>
 
 <main class="home-hero">
   <div class="home-inner home-shell">
@@ -355,8 +406,21 @@
       and postdoctoral opportunities.
     </p>
 
+    <footer class="site-footer">
+      &copy; 2026 Johan Ajnabi &middot; Last updated March 30, 2026
+    </footer>
+
   </div>
 </main>
+
+<script src="/js/global.js" defer></script>
+
+<a href="#top"
+   id="back-to-top"
+   class="pill back-to-top"
+   aria-label="Back to top">
+  &#8593; Top
+</a>
 
 </body>
 </html>
