@@ -1792,6 +1792,155 @@ body.academic-page {
   letter-spacing: 0.5px;
 }
 
+.home-shell {
+  max-width: 1120px;
+  padding: 56px;
+  text-align: left;
+}
+
+.home-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.95fr);
+  gap: 34px;
+  align-items: start;
+}
+
+.home-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-eyebrow,
+.home-proof-eyebrow,
+.home-side-label,
+.home-social-label {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.home-tagline {
+  max-width: 720px;
+  margin-bottom: 18px;
+}
+
+.home-description {
+  max-width: 720px;
+  margin: 0;
+}
+
+.home-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.home-meta span {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(26,92,255,0.08);
+  color: var(--text-main);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.home-cta {
+  justify-content: flex-start;
+  margin: 26px 0 0;
+}
+
+.home-side-card,
+.home-proof-card,
+.home-preview-card {
+  padding: 24px;
+  border: 1px solid var(--border-soft);
+  border-radius: 22px;
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.03);
+}
+
+.home-side-card {
+  background:
+    radial-gradient(circle at top right, rgba(26,92,255,0.09), transparent 38%),
+    rgba(255,255,255,0.92);
+}
+
+.home-side-card .home-photo {
+  margin: 0 0 18px;
+}
+
+.home-side-list,
+.home-preview-list {
+  margin: 0 0 18px;
+  padding-left: 20px;
+  color: var(--text-muted);
+}
+
+.home-side-list li,
+.home-preview-list li {
+  margin-bottom: 10px;
+}
+
+.home-icons {
+  justify-content: flex-start;
+  gap: 18px;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.home-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.home-proof-card h2,
+.home-preview-card h2 {
+  margin: 0 0 10px;
+  font-size: 21px;
+}
+
+.home-proof-card p:last-of-type,
+.home-preview-card p:last-of-type {
+  color: var(--text-muted);
+}
+
+.home-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.home-inline-link {
+  font-weight: 600;
+}
+
+.home-signature {
+  margin: 28px 0 0;
+  letter-spacing: 0.2px;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .home-shell {
+    padding: 40px 32px;
+  }
+
+  .home-top,
+  .home-proof-grid,
+  .home-preview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* =========================
    FADE-IN SEQUENCE
 ========================= */
@@ -2087,7 +2236,36 @@ body.academic-page {
     padding: 48px 24px;
     border-radius: 16px;
   }
-   .contact-grid {
+
+  .home-shell {
+    padding: 32px 20px;
+  }
+
+  .home-cta {
+    justify-content: flex-start;
+  }
+
+  .home-cta .home-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .home-side-card,
+  .home-proof-card,
+  .home-preview-card {
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .home-meta {
+    gap: 8px;
+  }
+
+  .home-icons {
+    gap: 16px;
+  }
+
+  .contact-grid {
   gap: 28px;
 }
 
