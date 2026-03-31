@@ -2513,59 +2513,6 @@ body.academic-page {
     border-radius: 16px;
   }
 
-  .home-shell {
-    padding: 32px 20px;
-  }
-
-  .home-cta {
-    justify-content: flex-start;
-  }
-
-  .home-heading-photo {
-    width: 108px;
-    height: 108px;
-  }
-
-  .home-cta .home-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .home-side-card,
-  .home-proof-card {
-    padding: 20px;
-    border-radius: 18px;
-  }
-
-  .project-summary-card,
-  .project-section-card,
-  .project-note-card,
-  .project-output-card,
-  .project-related-card,
-  .project-hub-card,
-  .project-detail-card,
-  .project-cta {
-    padding: 20px;
-    border-radius: 18px;
-  }
-
-  .home-meta {
-    gap: 8px;
-  }
-
-  .project-meta {
-    gap: 8px;
-  }
-
-  .home-heading-row {
-    gap: 16px;
-    align-items: center;
-  }
-
-  .home-icons {
-    gap: 16px;
-  }
-
   .contact-grid {
   gap: 28px;
 }
