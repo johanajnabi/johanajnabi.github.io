@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const publicationsSection = document.getElementById("publication-record")
     || document.getElementById("publications");
   const navPills = document.querySelectorAll(".nav-pills .pill");
-  const sections = [...document.querySelectorAll(".page-hero[id], section[id]")];
+  const sections = [...document.querySelectorAll("section[id]")];
 
   if (!publicationsSection || !navPills.length || !sections.length) return;
 
