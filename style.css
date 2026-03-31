@@ -51,6 +51,11 @@ section {
   margin-bottom: var(--section-gap);
 }
 
+.page-header[id],
+.page-hero[id] {
+  scroll-margin-top: calc(var(--nav-height) + 8px);
+}
+
 h1 {
   font-size: 32px;
   letter-spacing: -0.4px;
