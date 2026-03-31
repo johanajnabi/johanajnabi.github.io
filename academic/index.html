@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -69,7 +69,7 @@
   <!-- =====================
        ICON + STYLES
   ====================== -->
-  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="stylesheet" href="/style.css">
 
  <!-- =====================
@@ -77,309 +77,637 @@
 ====================== -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-
-    {
-      "@type": "ResearchOrganization",
-      "@id": "https://johanajnabi.com/#instem",
-      "name": "BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem)",
-      "url": "https://instem.res.in/",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bengaluru",
-        "addressCountry": "India"
-      }
-    },
-
-    {
-      "@type": "ResearchOrganization",
-      "@id": "https://johanajnabi.com/#iari",
-      "name": "ICAR – Indian Agricultural Research Institute"
-    },
-
-    {
-      "@type": "Person",
-      "@id": "https://johanajnabi.com/#johan",
-      "name": "Johan Ajnabi",
-      "givenName": "Johan",
-"familyName": "Ajnabi",
-"alternateName": "J. Ajnabi",
-"nationality": {
-  "@type": "Country",
-  "name": "India"
-},
-"hasOccupation": {
-  "@type": "Occupation",
-  "name": "Biomedical Researcher"
-},
-      "url": "https://johanajnabi.com/",
-      "image": {
-  "@type": "ImageObject",
-  "url": "https://johanajnabi.com/assets/profile.webp"
-},
-
-      "email": "mailto:johanajnabi@gmail.com",
-      "jobTitle": "PhD Candidate",
-      "description": "PhD researcher studying mechanotransduction, cytoskeletal dynamics, and epigenetic regulation during cutaneous wound repair and skin regeneration.",
-      "identifier": {
-        "@type": "PropertyValue",
-        "propertyID": "ORCID",
-        "value": "0000-0002-9437-9300",
-        "url": "https://orcid.org/0000-0002-9437-9300"
-      },
-      "affiliation": { "@id": "https://johanajnabi.com/#instem" },
-      "alumniOf": { "@id": "https://johanajnabi.com/#iari" },
-      "mainEntityOfPage": {
-  "@id": "https://johanajnabi.com/academic/#webpage"
-},
-      "knowsAbout": [
-        "Mechanotransduction",
-        "Epigenetic regulation",
-        "Cutaneous wound healing",
-        "Keratinocyte stem cells",
-        "Chromatin remodeling",
-        "Actin cytoskeleton dynamics"
-      ],
-      "sameAs": [
-        "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
-        "https://orcid.org/0000-0002-9437-9300",
-        "https://in.linkedin.com/in/johanajnabi",
-        "https://bsky.app/profile/johanajnabi.bsky.social",
-        "https://github.com/johanajnabi",
-        "https://johanajnabi.com/"
-      ],
-"subjectOf": [
-  { "@id": "https://doi.org/10.1101/2025.08.24.669246" },
-  { "@id": "https://doi.org/10.3389/fimmu.2023.1255478" }
-]
-    },
-
-    {
-      "@type": "WebSite",
-  "about": { "@id": "https://johanajnabi.com/#johan" },
-      "@id": "https://johanajnabi.com/#website",
-      "url": "https://johanajnabi.com/",
-      "name": "Johan Ajnabi",
-      "publisher": { "@id": "https://johanajnabi.com/#johan" },
-      "inLanguage": "en"
-    },
-
-   {
-  "@type": "WebPage",
-  "@id": "https://johanajnabi.com/academic/#webpage",
-  "url": "https://johanajnabi.com/academic/",
-  "name": "Johan Ajnabi | Academic Research",
-  "isPartOf": { "@id": "https://johanajnabi.com/#website" },
-  "about": { "@id": "https://johanajnabi.com/#johan" },
-  "inLanguage": "en",
-  "primaryImageOfPage": {
-    "@type": "ImageObject",
-    "url": "https://johanajnabi.com/assets/profile.webp"
-  },
-  "dateModified": "2026-02-14"
-},
-
-    {
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://johanajnabi.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Academic",
-      "item": "https://johanajnabi.com/academic/"
-    }
-  ]
-},
-
-    {
-      "@type": "ScholarlyArticle",
-      "@id": "https://doi.org/10.1101/2025.08.24.669246",
-      "headline": "Mindin mediated αM-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness",
-      "author": { "@id": "https://johanajnabi.com/#johan" },
-      "datePublished": "2025-08-24",
-      "identifier": "https://doi.org/10.1101/2025.08.24.669246",
-      "publisher": {
-        "@type": "ResearchOrganization",
-        "name": "Cold Spring Harbor Laboratory"
-      },
-      "isPartOf": {
-        "@type": "Periodical",
-        "name": "bioRxiv"
-      },
-      "about": [
-        "Keratinocyte stemness",
-        "Integrin signaling",
-        "STAT3 activation"
-      ]
-    },
-
-    {
-      "@type": "ScholarlyArticle",
-      "@id": "https://doi.org/10.3389/fimmu.2023.1255478",
-      "headline": "Niacinamide enhances cathelicidin mediated SARS-CoV-2 membrane disruption",
-      "author": { "@id": "https://johanajnabi.com/#johan" },
-      "datePublished": "2023",
-      "identifier": "https://doi.org/10.3389/fimmu.2023.1255478",
-      "publisher": {
-        "@type": "ResearchOrganization",
-        "name": "Frontiers Media SA"
-      },
-      "isPartOf": {
-        "@type": "Periodical",
-        "name": "Frontiers in Immunology"
-      },
-      "about": [
-        "Antimicrobial peptides",
-        "SARS-CoV-2",
-        "Innate immunity"
-      ]
-    },
-
-    {
-      "@type": "ScholarlyArticle",
-      "@id": "https://doi.org/10.1016/j.jid.2022.10.011",
-      "headline": "Mindin (SPON2) is essential for cutaneous fibrogenesis in a mouse model of systemic sclerosis",
-      "author": { "@id": "https://johanajnabi.com/#johan" },
-      "datePublished": "2023",
-      "identifier": "https://doi.org/10.1016/j.jid.2022.10.011",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Elsevier"
-      },
-      "isPartOf": {
-        "@type": "Periodical",
-        "name": "Journal of Investigative Dermatology"
-      },
-      "about": [
-        "Fibrosis",
-        "Systemic sclerosis",
-        "Skin pathology"
-      ]
-    },
-
-    {
-      "@type": "ScholarlyArticle",
-      "@id": "https://doi.org/10.1016/j.celrep.2022.111390",
-      "headline": "Snail maintains the stem/progenitor state of skin epithelial cells and carcinomas through the autocrine effect of matricellular protein Mindin",
-      "author": { "@id": "https://johanajnabi.com/#johan" },
-      "datePublished": "2022",
-      "identifier": "https://doi.org/10.1016/j.celrep.2022.111390",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Cell Press"
-      },
-      "isPartOf": {
-        "@type": "Periodical",
-        "name": "Cell Reports"
-      },
-      "about": [
-        "Snail transcription factor",
-        "Epithelial stem cells",
-        "Matricellular proteins"
-      ]
-    },
-
-    {
-      "@type": "Thesis",
-      "@id": "http://krishikosh.egranth.ac.in/handle/1/5810146216",
-      "headline": "Identification of cis-regulatory regions regulating the expression of PM19 gene in wheat",
-      "author": { "@id": "https://johanajnabi.com/#johan" },
-      "datePublished": "2019",
-      "publisher": { "@id": "https://johanajnabi.com/#iari" },
-      "url": "http://krishikosh.egranth.ac.in/handle/1/5810146216"
-    },
-{
-  "@type": "Event",
-  "@id": "https://johanajnabi.com/academic/#mbi2023",
-  "name": "MBI Conference 2023: Mechanobiology in Health and Disease",
-  "additionalType": "https://schema.org/PresentationDigitalDocument",
-  "startDate": "2023-09-26",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "eventStatus": "https://schema.org/EventCompleted",
-  "location": {
-    "@type": "Place",
-    "name": "National University of Singapore",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Singapore",
-      "addressCountry": "Singapore"
-    }
-  },
-  "organizer": {
-    "@type": "ResearchOrganization",
-    "name": "National University of Singapore"
-  },
-  "performer": {
-    "@id": "https://johanajnabi.com/#johan"
-  },
-  "description": "Poster presentation: Epigenetic and mechanical regulation of the cutaneous wound healing response."
-},
-
-{
-  "@type": "Event",
-  "@id": "https://johanajnabi.com/academic/#lasa2022",
-  "name": "10th International Conference of Laboratory Animal Scientists’ Association (LASA)",
-  "additionalType": "https://schema.org/PresentationDigitalDocument",
-  "startDate": "2022-06-01",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "eventStatus": "https://schema.org/EventCompleted",
-  "location": {
-    "@type": "Place",
-    "name": "Hyderabad",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Hyderabad",
-      "addressCountry": "India"
-    }
-  },
-  "organizer": {
-    "@type": "Organization",
-    "name": "Laboratory Animal Scientists’ Association"
-  },
-  "performer": {
-    "@id": "https://johanajnabi.com/#johan"
-  },
-  "description": "Poster presentation: Understanding the role of DNMT3A in the cutaneous wound healing response using a mouse model."
-},
-
-{
-  "@type": "Event",
-  "@id": "https://johanajnabi.com/academic/#nasc2019",
-  "name": "National Agricultural Science Congress",
-  "additionalType": "https://schema.org/PresentationDigitalDocument",
-  "startDate": "2019-02-01",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "eventStatus": "https://schema.org/EventCompleted",
-  "location": {
-    "@type": "Place",
-    "name": "Delhi",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Delhi",
-      "addressCountry": "India"
-    }
-  },
-  "performer": {
-    "@id": "https://johanajnabi.com/#johan"
-  },
-  "description": "Poster presentation: Identification and characterization of stress responsive PM19 promoter from wheat."
-}
-
-  ]
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "@type":  "ResearchOrganization",
+                       "@id":  "https://johanajnabi.com/#instem",
+                       "name":  "BRIC&ndash;Institute for Stem Cell Science and Regenerative Medicine (inStem)",
+                       "url":  "https://instem.res.in/",
+                       "address":  {
+                                       "@type":  "PostalAddress",
+                                       "addressLocality":  "Bengaluru",
+                                       "addressCountry":  "India"
+                                   }
+                   },
+                   {
+                       "@type":  "ResearchOrganization",
+                       "@id":  "https://johanajnabi.com/#iari",
+                       "name":  "ICAR &ndash; Indian Agricultural Research Institute"
+                   },
+                   {
+                       "@type":  "Person",
+                       "@id":  "https://johanajnabi.com/#johan",
+                       "name":  "Johan Ajnabi",
+                       "givenName":  "Johan",
+                       "familyName":  "Ajnabi",
+                       "alternateName":  "J. Ajnabi",
+                       "nationality":  {
+                                           "@type":  "Country",
+                                           "name":  "India"
+                                       },
+                       "url":  "https://johanajnabi.com/",
+                       "image":  {
+                                     "@type":  "ImageObject",
+                                     "url":  "https://johanajnabi.com/assets/profile.webp"
+                                 },
+                       "email":  "mailto:johanajnabi@gmail.com",
+                       "jobTitle":  "PhD Candidate",
+                       "hasOccupation":  {
+                                             "@type":  "Occupation",
+                                             "name":  "Biomedical Researcher"
+                                         },
+                       "seeks":  {
+                                     "@type":  "Occupation",
+                                     "name":  "Postdoctoral Researcher"
+                                 },
+                       "hasCredential":  {
+                                             "@type":  "EducationalOccupationalCredential",
+                                             "credentialCategory":  "PhD",
+                                             "recognizedBy":  {
+                                                                  "@id":  "https://johanajnabi.com/#instem"
+                                                              }
+                                         },
+                       "description":  "PhD researcher studying mechanotransduction, cytoskeletal dynamics, and epigenetic regulation during cutaneous wound repair and skin regeneration.",
+                       "identifier":  {
+                                          "@type":  "PropertyValue",
+                                          "propertyID":  "ORCID",
+                                          "value":  "0000-0002-9437-9300",
+                                          "url":  "https://orcid.org/0000-0002-9437-9300"
+                                      },
+                       "affiliation":  {
+                                           "@id":  "https://johanajnabi.com/#instem"
+                                       },
+                       "alumniOf":  {
+                                        "@id":  "https://johanajnabi.com/#iari"
+                                    },
+                       "mainEntityOfPage":  {
+                                                "@id":  "https://johanajnabi.com/academic/#webpage"
+                                            },
+                       "knowsAbout":  [
+                                          "Mechanobiology",
+                                          "Mechanotransduction",
+                                          "Epigenetic regulation",
+                                          "Chromatin remodeling",
+                                          "Stem cell biology",
+                                          "Tissue regeneration",
+                                          "Cutaneous wound healing",
+                                          "Cytoskeletal dynamics",
+                                          "Integrin signaling",
+                                          "Translational skin biology"
+                                      ],
+                       "sameAs":  [
+                                      "https://scholar.google.com/citations?user=4yT9DRcAAAAJ\u0026hl=en",
+                                      "https://orcid.org/0000-0002-9437-9300",
+                                      "https://in.linkedin.com/in/johanajnabi",
+                                      "https://bsky.app/profile/johanajnabi.com",
+                                      "https://github.com/johanajnabi",
+                                      "https://x.com/jo_ajnabi",
+                                      "https://www.researchgate.net/profile/Johan-Ajnabi"
+                                  ],
+                       "subjectOf":  [
+                                         {
+                                             "@id":  "https://doi.org/10.64898/2026.01.15.699481"
+                                         },
+                                         {
+                                             "@id":  "https://doi.org/10.1002/cti2.70080"
+                                         },
+                                         {
+                                             "@id":  "https://doi.org/10.1101/2025.08.24.669246"
+                                         },
+                                         {
+                                             "@id":  "https://link.springer.com/article/10.1007/s44372-025-00152-0"
+                                         },
+                                         {
+                                             "@id":  "https://doi.org/10.3389/fimmu.2023.1255478"
+                                         },
+                                         {
+                                             "@id":  "https://doi.org/10.1016/j.jid.2022.10.011"
+                                         },
+                                         {
+                                             "@id":  "https://doi.org/10.1016/j.celrep.2022.111390"
+                                         },
+                                         {
+                                             "@id":  "http://krishikosh.egranth.ac.in/handle/1/5810146216"
+                                         }
+                                     ]
+                   },
+                   {
+                       "@type":  "WebSite",
+                       "about":  {
+                                     "@id":  "https://johanajnabi.com/#johan"
+                                 },
+                       "@id":  "https://johanajnabi.com/#website",
+                       "url":  "https://johanajnabi.com/",
+                       "name":  "Johan Ajnabi",
+                       "publisher":  {
+                                         "@id":  "https://johanajnabi.com/#johan"
+                                     },
+                       "inLanguage":  "en"
+                   },
+                   {
+                       "@type":  "WebPage",
+                       "@id":  "https://johanajnabi.com/academic/#webpage",
+                       "url":  "https://johanajnabi.com/academic/",
+                       "name":  "Johan Ajnabi | Academic Research",
+                       "isPartOf":  {
+                                        "@id":  "https://johanajnabi.com/#website"
+                                    },
+                       "about":  {
+                                     "@id":  "https://johanajnabi.com/#johan"
+                                 },
+                       "inLanguage":  "en",
+                       "primaryImageOfPage":  {
+                                                  "@type":  "ImageObject",
+                                                  "url":  "https://johanajnabi.com/assets/profile.webp"
+                                              },
+                       "dateModified":  "2026-03-30"
+                   },
+                   {
+                       "@type":  "BreadcrumbList",
+                       "itemListElement":  [
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  1,
+                                                   "name":  "Home",
+                                                   "item":  "https://johanajnabi.com/"
+                                               },
+                                               {
+                                                   "@type":  "ListItem",
+                                                   "position":  2,
+                                                   "name":  "Academic",
+                                                   "item":  "https://johanajnabi.com/academic/"
+                                               }
+                                           ]
+                   },
+                   {
+                       "@type":  "ScholarlyArticle",
+                       "@id":  "https://doi.org/10.64898/2026.01.15.699481",
+                       "headline":  "Actin-dependent mechanotransduction controls nucleocytoplasmic partitioning of DNMT3a through ERK1/2 signaling during cutaneous wound healing",
+                       "author":  [
+                                      {
+                                          "@id":  "https://johanajnabi.com/#johan"
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Dam, B."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Gupta, E."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Saha, T."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Dutta, A."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Kumar, S."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Gupta, A."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Palakodeti, D."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Jamora, C."
+                                      }
+                                  ],
+                       "datePublished":  "2026-01-15",
+                       "identifier":  "https://doi.org/10.64898/2026.01.15.699481",
+                       "publisher":  {
+                                         "@type":  "ResearchOrganization",
+                                         "name":  "Cold Spring Harbor Laboratory"
+                                     },
+                       "isPartOf":  {
+                                        "@type":  "Periodical",
+                                        "name":  "bioRxiv"
+                                    },
+                       "description":  "This study demonstrates how wound-induced mechanical cues regulate DNMT3a nucleocytoplasmic localization through actin remodeling and ERK1/2 signaling, revealing a mechanotransduction-driven epigenetic control mechanism during cutaneous wound healing."
+                   },
+                   {
+                       "@type":  "ScholarlyArticle",
+                       "@id":  "https://doi.org/10.1002/cti2.70080",
+                       "headline":  "Spatial transcriptomic analysis of the immune landscape following NB-UVB treatment of vitiligo skin",
+                       "author":  [
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Dutta, A."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Gupta, D."
+                                      },
+                                      {
+                                          "@id":  "https://johanajnabi.com/#johan"
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Dam, B."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "P, S."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Jamora, C."
+                                      }
+                                  ],
+                       "datePublished":  "2026",
+                       "identifier":  "https://doi.org/10.1002/cti2.70080",
+                       "publisher":  {
+                                         "@type":  "Organization",
+                                         "name":  "Wiley"
+                                     },
+                       "isPartOf":  {
+                                        "@type":  "Periodical",
+                                        "name":  "Clinical \u0026 Translational Immunology"
+                                    },
+                       "description":  "This study employs spatial transcriptomic approaches to resolve immune cell states in vitiligo patient skin before and after narrowband UV-B therapy, revealing treatment-induced remodeling of the cutaneous immune landscape."
+                   },
+                   {
+                       "@type":  "ScholarlyArticle",
+                       "@id":  "https://doi.org/10.1101/2025.08.24.669246",
+                       "headline":  "Mindin mediated &alpha;M-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness",
+                       "author":  [
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Dam, B."
+                                      },
+                                      {
+                                          "@id":  "https://johanajnabi.com/#johan"
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Saha, T."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Shrivastava, A."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Badarinathan, K."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Hegde, A."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Dutta, A."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Jasoria, S."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Kataria, S."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Singh, A."
+                                      }
+                                  ],
+                       "datePublished":  "2025-08-24",
+                       "identifier":  "https://doi.org/10.1101/2025.08.24.669246",
+                       "publisher":  {
+                                         "@type":  "ResearchOrganization",
+                                         "name":  "Cold Spring Harbor Laboratory"
+                                     },
+                       "isPartOf":  {
+                                        "@type":  "Periodical",
+                                        "name":  "bioRxiv"
+                                    },
+                       "description":  "This work uncovers a Mindin&ndash;integrin&ndash;STAT3 signaling axis that sustains keratinocyte stemness through integrin endocytosis and downstream transcriptional activation."
+                   },
+                   {
+                       "@type":  "ScholarlyArticle",
+                       "@id":  "https://link.springer.com/article/10.1007/s44372-025-00152-0",
+                       "headline":  "Harmonizing plant resilience: unveiling the symphony of membrane lipid dynamics in response to abiotic stresses",
+                       "author":  [
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Dutta, S."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Islam, Z."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Das, S."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Barman, A."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Chowdhury, M."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Mondal, B. P."
+                                      },
+                                      {
+                                          "@id":  "https://johanajnabi.com/#johan"
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Manna, D."
+                                      }
+                                  ],
+                       "datePublished":  "2025",
+                       "identifier":  "https://link.springer.com/article/10.1007/s44372-025-00152-0",
+                       "publisher":  {
+                                         "@type":  "Organization",
+                                         "name":  "Springer Nature"
+                                     },
+                       "isPartOf":  {
+                                        "@type":  "Periodical",
+                                        "name":  "Discover Plants"
+                                    },
+                       "description":  "A comprehensive review of membrane lipid remodeling in plants under abiotic stress, highlighting lipid-mediated signaling mechanisms that contribute to stress tolerance."
+                   },
+                   {
+                       "@type":  "ScholarlyArticle",
+                       "@id":  "https://doi.org/10.3389/fimmu.2023.1255478",
+                       "headline":  "Niacinamide enhances cathelicidin mediated SARS-CoV-2 membrane disruption",
+                       "author":  [
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Bhatt, T."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Dam, B."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Khedkar, S. U."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Lall, S."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Pandey, S."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Kataria, S."
+                                      },
+                                      {
+                                          "@id":  "https://johanajnabi.com/#johan"
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Gulzar, S.-E.-J."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Dias, P. M."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Waskar, M."
+                                      }
+                                  ],
+                       "datePublished":  "2023",
+                       "identifier":  "https://doi.org/10.3389/fimmu.2023.1255478",
+                       "publisher":  {
+                                         "@type":  "ResearchOrganization",
+                                         "name":  "Frontiers Media SA"
+                                     },
+                       "isPartOf":  {
+                                        "@type":  "Periodical",
+                                        "name":  "Frontiers in Immunology"
+                                    },
+                       "description":  "This study shows that niacinamide potentiates cathelicidin-mediated antiviral activity by enhancing membrane disruption of SARS-CoV-2, providing mechanistic insight into host defense enhancement."
+                   },
+                   {
+                       "@type":  "ScholarlyArticle",
+                       "@id":  "https://doi.org/10.1016/j.jid.2022.10.011",
+                       "headline":  "Mindin (SPON2) is essential for cutaneous fibrogenesis in a mouse model of systemic sclerosis",
+                       "author":  [
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Rana, I."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Kataria, S."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Tan, T. L."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Hajam, E. Y."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Kashyap, D. K."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Saha, D."
+                                      },
+                                      {
+                                          "@id":  "https://johanajnabi.com/#johan"
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Paul, S."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Jayappa, S."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Ananthan, A. S. H. P."
+                                      }
+                                  ],
+                       "datePublished":  "2023",
+                       "identifier":  "https://doi.org/10.1016/j.jid.2022.10.011",
+                       "publisher":  {
+                                         "@type":  "Organization",
+                                         "name":  "Elsevier"
+                                     },
+                       "isPartOf":  {
+                                        "@type":  "Periodical",
+                                        "name":  "Journal of Investigative Dermatology"
+                                    },
+                       "description":  "This paper establishes Mindin as a critical regulator of dermal fibrogenesis, demonstrating its requirement for extracellular matrix remodeling in systemic sclerosis."
+                   },
+                   {
+                       "@type":  "ScholarlyArticle",
+                       "@id":  "https://doi.org/10.1016/j.celrep.2022.111390",
+                       "headline":  "Snail maintains the stem/progenitor state of skin epithelial cells and carcinomas through the autocrine effect of matricellular protein Mindin",
+                       "author":  [
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Badarinath, K."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Dam, B."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Kataria, S."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Zirmire, R. K."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Dey, R."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Kansagara, G."
+                                      },
+                                      {
+                                          "@id":  "https://johanajnabi.com/#johan"
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Hegde, A."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Singh, R."
+                                      },
+                                      {
+                                          "@type":  "Person",
+                                          "name":  "Masudi, T."
+                                      }
+                                  ],
+                       "datePublished":  "2022",
+                       "identifier":  "https://doi.org/10.1016/j.celrep.2022.111390",
+                       "publisher":  {
+                                         "@type":  "Organization",
+                                         "name":  "Cell Press"
+                                     },
+                       "isPartOf":  {
+                                        "@type":  "Periodical",
+                                        "name":  "Cell Reports"
+                                    },
+                       "description":  "This study identifies an autocrine Snail&ndash;Mindin signaling loop that sustains epithelial stemness in both normal skin and carcinoma contexts."
+                   },
+                   {
+                       "@type":  "Thesis",
+                       "@id":  "http://krishikosh.egranth.ac.in/handle/1/5810146216",
+                       "headline":  "Identification of cis-regulatory regions regulating the expression of PM19 gene in wheat",
+                       "author":  [
+                                      {
+                                          "@id":  "https://johanajnabi.com/#johan"
+                                      }
+                                  ],
+                       "datePublished":  "2019",
+                       "publisher":  {
+                                         "@id":  "https://johanajnabi.com/#iari"
+                                     },
+                       "url":  "http://krishikosh.egranth.ac.in/handle/1/5810146216"
+                   },
+                   {
+                       "@type":  "Event",
+                       "@id":  "https://johanajnabi.com/academic/#mbi2023",
+                       "name":  "MBI Conference 2023: Mechanobiology in Health and Disease",
+                       "additionalType":  "https://schema.org/PresentationDigitalDocument",
+                       "startDate":  "2023-09-26",
+                       "eventAttendanceMode":  "https://schema.org/OfflineEventAttendanceMode",
+                       "eventStatus":  "https://schema.org/EventCompleted",
+                       "location":  {
+                                        "@type":  "Place",
+                                        "name":  "National University of Singapore",
+                                        "address":  {
+                                                        "@type":  "PostalAddress",
+                                                        "addressLocality":  "Singapore",
+                                                        "addressCountry":  "Singapore"
+                                                    }
+                                    },
+                       "organizer":  {
+                                         "@type":  "ResearchOrganization",
+                                         "name":  "National University of Singapore"
+                                     },
+                       "performer":  {
+                                         "@id":  "https://johanajnabi.com/#johan"
+                                     },
+                       "description":  "Poster presentation: Epigenetic and mechanical regulation of the cutaneous wound healing response."
+                   },
+                   {
+                       "@type":  "Event",
+                       "@id":  "https://johanajnabi.com/academic/#lasa2022",
+                       "name":  "10th International Conference of Laboratory Animal Scientists' Association (LASA)",
+                       "additionalType":  "https://schema.org/PresentationDigitalDocument",
+                       "startDate":  "2022-06-01",
+                       "eventAttendanceMode":  "https://schema.org/OfflineEventAttendanceMode",
+                       "eventStatus":  "https://schema.org/EventCompleted",
+                       "location":  {
+                                        "@type":  "Place",
+                                        "name":  "Hyderabad",
+                                        "address":  {
+                                                        "@type":  "PostalAddress",
+                                                        "addressLocality":  "Hyderabad",
+                                                        "addressCountry":  "India"
+                                                    }
+                                    },
+                       "organizer":  {
+                                         "@type":  "Organization",
+                                         "name":  "Laboratory Animal Scientists' Association"
+                                     },
+                       "performer":  {
+                                         "@id":  "https://johanajnabi.com/#johan"
+                                     },
+                       "description":  "Poster presentation: Understanding the role of DNMT3A in the cutaneous wound healing response using a mouse model."
+                   },
+                   {
+                       "@type":  "Event",
+                       "@id":  "https://johanajnabi.com/academic/#nasc2019",
+                       "name":  "National Agricultural Science Congress",
+                       "additionalType":  "https://schema.org/PresentationDigitalDocument",
+                       "startDate":  "2019-02-01",
+                       "eventAttendanceMode":  "https://schema.org/OfflineEventAttendanceMode",
+                       "eventStatus":  "https://schema.org/EventCompleted",
+                       "location":  {
+                                        "@type":  "Place",
+                                        "name":  "Delhi",
+                                        "address":  {
+                                                        "@type":  "PostalAddress",
+                                                        "addressLocality":  "Delhi",
+                                                        "addressCountry":  "India"
+                                                    }
+                                    },
+                       "performer":  {
+                                         "@id":  "https://johanajnabi.com/#johan"
+                                     },
+                       "description":  "Poster presentation: Identification and characterization of stress responsive PM19 promoter from wheat."
+                   }
+               ]
 }
 </script>
 
 </head>
 
 
-<body>
+<body id="top" class="academic-page">
 
 <header class="top-nav">
   <div class="top-nav-inner">
@@ -388,7 +716,7 @@
 
     <!-- Hamburger button (mobile only) -->
     <button class="menu-toggle" aria-label="Open menu">
-      ☰
+      &#9776;
     </button>
 
     <!-- Desktop navigation -->
@@ -415,71 +743,349 @@
 <div class="menu-overlay" id="menuOverlay"></div>
 
 
-<main class="content">
-    
+<main class="content page-shell academic-content">
+  <!-- =====================
+       PAGE HEADER
+  ====================== -->
+  <header class="page-header page-hero academic-hero split-layout split-layout--hero-academic">
+    <div class="page-hero-main academic-hero-main">
+      <p class="academic-eyebrow">Research Profile</p>
+      <h1>Skin mechanobiology and epigenetic regulation in wound repair</h1>
+      <p class="academic-subtitle">
+        I investigate how physical cues generated during tissue injury are translated into
+        molecular programs that reshape epidermal cell identity during repair and regeneration.
+      </p>
+
+      <div class="academic-meta meta-list">
+        <span>PhD Candidate</span>
+        <span>BRIC-Institute for Stem Cell Science and Regenerative Medicine (inStem)</span>
+        <span>Bengaluru, India</span>
+      </div>
+
+      <div class="home-actions page-actions academic-actions">
+        <a href="#publications" class="home-btn primary">View Publications</a>
+        <a href="/assets/JA_CV2026.pdf" class="home-btn secondary" target="_blank" rel="noopener noreferrer">Download CV</a>
+        <a href="#links" class="home-btn secondary">Contact</a>
+      </div>
+    </div>
+
+    <aside class="page-hero-aside academic-opportunity">
+      <p class="academic-opportunity-label">Seeking postdoctoral opportunities</p>
+      <p>
+        I am interested in interdisciplinary research environments connecting mechanobiology,
+        tissue regeneration, chromatin regulation, and translational skin biology.
+      </p>
+      <a href="#links" class="academic-inline-link">Connect about postdoctoral opportunities</a>
+    </aside>
+  </header>
     <!-- =====================
          NAVIGATION
     ====================== -->
-    <nav class="nav-pills" aria-label="Primary navigation">
-      <a href="#about" class="pill active">Research Overview</a>
+    <nav class="nav-pills page-nav" aria-label="Primary navigation">
+      <a href="#about" class="pill active">Overview</a>
+      <a href="#highlights" class="pill">Highlights</a>
       <a href="#experience" class="pill">Experience</a>
       <a href="#publications" class="pill">Publications</a>
-      <a href="#talks" class="pill">Talks</a>
+      <a href="#talks" class="pill">Talks & Presentations</a>
       <a href="#links" class="pill">Contact</a>
     </nav>
 
     <!-- =====================
          ABOUT
     ====================== -->
-    <section id="about">
-      <h2>Research Overview</h2>
-      <p>
-        I am a life science researcher working at the interface of mechanobiology,
-        cell biology, and epigenetics. My research examines how mechanical cues at
-        wounds regulate cytoskeletal dynamics and epigenetic programs to control
-        epidermal cell-state transitions during tissue repair and regeneration.
-      </p>
+    <section id="about" class="page-section">
+      <div class="academic-overview-grid split-layout split-layout--academic">
+        <div class="academic-overview-copy">
+          <p class="section-kicker">Research Overview</p>
+          <h2>How cells interpret injury-associated mechanics</h2>
+          <p class="section-lead">
+            My work sits at the interface of mechanobiology, cell biology, and epigenetics,
+            with a focus on how wounded skin converts physical cues into durable changes in
+            cellular behavior.
+          </p>
+          <p>
+            At the Jamora laboratory, I study how actin-dependent mechanics, signaling pathways,
+            and chromatin regulators coordinate epidermal cell-state transitions during tissue
+            repair. I am especially interested in questions where physical microenvironments
+            meet nuclear decision-making.
+          </p>
+        </div>
+
+        <aside class="academic-overview-card">
+          <h3>Current Focus</h3>
+          <ul class="overview-points">
+            <li>Mechanotransduction during epidermal wound repair.</li>
+            <li>Actin-dependent control of nuclear signaling and chromatin regulators.</li>
+            <li>Skin regeneration, stemness, and disease-associated tissue-state changes.</li>
+          </ul>
+        </aside>
+      </div>
     </section>
 
     <!-- =====================
-         INTERESTS
+         HIGHLIGHTS
     ====================== -->
-    <section id="interests">
-      <h2>Research Interests</h2>
-      <ul>
-        <li>Cutaneous wound healing</li>
-        <li>Regeneration</li>
-        <li>Mechanobiology</li>
-        <li>Cellular signaling</li>
-        <li>Actin cytoskeleton dynamics</li>
-        <li>Epigenetic regulation</li>
-      </ul>
+    <section id="highlights" class="page-section">
+      <p class="section-kicker">Flagship Work</p>
+      <h2>Representative projects and outputs</h2>
+
+      <div class="academic-highlight-grid card-grid card-grid--3 card-grid--standard">
+        <article class="academic-highlight-card">
+          <p class="academic-card-eyebrow">2026 preprint</p>
+          <h3>Mechanotransduction and DNMT3A during cutaneous wound repair</h3>
+          <p>
+            Defined how wound-induced mechanical cues regulate nucleocytoplasmic partitioning
+            of DNMT3A through actin remodeling and ERK1/2 signaling during epidermal repair.
+          </p>
+          <div class="project-card-links">
+            <a href="/projects/dnmt3a-mechanotransduction/">Open project page</a>
+            <a href="https://doi.org/10.64898/2026.01.15.699481" target="_blank" rel="noopener noreferrer" class="project-card-secondary">
+              View preprint
+            </a>
+          </div>
+        </article>
+
+        <article class="academic-highlight-card">
+          <p class="academic-card-eyebrow">Spatial transcriptomics</p>
+          <h3>Immune-state mapping in vitiligo skin after NB-UVB treatment</h3>
+          <p>
+            Profiled treatment-associated remodeling of the cutaneous immune landscape using
+            spatial transcriptomic analysis complemented by validation in patient tissue.
+          </p>
+          <div class="project-card-links">
+            <a href="/projects/vitiligo-spatial-transcriptomics/">Open project page</a>
+            <a href="https://doi.org/10.1002/cti2.70080" target="_blank" rel="noopener noreferrer" class="project-card-secondary">
+              View article
+            </a>
+          </div>
+        </article>
+
+        <article class="academic-highlight-card">
+          <p class="academic-card-eyebrow">Stemness and signaling</p>
+          <h3>Mindin-integrin-STAT3 control of keratinocyte stemness</h3>
+          <p>
+            Contributed to work uncovering a signaling axis that sustains keratinocyte stemness
+            through integrin endocytosis and downstream transcriptional activation.
+          </p>
+          <div class="project-card-links">
+            <a href="/projects/keratinocyte-stemness/">Open project page</a>
+            <a href="https://doi.org/10.1101/2025.08.24.669246" target="_blank" rel="noopener noreferrer" class="project-card-secondary">
+              View preprint
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <p class="selected-pubs-footer">
+        Prefer a narrative view of the work? <a href="/projects/">Browse the flagship project pages</a>.
+      </p>
     </section>
 
     <hr class="section-divider">
 
     <!-- =====================
-         EXPERIENCE (Dynamic)
+         EXPERIENCE
     ====================== -->
-    <section id="experience">
-      <h2>Research Experience</h2>
-      <p class="fallback-only">
-        Detailed experience is loading…
+    <section id="experience" class="page-section">
+      <p class="section-kicker">Research Experience</p>
+      <h2>Research experience and training</h2>
+      <p class="section-lead">
+        Training across epidermal repair, stem cell biology, tissue analysis, and plant molecular biology.
       </p>
+      <div class="experience-block">
+        <p>
+          <strong>Research Assistant</strong><br>
+          Shiv Nadar Institute of Eminence (Deemed to be University), Delhi&ndash;NCR, India<br>
+          <em>July 2024 &ndash; Present</em><br>
+          Supervisor: Prof. Colin Jamora
+        </p>
+        <ul>
+<li>Investigating epigenetic and mechanical regulation of the cutaneous wound response, with a focus on wound-induced regulation of DNMT3a.</li>
+<li>Working extensively with primary mouse keratinocytes to study mechanotransduction-driven nuclear localization and function of epigenetic regulators.</li>
+        </ul>
+      </div>
+      <div class="experience-block">
+        <p>
+          <strong>Research Scholar</strong><br>
+          BRIC&ndash;Institute for Stem Cell Science and Regenerative Medicine (inStem), Bengaluru, India<br>
+          <em>August 2019 &ndash; Present</em><br>
+          Supervisor: Prof. Colin Jamora
+        </p>
+        <ul>
+<li>Investigated how wound-induced mechanical cues regulate the subcellular localization and activity of the de novo DNA methyltransferase DNMT3A during epidermal repair, integrating molecular biology, biochemistry, fluorescence microscopy, and genetic engineering approaches.<br><span class="exp-citation"><strong>bioRxiv (preprint)</strong>, 2026 <a href="https://doi.org/10.64898/2026.01.15.699481" target="_blank" rel="noopener noreferrer">[Ajnabi et al., 2026]</a></span></li>
+<li>Profiled immune cell states in patient skin before and after narrowband UV-B (NB-UVB) treatment using spatial transcriptomic approaches to resolve transcriptional heterogeneity within tissue, complemented by immunofluorescence and qPCR validation.<br><span class="exp-citation"><strong>Clinical &amp; Translational Immunology</strong>, 2026 <a href="https://doi.org/10.1002/cti2.70080" target="_blank" rel="noopener noreferrer">[Dutta et al., 2026]</a></span></li>
+<li>Studied a Mindin&ndash;integrin&ndash;STAT3 signaling axis that sustains keratinocyte stemness through integrin endocytosis and downstream transcriptional activation.<br><span class="exp-citation"><strong>bioRxiv (preprint)</strong>, 2025 <a href="https://doi.org/10.1101/2025.08.24.669246" target="_blank" rel="noopener noreferrer">[Dam et al., 2025]</a></span></li>
+<li>Investigated the role of the extracellular matrix protein Mindin in skin fibrotic conditions.<br><span class="exp-citation"><strong>Journal of Investigative Dermatology</strong>, 2023 <a href="https://doi.org/10.1016/j.jid.2022.10.011" target="_blank" rel="noopener noreferrer">[Rana et al., 2023]</a></span></li>
+<li>Studied antimicrobial peptide&ndash;mediated antiviral responses to SARS-CoV-2.<br><span class="exp-citation"><strong>Frontiers in Immunology</strong>, 2023 <a href="https://doi.org/10.3389/fimmu.2023.1255478" target="_blank" rel="noopener noreferrer">[Bhatt et al., 2023]</a></span></li>
+<li>Explored maintenance of epithelial stem/progenitor states via autocrine matricellular signaling.<br><span class="exp-citation"><strong>Cell Reports</strong>, 2022 <a href="https://doi.org/10.1016/j.celrep.2022.111390" target="_blank" rel="noopener noreferrer">[Badarinath et al., 2022]</a></span></li>
+        </ul>
+      </div>
+      <div class="experience-block">
+        <p>
+          <strong>AIEEA-PG Scholar (Master's Research)</strong><br>
+          ICAR&ndash;National Institute for Plant Biotechnology, New Delhi, India<br>
+          <em>January 2018 &ndash; July 2019</em><br>
+          Supervisor: Dr. Monika Dalal
+        </p>
+        <ul>
+<li>Master's research focused on identifying cis-regulatory regions controlling PM19 gene expression in wheat.<br><span class="exp-citation"><strong>MSc Thesis, ICAR &ndash; Indian Agricultural Research Institute</strong>, 2019 <a href="http://krishikosh.egranth.ac.in/handle/1/5810146216" target="_blank" rel="noopener noreferrer">[Ajnabi, 2019]</a></span></li>
+<li>Experience in in-silico genome analysis, gene/promoter cloning, transient GUS assays, plant tissue culture, and plant transformation.</li>
+        </ul>
+      </div>
     </section>
 
     <hr class="section-divider">
 
     <!-- =====================
-         PUBLICATIONS (Dynamic)
+         FULL PUBLICATION RECORD
     ====================== -->
-    <section id="publications">
-      <h2>Publications</h2>
-      <p class="fallback-only">
-        Interactive publication list loading.
-        <br>
-        Full list available in <a href="/assets/JA_CV2026.pdf">CV (PDF)</a>.
+    <section id="publications" class="page-section">
+      <p class="section-kicker">Publication Record</p>
+      <h2>Complete list of publications and preprints</h2>
+      <p class="publication-record-intro">
+        Filter by article type or sort chronologically below. A PDF version is also available in
+        <a href="/assets/JA_CV2026.pdf">CV (PDF)</a>.
       </p>
+
+      <div class="pub-year-group">
+        <h3>2026</h3>
+        <div class="pub">
+          <strong>Ajnabi, J.</strong>, Dam, B., Gupta, E., Saha, T., Dutta, A., Kumar, S., Gupta, A., Palakodeti, D., Jamora, C.
+          <span class="first-author">&#9733; First author</span>
+          <br>
+          <em>
+            <a href="https://doi.org/10.64898/2026.01.15.699481" target="_blank" rel="noopener noreferrer">
+              Actin-dependent mechanotransduction controls nucleocytoplasmic partitioning of DNMT3a through ERK1/2 signaling during cutaneous wound healing
+            </a>
+          </em>
+          <br>
+          bioRxiv (preprint), 2026
+          <p>
+            This study demonstrates how wound-induced mechanical cues regulate DNMT3a nucleocytoplasmic localization through actin remodeling and ERK1/2 signaling, revealing a mechanotransduction-driven epigenetic control mechanism during cutaneous wound healing.
+          </p>
+        </div>
+        <div class="pub">
+          Dutta, A., Gupta, D., <strong>Ajnabi, J.</strong>, Dam, B., P, S., Jamora, C.
+
+          <br>
+          <em>
+            <a href="https://doi.org/10.1002/cti2.70080" target="_blank" rel="noopener noreferrer">
+              Spatial transcriptomic analysis of the immune landscape following NB-UVB treatment of vitiligo skin
+            </a>
+          </em>
+          <br>
+          Clinical &amp; Translational Immunology, 2026
+          <p>
+            This study employs spatial transcriptomic approaches to resolve immune cell states in vitiligo patient skin before and after narrowband UV-B therapy, revealing treatment-induced remodeling of the cutaneous immune landscape.
+          </p>
+        </div>
+      </div>
+
+      <div class="pub-year-group">
+        <h3>2025</h3>
+        <div class="pub">
+          Dutta, S., Islam, Z., Das, S., Barman, A., Chowdhury, M., Mondal, B. P., <strong>Ajnabi, J.</strong>, Manna, D.
+
+          <br>
+          <em>
+            <a href="https://link.springer.com/article/10.1007/s44372-025-00152-0" target="_blank" rel="noopener noreferrer">
+              Harmonizing plant resilience: unveiling the symphony of membrane lipid dynamics in response to abiotic stresses
+            </a>
+          </em>
+          <br>
+          Discover Plants, 2025
+          <p>
+            A comprehensive review of membrane lipid remodeling in plants under abiotic stress, highlighting lipid-mediated signaling mechanisms that contribute to stress tolerance.
+          </p>
+        </div>
+        <div class="pub">
+          Dam, B., <strong>Ajnabi, J.</strong>, Saha, T., Shrivastava, A., Badarinathan, K., Hegde, A., Dutta, A., Jasoria, S., Kataria, S., Singh, A., et al.
+
+          <br>
+          <em>
+            <a href="https://doi.org/10.1101/2025.08.24.669246" target="_blank" rel="noopener noreferrer">
+              Mindin mediated &alpha;M-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness
+            </a>
+          </em>
+          <br>
+          bioRxiv (preprint), 2025
+          <p>
+            This work uncovers a Mindin&ndash;integrin&ndash;STAT3 signaling axis that sustains keratinocyte stemness through integrin endocytosis and downstream transcriptional activation.
+          </p>
+        </div>
+      </div>
+
+      <div class="pub-year-group">
+        <h3>2023</h3>
+        <div class="pub">
+          Rana, I., Kataria, S., Tan, T. L., Hajam, E. Y., Kashyap, D. K., Saha, D., <strong>Ajnabi, J.</strong>, Paul, S., Jayappa, S., Ananthan, A. S. H. P., et al.
+
+          <br>
+          <em>
+            <a href="https://doi.org/10.1016/j.jid.2022.10.011" target="_blank" rel="noopener noreferrer">
+              Mindin (SPON2) is essential for cutaneous fibrogenesis in a mouse model of systemic sclerosis
+            </a>
+          </em>
+          <br>
+          Journal of Investigative Dermatology, 2023
+          <p>
+            This paper establishes Mindin as a critical regulator of dermal fibrogenesis, demonstrating its requirement for extracellular matrix remodeling in systemic sclerosis.
+          </p>
+        </div>
+        <div class="pub">
+          Bhatt, T., Dam, B., Khedkar, S. U., Lall, S., Pandey, S., Kataria, S., <strong>Ajnabi, J.</strong>, Gulzar, S.-E.-J., Dias, P. M., Waskar, M., et al.
+
+          <br>
+          <em>
+            <a href="https://doi.org/10.3389/fimmu.2023.1255478" target="_blank" rel="noopener noreferrer">
+              Niacinamide enhances cathelicidin mediated SARS-CoV-2 membrane disruption
+            </a>
+          </em>
+          <br>
+          Frontiers in Immunology, 2023
+          <p>
+            This study shows that niacinamide potentiates cathelicidin-mediated antiviral activity by enhancing membrane disruption of SARS-CoV-2, providing mechanistic insight into host defense enhancement.
+          </p>
+        </div>
+      </div>
+
+      <div class="pub-year-group">
+        <h3>2022</h3>
+        <div class="pub">
+          Badarinath, K., Dam, B., Kataria, S., Zirmire, R. K., Dey, R., Kansagara, G., <strong>Ajnabi, J.</strong>, Hegde, A., Singh, R., Masudi, T., et al.
+
+          <br>
+          <em>
+            <a href="https://doi.org/10.1016/j.celrep.2022.111390" target="_blank" rel="noopener noreferrer">
+              Snail maintains the stem/progenitor state of skin epithelial cells and carcinomas through the autocrine effect of matricellular protein Mindin
+            </a>
+          </em>
+          <br>
+          Cell Reports, 2022
+          <p>
+            This study identifies an autocrine Snail&ndash;Mindin signaling loop that sustains epithelial stemness in both normal skin and carcinoma contexts.
+          </p>
+        </div>
+      </div>
+
+      <div class="pub-year-group">
+        <h3>2019</h3>
+        <div class="pub">
+          <strong>Ajnabi, J.</strong>
+          <span class="first-author">&#9733; First author</span>
+          <br>
+          <em>
+            <a href="http://krishikosh.egranth.ac.in/handle/1/5810146216" target="_blank" rel="noopener noreferrer">
+              Identification of cis-regulatory regions regulating the expression of PM19 gene in wheat
+            </a>
+          </em>
+          <br>
+          MSc Thesis, ICAR &ndash; Indian Agricultural Research Institute, 2019
+          <p>
+            Master's thesis identifying cis-regulatory elements controlling PM19 gene expression in wheat, contributing to understanding of stress-responsive transcriptional regulation in plants.
+          </p>
+        </div>
+      </div>
     </section>
 
     <hr class="section-divider">
@@ -487,27 +1093,75 @@
 <!-- =====================
      TALKS & PRESENTATIONS
 ====================== -->
-<section id="talks">
+<section id="talks" class="page-section">
+  <p class="section-kicker">Talks &amp; Presentations</p>
   <h2>Talks & Presentations</h2>
+  <p class="section-lead">
+    Selected conference presentations tracing the development of my work in mechanobiology
+    and wound repair.
+  </p>
 
   <div class="talk-block">
     <p>
       <strong>MBI Conference 2023: Mechanobiology in Health and Disease</strong><br>
-      National University of Singapore (NUS), Singapore · September 2023
+      National University of Singapore (NUS), Singapore &middot; September 2023
     </p>
     <p>
-      Poster Presentation — 
-      <em>Epigenetic and mechanical regulation of the cutaneous wound healing response</em>
-    </p>
+    Poster Presentation &mdash; 
+    <em>Epigenetic and mechanical regulation of the cutaneous wound healing response</em>
+  </p>
+
+ <!-- IMAGE STRIP -->
+        <div class="talk-images card-grid card-grid--3 card-grid--talks">
+
+  <div class="talk-img-wrap">
+    <img src="/assets/johan_giving_flash_talk.jpg"
+         alt="Johan Ajnabi giving a flash talk at MBI Conference 2023">
+    <span class="talk-caption">Flash Talk &middot; MBI Conference &middot; 2023</span>
   </div>
 
-  <div class="talk-block">
+  <div class="talk-img-wrap">
+    <img src="/assets/johan_presenting_poster.jpg"
+         alt="Johan Ajnabi presenting poster on mechanobiology and wound healing">
+    <span class="talk-caption">Poster Presentation &middot; NUS &middot; Singapore</span>
+  </div>
+
+  <div class="talk-img-wrap">
+    <img src="/assets/johan_with_other_awardees.webp"
+         alt="Johan Ajnabi with other awardees of Paeonia Foundation Travel Grant at the event">
+    <span class="talk-caption">Paeonia Foundation Travel Grant &middot; 2023</span>
+  </div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+
+  <!-- Close -->
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+
+  <!-- Previous -->
+  <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
+
+  <!-- Image -->
+  <img class="lightbox-img" src="" alt="">
+
+  <!-- Caption -->
+<div class="lightbox-caption"></div>
+
+  <!-- Next -->
+  <button class="lightbox-next" aria-label="Next image">&#10095;</button>
+
+</div>
+</div> <!-- CLOSE talk-block (MBI) -->
+
+<div class="talk-block">
     <p>
-      <strong>10th International Conference of Laboratory Animal Scientists’ Association (LASA)</strong><br>
-      Hyderabad, India · June 2022
+      <strong>10th International Conference of Laboratory Animal Scientists' Association (LASA)</strong><br>
+      Hyderabad, India &middot; June 2022
     </p>
     <p>
-      Poster Presentation — 
+      Poster Presentation &mdash; 
       <em>Understanding the role of DNMT3A in the cutaneous wound healing response using a mouse model</em>
     </p>
   </div>
@@ -515,10 +1169,10 @@
   <div class="talk-block">
     <p>
       <strong>National Agricultural Science Congress</strong><br>
-      Delhi, India · February 2019
+      Delhi, India &middot; February 2019
     </p>
     <p>
-      Poster Presentation — 
+      Poster Presentation &mdash; 
       <em>Identification and characterization of stress responsive PM19 promoter from wheat</em>
     </p>
   </div>
@@ -529,10 +1183,18 @@
     <!-- =====================
          CONTACT
     ====================== -->
-    <section id="links">
-      <h2>Contact</h2>
+    <section id="links" class="page-section contact-section">
+  <p class="section-kicker">Contact</p>
+  <h2>Contact</h2>
+  <p class="section-lead">
+    I welcome conversations about postdoctoral positions, collaborations, and related work
+    in mechanobiology, regeneration, and skin biology.
+  </p>
 
-      <ul class="contact-list">
+  <div class="contact-grid split-layout split-layout--contact">
+
+    <!-- LEFT: Contact Links -->
+    <ul class="contact-list">
 
         <li>
           <a href="mailto:johanajnabi@gmail.com">
@@ -580,6 +1242,28 @@
             </span>
           </a>
         </li>
+        
+         <li>
+  <a href="https://www.researchgate.net/profile/Johan-Ajnabi"
+     target="_blank" rel="noopener noreferrer">
+    <span class="contact-icon">
+      <svg viewBox="0 0 24 24"
+           stroke="currentColor"
+           fill="none"
+           stroke-width="1.6"
+           stroke-linecap="round"
+           stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M9 15V9h3a3 3 0 010 6H9z"></path>
+      </svg>
+    </span>
+    <span class="contact-text">
+      <strong>ResearchGate</strong>
+      <span>Research profile</span>
+    </span>
+  </a>
+</li>
+
 
         <li>
           <a href="https://in.linkedin.com/in/johanajnabi"
@@ -596,8 +1280,41 @@
           </a>
         </li>
 
+                <li>
+  <a href="https://github.com/johanajnabi"
+    target="_blank" rel="noopener noreferrer">
+    <span class="contact-icon">
+      <svg viewBox="0 0 24 24"
+           stroke="currentColor"
+           fill="none"
+           stroke-width="1.6"
+           stroke-linecap="round"
+           stroke-linejoin="round">
+        <path d="M9 19c-4 1.5-4-2-6-2"></path>
+        <path d="M15 22v-3.87a3.37 3.37 0 00-.94-2.61
+                 c3.14-.35 6.44-1.54 6.44-7
+                 A5.44 5.44 0 0019 4.77
+                 5.07 5.07 0 0018.91 1
+                 S17.73.65 15 2.48
+                 a13.38 13.38 0 00-6 0
+                 C6.27.65 5.09 1 5.09 1
+                 A5.07 5.07 0 005 4.77
+                 5.44 5.44 0 003.5 8.52
+                 c0 5.42 3.3 6.61 6.44 7
+                 A3.37 3.37 0 009 18.13V22"></path>
+      </svg>
+    </span>
+    <span class="contact-text">
+      <strong>GitHub</strong>
+      <span>@johanajnabi</span>
+    </span>
+  </a>
+</li>
+
+
+
         <li>
-          <a href="https://bsky.app/profile/johanajnabi.bsky.social"
+          <a href="https://bsky.app/profile/johanajnabi.com"
              target="_blank" rel="noopener noreferrer">
             <span class="contact-icon">
               <svg viewBox="0 0 24 24">
@@ -606,16 +1323,65 @@
             </span>
             <span class="contact-text">
               <strong>BlueSky</strong>
-              <span>@johanajnabi</span>
+              <span>@johanajnabi.com</span>
             </span>
           </a>
         </li>
 
+         <li>
+  <a href="https://x.com/jo_ajnabi"
+     target="_blank" rel="noopener noreferrer">
+    <span class="contact-icon">
+      <svg viewBox="0 0 24 24"
+           stroke="currentColor"
+           fill="none"
+           stroke-width="1.6"
+           stroke-linecap="round"
+           stroke-linejoin="round">
+        <path d="M4 4l16 16"></path>
+        <path d="M20 4L4 20"></path>
+      </svg>
+    </span>
+    <span class="contact-text">
+      <strong>X (formerly Twitter)</strong>
+      <span>@jo_ajnabi</span>
+    </span>
+  </a>
+</li>
+
       </ul>
+       <!-- RIGHT: Postdoc Card -->
+    <div class="postdoc-card">
+      <h3>Postdoctoral Opportunities</h3>
+
+      <p class="postdoc-lead">
+        I am actively seeking postdoctoral positions at the intersection of mechanobiology and 
+        epigenetic regulation, with a focus on tissue regeneration and translational biology.
+      </p>
+
+      <p>
+        My work integrates mechanical signaling with chromatin dynamics
+        in skin biology. I am particularly interested in interdisciplinary
+        and translational research environments.
+      </p>
+
+      <p>
+        I welcome discussions with potential mentors and collaborators.
+      </p>
+      <div class="postdoc-meta">
+  <span class="meta-label">Currently based at:</span><br>
+  BRIC&ndash;Institute for Stem Cell Science and Regenerative Medicine (inStem)<br>
+  Bengaluru, India
+</div>
+
+
+    </div>
+
+  </div>
     </section>
 
     <footer class="site-footer">
-      © 2026 Johan Ajnabi · Last updated February 2026
+      &copy; 2026 Johan Ajnabi &middot; Last updated March 30, 2026
     </footer>
 
   </main>
@@ -623,11 +1389,12 @@
 <script src="/js/global.js" defer></script>
 <script src="/academic/main.js" defer></script>
 
-<a href="#about"
+<a href="#top"
    id="back-to-top"
-   class="pill back-to-top"
+   class="back-to-top"
    aria-label="Back to top">
-  ↑ Top
+  &#8593; Top
 </a>
 </body>
 </html>
+
