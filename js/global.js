@@ -2,7 +2,7 @@
    GLOBAL SITE JS (PRODUCTION SAFE)
 ========================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
   const body = document.body;
   const toggle = document.querySelector(".menu-toggle");
@@ -101,6 +101,84 @@ document.addEventListener("DOMContentLoaded", () => {
       observer.observe(section);
     });
   }
+
+  /* =========================================
+     BEYOND GALLERY AUTOLOAD
+  ========================================= */
+
+  const captureGallery = document.querySelector(".capture-gallery[data-autoload]");
+
+  if (captureGallery) {
+    const emptyState = document.querySelector(".capture-empty");
+    const basePath = captureGallery.dataset.basePath || "/assets/beyond";
+    const extensions = (captureGallery.dataset.extensions || "png,jpg,jpeg,webp")
+      .split(",")
+      .map(ext => ext.trim())
+      .filter(Boolean);
+    const maxItems = Number.parseInt(captureGallery.dataset.maxItems || "24", 10) || 24;
+
+    const findImageSource = (index) => new Promise(resolve => {
+      let pointer = 0;
+
+      const tryNext = () => {
+        if (pointer >= extensions.length) {
+          resolve(null);
+          return;
+        }
+
+        const src = `${basePath}/${index}.${extensions[pointer]}`;
+        const probe = new Image();
+
+        probe.onload = () => resolve(src);
+        probe.onerror = () => {
+          pointer += 1;
+          tryNext();
+        };
+        probe.src = src;
+      };
+
+      tryNext();
+    });
+
+    const fragment = document.createDocumentFragment();
+    let foundCount = 0;
+
+    for (let index = 1; index <= maxItems; index += 1) {
+      const src = await findImageSource(index);
+
+      if (!src) break;
+
+      foundCount += 1;
+
+      const frame = document.createElement("figure");
+      const image = document.createElement("img");
+      const caption = document.createElement("span");
+      const frameLabel = `Frame ${String(index).padStart(2, "0")}`;
+
+      frame.className = "talk-img-wrap capture-frame";
+      frame.tabIndex = 0;
+      frame.setAttribute("role", "button");
+      frame.setAttribute("aria-label", `Open ${frameLabel} in lightbox`);
+
+      image.src = src;
+      image.alt = `Wildlife photograph ${index} by Johan Ajnabi`;
+      image.loading = "lazy";
+
+      caption.className = "talk-caption";
+      caption.textContent = frameLabel;
+
+      frame.appendChild(image);
+      frame.appendChild(caption);
+      fragment.appendChild(frame);
+    }
+
+    if (foundCount > 0) {
+      captureGallery.appendChild(fragment);
+      emptyState?.setAttribute("hidden", "");
+    } else {
+      emptyState?.removeAttribute("hidden");
+    }
+  }
 /* =========================================
    LIGHTBOX (PRO+ : NAV + CAPTION + UX)
 ========================================= */
@@ -177,7 +255,7 @@ if (lightbox && lightboxImg) {
   /* ========= OPEN ========= */
 
   wrappers.forEach((wrap, index) => {
-    wrap.addEventListener("click", () => {
+    const openFromWrapper = () => {
 
       const temp = new Image();
       temp.src = items[index].img.src;
@@ -186,6 +264,14 @@ if (lightbox && lightboxImg) {
 
       temp.onload = safeOpen;
       temp.onerror = safeOpen;
+    };
+
+    wrap.addEventListener("click", openFromWrapper);
+    wrap.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openFromWrapper();
+      }
     });
   });
 
