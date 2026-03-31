@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 
   <!-- =====================
        CORE META
@@ -13,23 +14,37 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
 
   <!-- =====================
+       CONTENT SECURITY POLICY
+  ====================== -->
+  <meta http-equiv="Content-Security-Policy"
+        content="
+          default-src 'self';
+          img-src 'self' https: data:;
+          script-src 'self';
+          style-src 'self' 'unsafe-inline';
+          connect-src 'self';
+          font-src 'self' https:;
+          frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.instagram.com;
+          object-src 'none';
+        ">
+
+  <!-- =====================
        SEO
   ====================== -->
- <title>Johan Ajnabi | Mechanobiology & Epigenetic Regulation</title>
+  <title>Johan Ajnabi | Skin Mechanobiology and Wound Repair</title>
 
   <meta name="author" content="Johan Ajnabi">
   <meta name="description"
-content="Johan Ajnabi is a PhD candidate studying mechanobiology and epigenetic regulation in skin biology at inStem, India. Pianist and wildlife photographer.">
-
+        content="Johan Ajnabi is a PhD candidate at inStem studying skin mechanobiology, epigenetic regulation, and epidermal wound repair. Explore research, publications, and contact information.">
 
   <link rel="canonical" href="https://johanajnabi.com/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Johan Ajnabi">
-  <meta property="og:title" content="Johan Ajnabi | Mechanobiology & Epigenetic Regulation">
+  <meta property="og:title" content="Johan Ajnabi | Skin Mechanobiology and Wound Repair">
   <meta property="og:description"
-      content="PhD candidate researching mechanobiology and epigenetic regulation in skin biology at inStem, India.">
+        content="Research on wound healing, mechanobiology, and epigenetic regulation in skin biology at inStem.">
   <meta property="og:url" content="https://johanajnabi.com/">
   <meta property="og:image"
         content="https://johanajnabi.com/assets/profile.webp">
@@ -37,30 +52,30 @@ content="Johan Ajnabi is a PhD candidate studying mechanobiology and epigenetic 
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Portrait of Johan Ajnabi">
 
-
   <!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Johan Ajnabi | Mechanobiology & Epigenetic Regulation">
-<meta name="twitter:description"
-      content="PhD candidate studying mechanobiology and epigenetic regulation in skin biology at inStem, India.">
-<meta name="twitter:image"
-      content="https://johanajnabi.com/assets/profile.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Johan Ajnabi | Skin Mechanobiology and Wound Repair">
+  <meta name="twitter:description"
+        content="PhD candidate studying skin mechanobiology, epigenetic regulation, and epidermal wound repair at inStem.">
+  <meta name="twitter:image"
+        content="https://johanajnabi.com/assets/profile.webp">
   <meta name="twitter:image:alt" content="Portrait of Johan Ajnabi">
   <meta name="twitter:creator" content="@jo_ajnabi">
   <meta name="twitter:site" content="@jo_ajnabi">
+
   <link rel="stylesheet" href="/style.css">
+
   <!-- =====================
-     STRUCTURED DATA
-====================== -->
-<script type="application/ld+json">
+       STRUCTURED DATA
+  ====================== -->
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
-
     {
       "@type": "ResearchOrganization",
       "@id": "https://johanajnabi.com/#instem",
-      "name": "BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem)",
+      "name": "BRIC-Institute for Stem Cell Science and Regenerative Medicine (inStem)",
       "url": "https://instem.res.in/",
       "address": {
         "@type": "PostalAddress",
@@ -68,67 +83,70 @@ content="Johan Ajnabi is a PhD candidate studying mechanobiology and epigenetic 
         "addressCountry": "India"
       }
     },
-
     {
-  "@type": "Person",
-  "@id": "https://johanajnabi.com/#johan",
-  "name": "Johan Ajnabi",
-  "givenName": "Johan",
-  "familyName": "Ajnabi",
-  "alternateName": "J. Ajnabi",
-  "email": "mailto:johanajnabi@gmail.com",
-
-  "worksFor": { "@id": "https://johanajnabi.com/#instem" },
-  "affiliation": { "@id": "https://johanajnabi.com/#instem" },
-  "memberOf": { "@id": "https://johanajnabi.com/#instem" },
-
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://johanajnabi.com/#webpage"
-  },
-
-  "url": "https://johanajnabi.com/",
-
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://johanajnabi.com/assets/profile.webp"
-  },
-
-  "jobTitle": "PhD Candidate",
-
-  "hasOccupation": {
-    "@type": "Occupation",
-    "name": "Biomedical Researcher"
-  },
-
-  "identifier": {
-    "@type": "PropertyValue",
-    "propertyID": "ORCID",
-    "value": "0000-0002-9437-9300",
-    "url": "https://orcid.org/0000-0002-9437-9300"
-  },
-
-  "sameAs": [
-    "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
-    "https://orcid.org/0000-0002-9437-9300",
-    "https://in.linkedin.com/in/johanajnabi",
-    "https://bsky.app/profile/johanajnabi.bsky.social",
-    "https://github.com/johanajnabi"
-  ],
-
-  "knowsAbout": [
-    "Mechanobiology",
-    "Epigenetic regulation",
-    "Cutaneous wound healing",
-    "Skin regeneration"
-  ],
-
-  "subjectOf": {
-    "@type": "WebPage",
-    "@id": "https://johanajnabi.com/academic/#webpage"
-  }
-},
-
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://johanajnabi.com/"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://johanajnabi.com/#johan",
+      "name": "Johan Ajnabi",
+      "givenName": "Johan",
+      "familyName": "Ajnabi",
+      "alternateName": "J. Ajnabi",
+      "email": "mailto:johanajnabi@gmail.com",
+      "description": "PhD candidate in mechanobiology and epigenetic regulation studying wound healing and translational skin regeneration at inStem, India.",
+      "worksFor": { "@id": "https://johanajnabi.com/#instem" },
+      "affiliation": { "@id": "https://johanajnabi.com/#instem" },
+      "memberOf": { "@id": "https://johanajnabi.com/#instem" },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://johanajnabi.com/#webpage"
+      },
+      "url": "https://johanajnabi.com/",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://johanajnabi.com/assets/profile.webp"
+      },
+      "jobTitle": "PhD Candidate",
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Biomedical Researcher"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ORCID",
+        "value": "0000-0002-9437-9300",
+        "url": "https://orcid.org/0000-0002-9437-9300"
+      },
+      "sameAs": [
+        "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
+        "https://orcid.org/0000-0002-9437-9300",
+        "https://in.linkedin.com/in/johanajnabi",
+        "https://bsky.app/profile/johanajnabi.com",
+        "https://github.com/johanajnabi",
+        "https://www.researchgate.net/profile/Johan-Ajnabi",
+        "https://x.com/jo_ajnabi"
+      ],
+      "knowsAbout": [
+        "Mechanobiology",
+        "Epigenetic regulation",
+        "Cutaneous wound healing",
+        "Skin regeneration",
+        "Mechanotransduction"
+      ],
+      "subjectOf": {
+        "@type": "WebPage",
+        "@id": "https://johanajnabi.com/academic/#webpage"
+      }
+    },
     {
       "@type": "WebSite",
       "@id": "https://johanajnabi.com/#website",
@@ -137,35 +155,35 @@ content="Johan Ajnabi is a PhD candidate studying mechanobiology and epigenetic 
       "publisher": { "@id": "https://johanajnabi.com/#johan" },
       "inLanguage": "en"
     },
-
     {
       "@type": "WebPage",
       "@id": "https://johanajnabi.com/#webpage",
       "url": "https://johanajnabi.com/",
-      "name": "Johan Ajnabi",
+      "name": "Johan Ajnabi | Skin Mechanobiology and Wound Repair",
       "about": { "@id": "https://johanajnabi.com/#johan" },
       "isPartOf": { "@id": "https://johanajnabi.com/#website" },
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://johanajnabi.com/assets/profile.webp"
       },
-      "inLanguage": "en"
+      "inLanguage": "en",
+      "dateModified": "2026-03-30"
     }
-
   ]
 }
-</script>
- <link rel="preload" as="image" href="/assets/profile.webp">
+  </script>
+
+  <link rel="preload" as="image" href="/assets/profile.webp">
 </head>
 <body class="home">
 
-<main class="home-hero">
+<main class="page-shell home-hero">
 
   <div class="home-inner">
 
     <!-- Profile Photo -->
     <img src="/assets/profile.webp"
-         alt="Johan Ajnabi"
+         alt="Portrait of Johan Ajnabi, biomedical researcher"
          class="home-photo fade-in">
 
     <!-- Name -->
@@ -179,7 +197,8 @@ content="Johan Ajnabi is a PhD candidate studying mechanobiology and epigenetic 
     BRIC–Institute for Stem Cell Science and Regenerative Medicine (inStem), India
   </div>
       <div class="home-focus">
-    Wound Healing · Mechanobiology · Epigenetics
+    Wound Healing · Mechanobiology · Epigenetics<br>
+        <em>Exploring translational mechanisms in wound healing biology</em>
   </div>
 </div>
 
@@ -255,7 +274,7 @@ content="Johan Ajnabi is a PhD candidate studying mechanobiology and epigenetic 
   </a>
 
   <!-- BlueSky -->
-  <a href="https://bsky.app/profile/johanajnabi.bsky.social"
+  <a href="https://bsky.app/profile/johanajnabi.com"
      target="_blank" rel="noopener noreferrer"
      class="home-icon"
      aria-label="BlueSky">
@@ -271,7 +290,7 @@ content="Johan Ajnabi is a PhD candidate studying mechanobiology and epigenetic 
     <div class="home-divider fade-in delay-3"></div>
 
     <!-- Navigation Pills -->
-    <nav class="nav-pills home-nav fade-in delay-4" aria-label="Primary navigation">
+    <nav class="nav-pills page-nav home-nav fade-in delay-4" aria-label="Primary navigation">
 
 <a href="/academic/#about" class="pill">About Me</a>
 <a href="/academic/#interests" class="pill">Interests</a>
@@ -290,8 +309,8 @@ content="Johan Ajnabi is a PhD candidate studying mechanobiology and epigenetic 
     </p>
 
     <p class="home-signature fade-in delay-5">
-      © 2026 Johan Ajnabi | Bengaluru · India
-    </p>
+  © 2026 Johan Ajnabi | Bengaluru · India | Last Updated March, 2026
+</p>
 
   </div>
 

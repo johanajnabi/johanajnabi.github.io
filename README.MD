@@ -28,6 +28,7 @@ Bengaluru, India
 
 Selected work includes:
 
+- Actin-dependent mechanotransduction controls nucleocytoplasmic partitioning of DNMT3a through ERK1/2 signaling during cutaneous wound healing (bioRxiv, 2026)
 - Mindin mediated αM-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness (bioRxiv, 2025)
 - Niacinamide enhances cathelicidin mediated SARS-CoV-2 membrane disruption (Frontiers in Immunology, 2023)
 - Mindin (SPON2) is essential for cutaneous fibrogenesis (Journal of Investigative Dermatology, 2023)

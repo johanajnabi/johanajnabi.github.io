@@ -3,14 +3,37 @@
 
   <url>
     <loc>https://johanajnabi.com/</loc>
+    <lastmod>2026-03-30</lastmod>
   </url>
 
   <url>
     <loc>https://johanajnabi.com/academic/</loc>
+    <lastmod>2026-03-30</lastmod>
   </url>
 
   <url>
     <loc>https://johanajnabi.com/beyond/</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+
+  <url>
+    <loc>https://johanajnabi.com/projects/</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+
+  <url>
+    <loc>https://johanajnabi.com/projects/dnmt3a-mechanotransduction/</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+
+  <url>
+    <loc>https://johanajnabi.com/projects/vitiligo-spatial-transcriptomics/</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+
+  <url>
+    <loc>https://johanajnabi.com/projects/keratinocyte-stemness/</loc>
+    <lastmod>2026-03-30</lastmod>
   </url>
 
 </urlset>
