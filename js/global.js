@@ -101,5 +101,141 @@ document.addEventListener("DOMContentLoaded", () => {
       observer.observe(section);
     });
   }
+/* =========================================
+   LIGHTBOX (PRO+ : NAV + CAPTION + UX)
+========================================= */
 
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.querySelector(".lightbox-img");
+const lightboxCaption = document.querySelector(".lightbox-caption");
+const lightboxClose = document.querySelector(".lightbox-close");
+const btnNext = document.querySelector(".lightbox-next");
+const btnPrev = document.querySelector(".lightbox-prev");
+
+if (lightbox && lightboxImg) {
+
+  /* ========= STATE ========= */
+  let items = [];
+  let currentIndex = 0;
+
+  const wrappers = document.querySelectorAll(".talk-img-wrap");
+
+  /* ========= INIT ========= */
+  items = Array.from(wrappers).map(wrap => ({
+    img: wrap.querySelector("img"),
+    caption: wrap.querySelector(".talk-caption")?.textContent || ""
+  }));
+
+  /* ========= CORE ========= */
+
+  const showImage = (index) => {
+    const item = items[index];
+
+    if (!item) return;
+
+    // Smooth fade
+    lightboxImg.style.opacity = 0;
+
+    setTimeout(() => {
+      lightboxImg.src = item.img.src;
+      lightboxImg.alt = item.img.alt || "";
+      lightboxCaption.textContent = item.caption;
+
+      lightboxImg.style.opacity = 1;
+    }, 120);
+  };
+
+  const openLightbox = (index) => {
+    currentIndex = index;
+
+    showImage(currentIndex);
+
+    lightbox.classList.add("active");
+    document.body.classList.add("no-scroll");
+
+    // accessibility
+    lightbox.setAttribute("aria-hidden", "false");
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.remove("active");
+    document.body.classList.remove("no-scroll");
+
+    lightbox.setAttribute("aria-hidden", "true");
+  };
+
+  const nextImage = () => {
+    currentIndex = (currentIndex + 1) % items.length;
+    showImage(currentIndex);
+  };
+
+  const prevImage = () => {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    showImage(currentIndex);
+  };
+
+  /* ========= OPEN ========= */
+
+  wrappers.forEach((wrap, index) => {
+    wrap.addEventListener("click", () => {
+
+      const temp = new Image();
+      temp.src = items[index].img.src;
+
+      const safeOpen = () => openLightbox(index);
+
+      temp.onload = safeOpen;
+      temp.onerror = safeOpen;
+    });
+  });
+
+  /* ========= BUTTON NAV ========= */
+
+  btnNext?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    nextImage();
+  });
+
+  btnPrev?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    prevImage();
+  });
+
+  /* ========= IMAGE CLICK NAV ========= */
+
+  lightboxImg.addEventListener("click", (e) => {
+    e.stopPropagation();
+    nextImage();
+  });
+
+  /* ========= CLOSE ========= */
+
+  lightboxClose?.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  /* ========= KEYBOARD ========= */
+
+  document.addEventListener("keydown", (e) => {
+
+    if (!lightbox.classList.contains("active")) return;
+
+    switch (e.key) {
+      case "Escape":
+        closeLightbox();
+        break;
+      case "ArrowRight":
+        nextImage();
+        break;
+      case "ArrowLeft":
+        prevImage();
+        break;
+    }
+
+  });
+
+}
+   
 });
