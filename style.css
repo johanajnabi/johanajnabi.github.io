@@ -1298,6 +1298,10 @@ body.beyond-page {
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.72);
 }
 
+.interest-embed-card--compact {
+  padding: 16px;
+}
+
 .capture-section {
   padding-top: 4px;
 }
@@ -1743,6 +1747,10 @@ body.beyond-page {
 
 .interest-embed-card .instagram-embed iframe {
   height: 620px;
+}
+
+.interest-embed-card--compact .instagram-embed iframe {
+  height: clamp(260px, 32vw, 340px);
 }
 
 .interest-embed-card .external-link {
