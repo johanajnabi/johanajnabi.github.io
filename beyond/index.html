@@ -33,26 +33,27 @@
   <title>Beyond Research | Johan Ajnabi</title>
 
   <meta name="description"
-        content="Creative pursuits of Johan Ajnabi including piano performance and wildlife photography.">
+        content="Beyond the laboratory, Johan Ajnabi explores piano performance and wildlife photography - creative practices centered on rhythm, light, patience, and attention.">
 
   <link rel="canonical" href="https://johanajnabi.com/beyond/">
 
   <!-- =====================
        OPEN GRAPH
   ====================== -->
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="website">
   <meta property="og:title" content="Beyond Research | Johan Ajnabi">
   <meta property="og:description"
-        content="Piano performance and wildlife photography.">
+        content="Piano performance and wildlife photography by Johan Ajnabi.">
   <meta property="og:url" content="https://johanajnabi.com/beyond/">
   <meta property="og:image"
         content="https://johanajnabi.com/assets/profile.webp">
   <meta property="og:image:alt" content="Portrait of Johan Ajnabi">
   <meta name="twitter:image:alt" content="Portrait of Johan Ajnabi">
 
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="stylesheet" href="/style.css">
-  
-    <!-- =====================
+
+  <!-- =====================
        TWITTER
   ====================== -->
   <meta name="twitter:card" content="summary_large_image">
@@ -67,7 +68,6 @@
 {
   "@context": "https://schema.org",
   "@graph": [
-
     {
       "@type": "WebPage",
       "@id": "https://johanajnabi.com/beyond/#webpage",
@@ -81,31 +81,36 @@
         "@id": "https://johanajnabi.com/#johan"
       },
       "inLanguage": "en",
+      "dateModified": "2026-03-30",
       "hasPart": [
         {
           "@id": "https://johanajnabi.com/beyond/#piano"
         },
         {
           "@id": "https://johanajnabi.com/beyond/#wildlife"
+        },
+        {
+          "@id": "https://johanajnabi.com/beyond/#practice"
         }
       ]
     },
-
     {
       "@type": "MusicGroup",
       "@id": "https://johanajnabi.com/beyond/#piano",
-      "name": "Jo's Pianoscope",
-      "url": "https://www.youtube.com/@JosPianoscope",
-      "genre": ["Classical", "Contemporary Piano"],
+      "name": "@jopianotes",
+      "url": "https://www.youtube.com/@jopianotes",
+      "genre": [
+        "Classical",
+        "Contemporary Piano"
+      ],
       "sameAs": [
-        "https://www.youtube.com/@JosPianoscope",
+        "https://www.youtube.com/@jopianotes",
         "https://www.instagram.com/jopianotes/"
       ],
       "creator": {
         "@id": "https://johanajnabi.com/#johan"
       }
     },
-
     {
       "@type": "CreativeWork",
       "@id": "https://johanajnabi.com/beyond/#wildlife",
@@ -115,27 +120,23 @@
         "@id": "https://johanajnabi.com/#johan"
       }
     }
-
   ]
 }
-</script>
-
+  </script>
 
 </head>
 
-<body>
+<body id="top" class="beyond-page">
 
 <header class="top-nav">
   <div class="top-nav-inner">
 
     <a href="/" class="brand">Johan Ajnabi</a>
 
-    <!-- Hamburger (mobile only) -->
     <button class="menu-toggle" aria-label="Open menu">
-      ☰
+      &#9776;
     </button>
 
-    <!-- Desktop navigation -->
     <nav class="top-links">
       <a href="/">Home</a>
       <a href="/academic/">Academic</a>
@@ -150,119 +151,229 @@
   </div>
 </header>
 
-<!-- Mobile Slide Menu -->
-<div class="mobile-menu" id="mobileMenu">
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
   <a href="/">Home</a>
   <a href="/academic/">Academic</a>
   <a href="/beyond/" class="active">Beyond Research</a>
-  <a href="/assets/JA_CV2026.pdf" target="_blank">CV</a>
-</div>
+  <a href="/assets/JA_CV2026.pdf"
+     target="_blank"
+     rel="noopener noreferrer">
+    CV
+  </a>
+</nav>
 
-<!-- Overlay -->
 <div class="menu-overlay" id="menuOverlay"></div>
 
-<main class="content">
+<main class="content page-shell beyond-content">
 
-  <!-- =====================
-       PAGE HEADER
-  ====================== -->
-  <header class="page-header" id="top">
+  <header class="page-header page-hero beyond-hero">
+    <p class="beyond-eyebrow">Creative Practice</p>
     <h1>Beyond Research</h1>
-   <p class="page-intro">
-  Research trains precision. Music and photography train perception. 
-  This is where I explore rhythm, light, and expression beyond the laboratory.
-</p>
-  </header>
-
-  <!-- =====================
-       PIANO
-  ====================== -->
-  <section id="piano">
-    <h2>Piano</h2>
-    <p>
-      Piano is where I slow down and listen more carefully - a study of structure, 
-      how phrasing, tension, and silence create meaning.
-      I share performances through <strong>Jo's Pianoscope</strong> on YouTube and 
-      <strong>@jopianotes</strong> on Instagram.
+    <p class="page-intro beyond-intro">
+      Outside the laboratory, I return to two practices that sharpen how I pay attention:
+      piano and wildlife photography. Both ask for patience, timing, and sensitivity to
+      small changes in tone, light, and movement.
     </p>
 
-    <div class="video-embed">
-      <iframe
-        src="https://www.youtube.com/embed/videoseries?list=PLaWJAthnVk-7YN0nSukZZ2ZHeVaY5iyYD"
-        title="Jo's Pianoscope YouTube Playlist"
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+    <div class="beyond-highlights card-grid card-grid--3 card-grid--compact">
+      <div class="beyond-highlight">
+        <span class="beyond-highlight-label">Piano</span>
+        <span>Interpretation, phrasing, and structure</span>
+      </div>
+      <div class="beyond-highlight">
+        <span class="beyond-highlight-label">Wildlife Photography</span>
+        <span>Observation, timing, and quiet presence</span>
+      </div>
+      <div class="beyond-highlight">
+        <span class="beyond-highlight-label">Shared Thread</span>
+        <span>Practices that deepen focus beyond the bench</span>
+      </div>
     </div>
 
-    <p class="external-link">
-      <a href="https://www.youtube.com/@JosPianoscope"
-         target="_blank"
-         rel="noopener noreferrer">
-        Watch full performances on YouTube →
-      </a>
-    </p>
-    <p class="external-link">
-      <a href="https://www.instagram.com/jopianotes/"
-        target="_blank"
-        rel="noopener noreferrer">
-        Follow @jopianotes on Instagram →
-  </a>
-</p>
+    <div class="home-actions page-actions beyond-actions">
+      <a href="#piano" class="home-btn primary">Explore Piano</a>
+      <a href="#wildlife" class="home-btn secondary">See Wildlife Work</a>
+    </div>
+  </header>
 
+  <nav class="nav-pills page-nav beyond-nav" aria-label="Beyond page navigation">
+    <a href="#piano" class="pill">Piano</a>
+    <a href="#wildlife" class="pill">Wildlife Photography</a>
+    <a href="#practice" class="pill">Creative Practice</a>
+  </nav>
+
+  <section id="piano" class="page-section interest-section interest-section-piano">
+    <div class="interest-header">
+      <div>
+        <p class="interest-kicker">Music</p>
+        <h2>Piano</h2>
+      </div>
+
+      <div class="interest-links">
+        <a href="https://www.youtube.com/@jopianotes"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="pill">
+          YouTube
+        </a>
+        <a href="https://www.instagram.com/jopianotes/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="pill">
+          Instagram
+        </a>
+      </div>
+    </div>
+
+      <div class="interest-grid split-layout split-layout--interest">
+      <div class="interest-copy">
+        <p>
+          Piano is where I return to form, pacing, and restraint. I am drawn to the way a
+          performance is shaped by touch, silence, and the architecture of a phrase.
+        </p>
+        <p>
+          I share performances online as <strong>@jopianotes</strong>, with a mix of classical
+          and contemporary pieces that reflect the same curiosity for structure and nuance
+          that draws me to science.
+        </p>
+        <ul class="interest-points">
+          <li>Focused on interpretation, tone, and narrative pacing.</li>
+          <li>Performances shared across YouTube and Instagram.</li>
+          <li>A creative counterweight to experimental work and analysis.</li>
+        </ul>
+      </div>
+
+      <div class="interest-embed-card">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/videoseries?list=PLaWJAthnVk-7YN0nSukZZ2ZHeVaY5iyYD"
+            title="Piano performance playlist"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <p class="external-link">
+          <a href="https://www.youtube.com/@jopianotes"
+             target="_blank"
+             rel="noopener noreferrer">
+            Browse the full piano archive &#8594;
+          </a>
+        </p>
+      </div>
+    </div>
   </section>
 
   <hr class="section-divider">
 
-  <!-- =====================
-       WILDLIFE
-  ====================== -->
-  <section id="wildlife">
-    <h2>Wildlife Photography</h2>
-    <p>
-      Through wildlife photography under the handle 
-      <strong>@jopxls</strong>, I try to capture fleeting moments — 
-      light, movement, stillness, and the quiet intensity of natural spaces.
-    </p>
+  <section id="wildlife" class="page-section interest-section interest-section-wildlife">
+    <div class="interest-header">
+      <div>
+        <p class="interest-kicker">Observation</p>
+        <h2>Wildlife Photography</h2>
+      </div>
 
-    <div class="instagram-embed">
-      <iframe
-        src="https://www.instagram.com/jopxls/embed"
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-        scrolling="no">
-      </iframe>
+      <div class="interest-links">
+        <a href="https://www.instagram.com/jopxls/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="pill">
+          Follow @jopxls
+        </a>
+      </div>
     </div>
 
-    <p class="external-link">
-      <a href="https://www.instagram.com/jopxls/"
-         target="_blank"
-         rel="noopener noreferrer">
-        Explore wildlife photographs →
-      </a>
-    </p>
+      <div class="interest-grid split-layout split-layout--interest">
+      <div class="interest-copy">
+        <p>
+          Through wildlife photography under the handle <strong>@jopxls</strong>, I try to
+          capture brief encounters shaped by light, distance, and stillness.
+        </p>
+        <p>
+          It is a practice grounded in patience. The image often depends less on control
+          than on waiting well enough to notice what is already there.
+        </p>
+        <ul class="interest-points">
+          <li>Centered on timing, light, and atmosphere in natural spaces.</li>
+          <li>Built around observation rather than staging.</li>
+          <li>A way of practicing attention outside structured research settings.</li>
+        </ul>
+      </div>
+
+      <div class="interest-embed-card">
+        <div class="instagram-embed">
+          <iframe
+            src="https://www.instagram.com/jopxls/embed"
+            title="Wildlife photography on Instagram"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            scrolling="no">
+          </iframe>
+        </div>
+
+        <p class="external-link">
+          <a href="https://www.instagram.com/jopxls/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Explore the wildlife gallery &#8594;
+          </a>
+        </p>
+      </div>
+    </div>
   </section>
 
-  <p class="home-signature" style="margin-top: 40px;">
-  Creative work informs scientific work — and vice versa.
-</p>
+  <hr class="section-divider">
+
+  <section id="practice" class="page-section practice-section">
+    <h2>What these practices sharpen</h2>
+
+      <div class="practice-grid card-grid card-grid--3 card-grid--practice">
+      <article class="practice-card">
+        <h3>Attention</h3>
+        <p>
+          Both music and photography reward subtle differences. Small shifts in tempo,
+          texture, framing, or light can change the whole experience.
+        </p>
+      </article>
+
+      <article class="practice-card">
+        <h3>Timing</h3>
+        <p>
+          A phrase lands because it is paced well. An image works because the moment is
+          met at the right instant. Timing shapes both practices.
+        </p>
+      </article>
+
+      <article class="practice-card">
+        <h3>Patience</h3>
+        <p>
+          Not every result can be forced. These creative habits reinforce the patience and
+          persistence that also matter in long research cycles.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <p class="home-signature beyond-signature">
+    Creative work and scientific work are not separate worlds for me.
+    Each one trains how I see the other.
+  </p>
 
   <footer class="site-footer">
-    © 2026 Johan Ajnabi · Last updated February 2026
+    &copy; 2026 Johan Ajnabi &middot; Last updated March 30, 2026
   </footer>
 
 </main>
 
-<!-- JS -->
 <script src="/js/global.js" defer></script>
-  
- <a href="#top"
+
+<a href="#top"
    id="back-to-top"
    class="back-to-top"
    aria-label="Back to top">
-  ↑ Top
+  &#8593; Top
 </a>
 
 </body>
