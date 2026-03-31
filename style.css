@@ -127,8 +127,10 @@ body.home {
 .home-icons {
   display: flex;
   justify-content: center;
-  gap: 28px;
-  margin: 12px 0 12px;
+  align-items: center;
+  gap: 26px;
+  margin: 16px auto;
+  width: 100%;
 }
 
 .home-icon {
@@ -137,6 +139,7 @@ body.home {
   display: inline-flex;
   color: var(--text-muted);
   transition: color 0.2s ease, transform 0.15s ease;
+  line-height: 0;
 }
 
 .home-icon:hover {
@@ -147,6 +150,7 @@ body.home {
 .home-icon svg {
   width: 100%;
   height: 100%;
+   display: block;
 }
 
 /* =========================
@@ -1791,6 +1795,10 @@ body.academic-page {
 }
 
 .home-signature {
+   text-align: center;
+   margin-top: 18px;
+   border-top: 1px solid var(--border-soft);
+  padding-top: 14px;
   font-size: 14px;
   color: var(--text-muted);
   letter-spacing: 0.5px;
