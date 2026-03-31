@@ -110,6 +110,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (captureGallery) {
     const emptyState = document.querySelector(".capture-empty");
+    const previewFigure = document.querySelector(".capture-preview-figure");
+    const previewImage = document.querySelector(".capture-preview-img[data-autopreview]");
     const basePath = captureGallery.dataset.basePath || "/assets/beyond";
     const extensions = (captureGallery.dataset.extensions || "png,jpg,jpeg,webp")
       .split(",")
@@ -142,6 +144,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const fragment = document.createDocumentFragment();
     let foundCount = 0;
+    let firstFoundSrc = "";
 
     for (let index = 1; index <= maxItems; index += 1) {
       const src = await findImageSource(index);
@@ -149,6 +152,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (!src) break;
 
       foundCount += 1;
+      if (!firstFoundSrc) firstFoundSrc = src;
 
       const frame = document.createElement("figure");
       const image = document.createElement("img");
@@ -175,6 +179,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (foundCount > 0) {
       captureGallery.appendChild(fragment);
       emptyState?.setAttribute("hidden", "");
+      if (previewFigure && previewImage && firstFoundSrc) {
+        previewImage.src = firstFoundSrc;
+        previewFigure.hidden = false;
+      }
     } else {
       emptyState?.removeAttribute("hidden");
     }
