@@ -884,6 +884,7 @@ body.academic-page {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  box-sizing: border-box;
   width: 100%;
   max-width: none;
   justify-self: stretch;
