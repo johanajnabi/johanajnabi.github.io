@@ -615,8 +615,9 @@ p a:hover {
 }
 
 .split-layout--hero-academic {
-  grid-template-columns: minmax(0, 2.1fr) minmax(260px, 0.95fr);
-  gap: 28px;
+  grid-template-columns: minmax(0, 1.9fr) minmax(320px, 1.08fr);
+  gap: 24px;
+  align-items: start;
 }
 
 .split-layout--academic {
@@ -840,8 +841,9 @@ body.academic-page {
 
 .academic-hero {
   display: grid;
-  grid-template-columns: minmax(0, 2.1fr) minmax(260px, 0.95fr);
-  gap: 28px;
+  grid-template-columns: minmax(0, 1.9fr) minmax(320px, 1.08fr);
+  gap: 24px;
+  align-items: start;
   padding: 36px;
   border: 1px solid var(--border-soft);
   border-radius: 28px;
@@ -875,8 +877,11 @@ body.academic-page {
 .academic-opportunity {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 24px;
+  gap: 12px;
+  width: 100%;
+  max-width: 360px;
+  justify-self: end;
+  padding: 22px;
   border-radius: 22px;
   border: 1px solid rgba(26,92,255,0.16);
   background: rgba(26,92,255,0.05);
@@ -894,6 +899,20 @@ body.academic-page {
 .academic-opportunity p:last-of-type {
   margin: 0;
   color: var(--text-muted);
+}
+
+.academic-opportunity > p:not(.academic-opportunity-label) {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.academic-opportunity .overview-points {
+  padding-left: 18px;
+}
+
+.academic-opportunity .overview-points li {
+  margin-bottom: 8px;
+  line-height: 1.55;
 }
 
 .academic-inline-link {
