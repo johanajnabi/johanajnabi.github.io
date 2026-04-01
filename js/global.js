@@ -112,12 +112,30 @@ document.addEventListener("DOMContentLoaded", async () => {
     const emptyState = document.querySelector(".capture-empty");
     const previewFigure = document.querySelector(".capture-preview-figure");
     const previewImage = document.querySelector(".capture-preview-img[data-autopreview]");
+    const galleryData = document.getElementById("beyond-gallery-data");
     const basePath = captureGallery.dataset.basePath || "/assets/beyond";
     const extensions = (captureGallery.dataset.extensions || "png,jpg,jpeg,webp")
       .split(",")
       .map(ext => ext.trim())
       .filter(Boolean);
     const maxItems = Number.parseInt(captureGallery.dataset.maxItems || "24", 10) || 24;
+    let metadataMap = new Map();
+
+    if (galleryData) {
+      try {
+        const parsed = JSON.parse(galleryData.textContent || "[]");
+        metadataMap = new Map(parsed.map(item => [item.file, item]));
+      } catch (error) {
+        console.warn("Beyond gallery metadata could not be parsed.", error);
+      }
+    }
+
+    const escapeHtml = (value = "") => String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\"/g, "&quot;")
+      .replace(/'/g, "&#39;");
 
     const findImageSource = (index) => new Promise(resolve => {
       let pointer = 0;
@@ -157,22 +175,45 @@ document.addEventListener("DOMContentLoaded", async () => {
       const frame = document.createElement("figure");
       const image = document.createElement("img");
       const caption = document.createElement("span");
+      const detail = document.createElement("figcaption");
       const frameLabel = `Frame ${String(index).padStart(2, "0")}`;
+      const filename = src.split("/").pop() || "";
+      const metadata = metadataMap.get(filename) || {};
+      const commonName = String(metadata.common || "").trim();
+      const scientificName = String(metadata.scientific || "").trim();
+      const location = String(metadata.location || "").trim();
+      const note = String(metadata.note || "").trim();
+      const speciesLabel = commonName || frameLabel;
+      const captionHtml = commonName
+        ? `${escapeHtml(commonName)}${scientificName ? ` <em>(${escapeHtml(scientificName)})</em>` : ""}${location ? ` · ${escapeHtml(location)}` : ""}`
+        : frameLabel;
+      const lightboxCaption = note
+        ? `${captionHtml}<span class="lightbox-note">${escapeHtml(note)}</span>`
+        : captionHtml;
 
       frame.className = "talk-img-wrap capture-frame";
       frame.tabIndex = 0;
+      frame.dataset.lightboxCaption = lightboxCaption;
       frame.setAttribute("role", "button");
-      frame.setAttribute("aria-label", `Open ${frameLabel} in lightbox`);
+      frame.setAttribute("aria-label", `Open ${speciesLabel} in lightbox`);
 
       image.src = src;
-      image.alt = `Wildlife photograph ${index} by Johan Ajnabi`;
+      image.alt = commonName
+        ? `${commonName}${scientificName ? ` (${scientificName})` : ""}${location ? `, ${location}` : ""}`
+        : `Wildlife photograph ${index} by Johan Ajnabi`;
       image.loading = "lazy";
 
       caption.className = "talk-caption";
-      caption.textContent = frameLabel;
+      caption.innerHTML = captionHtml;
+
+      if (note) {
+        detail.className = "capture-detail";
+        detail.textContent = note;
+      }
 
       frame.appendChild(image);
       frame.appendChild(caption);
+      if (note) frame.appendChild(detail);
       fragment.appendChild(frame);
     }
 
@@ -209,7 +250,7 @@ if (lightbox && lightboxImg) {
   /* ========= INIT ========= */
   items = Array.from(wrappers).map(wrap => ({
     img: wrap.querySelector("img"),
-    caption: wrap.querySelector(".talk-caption")?.textContent || ""
+    caption: wrap.dataset.lightboxCaption || wrap.querySelector(".talk-caption")?.innerHTML || ""
   }));
 
   /* ========= CORE ========= */
@@ -225,7 +266,7 @@ if (lightbox && lightboxImg) {
     setTimeout(() => {
       lightboxImg.src = item.img.src;
       lightboxImg.alt = item.img.alt || "";
-      lightboxCaption.textContent = item.caption;
+      lightboxCaption.innerHTML = item.caption;
 
       lightboxImg.style.opacity = 1;
     }, 120);
