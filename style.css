@@ -615,8 +615,8 @@ p a:hover {
 }
 
 .split-layout--hero-academic {
-  grid-template-columns: minmax(0, 1.9fr) minmax(320px, 1.08fr);
-  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 28px;
   align-items: start;
 }
 
@@ -841,8 +841,8 @@ body.academic-page {
 
 .academic-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.9fr) minmax(320px, 1.08fr);
-  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 28px;
   align-items: start;
   padding: 36px;
   border: 1px solid var(--border-soft);
@@ -859,6 +859,12 @@ body.academic-page {
   color: var(--text-main);
   font-size: 18px;
   line-height: 1.8;
+}
+
+.page-hero-main,
+.page-hero-aside,
+.academic-hero-main {
+  min-width: 0;
 }
 
 .academic-meta {
@@ -879,8 +885,8 @@ body.academic-page {
   flex-direction: column;
   gap: 12px;
   width: 100%;
-  max-width: 360px;
-  justify-self: end;
+  max-width: none;
+  justify-self: stretch;
   padding: 22px;
   border-radius: 22px;
   border: 1px solid rgba(26,92,255,0.16);
