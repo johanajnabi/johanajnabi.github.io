@@ -1306,12 +1306,6 @@ body.beyond-page {
   padding-top: 4px;
 }
 
-.capture-note {
-  margin: -10px 0 0;
-  color: var(--text-muted);
-  font-size: 14px;
-}
-
 .capture-empty {
   margin: 20px 0 0;
   color: var(--text-muted);
@@ -1354,6 +1348,13 @@ body.beyond-page {
 
 .capture-gallery .talk-caption {
   border-radius: 0 0 16px 16px;
+}
+
+.capture-detail {
+  margin: 10px 4px 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.65;
 }
 
 .capture-actions {
@@ -1979,6 +1980,14 @@ body.beyond-page {
   text-align: center;
 
   z-index: 1000;
+}
+
+.lightbox-note {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255,255,255,0.84);
+  font-size: 14px;
+  line-height: 1.55;
 }
 
 /* =========================
