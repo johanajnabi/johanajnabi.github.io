@@ -1323,15 +1323,20 @@ body.beyond-page {
   margin: 0 0 16px;
   break-inside: avoid;
   cursor: pointer;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(17,17,17,0.06);
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.08);
 }
 
 .capture-gallery img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 16px;
-  border: 1px solid rgba(17,17,17,0.06);
-  box-shadow: 0 14px 34px rgba(0,0,0,0.08);
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
   transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
 }
 
@@ -1347,11 +1352,27 @@ body.beyond-page {
 }
 
 .capture-gallery .talk-caption {
-  border-radius: 0 0 16px 16px;
+  position: static;
+  inset: auto;
+  display: block;
+  padding: 12px 14px 0;
+  background: none;
+  color: var(--text-main);
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+  opacity: 1;
+  transform: none;
+  border-radius: 0;
+  max-width: none;
+}
+
+.capture-gallery .talk-caption em {
+  font-style: italic;
 }
 
 .capture-detail {
-  margin: 10px 4px 0;
+  margin: 6px 14px 14px;
   color: var(--text-muted);
   font-size: 14px;
   line-height: 1.65;
