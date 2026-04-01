@@ -114,17 +114,23 @@ document.addEventListener("DOMContentLoaded", async () => {
     const previewImage = document.querySelector(".capture-preview-img[data-autopreview]");
     const galleryData = document.getElementById("beyond-gallery-data");
     const basePath = captureGallery.dataset.basePath || "/assets/beyond";
-    const extensions = (captureGallery.dataset.extensions || "png,jpg,jpeg,webp")
+    const extensions = (captureGallery.dataset.extensions || "webp,png,jpg,jpeg")
       .split(",")
       .map(ext => ext.trim())
       .filter(Boolean);
     const maxItems = Number.parseInt(captureGallery.dataset.maxItems || "24", 10) || 24;
     let metadataMap = new Map();
+    let metadataEntries = [];
 
     if (galleryData) {
       try {
-        const parsed = JSON.parse(galleryData.textContent || "[]");
-        metadataMap = new Map(parsed.map(item => [item.file, item]));
+        metadataEntries = JSON.parse(galleryData.textContent || "[]");
+        metadataMap = new Map(
+          metadataEntries.map(item => [
+            String(item.file || "").replace(/\.[^.]+$/, ""),
+            item
+          ])
+        );
       } catch (error) {
         console.warn("Beyond gallery metadata could not be parsed.", error);
       }
@@ -137,7 +143,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       .replace(/\"/g, "&quot;")
       .replace(/'/g, "&#39;");
 
-    const findImageSource = (index) => new Promise(resolve => {
+    const findImageSource = (stem) => new Promise(resolve => {
       let pointer = 0;
 
       const tryNext = () => {
@@ -146,7 +152,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           return;
         }
 
-        const src = `${basePath}/${index}.${extensions[pointer]}`;
+        const src = `${basePath}/${stem}.${extensions[pointer]}`;
         const probe = new Image();
 
         probe.onload = () => resolve(src);
@@ -160,14 +166,30 @@ document.addEventListener("DOMContentLoaded", async () => {
       tryNext();
     });
 
+    const galleryTargets = metadataEntries.length
+      ? metadataEntries.map((item, originalIndex) => ({
+          stem: String(item.file || `${originalIndex + 1}`).replace(/\.[^.]+$/, ""),
+          index: originalIndex + 1
+        }))
+      : Array.from({ length: maxItems }, (_, offset) => ({
+          stem: String(offset + 1),
+          index: offset + 1
+        }));
+
+    const resolvedTargets = await Promise.all(
+      galleryTargets.map(async target => ({
+        ...target,
+        src: await findImageSource(target.stem)
+      }))
+    );
+
     const fragment = document.createDocumentFragment();
     let foundCount = 0;
     let firstFoundSrc = "";
 
-    for (let index = 1; index <= maxItems; index += 1) {
-      const src = await findImageSource(index);
-
-      if (!src) break;
+    for (const target of resolvedTargets) {
+      const { index, stem, src } = target;
+      if (!src) continue;
 
       foundCount += 1;
       if (!firstFoundSrc) firstFoundSrc = src;
@@ -177,8 +199,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const caption = document.createElement("span");
       const detail = document.createElement("figcaption");
       const frameLabel = `Frame ${String(index).padStart(2, "0")}`;
-      const filename = src.split("/").pop() || "";
-      const metadata = metadataMap.get(filename) || {};
+      const metadata = metadataMap.get(stem) || {};
       const commonName = String(metadata.common || "").trim();
       const scientificName = String(metadata.scientific || "").trim();
       const location = String(metadata.location || "").trim();
@@ -202,6 +223,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         ? `${commonName}${scientificName ? ` (${scientificName})` : ""}${location ? `, ${location}` : ""}`
         : `Wildlife photograph ${index} by Johan Ajnabi`;
       image.loading = "lazy";
+      image.decoding = "async";
 
       caption.className = "talk-caption";
       caption.innerHTML = captionHtml;
