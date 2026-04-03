@@ -82,7 +82,7 @@
                    {
                        "@type":  "ResearchOrganization",
                        "@id":  "https://johanajnabi.com/#instem",
-                       "name":  "BRIC&ndash;Institute for Stem Cell Science and Regenerative Medicine (inStem)",
+                       "name":  "BRIC-Institute for Stem Cell Science and Regenerative Medicine (inStem)",
                        "url":  "https://instem.res.in/",
                        "address":  {
                                        "@type":  "PostalAddress",
@@ -93,7 +93,7 @@
                    {
                        "@type":  "ResearchOrganization",
                        "@id":  "https://johanajnabi.com/#iari",
-                       "name":  "ICAR &ndash; Indian Agricultural Research Institute"
+                       "name":  "ICAR - Indian Agricultural Research Institute"
                    },
                    {
                        "@type":  "Person",
@@ -221,7 +221,7 @@
                                                   "@type":  "ImageObject",
                                                   "url":  "https://johanajnabi.com/assets/profile.webp"
                                               },
-                       "dateModified":  "2026-03-30"
+                       "dateModified":  "2026-04-03"
                    },
                    {
                        "@type":  "BreadcrumbList",
@@ -337,7 +337,7 @@
                    {
                        "@type":  "ScholarlyArticle",
                        "@id":  "https://doi.org/10.1101/2025.08.24.669246",
-                       "headline":  "Mindin mediated &alpha;M-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness",
+                       "headline":  "Mindin mediated alphaM-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness",
                        "author":  [
                                       {
                                           "@type":  "Person",
@@ -389,7 +389,7 @@
                                         "@type":  "Periodical",
                                         "name":  "bioRxiv"
                                     },
-                       "description":  "This work uncovers a Mindin&ndash;integrin&ndash;STAT3 signaling axis that sustains keratinocyte stemness through integrin endocytosis and downstream transcriptional activation."
+                       "description":  "This work uncovers a Mindin-integrin-STAT3 signaling axis that sustains keratinocyte stemness through integrin endocytosis and downstream transcriptional activation."
                    },
                    {
                        "@type":  "ScholarlyArticle",
@@ -609,7 +609,7 @@
                                         "@type":  "Periodical",
                                         "name":  "Cell Reports"
                                     },
-                       "description":  "This study identifies an autocrine Snail&ndash;Mindin signaling loop that sustains epithelial stemness in both normal skin and carcinoma contexts."
+                       "description":  "This study identifies an autocrine Snail-Mindin signaling loop that sustains epithelial stemness in both normal skin and carcinoma contexts."
                    },
                    {
                        "@type":  "Thesis",
@@ -709,192 +709,199 @@
 
 <body id="top" class="academic-page">
 
-<header class="top-nav">
-  <div class="top-nav-inner">
-
+<!-- =====================
+     SITE NAV
+===================== -->
+<header class="site-nav">
+  <div class="site-nav__inner">
     <a href="/" class="brand">Johan Ajnabi</a>
 
-    <!-- Hamburger button (mobile only) -->
     <button class="menu-toggle" aria-label="Open menu">
       &#9776;
     </button>
 
-    <!-- Desktop navigation -->
-    <nav class="top-links">
+    <nav class="site-links" aria-label="Primary">
       <a href="/">Home</a>
       <a href="/academic/" class="active">Academic</a>
-      <a href="/beyond/">Beyond Research</a>
-      <a href="/assets/JA_CV2026.pdf" target="_blank" rel="noopener noreferrer">
-        CV
-      </a>
+      <a href="/projects/">Projects</a>
+      <a href="/beyond/">Beyond</a>
+      <a href="/assets/JA_CV2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
     </nav>
-
   </div>
 </header>
-  <!-- Mobile Slide Menu -->
+
 <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
   <a href="/">Home</a>
-  <a href="/academic/">Academic</a>
-  <a href="/beyond/">Beyond Research</a>
+  <a href="/academic/" class="active">Academic</a>
+  <a href="/projects/">Projects</a>
+  <a href="/beyond/">Beyond</a>
   <a href="/assets/JA_CV2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
 </nav>
 
-<!-- Dark overlay -->
 <div class="menu-overlay" id="menuOverlay"></div>
 
-
-<main class="content page-shell academic-content">
+<main class="shell shell--wide page-stack">
   <!-- =====================
-       PAGE HEADER
+       HERO
   ====================== -->
-  <header class="page-header page-hero academic-hero split-layout split-layout--hero-academic">
-    <div class="page-hero-main academic-hero-main">
-      <p class="academic-eyebrow">About Me</p>
+  <section id="about-me" class="hero hero--accent card split split--main-aside reveal">
+    <div>
+      <p class="eyebrow">About Me</p>
       <h1>Johan Ajnabi</h1>
-      <p class="academic-subtitle">
-        I am a PhD candidate at the BRIC-Institute for Stem Cell Science and Regenerative Medicine
-        (inStem) in Bengaluru, where I work in the Jamora laboratory on questions in skin biology
-        and regeneration. I am especially interested in interdisciplinary research at the
-        intersection of cell biology, mechanobiology, and epigenetics.
+      <p class="lead">
+        I am a PhD candidate in the Jamora laboratory at the BRIC-Institute for Stem Cell
+        Science and Regenerative Medicine (inStem), where I study how tissue mechanics shape
+        cell behavior during epidermal wound repair.
+      </p>
+      <p>
+        My work brings together mechanobiology, skin regeneration, and epigenetic regulation,
+        using primary keratinocyte systems, fluorescence imaging, molecular biology, and
+        transcriptomic approaches.
       </p>
 
-      <div class="academic-meta meta-list">
-        <span>PhD Candidate</span>
-        <span>BRIC-Institute for Stem Cell Science and Regenerative Medicine (inStem)</span>
-        <span>Bengaluru, India</span>
+      <div class="tag-list">
+        <span class="tag">PhD Candidate</span>
+        <span class="tag">Jamora Laboratory &middot; inStem</span>
+        <span class="tag">Epidermal Wound Repair</span>
+        <span class="tag">Mechanobiology &amp; Cell-State Change</span>
       </div>
 
-      <div class="home-actions page-actions academic-actions">
-        <a href="#publications" class="home-btn primary">View Publications</a>
-        <a href="/assets/JA_CV2026.pdf" class="home-btn secondary" target="_blank" rel="noopener noreferrer">Download CV</a>
-        <a href="#links" class="home-btn secondary">Contact</a>
+      <div class="actions">
+        <a href="#publications" class="btn btn--primary">View Publications</a>
+        <a href="/assets/JA_CV2026.pdf" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">Download CV</a>
+        <a href="#links" class="btn btn--secondary">Contact</a>
       </div>
     </div>
 
-    <aside class="page-hero-aside academic-opportunity">
-      <p class="academic-opportunity-label">Seeking postdoctoral opportunities</p>
+    <aside class="card card--accent">
+      <p class="eyebrow eyebrow--sm">Research Snapshot</p>
       <p>
-        I am interested in interdisciplinary research environments connecting mechanobiology,
-        tissue regeneration, chromatin regulation, and translational skin biology.
+        I am looking for postdoctoral environments working at the intersection of
+        mechanobiology, regeneration, and skin biology.
       </p>
-      <a href="#links" class="academic-inline-link">Connect about postdoctoral opportunities</a>
+      <ul class="overview-points">
+        <li><strong>Focus:</strong> epidermal wound repair, mechanotransduction, and cell-state change in skin.</li>
+        <li><strong>Methods:</strong> primary keratinocytes, fluorescence microscopy, molecular biology, and transcriptomic analysis.</li>
+        <li><strong>Fit:</strong> labs studying regeneration, skin biology, epigenetics, or how cells respond to physical cues in tissue.</li>
+      </ul>
+      <div class="card-links">
+        <a href="#links">Discuss postdoctoral opportunities</a>
+      </div>
     </aside>
-  </header>
-    <!-- =====================
-         NAVIGATION
-    ====================== -->
-    <nav class="nav-pills page-nav" aria-label="Primary navigation">
-      <a href="#about" class="pill active">Research</a>
-      <a href="#highlights" class="pill">Highlights</a>
-      <a href="#experience" class="pill">Experience</a>
-      <a href="#publications" class="pill">Publications</a>
-      <a href="#talks" class="pill">Talks & Presentations</a>
-      <a href="#links" class="pill">Contact</a>
-    </nav>
+  </section>
 
-    <!-- =====================
-         ABOUT
-    ====================== -->
-    <section id="about" class="page-section">
-      <div class="academic-overview-grid split-layout split-layout--academic">
-        <div class="academic-overview-copy">
-          <p class="section-kicker">Research Overview</p>
-          <h2>How cells interpret injury-associated mechanics</h2>
-          <p class="section-lead">
-            My work sits at the interface of mechanobiology, cell biology, and epigenetics,
-            with a focus on how wounded skin converts physical cues into durable changes in
-            cellular behavior.
-          </p>
-          <p>
-            At the Jamora laboratory, I study how actin-dependent mechanics, signaling pathways,
-            and chromatin regulators coordinate epidermal cell-state transitions during tissue
-            repair. I am especially interested in questions where physical microenvironments
-            meet nuclear decision-making.
-          </p>
+  <!-- =====================
+       SECTION NAV
+  ====================== -->
+  <nav class="pills section-nav" aria-label="Primary navigation">
+    <a href="#about" class="pill active">Research</a>
+    <a href="#highlights" class="pill">Highlights</a>
+    <a href="#experience" class="pill">Experience</a>
+    <a href="#recognition" class="pill">Recognition</a>
+    <a href="#publications" class="pill">Publications</a>
+    <a href="#talks" class="pill">Talks</a>
+    <a href="#links" class="pill">Contact</a>
+  </nav>
+
+  <!-- =====================
+       ABOUT
+  ====================== -->
+  <section id="about" class="section reveal">
+    <div class="split split--main-aside">
+      <div>
+        <p class="eyebrow">Research Overview</p>
+        <h2>How cells interpret injury-associated mechanics</h2>
+        <p class="lead">
+          My work sits at the interface of mechanobiology, cell biology, and epigenetics,
+          with a focus on how wounded skin converts physical cues into durable changes in
+          cellular behavior.
+        </p>
+        <p>
+          At the Jamora laboratory, I study how actin-dependent mechanics, signaling pathways,
+          and chromatin regulators coordinate epidermal cell-state transitions during tissue
+          repair. I am especially interested in questions where physical microenvironments
+          meet nuclear decision-making.
+        </p>
+      </div>
+
+      <aside class="card">
+        <h3>Current Focus</h3>
+        <ul class="overview-points">
+          <li>Mechanotransduction during epidermal wound repair.</li>
+          <li>Actin-dependent control of nuclear signaling and chromatin regulators.</li>
+          <li>Skin regeneration, stemness, and disease-associated tissue-state changes.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- =====================
+       HIGHLIGHTS
+  ====================== -->
+  <section id="highlights" class="section reveal">
+    <p class="eyebrow">Flagship Work</p>
+    <h2>Representative projects and outputs</h2>
+
+    <div class="grid grid--3">
+      <article class="card">
+        <p class="eyebrow eyebrow--sm">2026 preprint</p>
+        <h3>Mechanotransduction and DNMT3A during cutaneous wound repair</h3>
+        <p>
+          Defined how wound-induced mechanical cues regulate nucleocytoplasmic partitioning
+          of DNMT3A through actin remodeling and ERK1/2 signaling during epidermal repair.
+        </p>
+        <div class="card-links">
+          <a href="/projects/dnmt3a-mechanotransduction/">Open project page</a>
+          <a href="https://doi.org/10.64898/2026.01.15.699481" target="_blank" rel="noopener noreferrer" class="secondary-link">View preprint</a>
         </div>
+      </article>
 
-        <aside class="academic-overview-card">
-          <h3>Current Focus</h3>
-          <ul class="overview-points">
-            <li>Mechanotransduction during epidermal wound repair.</li>
-            <li>Actin-dependent control of nuclear signaling and chromatin regulators.</li>
-            <li>Skin regeneration, stemness, and disease-associated tissue-state changes.</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
+      <article class="card">
+        <p class="eyebrow eyebrow--sm">Spatial transcriptomics</p>
+        <h3>Immune-state mapping in vitiligo skin after NB-UVB treatment</h3>
+        <p>
+          Profiled treatment-associated remodeling of the cutaneous immune landscape using
+          spatial transcriptomic analysis complemented by validation in patient tissue.
+        </p>
+        <div class="card-links">
+          <a href="/projects/vitiligo-spatial-transcriptomics/">Open project page</a>
+          <a href="https://doi.org/10.1002/cti2.70080" target="_blank" rel="noopener noreferrer" class="secondary-link">View article</a>
+        </div>
+      </article>
 
-    <!-- =====================
-         HIGHLIGHTS
-    ====================== -->
-    <section id="highlights" class="page-section">
-      <p class="section-kicker">Flagship Work</p>
-      <h2>Representative projects and outputs</h2>
+      <article class="card">
+        <p class="eyebrow eyebrow--sm">Stemness and signaling</p>
+        <h3>Mindin-integrin-STAT3 control of keratinocyte stemness</h3>
+        <p>
+          Contributed to work uncovering a signaling axis that sustains keratinocyte stemness
+          through integrin endocytosis and downstream transcriptional activation.
+        </p>
+        <div class="card-links">
+          <a href="/projects/keratinocyte-stemness/">Open project page</a>
+          <a href="https://doi.org/10.1101/2025.08.24.669246" target="_blank" rel="noopener noreferrer" class="secondary-link">View preprint</a>
+        </div>
+      </article>
+    </div>
 
-      <div class="academic-highlight-grid card-grid card-grid--3 card-grid--standard">
-        <article class="academic-highlight-card">
-          <p class="academic-card-eyebrow">2026 preprint</p>
-          <h3>Mechanotransduction and DNMT3A during cutaneous wound repair</h3>
-          <p>
-            Defined how wound-induced mechanical cues regulate nucleocytoplasmic partitioning
-            of DNMT3A through actin remodeling and ERK1/2 signaling during epidermal repair.
-          </p>
-          <div class="project-card-links">
-            <a href="/projects/dnmt3a-mechanotransduction/">Open project page</a>
-            <a href="https://doi.org/10.64898/2026.01.15.699481" target="_blank" rel="noopener noreferrer" class="project-card-secondary">
-              View preprint
-            </a>
-          </div>
-        </article>
+    <p class="home-signature">
+      Prefer a narrative view of the work? <a href="/projects/">Browse the flagship project pages</a>.
+    </p>
+  </section>
 
-        <article class="academic-highlight-card">
-          <p class="academic-card-eyebrow">Spatial transcriptomics</p>
-          <h3>Immune-state mapping in vitiligo skin after NB-UVB treatment</h3>
-          <p>
-            Profiled treatment-associated remodeling of the cutaneous immune landscape using
-            spatial transcriptomic analysis complemented by validation in patient tissue.
-          </p>
-          <div class="project-card-links">
-            <a href="/projects/vitiligo-spatial-transcriptomics/">Open project page</a>
-            <a href="https://doi.org/10.1002/cti2.70080" target="_blank" rel="noopener noreferrer" class="project-card-secondary">
-              View article
-            </a>
-          </div>
-        </article>
+  <hr class="section-divider">
 
-        <article class="academic-highlight-card">
-          <p class="academic-card-eyebrow">Stemness and signaling</p>
-          <h3>Mindin-integrin-STAT3 control of keratinocyte stemness</h3>
-          <p>
-            Contributed to work uncovering a signaling axis that sustains keratinocyte stemness
-            through integrin endocytosis and downstream transcriptional activation.
-          </p>
-          <div class="project-card-links">
-            <a href="/projects/keratinocyte-stemness/">Open project page</a>
-            <a href="https://doi.org/10.1101/2025.08.24.669246" target="_blank" rel="noopener noreferrer" class="project-card-secondary">
-              View preprint
-            </a>
-          </div>
-        </article>
-      </div>
+  <!-- =====================
+       EXPERIENCE
+  ====================== -->
+  <section id="experience" class="section reveal">
+    <p class="eyebrow">Research Experience</p>
+    <h2>Research experience and training</h2>
+    <p class="lead lead--compact">
+      Training across epidermal repair, stem cell biology, tissue analysis, and plant molecular biology.
+    </p>
 
-      <p class="selected-pubs-footer">
-        Prefer a narrative view of the work? <a href="/projects/">Browse the flagship project pages</a>.
-      </p>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- =====================
-         EXPERIENCE
-    ====================== -->
-    <section id="experience" class="page-section">
-      <p class="section-kicker">Research Experience</p>
-      <h2>Research experience and training</h2>
-      <p class="section-lead">
-        Training across epidermal repair, stem cell biology, tissue analysis, and plant molecular biology.
-      </p>
-      <div class="experience-block">
+    <div class="stack entry-stack">
+      <article class="card entry-card">
         <p>
           <strong>Research Assistant</strong><br>
           Shiv Nadar Institute of Eminence (Deemed to be University), Delhi&ndash;NCR, India<br>
@@ -902,11 +909,12 @@
           Supervisor: Prof. Colin Jamora
         </p>
         <ul>
-<li>Investigating epigenetic and mechanical regulation of the cutaneous wound response, with a focus on wound-induced regulation of DNMT3a.</li>
-<li>Working extensively with primary mouse keratinocytes to study mechanotransduction-driven nuclear localization and function of epigenetic regulators.</li>
+          <li>Investigating epigenetic and mechanical regulation of the cutaneous wound response, with a focus on wound-induced regulation of DNMT3a.</li>
+          <li>Working extensively with primary mouse keratinocytes to study mechanotransduction-driven nuclear localization and function of epigenetic regulators.</li>
         </ul>
-      </div>
-      <div class="experience-block">
+      </article>
+
+      <article class="card entry-card">
         <p>
           <strong>Research Scholar</strong><br>
           BRIC&ndash;Institute for Stem Cell Science and Regenerative Medicine (inStem), Bengaluru, India<br>
@@ -914,15 +922,16 @@
           Supervisor: Prof. Colin Jamora
         </p>
         <ul>
-<li>Investigated how wound-induced mechanical cues regulate the subcellular localization and activity of the de novo DNA methyltransferase DNMT3A during epidermal repair, integrating molecular biology, biochemistry, fluorescence microscopy, and genetic engineering approaches.<br><span class="exp-citation"><strong>bioRxiv (preprint)</strong>, 2026 <a href="https://doi.org/10.64898/2026.01.15.699481" target="_blank" rel="noopener noreferrer">[Ajnabi et al., 2026]</a></span></li>
-<li>Profiled immune cell states in patient skin before and after narrowband UV-B (NB-UVB) treatment using spatial transcriptomic approaches to resolve transcriptional heterogeneity within tissue, complemented by immunofluorescence and qPCR validation.<br><span class="exp-citation"><strong>Clinical &amp; Translational Immunology</strong>, 2026 <a href="https://doi.org/10.1002/cti2.70080" target="_blank" rel="noopener noreferrer">[Dutta et al., 2026]</a></span></li>
-<li>Studied a Mindin&ndash;integrin&ndash;STAT3 signaling axis that sustains keratinocyte stemness through integrin endocytosis and downstream transcriptional activation.<br><span class="exp-citation"><strong>bioRxiv (preprint)</strong>, 2025 <a href="https://doi.org/10.1101/2025.08.24.669246" target="_blank" rel="noopener noreferrer">[Dam et al., 2025]</a></span></li>
-<li>Investigated the role of the extracellular matrix protein Mindin in skin fibrotic conditions.<br><span class="exp-citation"><strong>Journal of Investigative Dermatology</strong>, 2023 <a href="https://doi.org/10.1016/j.jid.2022.10.011" target="_blank" rel="noopener noreferrer">[Rana et al., 2023]</a></span></li>
-<li>Studied antimicrobial peptide&ndash;mediated antiviral responses to SARS-CoV-2.<br><span class="exp-citation"><strong>Frontiers in Immunology</strong>, 2023 <a href="https://doi.org/10.3389/fimmu.2023.1255478" target="_blank" rel="noopener noreferrer">[Bhatt et al., 2023]</a></span></li>
-<li>Explored maintenance of epithelial stem/progenitor states via autocrine matricellular signaling.<br><span class="exp-citation"><strong>Cell Reports</strong>, 2022 <a href="https://doi.org/10.1016/j.celrep.2022.111390" target="_blank" rel="noopener noreferrer">[Badarinath et al., 2022]</a></span></li>
+          <li>Investigated how wound-induced mechanical cues regulate the subcellular localization and activity of the de novo DNA methyltransferase DNMT3A during epidermal repair, integrating molecular biology, biochemistry, fluorescence microscopy, and genetic engineering approaches.<br><span class="exp-citation"><strong>bioRxiv (preprint)</strong>, 2026 <a href="https://doi.org/10.64898/2026.01.15.699481" target="_blank" rel="noopener noreferrer">[Ajnabi et al., 2026]</a></span></li>
+          <li>Profiled immune cell states in patient skin before and after narrowband UV-B (NB-UVB) treatment using spatial transcriptomic approaches to resolve transcriptional heterogeneity within tissue, complemented by immunofluorescence and qPCR validation.<br><span class="exp-citation"><strong>Clinical &amp; Translational Immunology</strong>, 2026 <a href="https://doi.org/10.1002/cti2.70080" target="_blank" rel="noopener noreferrer">[Dutta et al., 2026]</a></span></li>
+          <li>Studied a Mindin&ndash;integrin&ndash;STAT3 signaling axis that sustains keratinocyte stemness through integrin endocytosis and downstream transcriptional activation.<br><span class="exp-citation"><strong>bioRxiv (preprint)</strong>, 2025 <a href="https://doi.org/10.1101/2025.08.24.669246" target="_blank" rel="noopener noreferrer">[Dam et al., 2025]</a></span></li>
+          <li>Investigated the role of the extracellular matrix protein Mindin in skin fibrotic conditions.<br><span class="exp-citation"><strong>Journal of Investigative Dermatology</strong>, 2023 <a href="https://doi.org/10.1016/j.jid.2022.10.011" target="_blank" rel="noopener noreferrer">[Rana et al., 2023]</a></span></li>
+          <li>Studied antimicrobial peptide&ndash;mediated antiviral responses to SARS-CoV-2.<br><span class="exp-citation"><strong>Frontiers in Immunology</strong>, 2023 <a href="https://doi.org/10.3389/fimmu.2023.1255478" target="_blank" rel="noopener noreferrer">[Bhatt et al., 2023]</a></span></li>
+          <li>Explored maintenance of epithelial stem/progenitor states via autocrine matricellular signaling.<br><span class="exp-citation"><strong>Cell Reports</strong>, 2022 <a href="https://doi.org/10.1016/j.celrep.2022.111390" target="_blank" rel="noopener noreferrer">[Badarinath et al., 2022]</a></span></li>
         </ul>
-      </div>
-      <div class="experience-block">
+      </article>
+
+      <article class="card entry-card">
         <p>
           <strong>AIEEA-PG Scholar (Master's Research)</strong><br>
           ICAR&ndash;National Institute for Plant Biotechnology, New Delhi, India<br>
@@ -930,26 +939,78 @@
           Supervisor: Dr. Monika Dalal
         </p>
         <ul>
-<li>Master's research focused on identifying cis-regulatory regions controlling PM19 gene expression in wheat.<br><span class="exp-citation"><strong>MSc Thesis, ICAR &ndash; Indian Agricultural Research Institute</strong>, 2019 <a href="http://krishikosh.egranth.ac.in/handle/1/5810146216" target="_blank" rel="noopener noreferrer">[Ajnabi, 2019]</a></span></li>
-<li>Experience in in-silico genome analysis, gene/promoter cloning, transient GUS assays, plant tissue culture, and plant transformation.</li>
+          <li>Master's research focused on identifying cis-regulatory regions controlling PM19 gene expression in wheat.<br><span class="exp-citation"><strong>MSc Thesis, ICAR &ndash; Indian Agricultural Research Institute</strong>, 2019 <a href="http://krishikosh.egranth.ac.in/handle/1/5810146216" target="_blank" rel="noopener noreferrer">[Ajnabi, 2019]</a></span></li>
+          <li>Experience in in-silico genome analysis, gene/promoter cloning, transient GUS assays, plant tissue culture, and plant transformation.</li>
         </ul>
-      </div>
-    </section>
+      </article>
+    </div>
+  </section>
 
-    <hr class="section-divider">
+  <hr class="section-divider">
 
-    <!-- =====================
-         FULL PUBLICATION RECORD
-    ====================== -->
-    <section id="publications" class="page-section">
-      <p class="section-kicker">Publication Record</p>
-      <h2>Complete list of publications and preprints</h2>
-      <p class="publication-record-intro">
-        Filter by article type or sort chronologically below. A PDF version is also available in
-        <a href="/assets/JA_CV2026.pdf">CV (PDF)</a>.
-      </p>
+  <!-- =====================
+       RECOGNITION
+  ====================== -->
+  <section id="recognition" class="section reveal">
+    <p class="eyebrow">Awards &amp; Recognition</p>
+    <h2>Awards, fellowships, and qualifications</h2>
+    <p class="lead lead--compact">
+      Competitive awards, fellowship support, and national qualifying examinations that have shaped my academic training.
+    </p>
 
-      <div class="pub-year-group">
+    <div class="stack entry-stack">
+      <article class="card entry-card">
+        <p>
+          <strong>Awards</strong><br>
+          Selected recognition for research presentation and academic achievement.
+        </p>
+        <ul>
+          <li><strong>Paeonia Travel Award</strong> &middot; September 2023<br>Awarded support for attending and presenting my work at the MBI Conference 2023, <em>Mechanobiology in Health and Disease</em>, National University of Singapore, Singapore.</li>
+        </ul>
+      </article>
+
+      <article class="card entry-card">
+        <p>
+          <strong>Fellowships</strong><br>
+          Competitive fellowship and scholarship support across life sciences, biotechnology, and agricultural research training.
+        </p>
+        <ul>
+          <li><strong>Junior Research Fellowship (JRF) in Life Sciences</strong> &middot; Indian Council of Medical Research (ICMR), India &middot; September 2019</li>
+          <li><strong>Junior Research Fellowship (JRF) in Biotechnology</strong> &middot; Biotech Consortium India Limited (BCIL), Department of Biotechnology (DBT), India &middot; May 2019</li>
+          <li><strong>GATE-XL Fellowship in Life Sciences</strong> &middot; Department of Higher Education, Ministry of Human Resource Development, India &middot; March 2019<br><span class="exp-citation">All India Rank &ndash; 8</span></li>
+          <li><strong>AIEEA-PG Scholarship for master&rsquo;s research in Plant Biotechnology</strong> &middot; Indian Council of Agricultural Research (ICAR), India &middot; July 2017<br><span class="exp-citation">All India Rank &ndash; 1</span></li>
+        </ul>
+      </article>
+
+      <article class="card entry-card">
+        <p>
+          <strong>Qualifications</strong><br>
+          National-level qualifying examinations and competitive entrance outcomes relevant to research training and academic appointments.
+        </p>
+        <ul>
+          <li><strong>Qualified National Eligibility Test in Agricultural Biotechnology for Lectureship</strong> &middot; Agricultural Scientists Recruitment Board (ASRB), Department of Agricultural Research and Education, India &middot; January 2020</li>
+          <li><strong>Qualified National Eligibility Test for Lectureship and Junior Research Fellowship (JRF) in Life Sciences</strong> &middot; Council for Scientific and Industrial Research (CSIR), India &middot; August 2019<br><span class="exp-citation">All India Rank &ndash; 20</span></li>
+          <li><strong>Qualified All India Common Entrance for JRF/SRF in Agricultural Biotechnology</strong> &middot; Indian Council of Agricultural Research (ICAR), India &middot; July 2019<br><span class="exp-citation">All India Rank &ndash; 3</span></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- =====================
+       PUBLICATIONS
+  ====================== -->
+  <section id="publications" class="section reveal">
+    <p class="eyebrow">Publication Record</p>
+    <h2>Complete list of publications and preprints</h2>
+    <p class="publication-record-intro lead lead--compact">
+      Filter by article type or sort chronologically below. A PDF version is also available in
+      <a href="/assets/JA_CV2026.pdf">CV (PDF)</a>.
+    </p>
+
+    <div class="pub-groups stack">
+      <div class="card pub-year-group">
         <h3>2026</h3>
         <div class="pub">
           <strong>Ajnabi, J.</strong>, Dam, B., Gupta, E., Saha, T., Dutta, A., Kumar, S., Gupta, A., Palakodeti, D., Jamora, C.
@@ -968,7 +1029,6 @@
         </div>
         <div class="pub">
           Dutta, A., Gupta, D., <strong>Ajnabi, J.</strong>, Dam, B., P, S., Jamora, C.
-
           <br>
           <em>
             <a href="https://doi.org/10.1002/cti2.70080" target="_blank" rel="noopener noreferrer">
@@ -983,11 +1043,10 @@
         </div>
       </div>
 
-      <div class="pub-year-group">
+      <div class="card pub-year-group">
         <h3>2025</h3>
         <div class="pub">
           Dutta, S., Islam, Z., Das, S., Barman, A., Chowdhury, M., Mondal, B. P., <strong>Ajnabi, J.</strong>, Manna, D.
-
           <br>
           <em>
             <a href="https://link.springer.com/article/10.1007/s44372-025-00152-0" target="_blank" rel="noopener noreferrer">
@@ -1002,7 +1061,6 @@
         </div>
         <div class="pub">
           Dam, B., <strong>Ajnabi, J.</strong>, Saha, T., Shrivastava, A., Badarinathan, K., Hegde, A., Dutta, A., Jasoria, S., Kataria, S., Singh, A., et al.
-
           <br>
           <em>
             <a href="https://doi.org/10.1101/2025.08.24.669246" target="_blank" rel="noopener noreferrer">
@@ -1017,11 +1075,10 @@
         </div>
       </div>
 
-      <div class="pub-year-group">
+      <div class="card pub-year-group">
         <h3>2023</h3>
         <div class="pub">
           Rana, I., Kataria, S., Tan, T. L., Hajam, E. Y., Kashyap, D. K., Saha, D., <strong>Ajnabi, J.</strong>, Paul, S., Jayappa, S., Ananthan, A. S. H. P., et al.
-
           <br>
           <em>
             <a href="https://doi.org/10.1016/j.jid.2022.10.011" target="_blank" rel="noopener noreferrer">
@@ -1036,7 +1093,6 @@
         </div>
         <div class="pub">
           Bhatt, T., Dam, B., Khedkar, S. U., Lall, S., Pandey, S., Kataria, S., <strong>Ajnabi, J.</strong>, Gulzar, S.-E.-J., Dias, P. M., Waskar, M., et al.
-
           <br>
           <em>
             <a href="https://doi.org/10.3389/fimmu.2023.1255478" target="_blank" rel="noopener noreferrer">
@@ -1051,11 +1107,10 @@
         </div>
       </div>
 
-      <div class="pub-year-group">
+      <div class="card pub-year-group">
         <h3>2022</h3>
         <div class="pub">
           Badarinath, K., Dam, B., Kataria, S., Zirmire, R. K., Dey, R., Kansagara, G., <strong>Ajnabi, J.</strong>, Hegde, A., Singh, R., Masudi, T., et al.
-
           <br>
           <em>
             <a href="https://doi.org/10.1016/j.celrep.2022.111390" target="_blank" rel="noopener noreferrer">
@@ -1070,11 +1125,10 @@
         </div>
       </div>
 
-      <div class="pub-year-group">
+      <div class="card pub-year-group">
         <h3>2019</h3>
         <div class="pub">
           <strong>Ajnabi, J.</strong>
-          <span class="first-author">&#9733; First author</span>
           <br>
           <em>
             <a href="http://krishikosh.egranth.ac.in/handle/1/5810146216" target="_blank" rel="noopener noreferrer">
@@ -1088,122 +1142,116 @@
           </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="section-divider">
+  <hr class="section-divider">
 
-<!-- =====================
-     TALKS & PRESENTATIONS
-====================== -->
-<section id="talks" class="page-section">
-  <p class="section-kicker">Talks &amp; Presentations</p>
-  <h2>Talks & Presentations</h2>
-  <p class="section-lead">
-    Selected conference presentations tracing the development of my work in mechanobiology
-    and wound repair.
-  </p>
-
-  <div class="talk-block">
-    <p>
-      <strong>MBI Conference 2023: Mechanobiology in Health and Disease</strong><br>
-      National University of Singapore (NUS), Singapore &middot; September 2023
+  <!-- =====================
+       TALKS
+  ====================== -->
+  <section id="talks" class="section reveal">
+    <p class="eyebrow">Talks &amp; Presentations</p>
+    <h2>Talks &amp; Presentations</h2>
+    <p class="lead lead--compact">
+      Selected conference presentations tracing the development of my work in mechanobiology
+      and wound repair.
     </p>
-    <p>
-    Poster Presentation &mdash; 
-    <em>Epigenetic and mechanical regulation of the cutaneous wound healing response</em>
-  </p>
 
- <!-- IMAGE STRIP -->
-        <div class="talk-images card-grid card-grid--3 card-grid--talks">
+    <div class="stack">
+      <article class="card">
+        <p>
+          <strong>MBI Conference 2023: Mechanobiology in Health and Disease</strong><br>
+          National University of Singapore (NUS), Singapore &middot; September 2023
+        </p>
+        <p>
+          Poster Presentation &mdash;
+          <em>Epigenetic and mechanical regulation of the cutaneous wound healing response</em>
+        </p>
 
-  <div class="talk-img-wrap">
-    <img src="/assets/johan_giving_flash_talk.jpg"
-         alt="Johan Ajnabi giving a flash talk at MBI Conference 2023">
-    <span class="talk-caption">Flash Talk &middot; MBI Conference &middot; 2023</span>
+        <div class="grid grid--3 media-grid">
+          <figure class="media-card lightbox-trigger"
+                  tabindex="0"
+                  role="button"
+                  data-lightbox-caption="Flash Talk &middot; MBI Conference &middot; 2023">
+            <img src="/assets/johan_giving_flash_talk.jpg"
+                 alt="Johan Ajnabi giving a flash talk at MBI Conference 2023">
+            <figcaption class="media-card__caption">Flash Talk &middot; MBI Conference &middot; 2023</figcaption>
+          </figure>
+
+          <figure class="media-card lightbox-trigger"
+                  tabindex="0"
+                  role="button"
+                  data-lightbox-caption="Poster Presentation &middot; NUS &middot; Singapore">
+            <img src="/assets/johan_presenting_poster.jpg"
+                 alt="Johan Ajnabi presenting poster on mechanobiology and wound healing">
+            <figcaption class="media-card__caption">Poster Presentation &middot; NUS &middot; Singapore</figcaption>
+          </figure>
+
+          <figure class="media-card lightbox-trigger"
+                  tabindex="0"
+                  role="button"
+                  data-lightbox-caption="Paeonia Foundation Travel Grant &middot; 2023">
+            <img src="/assets/johan_with_other_awardees.webp"
+                 alt="Johan Ajnabi with other awardees of Paeonia Foundation Travel Grant at the event">
+            <figcaption class="media-card__caption">Paeonia Foundation Travel Grant &middot; 2023</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="card">
+        <p>
+          <strong>10th International Conference of Laboratory Animal Scientists' Association (LASA)</strong><br>
+          Hyderabad, India &middot; June 2022
+        </p>
+        <p>
+          Poster Presentation &mdash;
+          <em>Understanding the role of DNMT3A in the cutaneous wound healing response using a mouse model</em>
+        </p>
+      </article>
+
+      <article class="card">
+        <p>
+          <strong>National Agricultural Science Congress</strong><br>
+          Delhi, India &middot; February 2019
+        </p>
+        <p>
+          Poster Presentation &mdash;
+          <em>Identification and characterization of stress responsive PM19 promoter from wheat</em>
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
+    <img class="lightbox-img" src="" alt="">
+    <div class="lightbox-caption"></div>
+    <button class="lightbox-next" aria-label="Next image">&#10095;</button>
   </div>
 
-  <div class="talk-img-wrap">
-    <img src="/assets/johan_presenting_poster.jpg"
-         alt="Johan Ajnabi presenting poster on mechanobiology and wound healing">
-    <span class="talk-caption">Poster Presentation &middot; NUS &middot; Singapore</span>
-  </div>
+  <hr class="section-divider">
 
-  <div class="talk-img-wrap">
-    <img src="/assets/johan_with_other_awardees.webp"
-         alt="Johan Ajnabi with other awardees of Paeonia Foundation Travel Grant at the event">
-    <span class="talk-caption">Paeonia Foundation Travel Grant &middot; 2023</span>
-  </div>
-
-</div>
-
-<!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox" aria-hidden="true">
-
-  <!-- Close -->
-  <button class="lightbox-close" aria-label="Close">&times;</button>
-
-  <!-- Previous -->
-  <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
-
-  <!-- Image -->
-  <img class="lightbox-img" src="" alt="">
-
-  <!-- Caption -->
-<div class="lightbox-caption"></div>
-
-  <!-- Next -->
-  <button class="lightbox-next" aria-label="Next image">&#10095;</button>
-
-</div>
-</div> <!-- CLOSE talk-block (MBI) -->
-
-<div class="talk-block">
-    <p>
-      <strong>10th International Conference of Laboratory Animal Scientists' Association (LASA)</strong><br>
-      Hyderabad, India &middot; June 2022
+  <!-- =====================
+       CONTACT
+  ====================== -->
+  <section id="links" class="section reveal">
+    <p class="eyebrow">Contact</p>
+    <h2>Contact</h2>
+    <p class="lead lead--compact">
+      I welcome conversations about postdoctoral positions, collaborations, and related work
+      in mechanobiology, regeneration, and skin biology.
     </p>
-    <p>
-      Poster Presentation &mdash; 
-      <em>Understanding the role of DNMT3A in the cutaneous wound healing response using a mouse model</em>
-    </p>
-  </div>
 
-  <div class="talk-block">
-    <p>
-      <strong>National Agricultural Science Congress</strong><br>
-      Delhi, India &middot; February 2019
-    </p>
-    <p>
-      Poster Presentation &mdash; 
-      <em>Identification and characterization of stress responsive PM19 promoter from wheat</em>
-    </p>
-  </div>
-
-</section>
-   <hr class="section-divider">
-
-    <!-- =====================
-         CONTACT
-    ====================== -->
-    <section id="links" class="page-section contact-section">
-  <p class="section-kicker">Contact</p>
-  <h2>Contact</h2>
-  <p class="section-lead">
-    I welcome conversations about postdoctoral positions, collaborations, and related work
-    in mechanobiology, regeneration, and skin biology.
-  </p>
-
-  <div class="contact-grid split-layout split-layout--contact">
-
-    <!-- LEFT: Contact Links -->
-    <ul class="contact-list">
-
+    <div class="split split--contact contact-grid">
+      <ul class="contact-list">
         <li>
           <a href="mailto:johanajnabi@gmail.com">
             <span class="contact-icon">
               <svg viewBox="0 0 24 24">
-                <path d="M4 6h16v12H4z"/>
-                <path d="M4 6l8 6 8-6"/>
+                <path d="M4 6h16v12H4z"></path>
+                <path d="M4 6l8 6 8-6"></path>
               </svg>
             </span>
             <span class="contact-text">
@@ -1218,8 +1266,8 @@
              target="_blank" rel="noopener noreferrer">
             <span class="contact-icon">
               <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M9 8v8M13 8h2a3 3 0 010 6h-2z"/>
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M9 8v8M13 8h2a3 3 0 010 6h-2z"></path>
               </svg>
             </span>
             <span class="contact-text">
@@ -1234,8 +1282,8 @@
              target="_blank" rel="noopener noreferrer">
             <span class="contact-icon">
               <svg viewBox="0 0 24 24">
-                <path d="M12 3l9 5-9 5-9-5z"/>
-                <path d="M5 13v4c0 1.5 3 3 7 3s7-1.5 7-3v-4"/>
+                <path d="M12 3l9 5-9 5-9-5z"></path>
+                <path d="M5 13v4c0 1.5 3 3 7 3s7-1.5 7-3v-4"></path>
               </svg>
             </span>
             <span class="contact-text">
@@ -1244,35 +1292,32 @@
             </span>
           </a>
         </li>
-        
-         <li>
-  <a href="https://www.researchgate.net/profile/Johan-Ajnabi"
-     target="_blank" rel="noopener noreferrer">
-    <span class="contact-icon">
-      <svg viewBox="0 0 24 24"
-           stroke="currentColor"
-           fill="none"
-           stroke-width="1.6"
-           stroke-linecap="round"
-           stroke-linejoin="round">
-        <circle cx="12" cy="12" r="9"></circle>
-        <path d="M9 15V9h3a3 3 0 010 6H9z"></path>
-      </svg>
-    </span>
-    <span class="contact-text">
-      <strong>ResearchGate</strong>
-      <span>Research profile</span>
-    </span>
-  </a>
-</li>
 
+        <li>
+          <a href="https://www.researchgate.net/profile/Johan-Ajnabi"
+             target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M9 15V9h3a3 3 0 010 6H9z"></path>
+              </svg>
+            </span>
+            <span class="contact-text">
+              <strong>ResearchGate</strong>
+              <span>Research profile</span>
+            </span>
+          </a>
+        </li>
 
         <li>
           <a href="https://in.linkedin.com/in/johanajnabi"
              target="_blank" rel="noopener noreferrer">
             <span class="contact-icon">
               <svg viewBox="0 0 24 24">
-                <path d="M6 9v9M6 6v.01M10 9v9M10 13c0-4 6-4 6 0v5"/>
+                <path d="M6 9v9"></path>
+                <path d="M6 6v.01"></path>
+                <path d="M10 9v9"></path>
+                <path d="M10 13c0-4 6-4 6 0v5"></path>
               </svg>
             </span>
             <span class="contact-text">
@@ -1282,45 +1327,28 @@
           </a>
         </li>
 
-                <li>
-  <a href="https://github.com/johanajnabi"
-    target="_blank" rel="noopener noreferrer">
-    <span class="contact-icon">
-      <svg viewBox="0 0 24 24"
-           stroke="currentColor"
-           fill="none"
-           stroke-width="1.6"
-           stroke-linecap="round"
-           stroke-linejoin="round">
-        <path d="M9 19c-4 1.5-4-2-6-2"></path>
-        <path d="M15 22v-3.87a3.37 3.37 0 00-.94-2.61
-                 c3.14-.35 6.44-1.54 6.44-7
-                 A5.44 5.44 0 0019 4.77
-                 5.07 5.07 0 0018.91 1
-                 S17.73.65 15 2.48
-                 a13.38 13.38 0 00-6 0
-                 C6.27.65 5.09 1 5.09 1
-                 A5.07 5.07 0 005 4.77
-                 5.44 5.44 0 003.5 8.52
-                 c0 5.42 3.3 6.61 6.44 7
-                 A3.37 3.37 0 009 18.13V22"></path>
-      </svg>
-    </span>
-    <span class="contact-text">
-      <strong>GitHub</strong>
-      <span>@johanajnabi</span>
-    </span>
-  </a>
-</li>
-
-
+        <li>
+          <a href="https://github.com/johanajnabi"
+             target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M9 19c-4 1.5-4-2-6-2"></path>
+                <path d="M15 22v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0019 4.77 5.07 5.07 0 0018.91 1S17.73.65 15 2.48a13.38 13.38 0 00-6 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77 5.44 5.44 0 003.5 8.52c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"></path>
+              </svg>
+            </span>
+            <span class="contact-text">
+              <strong>GitHub</strong>
+              <span>@johanajnabi</span>
+            </span>
+          </a>
+        </li>
 
         <li>
           <a href="https://bsky.app/profile/johanajnabi.com"
              target="_blank" rel="noopener noreferrer">
             <span class="contact-icon">
               <svg viewBox="0 0 24 24">
-                <path d="M12 12c-2-4-6-6-8-7 0 7 4 10 8 12 4-2 8-5 8-12-2 1-6 3-8 7z"/>
+                <path d="M12 12c-2-4-6-6-8-7 0 7 4 10 8 12 4-2 8-5 8-12-2 1-6 3-8 7z"></path>
               </svg>
             </span>
             <span class="contact-text">
@@ -1330,63 +1358,54 @@
           </a>
         </li>
 
-         <li>
-  <a href="https://x.com/jo_ajnabi"
-     target="_blank" rel="noopener noreferrer">
-    <span class="contact-icon">
-      <svg viewBox="0 0 24 24"
-           stroke="currentColor"
-           fill="none"
-           stroke-width="1.6"
-           stroke-linecap="round"
-           stroke-linejoin="round">
-        <path d="M4 4l16 16"></path>
-        <path d="M20 4L4 20"></path>
-      </svg>
-    </span>
-    <span class="contact-text">
-      <strong>X (formerly Twitter)</strong>
-      <span>@jo_ajnabi</span>
-    </span>
-  </a>
-</li>
-
+        <li>
+          <a href="https://x.com/jo_ajnabi"
+             target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4l16 16"></path>
+                <path d="M20 4L4 20"></path>
+              </svg>
+            </span>
+            <span class="contact-text">
+              <strong>X (formerly Twitter)</strong>
+              <span>@jo_ajnabi</span>
+            </span>
+          </a>
+        </li>
       </ul>
-       <!-- RIGHT: Postdoc Card -->
-    <div class="postdoc-card">
-      <h3>Postdoctoral Opportunities</h3>
 
-      <p class="postdoc-lead">
-        I am actively seeking postdoctoral positions at the intersection of mechanobiology and 
-        epigenetic regulation, with a focus on tissue regeneration and translational biology.
-      </p>
-
-      <p>
-        My work integrates mechanical signaling with chromatin dynamics
-        in skin biology. I am particularly interested in interdisciplinary
-        and translational research environments.
-      </p>
-
-      <p>
-        I welcome discussions with potential mentors and collaborators.
-      </p>
-      <div class="postdoc-meta">
-  <span class="meta-label">Currently based at:</span><br>
-  BRIC&ndash;Institute for Stem Cell Science and Regenerative Medicine (inStem)<br>
-  Bengaluru, India
-</div>
-
-
+      <aside class="card postdoc-card">
+        <h3>Postdoctoral Opportunities</h3>
+        <p class="postdoc-lead">
+          I am actively seeking postdoctoral positions at the intersection of mechanobiology and
+          epigenetic regulation, with a focus on tissue regeneration and translational biology.
+        </p>
+        <p>
+          My work integrates mechanical signaling with chromatin dynamics
+          in skin biology. I am particularly interested in interdisciplinary
+          and translational research environments.
+        </p>
+        <p>
+          I welcome discussions with potential mentors and collaborators.
+        </p>
+        <div class="postdoc-meta">
+          <span class="meta-label">Currently based at:</span><br>
+          BRIC&ndash;Institute for Stem Cell Science and Regenerative Medicine (inStem)<br>
+          Bengaluru, India
+        </div>
+      </aside>
     </div>
+  </section>
 
-  </div>
-    </section>
+  <!-- =====================
+       FOOTER
+  ====================== -->
+  <footer class="site-footer">
+    &copy; 2026 Johan Ajnabi &middot; Last updated April 3, 2026
+  </footer>
 
-    <footer class="site-footer">
-      &copy; 2026 Johan Ajnabi &middot; Last updated March 30, 2026
-    </footer>
-
-  </main>
+</main>
 
 <script src="/js/global.js" defer></script>
 <script src="/academic/main.js" defer></script>

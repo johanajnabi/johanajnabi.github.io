@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 
+  <!-- =====================
+       CORE META
+  ====================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
@@ -9,6 +12,9 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="robots" content="index, follow, max-image-preview:large">
 
+  <!-- =====================
+       CONTENT SECURITY POLICY
+  ====================== -->
   <meta http-equiv="Content-Security-Policy"
         content="
           default-src 'self';
@@ -21,11 +27,17 @@
           object-src 'none';
         ">
 
+  <!-- =====================
+       SEO
+  ====================== -->
   <title>Flagship Research Projects | Johan Ajnabi</title>
   <meta name="description"
         content="Flagship research projects by Johan Ajnabi spanning skin mechanobiology, spatial transcriptomics, keratinocyte stemness, and regenerative skin biology.">
   <link rel="canonical" href="https://johanajnabi.com/projects/">
 
+  <!-- =====================
+       OPEN GRAPH
+  ====================== -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Johan Ajnabi">
   <meta property="og:title" content="Flagship Research Projects | Johan Ajnabi">
@@ -37,6 +49,9 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Portrait of Johan Ajnabi">
 
+  <!-- =====================
+       TWITTER
+  ====================== -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Flagship Research Projects | Johan Ajnabi">
   <meta name="twitter:description"
@@ -45,9 +60,15 @@
   <meta name="twitter:image:alt" content="Portrait of Johan Ajnabi">
   <meta name="twitter:creator" content="@jo_ajnabi">
 
+  <!-- =====================
+       ICON + STYLES
+  ====================== -->
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css">
 
+  <!-- =====================
+       STRUCTURED DATA
+  ====================== -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -59,7 +80,7 @@
       "name": "Flagship Research Projects | Johan Ajnabi",
       "description": "Research portfolio pages highlighting flagship work in mechanobiology, spatial transcriptomics, and epidermal stemness.",
       "inLanguage": "en",
-      "dateModified": "2026-03-30"
+      "dateModified": "2026-04-03"
     },
     {
       "@type": "BreadcrumbList",
@@ -85,115 +106,128 @@
 </head>
 <body id="top" class="project-page">
 
-<header class="top-nav">
-  <div class="top-nav-inner">
-
+<!-- =====================
+     SITE NAV
+===================== -->
+<header class="site-nav">
+  <div class="site-nav__inner">
     <a href="/" class="brand">Johan Ajnabi</a>
 
     <button class="menu-toggle" aria-label="Open menu">
       &#9776;
     </button>
 
-    <nav class="top-links">
+    <nav class="site-links" aria-label="Primary">
       <a href="/">Home</a>
-      <a href="/academic/" class="active">Academic</a>
-      <a href="/beyond/">Beyond Research</a>
+      <a href="/academic/">Academic</a>
+      <a href="/projects/" class="active">Projects</a>
+      <a href="/beyond/">Beyond</a>
       <a href="/assets/JA_CV2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
     </nav>
-
   </div>
 </header>
 
 <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
   <a href="/">Home</a>
-  <a href="/academic/" class="active">Academic</a>
-  <a href="/beyond/">Beyond Research</a>
+  <a href="/academic/">Academic</a>
+  <a href="/projects/" class="active">Projects</a>
+  <a href="/beyond/">Beyond</a>
   <a href="/assets/JA_CV2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
 </nav>
 
 <div class="menu-overlay" id="menuOverlay"></div>
 
-<main class="content project-content">
-  <header class="page-header project-hero fade-in">
+<main class="shell shell--wide page-stack">
+
+  <!-- =====================
+       HERO
+  ====================== -->
+  <section class="hero hero--accent card split split--main-aside reveal">
     <div>
-      <p class="project-eyebrow">Flagship Projects</p>
+      <p class="eyebrow">Flagship Projects</p>
       <h1>Three projects that best reflect how I think about skin biology</h1>
-      <p class="project-subtitle">
-        These projects differ in system and scale, but they are held together by the same
-        interest: how local context shapes cell state. I put these pages together to give a
-        clearer and more readable view of the work than a publication list alone can offer.
+      <p class="lead">
+        These projects differ in system and scale, but together they trace the questions that
+        organize my work: how local context shapes cell state, how tissue injury is interpreted,
+        and how those shifts matter for regeneration and disease.
       </p>
 
-      <div class="project-meta">
-        <span>Skin mechanobiology</span>
-        <span>Spatial transcriptomics</span>
-        <span>Stemness and regeneration</span>
+      <div class="tag-list">
+        <span class="tag">Skin Mechanobiology</span>
+        <span class="tag">Spatial Transcriptomics</span>
+        <span class="tag">Stemness and Regeneration</span>
       </div>
 
-      <div class="home-actions project-actions">
-        <a href="/academic/" class="home-btn primary">Academic Profile</a>
-        <a href="/academic/#publications" class="home-btn secondary">Selected Publications</a>
-        <a href="/academic/#links" class="home-btn secondary">Contact</a>
+      <div class="actions">
+        <a href="/academic/" class="btn btn--primary">Academic Profile</a>
+        <a href="/academic/#publications" class="btn btn--secondary">Selected Publications</a>
+        <a href="/academic/#links" class="btn btn--secondary">Contact</a>
       </div>
     </div>
 
-    <aside class="project-summary-card">
-      <h2>What you will find here</h2>
+    <aside class="card card--accent">
+      <p class="eyebrow eyebrow--sm">What You Will Find Here</p>
       <ul class="project-summary-list">
         <li>The question I was trying to answer in each project.</li>
         <li>Why the biological system and approach mattered.</li>
         <li>How the work fits into a broader program in wound repair, tissue-state change, and skin biology.</li>
       </ul>
     </aside>
-  </header>
+  </section>
 
-  <nav class="nav-pills project-nav" aria-label="Project navigation">
-    <a href="#projects" class="pill">Projects</a>
+  <!-- =====================
+       SECTION NAV
+  ====================== -->
+  <nav class="pills section-nav" aria-label="Project navigation">
+    <a href="#projects" class="pill active">Projects</a>
     <a href="#connections" class="pill">Connections</a>
-    <a href="#next" class="pill">Next Step</a>
+    <a href="#next" class="pill">Start Here</a>
   </nav>
 
-  <section id="projects" class="fade-in delay-1">
-    <p class="section-kicker">Research Threads</p>
+  <!-- =====================
+       PROJECTS
+  ====================== -->
+  <section id="projects" class="section reveal">
+    <p class="eyebrow">Research Threads</p>
     <h2>Three projects I would want someone to read first</h2>
 
-    <div class="project-hub-grid">
-      <article class="project-hub-card">
-        <p class="project-hub-meta">Mechanobiology and wound repair</p>
+    <div class="grid grid--3">
+      <article class="card">
+        <p class="eyebrow eyebrow--sm">Mechanobiology and Wound Repair</p>
         <h3>DNMT3A mechanotransduction during epidermal injury</h3>
         <p>
           This is the project closest to the core of my current work: how mechanical changes at
           a wound edge influence the localization of an epigenetic regulator and help shape repair.
         </p>
-        <div class="project-card-links">
+        <div class="card-links">
           <a href="/projects/dnmt3a-mechanotransduction/">Open project page</a>
-          <a href="https://doi.org/10.64898/2026.01.15.699481" target="_blank" rel="noopener noreferrer" class="project-card-secondary">Associated preprint</a>
+          <a href="https://doi.org/10.64898/2026.01.15.699481" target="_blank" rel="noopener noreferrer" class="secondary-link">Associated preprint</a>
         </div>
       </article>
 
-      <article class="project-hub-card">
-        <p class="project-hub-meta">Spatial transcriptomics and patient tissue</p>
+      <article class="card">
+        <p class="eyebrow eyebrow--sm">Spatial Transcriptomics and Patient Tissue</p>
         <h3>Immune remodeling in vitiligo skin after NB-UVB treatment</h3>
         <p>
           This collaborative project let me work at the level of patient tissue, asking how
           treatment reshapes the immune landscape when viewed with spatial resolution.
         </p>
-        <div class="project-card-links">
+        <div class="card-links">
           <a href="/projects/vitiligo-spatial-transcriptomics/">Open project page</a>
-          <a href="https://doi.org/10.1002/cti2.70080" target="_blank" rel="noopener noreferrer" class="project-card-secondary">Associated article</a>
+          <a href="https://doi.org/10.1002/cti2.70080" target="_blank" rel="noopener noreferrer" class="secondary-link">Associated article</a>
         </div>
       </article>
 
-      <article class="project-hub-card">
-        <p class="project-hub-meta">Stemness and signaling</p>
+      <article class="card">
+        <p class="eyebrow eyebrow--sm">Stemness and Signaling</p>
         <h3>Mindin-integrin-STAT3 control of keratinocyte stemness</h3>
         <p>
           This thread is about what it takes to hold onto stemness in epidermal systems, and how
           extracellular context and trafficking pathways feed into that decision.
         </p>
-        <div class="project-card-links">
+        <div class="card-links">
           <a href="/projects/keratinocyte-stemness/">Open project page</a>
-          <a href="https://doi.org/10.1101/2025.08.24.669246" target="_blank" rel="noopener noreferrer" class="project-card-secondary">Associated preprint</a>
+          <a href="https://doi.org/10.1101/2025.08.24.669246" target="_blank" rel="noopener noreferrer" class="secondary-link">Associated preprint</a>
         </div>
       </article>
     </div>
@@ -201,12 +235,15 @@
 
   <hr class="section-divider">
 
-  <section id="connections" class="fade-in delay-2">
-    <p class="section-kicker">Shared Thread</p>
+  <!-- =====================
+       CONNECTIONS
+  ====================== -->
+  <section id="connections" class="section reveal">
+    <p class="eyebrow">Shared Thread</p>
     <h2>What connects these projects for me</h2>
 
-    <div class="project-detail-grid">
-      <article class="project-detail-card">
+    <div class="grid grid--3">
+      <article class="card">
         <h3>Mechanics to molecular state</h3>
         <p>
           In different ways, each project asks how context becomes instruction, whether that context
@@ -214,7 +251,7 @@
         </p>
       </article>
 
-      <article class="project-detail-card">
+      <article class="card">
         <h3>Tissue-state transitions</h3>
         <p>
           I keep returning to the problem of state change: how cells move, hold, or exit biological
@@ -222,7 +259,7 @@
         </p>
       </article>
 
-      <article class="project-detail-card">
+      <article class="card">
         <h3>Regeneration and translational relevance</h3>
         <p>
           I am interested in work that stays mechanistic without losing tissue relevance, and these
@@ -234,22 +271,31 @@
 
   <hr class="section-divider">
 
-  <section id="next" class="project-cta fade-in delay-3">
-    <p class="section-kicker">Why I Made These</p>
-    <h2>A more readable way into the research</h2>
-    <p>
-      If you are reading the site as a potential mentor, collaborator, or committee member, I hoped
-      these pages would make the work easier to enter quickly: what the question was, why it mattered,
-      and how the pieces fit together.
-    </p>
-    <div class="home-actions project-actions">
-      <a href="/academic/" class="home-btn primary">Back to academic page</a>
-      <a href="/academic/#links" class="home-btn secondary">Start a conversation</a>
+  <!-- =====================
+       CTA
+  ====================== -->
+  <section id="next" class="section reveal">
+    <div class="card card--accent">
+      <p class="eyebrow">Where to Start</p>
+      <h2>Begin with the project closest to my current work</h2>
+      <p class="lead lead--compact">
+        If you want the fastest entry into how I think, start with the DNMT3A mechanotransduction
+        project. It is the clearest bridge between mechanics, chromatin regulation, and epidermal
+        repair, and it provides the best context for the rest of the portfolio.
+      </p>
+      <div class="actions">
+        <a href="/projects/dnmt3a-mechanotransduction/" class="btn btn--primary">Start with DNMT3A</a>
+        <a href="/academic/" class="btn btn--secondary">View academic profile</a>
+        <a href="/academic/#links" class="btn btn--secondary">Start a conversation</a>
+      </div>
     </div>
   </section>
 
+  <!-- =====================
+       FOOTER
+  ====================== -->
   <footer class="site-footer">
-    &copy; 2026 Johan Ajnabi &middot; Last updated March 30, 2026
+    &copy; 2026 Johan Ajnabi &middot; Last updated April 3, 2026
   </footer>
 </main>
 
@@ -257,7 +303,7 @@
 
 <a href="#top"
    id="back-to-top"
-   class="pill back-to-top"
+   class="back-to-top"
    aria-label="Back to top">
   &#8593; Top
 </a>
