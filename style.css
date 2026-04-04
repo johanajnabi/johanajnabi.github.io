@@ -1205,7 +1205,8 @@ html.js .reveal.is-visible {
   .grid--4 {
     grid-template-columns: 1fr;
   }
-
+   .capture-gallery { column-count: 1; }
+}
   .lightbox {
     padding: 4.5rem 1rem 2rem;
   }
