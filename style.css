@@ -1274,6 +1274,12 @@ html.js .reveal.is-visible {
     transform-origin: top left;
     width: 111%;
   }
+   .embed--compact {
+    transform: scale(0.88);
+    transform-origin: top left;
+    width: 114%;
+    height: 114%;
+  }
 
   /* ---------- Lightbox ---------- */
   .lightbox {
