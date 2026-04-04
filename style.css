@@ -790,9 +790,10 @@ header[id] {
 }
 
 .embed--compact {
-   aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1;
   min-height: 420px;
-   margin: 0 auto;
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .embed iframe {
@@ -1268,11 +1269,10 @@ html.js .reveal.is-visible {
     transform-origin: top left;
     width: 111%;
   }
-   .embed--compact {
-    transform: scale(0.88);
-    transform-origin: top left;
-    width: 114%;
-    height: 114%;
+  .embed--compact {
+    width: 100%;
+    max-width: 100%;
+    transform: none;
   }
 
   /* ---------- Lightbox ---------- */
