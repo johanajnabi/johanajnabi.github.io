@@ -181,9 +181,10 @@ header[id] {
 .shell--home {
   min-height: calc(100vh - var(--nav-height));
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 2rem 0 3rem;
+  align-items: flex-start;
+  padding-top: clamp(4rem, 12vh, 8rem);
+  padding-bottom: 3rem;
 }
 
 .page-stack {
