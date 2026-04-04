@@ -1185,28 +1185,93 @@ html.js .reveal.is-visible {
 }
 
 @media (max-width: 720px) {
+
+  /* ---------- Layout ---------- */
   .shell,
   .shell--wide {
-    width: min(100% - 1.25rem, 1120px);
+    width: min(100% - 1.25rem, 100%);
   }
 
   .page-stack {
-    padding-top: 1.15rem;
+    padding: 1.25rem 0 2.5rem;
   }
 
+  /* ---------- Spacing ---------- */
   .hero,
   .card,
   .pub-year-group {
     padding: 1.2rem;
+    border-radius: var(--radius-md);
   }
 
+  /* ---------- Grid → Stack ---------- */
   .grid--2,
   .grid--3,
-  .grid--4 {
+  .grid--4,
+  .split,
+  .split--main-aside,
+  .split--project,
+  .split--contact {
     grid-template-columns: 1fr;
   }
-   .capture-gallery { column-count: 1; }
-}
+
+  /* ---------- Typography ---------- */
+  h1 {
+    font-size: clamp(1.9rem, 6vw, 2.4rem);
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* ---------- Buttons & Pills ---------- */
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .pills {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.25rem;
+  }
+
+  .pill {
+    flex: 0 0 auto;
+  }
+
+  /* ---------- Gallery (FIXED) ---------- */
+  .capture-gallery {
+    column-count: 1;
+  }
+
+  .media-card img {
+    height: auto;
+    aspect-ratio: auto; /* 🔥 remove forced cropping */
+  }
+
+  /* ---------- Embeds (FIXED) ---------- */
+  .embed {
+    aspect-ratio: 1 / 1;
+  }
+
+  .embed iframe {
+    transform: scale(0.9);
+    transform-origin: top left;
+    width: 111%;
+  }
+
+  /* ---------- Lightbox ---------- */
   .lightbox {
     padding: 4.5rem 1rem 2rem;
   }
@@ -1223,16 +1288,13 @@ html.js .reveal.is-visible {
     transform: none;
   }
 
-  .lightbox-prev {
-    left: 1rem;
-  }
+  .lightbox-prev { left: 1rem; }
+  .lightbox-next { right: 1rem; }
 
-  .lightbox-next {
-    right: 1rem;
-  }
-
+  /* ---------- Floating UI ---------- */
   .back-to-top {
     right: 0.85rem;
     bottom: 0.95rem;
   }
+
 }
