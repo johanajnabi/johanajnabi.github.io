@@ -179,11 +179,11 @@ header[id] {
 }
 
 .shell--home {
-  min-height: calc(100vh - var(--nav-height));
+  min-height: auto;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: clamp(4rem, 12vh, 8rem);
+  padding-top: clamp(5rem, 12vh, 9rem);
   padding-bottom: 3rem;
 }
 
