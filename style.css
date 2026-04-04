@@ -780,9 +780,11 @@ header[id] {
 }
 
 .embed {
-  overflow: hidden;
-  min-height: 360px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   border-radius: var(--radius-md);
+  overflow: hidden;
   background: #0d1629;
 }
 
