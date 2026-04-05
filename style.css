@@ -1264,11 +1264,17 @@ html.js .reveal.is-visible {
     height: auto;
     aspect-ratio: auto; /* 🔥 remove forced cropping */
   }
-  .embed iframe {
+  .embed:not(.embed--compact) iframe {
     transform: scale(0.9);
     transform-origin: top left;
     width: 111%;
   }
+
+  .embed--compact iframe {
+    transform: none;
+    width: 100%;
+  }
+
   .embed--compact {
     width: 100%;
     max-width: 100%;
