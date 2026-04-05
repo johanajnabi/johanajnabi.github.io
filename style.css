@@ -796,6 +796,7 @@ header[id] {
   min-height: 420px;
   max-width: 420px;
   margin: 0 auto;
+  background: #ffffff;
 }
 
 .embed iframe {
@@ -1281,6 +1282,7 @@ html.js .reveal.is-visible {
     transform: scale(0.84);
     transform-origin: top left;
     width: 119.05%;
+    max-width: none;
     height: 119.05%;
   }
 
