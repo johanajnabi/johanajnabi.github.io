@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 
+  <!-- =====================
+       CORE META
+  ====================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
@@ -9,6 +12,9 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="robots" content="index, follow, max-image-preview:large">
 
+  <!-- =====================
+       CONTENT SECURITY POLICY
+  ====================== -->
   <meta http-equiv="Content-Security-Policy"
         content="
           default-src 'self';
@@ -21,11 +27,17 @@
           object-src 'none';
         ">
 
+  <!-- =====================
+       SEO
+  ====================== -->
   <title>Spatial Transcriptomics in Vitiligo Skin | Johan Ajnabi</title>
   <meta name="description"
         content="A flagship research project by Johan Ajnabi on spatial transcriptomic analysis of the immune landscape in vitiligo skin following NB-UVB treatment.">
   <link rel="canonical" href="https://johanajnabi.com/projects/vitiligo-spatial-transcriptomics/">
 
+  <!-- =====================
+       OPEN GRAPH
+  ====================== -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Johan Ajnabi">
   <meta property="og:title" content="Spatial Transcriptomics in Vitiligo Skin | Johan Ajnabi">
@@ -37,6 +49,9 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Portrait of Johan Ajnabi">
 
+  <!-- =====================
+       TWITTER
+  ====================== -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Spatial Transcriptomics in Vitiligo Skin | Johan Ajnabi">
   <meta name="twitter:description"
@@ -45,9 +60,15 @@
   <meta name="twitter:image:alt" content="Portrait of Johan Ajnabi">
   <meta name="twitter:creator" content="@jo_ajnabi">
 
+  <!-- =====================
+       ICON + STYLES
+  ====================== -->
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css">
 
+  <!-- =====================
+       STRUCTURED DATA
+  ====================== -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -59,7 +80,7 @@
       "name": "Spatial Transcriptomics in Vitiligo Skin | Johan Ajnabi",
       "description": "A research project on how NB-UVB treatment reshapes the immune landscape in vitiligo skin using spatial transcriptomic analysis.",
       "inLanguage": "en",
-      "dateModified": "2026-03-30"
+      "dateModified": "2026-04-03"
     },
     {
       "@type": "BreadcrumbList",
@@ -91,18 +112,22 @@
 </head>
 <body id="top" class="project-page">
 
-<header class="top-nav">
-  <div class="top-nav-inner">
+<!-- =====================
+     SITE NAV
+===================== -->
+<header class="site-nav">
+  <div class="site-nav__inner">
     <a href="/" class="brand">Johan Ajnabi</a>
 
     <button class="menu-toggle" aria-label="Open menu">
       &#9776;
     </button>
 
-    <nav class="top-links">
+    <nav class="site-links" aria-label="Primary">
       <a href="/">Home</a>
-      <a href="/academic/" class="active">Academic</a>
-      <a href="/beyond/">Beyond Research</a>
+      <a href="/academic/">Academic</a>
+      <a href="/projects/" class="active">Projects</a>
+      <a href="/beyond/">Beyond</a>
       <a href="/assets/JA_CV2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
     </nav>
   </div>
@@ -110,60 +135,71 @@
 
 <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
   <a href="/">Home</a>
-  <a href="/academic/" class="active">Academic</a>
-  <a href="/beyond/">Beyond Research</a>
+  <a href="/academic/">Academic</a>
+  <a href="/projects/" class="active">Projects</a>
+  <a href="/beyond/">Beyond</a>
   <a href="/assets/JA_CV2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
 </nav>
 
 <div class="menu-overlay" id="menuOverlay"></div>
 
-<main class="content page-shell project-content">
-  <header class="page-header page-hero project-hero split-layout split-layout--hero-project fade-in">
-    <div class="page-hero-main">
-      <p class="project-eyebrow">Flagship Project</p>
+<main class="shell shell--wide page-stack">
+
+  <!-- =====================
+       HERO
+  ====================== -->
+  <section class="hero hero--accent card split split--main-aside reveal">
+    <div>
+      <p class="eyebrow">Flagship Project</p>
       <h1>Spatial transcriptomics of the immune landscape in vitiligo skin</h1>
-      <p class="project-subtitle">
+      <p class="lead">
         What I valued most in this project was the chance to work at the level of patient tissue
         and ask how treatment changes the immune landscape when spatial context is preserved rather
         than averaged away.
       </p>
 
-      <div class="project-meta meta-list">
-        <span>Patient tissue analysis</span>
-        <span>Spatial transcriptomics</span>
-        <span>Translational skin biology</span>
+      <div class="tag-list">
+        <span class="tag">Patient Tissue Analysis</span>
+        <span class="tag">Spatial Transcriptomics</span>
+        <span class="tag">Translational Skin Biology</span>
       </div>
 
-      <div class="home-actions page-actions project-actions">
-        <a href="https://doi.org/10.1002/cti2.70080" target="_blank" rel="noopener noreferrer" class="home-btn primary">Read article</a>
-        <a href="/academic/#publications" class="home-btn secondary">See publication record</a>
-        <a href="/projects/" class="home-btn secondary">All project pages</a>
+      <div class="actions">
+        <a href="https://doi.org/10.1002/cti2.70080" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Read article</a>
+        <a href="/academic/#publications" class="btn btn--secondary">See publication record</a>
+        <a href="/projects/" class="btn btn--secondary">All project pages</a>
       </div>
     </div>
 
-    <aside class="page-hero-aside project-summary-card">
-      <h2>What drew me to this project</h2>
+    <aside class="card card--accent">
+      <p class="eyebrow eyebrow--sm">What Drew Me To This Project</p>
       <ul class="project-summary-list">
         <li>The question: how treatment reshapes immune organization in vitiligo skin.</li>
         <li>The setting: patient tissue before and after NB-UVB therapy.</li>
         <li>The method: spatial transcriptomic tissue profiling with validation.</li>
-        <li>The output: a 2026 Clinical &amp; Translational Immunology paper.</li>
+        <li>The output: a 2026 <em>Clinical &amp; Translational Immunology</em> paper.</li>
       </ul>
     </aside>
-  </header>
+  </section>
 
-  <nav class="nav-pills page-nav project-nav" aria-label="Project sections">
-    <a href="#overview" class="pill">Overview</a>
+  <!-- =====================
+       SECTION NAV
+  ====================== -->
+  <nav class="pills section-nav" aria-label="Project sections">
+    <a href="#overview" class="pill active">Overview</a>
     <a href="#questions" class="pill">Questions</a>
     <a href="#approach" class="pill">Approach</a>
     <a href="#outputs" class="pill">Outputs</a>
     <a href="#next" class="pill">Related</a>
   </nav>
 
-  <section id="overview" class="page-section fade-in delay-1">
-    <div class="project-layout split-layout split-layout--project">
-      <article class="project-section-card">
-        <p class="section-kicker">Overview</p>
+  <!-- =====================
+       OVERVIEW
+  ====================== -->
+  <section id="overview" class="section reveal">
+    <div class="split split--project">
+      <article class="card">
+        <p class="eyebrow">Overview</p>
         <h2>Why this project matters</h2>
         <p>
           I liked this project because it pushed me to think about disease and treatment at the scale
@@ -178,17 +214,17 @@
         </p>
       </article>
 
-      <div class="project-aside-stack stack-layout">
-        <aside class="project-note-card">
-          <h2>Program fit</h2>
+      <div class="stack">
+        <aside class="card card--soft">
+          <h3>Program fit</h3>
           <p>
             This project widens my portfolio beyond mechanistic cell biology and into patient-tissue
             analysis, while still staying close to the theme of state change.
           </p>
         </aside>
 
-        <aside class="project-note-card">
-          <h2>Contribution frame</h2>
+        <aside class="card card--soft">
+          <h3>Contribution frame</h3>
           <p>
             I contributed within a collaborative setting centered on spatial transcriptomic analysis,
             tissue validation, and interpretation of therapy-associated remodeling in skin.
@@ -200,12 +236,15 @@
 
   <hr class="section-divider">
 
-  <section id="questions" class="page-section fade-in delay-2">
-    <p class="section-kicker">Core Questions</p>
+  <!-- =====================
+       QUESTIONS
+  ====================== -->
+  <section id="questions" class="section reveal">
+    <p class="eyebrow">Core Questions</p>
     <h2>The questions that made the project interesting</h2>
 
-    <div class="project-detail-grid card-grid card-grid--3 card-grid--standard">
-      <article class="project-detail-card">
+    <div class="grid grid--3">
+      <article class="card">
         <h3>How does treatment reshape tissue organization?</h3>
         <p>
           The first thing I wanted this work to clarify was how NB-UVB changes immune-state
@@ -213,7 +252,7 @@
         </p>
       </article>
 
-      <article class="project-detail-card">
+      <article class="card">
         <h3>Why use spatial readouts?</h3>
         <p>
           Spatial readouts mattered because the biology depends on neighborhood, microenvironment,
@@ -221,7 +260,7 @@
         </p>
       </article>
 
-      <article class="project-detail-card">
+      <article class="card">
         <h3>What makes it translationally important?</h3>
         <p>
           What makes the work useful to me is that it ties treatment response to a tissue-resolved map,
@@ -233,10 +272,13 @@
 
   <hr class="section-divider">
 
-  <section id="approach" class="page-section fade-in delay-3">
-    <div class="project-layout split-layout split-layout--project">
-      <article class="project-section-card">
-        <p class="section-kicker">Approach</p>
+  <!-- =====================
+       APPROACH
+  ====================== -->
+  <section id="approach" class="section reveal">
+    <div class="split split--project">
+      <article class="card">
+        <p class="eyebrow">Approach</p>
         <h2>Experimental frame</h2>
         <p>
           I think of this project as one where method and question had to match closely. Spatial
@@ -250,8 +292,8 @@
         </p>
       </article>
 
-      <aside class="project-summary-card">
-        <h2>Methods and readouts</h2>
+      <aside class="card card--soft">
+        <p class="eyebrow eyebrow--sm">Methods and Readouts</p>
         <ul class="project-summary-list">
           <li>Spatial transcriptomic profiling</li>
           <li>Patient tissue before and after NB-UVB treatment</li>
@@ -264,25 +306,28 @@
 
   <hr class="section-divider">
 
-  <section id="outputs" class="page-section fade-in delay-4">
-    <p class="section-kicker">Associated Outputs</p>
+  <!-- =====================
+       OUTPUTS
+  ====================== -->
+  <section id="outputs" class="section reveal">
+    <p class="eyebrow">Associated Outputs</p>
     <h2>Where this work appears</h2>
 
-    <div class="project-output-grid card-grid card-grid--3 card-grid--standard">
-      <article class="project-output-card">
-        <p class="project-output-meta">Primary output</p>
-        <h3>2026 Clinical &amp; Translational Immunology paper</h3>
+    <div class="grid grid--3">
+      <article class="card">
+        <p class="eyebrow eyebrow--sm">Primary Output</p>
+        <h3>2026 <em>Clinical &amp; Translational Immunology</em> paper</h3>
         <p>
           Spatial transcriptomic analysis of the immune landscape following NB-UVB treatment of vitiligo skin.
         </p>
-        <div class="project-card-links">
+        <div class="card-links">
           <a href="https://doi.org/10.1002/cti2.70080" target="_blank" rel="noopener noreferrer">Read article</a>
-          <a href="/academic/#publications" class="project-card-secondary">Full publication record</a>
+          <a href="/academic/#publications" class="secondary-link">Full publication record</a>
         </div>
       </article>
 
-      <article class="project-output-card">
-        <p class="project-output-meta">Research value</p>
+      <article class="card">
+        <p class="eyebrow eyebrow--sm">Research Value</p>
         <h3>Tissue-scale immune-state analysis</h3>
         <p>
           To me, the value of this project is that it shows how much clearer a disease-focused question
@@ -290,8 +335,8 @@
         </p>
       </article>
 
-      <article class="project-output-card">
-        <p class="project-output-meta">Portfolio role</p>
+      <article class="card">
+        <p class="eyebrow eyebrow--sm">Portfolio Role</p>
         <h3>Translational complement to mechanistic work</h3>
         <p>
           It broadens my portfolio from mechanistic signaling questions into patient-tissue analysis
@@ -303,61 +348,72 @@
 
   <hr class="section-divider">
 
-  <section id="next" class="page-section fade-in delay-5">
-    <p class="section-kicker">Related Pages</p>
+  <!-- =====================
+       RELATED
+  ====================== -->
+  <section id="next" class="section reveal">
+    <p class="eyebrow">Related Pages</p>
     <h2>Other projects in the portfolio</h2>
 
-    <div class="project-related-grid card-grid card-grid--3 card-grid--standard">
-      <article class="project-related-card">
+    <div class="grid grid--3">
+      <article class="card">
         <h3>DNMT3A mechanotransduction</h3>
         <p>
           A mechanobiology-focused project on how wound-induced physical cues regulate an epigenetic
           regulator during repair.
         </p>
-        <div class="project-card-links">
+        <div class="card-links">
           <a href="/projects/dnmt3a-mechanotransduction/">Open project page</a>
         </div>
       </article>
 
-      <article class="project-related-card">
+      <article class="card">
         <h3>Keratinocyte stemness signaling</h3>
         <p>
           A complementary signaling project on extracellular context, integrin trafficking, and
           stemness maintenance in epidermal systems.
         </p>
-        <div class="project-card-links">
+        <div class="card-links">
           <a href="/projects/keratinocyte-stemness/">Open project page</a>
         </div>
       </article>
 
-      <article class="project-related-card">
+      <article class="card">
         <h3>Academic profile</h3>
         <p>
           Return to the broader research profile, including publications, talks, and contact details.
         </p>
-        <div class="project-card-links">
+        <div class="card-links">
           <a href="/academic/">Visit academic page</a>
         </div>
       </article>
     </div>
   </section>
 
-  <section class="page-section project-cta fade-in delay-5">
-    <p class="section-kicker">Contact</p>
-    <h2>Interested in translational skin biology and tissue-state analysis?</h2>
-    <p>
-      I am especially interested in research environments that connect high-resolution tissue profiling
-      with mechanistic questions in skin biology, regeneration, and immune-state change, and I am
-      always happy to talk with people working in that space.
-    </p>
-    <div class="home-actions page-actions project-actions">
-      <a href="/academic/#links" class="home-btn primary">Get in touch</a>
-      <a href="/assets/JA_CV2026.pdf" class="home-btn secondary" target="_blank" rel="noopener noreferrer">Download CV</a>
+  <!-- =====================
+       CTA
+  ====================== -->
+  <section class="section reveal">
+    <div class="card card--accent">
+      <p class="eyebrow">Contact</p>
+      <h2>Interested in translational skin biology and tissue-state analysis?</h2>
+      <p class="lead lead--compact">
+        I am especially interested in research environments that connect high-resolution tissue profiling
+        with mechanistic questions in skin biology, regeneration, and immune-state change, and I am
+        always happy to talk with people working in that space.
+      </p>
+      <div class="actions">
+        <a href="/academic/#links" class="btn btn--primary">Get in touch</a>
+        <a href="/assets/JA_CV2026.pdf" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">Download CV</a>
+      </div>
     </div>
   </section>
 
+  <!-- =====================
+       FOOTER
+  ====================== -->
   <footer class="site-footer">
-    &copy; 2026 Johan Ajnabi &middot; Last updated March 30, 2026
+    &copy; 2026 Johan Ajnabi &middot; Last updated April 3, 2026
   </footer>
 </main>
 

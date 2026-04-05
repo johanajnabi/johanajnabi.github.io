@@ -50,6 +50,9 @@
   <meta property="og:image:alt" content="Portrait of Johan Ajnabi">
   <meta name="twitter:image:alt" content="Portrait of Johan Ajnabi">
 
+  <!-- =====================
+       ICON + STYLES
+  ====================== -->
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="stylesheet" href="/style.css">
 
@@ -64,6 +67,9 @@
         content="https://johanajnabi.com/assets/profile.webp">
   <meta name="twitter:creator" content="@jo_ajnabi">
 
+  <!-- =====================
+       STRUCTURED DATA
+  ====================== -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -81,7 +87,7 @@
         "@id": "https://johanajnabi.com/#johan"
       },
       "inLanguage": "en",
-      "dateModified": "2026-03-30",
+      "dateModified": "2026-04-03",
       "hasPart": [
         {
           "@id": "https://johanajnabi.com/beyond/#piano"
@@ -125,127 +131,178 @@
   </script>
 
 </head>
-
 <body id="top" class="beyond-page">
 
-<header class="top-nav">
-  <div class="top-nav-inner">
-
+<!-- =====================
+     SITE NAV
+===================== -->
+<header class="site-nav">
+  <div class="site-nav__inner">
     <a href="/" class="brand">Johan Ajnabi</a>
 
     <button class="menu-toggle" aria-label="Open menu">
       &#9776;
     </button>
 
-    <nav class="top-links">
+    <nav class="site-links" aria-label="Primary">
       <a href="/">Home</a>
       <a href="/academic/">Academic</a>
-      <a href="/beyond/" class="active">Beyond Research</a>
-      <a href="/assets/JA_CV2026.pdf"
-         target="_blank"
-         rel="noopener noreferrer">
-        CV
-      </a>
+      <a href="/projects/">Projects</a>
+      <a href="/beyond/" class="active">Beyond</a>
+      <a href="/assets/JA_CV2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
     </nav>
-
   </div>
 </header>
 
 <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
   <a href="/">Home</a>
   <a href="/academic/">Academic</a>
-  <a href="/beyond/" class="active">Beyond Research</a>
-  <a href="/assets/JA_CV2026.pdf"
-     target="_blank"
-     rel="noopener noreferrer">
-    CV
-  </a>
+  <a href="/projects/">Projects</a>
+  <a href="/beyond/" class="active">Beyond</a>
+  <a href="/assets/JA_CV2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
 </nav>
 
 <div class="menu-overlay" id="menuOverlay"></div>
 
-<main class="content page-shell beyond-content">
+<main class="shell shell--wide page-stack">
 
-  <header class="page-header page-hero beyond-hero">
-    <p class="beyond-eyebrow">Beyond the Bench</p>
-    <h1>Beyond Research</h1>
-    <p class="page-intro beyond-intro">
-      When I step away from the lab, I usually return to two slower practices: piano and
-      wildlife photography. One keeps me listening for phrasing, touch, and silence. The
-      other asks me to wait for light, distance, and movement to briefly line up.
-    </p>
+  <!-- =====================
+       COVER
+  ====================== -->
+  <section class="beyond-cover reveal">
+    <div class="beyond-cover__masthead">
+      <p class="eyebrow eyebrow--lg">Feature Essay</p>
+      <span class="beyond-cover__issue">Issue 01 &middot; Piano, Wildlife, Attention</span>
+    </div>
 
-    <div class="beyond-highlights card-grid card-grid--3 card-grid--compact">
-      <div class="beyond-highlight">
-        <span class="beyond-highlight-label">At the piano</span>
-        <span>Phrasing, touch, and the shape of a musical line</span>
+    <div class="beyond-cover__body">
+      <div class="beyond-cover__copy">
+        <p class="beyond-cover__kicker">Field notes from a life in science</p>
+        <h1>Beyond the Bench</h1>
+        <p class="beyond-cover__dek">
+          When I step away from research, I return to two slower practices: piano and wildlife
+          photography. One tunes my ear to phrasing, touch, and silence. The other keeps me alert
+          to light, distance, and the single movement that completes a frame.
+        </p>
+        <p class="beyond-cover__standfirst">
+          This page is not a sidebar to my work. It is where attention gets reset, pacing becomes
+          deliberate again, and the habits I care about in research are rehearsed in another key.
+        </p>
+
+        <div class="beyond-cover__meta">
+          <span>By Johan Ajnabi</span>
+          <span>Researcher, Pianist, Observer</span>
+          <span>Updated April 5, 2026</span>
+        </div>
+
+        <div class="actions">
+          <a href="#piano" class="btn btn--primary">Enter the Piano Feature</a>
+          <a href="#captures" class="btn btn--secondary">Open the Field Spread</a>
+        </div>
       </div>
-      <div class="beyond-highlight">
-        <span class="beyond-highlight-label">In the field</span>
-        <span>Light, stillness, and moments that cannot be staged</span>
-      </div>
-      <div class="beyond-highlight">
-        <span class="beyond-highlight-label">What carries over</span>
-        <span>Practices that reset my attention and sense of pace</span>
+
+      <div class="beyond-cover__visual">
+        <figure class="beyond-cover__photo">
+          <img
+            src="/assets/beyond/8.webp"
+            alt="White-eared catbird photographed at Mandai Wildlife Reserve, Singapore">
+          <figcaption>
+            <span>Lead Frame</span>
+            <span>White-eared catbird &middot; Mandai Wildlife Reserve</span>
+          </figcaption>
+        </figure>
+
+        <div class="beyond-cover__side-note">
+          <p>
+            Two practices, one shared instinct: stay with the moment long enough for structure to
+            reveal itself.
+          </p>
+        </div>
       </div>
     </div>
 
-    <div class="home-actions page-actions beyond-actions">
-      <a href="#piano" class="home-btn primary">Listen to Piano</a>
-      <a href="#captures" class="home-btn secondary">See Selected Frames</a>
+    <div class="beyond-cover__notes">
+      <article class="beyond-note">
+        <span>At the piano</span>
+        <p>Phrasing, voicing, and the shape of a musical line.</p>
+      </article>
+      <article class="beyond-note">
+        <span>In the field</span>
+        <p>Light, stillness, and moments that cannot be staged.</p>
+      </article>
+      <article class="beyond-note">
+        <span>What carries over</span>
+        <p>Practices that return me to the lab with more patience and care.</p>
+      </article>
     </div>
-  </header>
+  </section>
 
-  <nav class="nav-pills page-nav beyond-nav" aria-label="Beyond page navigation">
-    <a href="#piano" class="pill">Piano</a>
-    <a href="#wildlife" class="pill">Wildlife Photography</a>
+  <!-- =====================
+       SECTION NAV
+  ====================== -->
+  <nav class="pills section-nav" aria-label="Beyond page navigation">
+    <a href="#piano" class="pill active">Piano</a>
+    <a href="#wildlife" class="pill">Wildlife</a>
     <a href="#captures" class="pill">Selected Frames</a>
     <a href="#practice" class="pill">What I Carry Back</a>
   </nav>
 
-  <section id="piano" class="page-section interest-section interest-section-piano">
-    <div class="interest-header">
-      <div>
-        <p class="interest-kicker">Music</p>
-        <h2>Piano</h2>
-      </div>
-
-      <div class="interest-links">
-        <a href="https://www.youtube.com/@jopianotes"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="pill">
-          YouTube
-        </a>
-        <a href="https://www.instagram.com/jopianotes/"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="pill">
-          Instagram
-        </a>
-      </div>
+  <!-- =====================
+       PIANO
+  ====================== -->
+  <section id="piano" class="section reveal beyond-story">
+    <div class="beyond-story__heading">
+      <p class="eyebrow">Music Feature</p>
+      <h2>Piano is where I practice listening before I decide what comes next.</h2>
     </div>
 
-      <div class="interest-grid split-layout split-layout--interest">
-      <div class="interest-copy">
-        <p>
-          Piano is where I go when I want to slow down and listen more carefully. I am most
-          drawn to pieces where phrasing, voicing, and restraint matter as much as technique.
+    <div class="beyond-feature-grid beyond-feature-grid--music">
+      <div class="beyond-story__copy">
+        <div class="pills" aria-label="Piano links">
+          <a href="https://www.youtube.com/@jopianotes"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="pill">
+            YouTube
+          </a>
+          <a href="https://www.instagram.com/jopianotes/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="pill">
+            Instagram
+          </a>
+        </div>
+
+        <p class="lead">
+          Piano is where I go when I want to slow down and listen more carefully. I am most drawn
+          to pieces where phrasing, voicing, and restraint matter as much as technique.
         </p>
         <p>
           I share performances as <strong>@jopianotes</strong>, mostly across classical and
-          contemporary repertoire. Recording them has made me more attentive to touch, pacing,
-          and how a line holds together over time.
+          contemporary repertoire. Recording them has made me more attentive to touch, pacing, and
+          how a line holds together over time.
         </p>
-        <ul class="interest-points">
-          <li>I keep returning to pieces where tone and space matter more than speed.</li>
-          <li>Most full performances live on YouTube, with shorter clips on Instagram.</li>
-          <li>It is the practice that reminds me to work with intention rather than rush.</li>
-        </ul>
+
+        <div class="beyond-story__two-up">
+          <ul class="beyond-notes-list">
+            <li>I keep returning to pieces where tone and space matter more than speed.</li>
+            <li>Most full performances live on YouTube, with shorter clips on Instagram.</li>
+            <li>It is the practice that reminds me to work with intention rather than rush.</li>
+          </ul>
+
+          <blockquote class="beyond-quote-card">
+            <p>
+              Recording a performance turns touch, timing, and restraint into something you can
+              actually audit.
+            </p>
+            <span>@jopianotes</span>
+          </blockquote>
+        </div>
       </div>
 
-      <div class="interest-embed-card">
-        <div class="video-embed">
+      <aside class="card embed-card beyond-media-card">
+        <p class="beyond-media-label">Featured performance</p>
+        <div class="embed">
           <iframe
             src="https://www.youtube.com/embed/videoseries?list=PLaWJAthnVk-7YN0nSukZZ2ZHeVaY5iyYD"
             title="Piano performance playlist"
@@ -263,76 +320,131 @@
             Browse the full piano archive &#8594;
           </a>
         </p>
-      </div>
+      </aside>
     </div>
   </section>
 
   <hr class="section-divider">
 
-  <section id="wildlife" class="page-section interest-section interest-section-wildlife">
-    <div class="interest-header">
-      <div>
-        <p class="interest-kicker">Observation</p>
-        <h2>Wildlife Photography</h2>
-      </div>
-
-      <div class="interest-links">
-        <a href="https://www.instagram.com/jopxls/"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="pill">
-          Follow @jopxls
-        </a>
-      </div>
+  <!-- =====================
+       WILDLIFE
+  ====================== -->
+  <section id="wildlife" class="section reveal beyond-story">
+    <div class="beyond-story__heading">
+      <p class="eyebrow">Field Notes</p>
+      <h2>Wildlife photography asks for patience, distance, and a willingness to let the world keep some of its mystery.</h2>
     </div>
 
-      <div class="interest-grid split-layout split-layout--interest">
-      <div class="interest-copy">
-        <p>
-          Through wildlife photography as <strong>@jopxls</strong>, I try to make images that
-          feel observed rather than collected. I am less interested in spectacle than in the
-          mood created by light, weather, distance, and one brief movement.
+    <div class="beyond-feature-grid beyond-feature-grid--wildlife">
+      <div class="beyond-photo-layout">
+        <figure class="beyond-photo-layout__lead">
+          <img
+            src="/assets/beyond/1.webp"
+            alt="Spot-billed pelican photographed at Ranganathittu Bird Sanctuary, Karnataka">
+          <figcaption>
+            <span>Lead Frame</span>
+            <strong>Spot-billed pelican</strong>
+            <em>Ranganathittu Bird Sanctuary, Karnataka</em>
+          </figcaption>
+        </figure>
+
+        <div class="beyond-photo-strip">
+          <figure>
+            <img
+              src="/assets/beyond/5.webp"
+              alt="Bali myna photographed at Mandai Wildlife Reserve, Singapore">
+            <figcaption>
+              <span>Contact Sheet</span>
+              <strong>Bali myna</strong>
+              <em>Mandai Wildlife Reserve</em>
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="/assets/beyond/9.webp"
+              alt="Ornate lorikeet photographed at Mandai Wildlife Reserve, Singapore">
+            <figcaption>
+              <span>Contact Sheet</span>
+              <strong>Ornate lorikeet</strong>
+              <em>Mandai Wildlife Reserve</em>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="beyond-story__copy">
+        <div class="pills" aria-label="Wildlife links">
+          <a href="https://www.instagram.com/jopxls/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="pill">
+            Follow @jopxls
+          </a>
+        </div>
+
+        <p class="lead">
+          Through wildlife photography as <strong>@jopxls</strong>, I try to make images that feel
+          observed rather than collected. I am less interested in spectacle than in the mood created
+          by light, weather, distance, and one brief movement.
         </p>
         <p>
           Most of the work is really waiting. The frame only appears for a moment, and the
           interesting part is being quiet enough to notice when it does.
         </p>
-        <ul class="interest-points">
+
+        <ul class="beyond-notes-list">
           <li>I look for calm frames shaped by early light, layered backgrounds, and breathing room.</li>
           <li>I prefer moments that still feel wild, with some distance left intact.</li>
           <li>It gives me a way to practice patience without an agenda or outcome in mind.</li>
         </ul>
-      </div>
 
-      <div class="interest-embed-card interest-embed-card--compact">
-        <div class="instagram-embed instagram-embed--compact">
-          <iframe
-            src="https://www.instagram.com/jopxls/embed"
-            title="Wildlife photography on Instagram"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-            scrolling="no">
-          </iframe>
-        </div>
+        <aside class="card embed-card beyond-instagram-panel">
+          <p class="beyond-media-label">Instagram notebook</p>
+          <p class="beyond-caption">
+            A live square profile embed sits here as a current contact sheet from the field.
+          </p>
+          <div class="embed embed--compact">
+            <iframe
+              src="https://www.instagram.com/jopxls/embed"
+              title="Wildlife photography on Instagram"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin">
+            </iframe>
+          </div>
 
-        <p class="external-link">
-          <a href="https://www.instagram.com/jopxls/"
-             target="_blank"
-             rel="noopener noreferrer">
-            Explore the wildlife gallery &#8594;
-          </a>
-        </p>
+          <p class="external-link">
+            <a href="https://www.instagram.com/jopxls/"
+               target="_blank"
+               rel="noopener noreferrer">
+              Explore the wildlife gallery &#8594;
+            </a>
+          </p>
+        </aside>
       </div>
     </div>
   </section>
 
   <hr class="section-divider">
 
-  <section id="captures" class="page-section capture-section">
-    <p class="section-kicker">Selected Frames</p>
-    <h2>A few captures from the field</h2>
-    <p class="section-lead">
-      A small selection from my current field archive. Tap any frame to open it larger.
+  <!-- =====================
+       CAPTURES
+  ====================== -->
+  <section id="captures" class="section reveal beyond-gallery-section">
+    <div class="beyond-gallery-head">
+      <div>
+        <p class="eyebrow">Selected Frames</p>
+        <h2>A field spread arranged like a small printed portfolio.</h2>
+      </div>
+
+      <blockquote class="beyond-pullquote">
+        I look for images that still leave some distance intact, where light and stillness do most
+        of the speaking.
+      </blockquote>
+    </div>
+
+    <p class="lead lead--compact">
+      A working edit from my current archive. Tap any frame to open it larger.
     </p>
 
     <p class="capture-empty" hidden>No beyond captures are available yet.</p>
@@ -342,7 +454,7 @@
          data-extensions="webp,png,jpg,jpeg"
          data-max-items="24"></div>
 
-<script id="beyond-gallery-data" type="application/json">
+    <script id="beyond-gallery-data" type="application/json">
 [
   { "file": "1.webp", "common": "Spot-billed pelican", "scientific": "Pelecanus philippensis", "location": "Ranganathittu Bird Sanctuary, Karnataka", "note": "A moment suspended between water and sky!" },
   { "file": "2.webp", "common": "Barred cuckoo-dove", "scientific": "Macropygia unchall", "location": "Mandai Wildlife Reserve, Singapore", "note": "Where silence meets song!" },
@@ -356,59 +468,73 @@
 ]
     </script>
 
-    <div class="home-actions page-actions beyond-actions capture-actions">
+    <div class="actions">
       <a href="https://www.instagram.com/jopxls/"
          target="_blank"
          rel="noopener noreferrer"
-         class="home-btn primary">
+         class="btn btn--primary">
         Open @jopxls
       </a>
-      <a href="#wildlife" class="home-btn secondary">Return to Wildlife</a>
+      <a href="#wildlife" class="btn btn--secondary">Return to Wildlife</a>
     </div>
   </section>
 
   <hr class="section-divider">
 
-  <section id="practice" class="page-section practice-section">
-    <p class="section-kicker">What I Carry Back</p>
-    <h2>What these practices give me when I return to research</h2>
-    <p class="section-lead">
-      I do not think of them as side hobbies. They reset the pace at which I notice, judge,
-      and work.
-    </p>
+  <!-- =====================
+       PRACTICE
+  ====================== -->
+  <section id="practice" class="section reveal beyond-return">
+    <div class="beyond-return__intro">
+      <div>
+        <p class="eyebrow">Return</p>
+        <h2>What these practices return to research</h2>
+      </div>
 
-      <div class="practice-grid card-grid card-grid--3 card-grid--practice">
-      <article class="practice-card">
-        <h3>Listening</h3>
+      <p class="lead lead--compact">
+        I do not think of them as side hobbies. They reset the pace at which I notice, judge, and
+        work. They are how I practice attention when no experiment is running.
+      </p>
+    </div>
+
+    <div class="beyond-return__grid">
+      <article class="beyond-return-card">
+        <span class="beyond-return-card__index">01 &middot; Listening</span>
+        <h3>Structure before noise</h3>
         <p>
-          Piano keeps me sensitive to pacing, internal structure, and when a line needs more
-          space rather than more force.
+          Piano keeps me sensitive to pacing, internal structure, and when a line needs more space
+          rather than more force.
         </p>
       </article>
 
-      <article class="practice-card">
-        <h3>Patience</h3>
+      <article class="beyond-return-card">
+        <span class="beyond-return-card__index">02 &middot; Patience</span>
+        <h3>Waiting is part of the method</h3>
         <p>
-          Photography reminds me that not every good outcome can be pushed into happening.
-          Some results depend on waiting well.
+          Photography reminds me that not every good outcome can be pushed into happening. Some
+          results depend on waiting well.
         </p>
       </article>
 
-      <article class="practice-card">
-        <h3>Restraint</h3>
+      <article class="beyond-return-card">
+        <span class="beyond-return-card__index">03 &middot; Restraint</span>
+        <h3>Do only what the moment needs</h3>
         <p>
-          Both practices reward doing only what the moment needs. That instinct for restraint
-          matters to me in experiments, writing, and problem-solving too.
+          Both practices reward restraint. That instinct matters to me in experiments, writing, and
+          problem-solving just as much as it does in music or a frame.
         </p>
       </article>
     </div>
+
+    <p class="beyond-return__closing">
+      These practices do not sit outside my research life. They are part of how I reset attention,
+      recover patience, and return to work more clearly.
+    </p>
   </section>
 
-  <p class="home-signature beyond-signature">
-    These practices do not sit outside my research life.
-    They are part of how I reset attention, recover patience, and return to work more clearly.
-  </p>
-
+  <!-- =====================
+       LIGHTBOX
+  ====================== -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
     <button class="lightbox-close" aria-label="Close">&times;</button>
     <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
@@ -417,8 +543,11 @@
     <button class="lightbox-next" aria-label="Next image">&#10095;</button>
   </div>
 
+  <!-- =====================
+       FOOTER
+  ====================== -->
   <footer class="site-footer">
-    &copy; 2026 Johan Ajnabi &middot; Last updated March 30, 2026
+    &copy; 2026 Johan Ajnabi &middot; Last updated April 3, 2026
   </footer>
 
 </main>

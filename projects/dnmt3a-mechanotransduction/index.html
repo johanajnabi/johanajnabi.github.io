@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 
+  <!-- =====================
+       CORE META
+  ====================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
@@ -9,6 +12,9 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="robots" content="index, follow, max-image-preview:large">
 
+  <!-- =====================
+       CONTENT SECURITY POLICY
+  ====================== -->
   <meta http-equiv="Content-Security-Policy"
         content="
           default-src 'self';
@@ -21,11 +27,17 @@
           object-src 'none';
         ">
 
+  <!-- =====================
+       SEO
+  ====================== -->
   <title>DNMT3A Mechanotransduction in Wound Repair | Johan Ajnabi</title>
   <meta name="description"
         content="A flagship research project by Johan Ajnabi on how wound-induced mechanical cues regulate DNMT3A localization and epigenetic control during epidermal repair.">
   <link rel="canonical" href="https://johanajnabi.com/projects/dnmt3a-mechanotransduction/">
 
+  <!-- =====================
+       OPEN GRAPH
+  ====================== -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Johan Ajnabi">
   <meta property="og:title" content="DNMT3A Mechanotransduction in Wound Repair | Johan Ajnabi">
@@ -37,6 +49,9 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Portrait of Johan Ajnabi">
 
+  <!-- =====================
+       TWITTER
+  ====================== -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="DNMT3A Mechanotransduction in Wound Repair | Johan Ajnabi">
   <meta name="twitter:description"
@@ -45,9 +60,15 @@
   <meta name="twitter:image:alt" content="Portrait of Johan Ajnabi">
   <meta name="twitter:creator" content="@jo_ajnabi">
 
+  <!-- =====================
+       ICON + STYLES
+  ====================== -->
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css">
 
+  <!-- =====================
+       STRUCTURED DATA
+  ====================== -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -59,7 +80,7 @@
       "name": "DNMT3A Mechanotransduction in Wound Repair | Johan Ajnabi",
       "description": "A research project on how wound-induced mechanical cues regulate DNMT3A localization and epigenetic control during epidermal repair.",
       "inLanguage": "en",
-      "dateModified": "2026-03-30"
+      "dateModified": "2026-04-03"
     },
     {
       "@type": "BreadcrumbList",
@@ -91,18 +112,22 @@
 </head>
 <body id="top" class="project-page">
 
-<header class="top-nav">
-  <div class="top-nav-inner">
+<!-- =====================
+     SITE NAV
+===================== -->
+<header class="site-nav">
+  <div class="site-nav__inner">
     <a href="/" class="brand">Johan Ajnabi</a>
 
     <button class="menu-toggle" aria-label="Open menu">
       &#9776;
     </button>
 
-    <nav class="top-links">
+    <nav class="site-links" aria-label="Primary">
       <a href="/">Home</a>
-      <a href="/academic/" class="active">Academic</a>
-      <a href="/beyond/">Beyond Research</a>
+      <a href="/academic/">Academic</a>
+      <a href="/projects/" class="active">Projects</a>
+      <a href="/beyond/">Beyond</a>
       <a href="/assets/JA_CV2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
     </nav>
   </div>
@@ -110,39 +135,44 @@
 
 <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
   <a href="/">Home</a>
-  <a href="/academic/" class="active">Academic</a>
-  <a href="/beyond/">Beyond Research</a>
+  <a href="/academic/">Academic</a>
+  <a href="/projects/" class="active">Projects</a>
+  <a href="/beyond/">Beyond</a>
   <a href="/assets/JA_CV2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
 </nav>
 
 <div class="menu-overlay" id="menuOverlay"></div>
 
-<main class="content page-shell project-content">
-  <header class="page-header page-hero project-hero split-layout split-layout--hero-project fade-in">
-    <div class="page-hero-main">
-      <p class="project-eyebrow">Flagship Project</p>
+<main class="shell shell--wide page-stack">
+
+  <!-- =====================
+       HERO
+  ====================== -->
+  <section class="hero hero--accent card split split--main-aside reveal">
+    <div>
+      <p class="eyebrow">Flagship Project</p>
       <h1>DNMT3A mechanotransduction during cutaneous wound repair</h1>
-      <p class="project-subtitle">
+      <p class="lead">
         This is the project I return to most often when I try to describe my current research.
         I wanted to understand how the physical changes created by a wound are read inside the
         nucleus during epidermal repair, and DNMT3A became the entry point into that question.
       </p>
 
-      <div class="project-meta meta-list">
-        <span>First-author project</span>
-        <span>Mechanobiology and epigenetics</span>
-        <span>Epidermal repair</span>
+      <div class="tag-list">
+        <span class="tag">First-Author Project</span>
+        <span class="tag">Mechanobiology and Epigenetics</span>
+        <span class="tag">Epidermal Repair</span>
       </div>
 
-      <div class="home-actions page-actions project-actions">
-        <a href="https://doi.org/10.64898/2026.01.15.699481" target="_blank" rel="noopener noreferrer" class="home-btn primary">Read preprint</a>
-        <a href="/academic/#publications" class="home-btn secondary">See publication record</a>
-        <a href="/projects/" class="home-btn secondary">All project pages</a>
+      <div class="actions">
+        <a href="https://doi.org/10.64898/2026.01.15.699481" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Read preprint</a>
+        <a href="/academic/#publications" class="btn btn--secondary">See publication record</a>
+        <a href="/projects/" class="btn btn--secondary">All project pages</a>
       </div>
     </div>
 
-    <aside class="page-hero-aside project-summary-card">
-      <h2>Why this project is central for me</h2>
+    <aside class="card card--accent">
+      <p class="eyebrow eyebrow--sm">Why This Project Is Central</p>
       <ul class="project-summary-list">
         <li>The question: how wound-induced mechanics become epigenetic instruction.</li>
         <li>The setting: epidermal repair and keratinocyte-based analysis.</li>
@@ -150,20 +180,26 @@
         <li>The output: a 2026 first-author bioRxiv preprint.</li>
       </ul>
     </aside>
-  </header>
+  </section>
 
-  <nav class="nav-pills page-nav project-nav" aria-label="Project sections">
-    <a href="#overview" class="pill">Overview</a>
+  <!-- =====================
+       SECTION NAV
+  ====================== -->
+  <nav class="pills section-nav" aria-label="Project sections">
+    <a href="#overview" class="pill active">Overview</a>
     <a href="#questions" class="pill">Questions</a>
     <a href="#approach" class="pill">Approach</a>
     <a href="#outputs" class="pill">Outputs</a>
     <a href="#next" class="pill">Related</a>
   </nav>
 
-  <section id="overview" class="page-section fade-in delay-1">
-    <div class="project-layout split-layout split-layout--project">
-      <article class="project-section-card">
-        <p class="section-kicker">Overview</p>
+  <!-- =====================
+       OVERVIEW
+  ====================== -->
+  <section id="overview" class="section reveal">
+    <div class="split split--project">
+      <article class="card">
+        <p class="eyebrow">Overview</p>
         <h2>Why this project matters</h2>
         <p>
           I was drawn to this problem because a wound is not only a biochemical event. It changes
@@ -179,17 +215,17 @@
         </p>
       </article>
 
-      <div class="project-aside-stack stack-layout">
-        <aside class="project-note-card">
-          <h2>Program fit</h2>
+      <div class="stack">
+        <aside class="card card--soft">
+          <h3>Program fit</h3>
           <p>
             If someone wanted a single example of how I think about skin biology, this would probably
             be it: mechanical context, nuclear signaling, and chromatin regulation meeting in one problem.
           </p>
         </aside>
 
-        <aside class="project-note-card">
-          <h2>Research setting</h2>
+        <aside class="card card--soft">
+          <h3>Research setting</h3>
           <p>
             I developed this work in the Jamora laboratory within a broader interest in wound healing,
             skin biology, and regenerative cell-state transitions.
@@ -201,12 +237,15 @@
 
   <hr class="section-divider">
 
-  <section id="questions" class="page-section fade-in delay-2">
-    <p class="section-kicker">Core Questions</p>
+  <!-- =====================
+       QUESTIONS
+  ====================== -->
+  <section id="questions" class="section reveal">
+    <p class="eyebrow">Core Questions</p>
     <h2>The questions that shaped the work</h2>
 
-    <div class="project-detail-grid card-grid card-grid--3 card-grid--standard">
-      <article class="project-detail-card">
+    <div class="grid grid--3">
+      <article class="card">
         <h3>What changes at the wound edge?</h3>
         <p>
           I started from the idea that injury changes the local physical state of tissue in ways that
@@ -214,7 +253,7 @@
         </p>
       </article>
 
-      <article class="project-detail-card">
+      <article class="card">
         <h3>How is a nuclear regulator repositioned?</h3>
         <p>
           A central question for me was how actin remodeling and ERK1/2 signaling participate in
@@ -222,7 +261,7 @@
         </p>
       </article>
 
-      <article class="project-detail-card">
+      <article class="card">
         <h3>Why does localization matter?</h3>
         <p>
           What kept the project interesting was the possibility that mechanotransduction is not just
@@ -234,10 +273,13 @@
 
   <hr class="section-divider">
 
-  <section id="approach" class="page-section fade-in delay-3">
-    <div class="project-layout split-layout split-layout--project">
-      <article class="project-section-card">
-        <p class="section-kicker">Approach</p>
+  <!-- =====================
+       APPROACH
+  ====================== -->
+  <section id="approach" class="section reveal">
+    <div class="split split--project">
+      <article class="card">
+        <p class="eyebrow">Approach</p>
         <h2>Experimental frame</h2>
         <p>
           I approached the project by trying to keep mechanics, signaling, and nuclear behavior in the
@@ -251,8 +293,8 @@
         </p>
       </article>
 
-      <aside class="project-summary-card">
-        <h2>Methods and readouts</h2>
+      <aside class="card card--soft">
+        <p class="eyebrow eyebrow--sm">Methods and Readouts</p>
         <ul class="project-summary-list">
           <li>Primary keratinocyte-focused analysis</li>
           <li>Fluorescence microscopy of subcellular localization</li>
@@ -265,26 +307,29 @@
 
   <hr class="section-divider">
 
-  <section id="outputs" class="page-section fade-in delay-4">
-    <p class="section-kicker">Associated Outputs</p>
+  <!-- =====================
+       OUTPUTS
+  ====================== -->
+  <section id="outputs" class="section reveal">
+    <p class="eyebrow">Associated Outputs</p>
     <h2>Where this work appears</h2>
 
-    <div class="project-output-grid card-grid card-grid--3 card-grid--standard">
-      <article class="project-output-card">
-        <p class="project-output-meta">Primary output</p>
+    <div class="grid grid--3">
+      <article class="card">
+        <p class="eyebrow eyebrow--sm">Primary Output</p>
         <h3>2026 bioRxiv first-author preprint</h3>
         <p>
           Actin-dependent mechanotransduction controls nucleocytoplasmic partitioning of DNMT3A
           through ERK1/2 signaling during cutaneous wound healing.
         </p>
-        <div class="project-card-links">
+        <div class="card-links">
           <a href="https://doi.org/10.64898/2026.01.15.699481" target="_blank" rel="noopener noreferrer">Read preprint</a>
-          <a href="/academic/#publications" class="project-card-secondary">Full publication record</a>
+          <a href="/academic/#publications" class="secondary-link">Full publication record</a>
         </div>
       </article>
 
-      <article class="project-output-card">
-        <p class="project-output-meta">Broader context</p>
+      <article class="card">
+        <p class="eyebrow eyebrow--sm">Broader Context</p>
         <h3>Mechanics, chromatin, and repair</h3>
         <p>
           This is where the broader shape of my research program becomes most visible to me:
@@ -292,8 +337,8 @@
         </p>
       </article>
 
-      <article class="project-output-card">
-        <p class="project-output-meta">Why it is central</p>
+      <article class="card">
+        <p class="eyebrow eyebrow--sm">Why It Is Central</p>
         <h3>A narrative anchor for the academic profile</h3>
         <p>
           If someone asks what sits at the mechanistic center of my current research identity,
@@ -305,60 +350,71 @@
 
   <hr class="section-divider">
 
-  <section id="next" class="page-section fade-in delay-5">
-    <p class="section-kicker">Related Pages</p>
+  <!-- =====================
+       RELATED
+  ====================== -->
+  <section id="next" class="section reveal">
+    <p class="eyebrow">Related Pages</p>
     <h2>Other projects in the portfolio</h2>
 
-    <div class="project-related-grid card-grid card-grid--3 card-grid--standard">
-      <article class="project-related-card">
+    <div class="grid grid--3">
+      <article class="card">
         <h3>Vitiligo spatial transcriptomics</h3>
         <p>
           A translational tissue-analysis project centered on therapy-associated immune remodeling
           in patient skin.
         </p>
-        <div class="project-card-links">
+        <div class="card-links">
           <a href="/projects/vitiligo-spatial-transcriptomics/">Open project page</a>
         </div>
       </article>
 
-      <article class="project-related-card">
+      <article class="card">
         <h3>Keratinocyte stemness signaling</h3>
         <p>
           A complementary signaling-focused thread on extracellular context, integrin trafficking,
           and stemness maintenance.
         </p>
-        <div class="project-card-links">
+        <div class="card-links">
           <a href="/projects/keratinocyte-stemness/">Open project page</a>
         </div>
       </article>
 
-      <article class="project-related-card">
+      <article class="card">
         <h3>Academic profile</h3>
         <p>
           Return to the full research overview, publication record, talks, and contact details.
         </p>
-        <div class="project-card-links">
+        <div class="card-links">
           <a href="/academic/">Visit academic page</a>
         </div>
       </article>
     </div>
   </section>
 
-  <section class="page-section project-cta fade-in delay-5">
-    <p class="section-kicker">Contact</p>
-    <h2>Interested in this direction of work?</h2>
-    <p>
-      I would be especially glad to talk with people interested in mechanobiology, chromatin
-      regulation, regenerative systems, and postdoctoral directions that connect these areas.
-    </p>
-    <div class="home-actions page-actions project-actions">
-      <a href="/academic/#links" class="home-btn primary">Get in touch</a>
-      <a href="/assets/JA_CV2026.pdf" class="home-btn secondary" target="_blank" rel="noopener noreferrer">Download CV</a>
+  <!-- =====================
+       CTA
+  ====================== -->
+  <section class="section reveal">
+    <div class="card card--accent">
+      <p class="eyebrow">Contact</p>
+      <h2>Interested in this direction of work?</h2>
+      <p class="lead lead--compact">
+        I would be especially glad to talk with people interested in mechanobiology, chromatin
+        regulation, regenerative systems, and postdoctoral directions that connect these areas.
+      </p>
+      <div class="actions">
+        <a href="/academic/#links" class="btn btn--primary">Get in touch</a>
+        <a href="/assets/JA_CV2026.pdf" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">Download CV</a>
+      </div>
     </div>
   </section>
 
+  <!-- =====================
+       FOOTER
+  ====================== -->
   <footer class="site-footer">
-    &copy; 2026 Johan Ajnabi &middot; Last updated March 30, 2026
+    &copy; 2026 Johan Ajnabi &middot; Last updated April 3, 2026
   </footer>
 </main>
 

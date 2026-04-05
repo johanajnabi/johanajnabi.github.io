@@ -31,63 +31,76 @@
 </head>
 <body id="top">
 
-<header class="top-nav">
-  <div class="top-nav-inner">
-
+<!-- =====================
+     SITE NAV
+===================== -->
+<header class="site-nav">
+  <div class="site-nav__inner">
     <a href="/" class="brand">Johan Ajnabi</a>
 
     <button class="menu-toggle" aria-label="Open menu">
       &#9776;
     </button>
 
-    <nav class="top-links">
+    <nav class="site-links" aria-label="Primary">
       <a href="/">Home</a>
       <a href="/academic/">Academic</a>
-      <a href="/beyond/">Beyond Research</a>
+      <a href="/projects/">Projects</a>
+      <a href="/beyond/">Beyond</a>
       <a href="/assets/JA_CV2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
     </nav>
-
   </div>
 </header>
 
 <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
   <a href="/">Home</a>
   <a href="/academic/">Academic</a>
-  <a href="/beyond/">Beyond Research</a>
+  <a href="/projects/">Projects</a>
+  <a href="/beyond/">Beyond</a>
   <a href="/assets/JA_CV2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
 </nav>
 
 <div class="menu-overlay" id="menuOverlay"></div>
 
-<main class="content page-shell">
-  <section class="page-header page-hero academic-hero split-layout split-layout--hero-academic">
-    <div class="page-hero-main academic-hero-main">
-      <p class="academic-eyebrow">404</p>
+<main class="shell page-stack">
+
+  <!-- =====================
+       HERO
+  ====================== -->
+  <section class="hero hero--accent card split split--main-aside reveal">
+    <div>
+      <p class="eyebrow">404</p>
       <h1>Page not found</h1>
-      <p class="academic-subtitle">
-        The page you requested is unavailable or may have moved. The main sections of the
-        site are still available below.
+      <p class="lead">
+        The page you requested is unavailable or may have moved. The main sections of the site
+        are still available below.
       </p>
 
-      <div class="home-actions page-actions academic-actions">
-        <a href="/" class="home-btn primary">Return Home</a>
-        <a href="/academic/" class="home-btn secondary">Academic Profile</a>
-        <a href="/beyond/" class="home-btn secondary">Beyond Research</a>
+      <div class="actions">
+        <a href="/" class="btn btn--primary">Return Home</a>
+        <a href="/academic/" class="btn btn--secondary">Academic Profile</a>
+        <a href="/projects/" class="btn btn--secondary">Projects</a>
       </div>
     </div>
 
-    <aside class="page-hero-aside academic-opportunity">
-      <p class="academic-opportunity-label">Quick links</p>
+    <aside class="card card--accent">
+      <p class="eyebrow eyebrow--sm">Quick Links</p>
       <p>
-        If you were looking for publications, talks, or contact information, the academic
-        page is the best place to start.
+        If you were looking for publications, talks, or contact information, the academic page
+        is the best place to start.
       </p>
-      <a href="/academic/#links" class="academic-inline-link">Go to contact</a>
+      <div class="card-links">
+        <a href="/academic/#links">Go to contact</a>
+        <a href="/beyond/" class="secondary-link">Visit beyond research</a>
+      </div>
     </aside>
   </section>
 
+  <!-- =====================
+       FOOTER
+  ====================== -->
   <footer class="site-footer">
-    &copy; 2026 Johan Ajnabi &middot; Last updated March 30, 2026
+    &copy; 2026 Johan Ajnabi &middot; Last updated April 3, 2026
   </footer>
 </main>
 
