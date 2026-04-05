@@ -777,12 +777,14 @@ header[id] {
 
 .embed-card {
   padding: 1rem;
+  min-width: 0;
 }
 
 .embed {
   position: relative;
   width: 100%;
-   max-width: 100%;
+  max-width: 100%;
+  min-width: 0;
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -797,8 +799,9 @@ header[id] {
 }
 
 .embed iframe {
+  display: block;
   width: 100%;
-   max-width: 100%;
+  max-width: 100%;
   height: 100%;
 }
 
@@ -1264,6 +1267,10 @@ html.js .reveal.is-visible {
     height: auto;
     aspect-ratio: auto; /* 🔥 remove forced cropping */
   }
+  .embed-card {
+    padding: 0.75rem;
+  }
+
   .embed:not(.embed--compact) iframe {
     transform: scale(0.9);
     transform-origin: top left;
@@ -1271,13 +1278,16 @@ html.js .reveal.is-visible {
   }
 
   .embed--compact iframe {
-    transform: none;
-    width: 100%;
+    transform: scale(0.84);
+    transform-origin: top left;
+    width: 119.05%;
+    height: 119.05%;
   }
 
   .embed--compact {
     width: 100%;
     max-width: 100%;
+    min-height: 460px;
     transform: none;
   }
 
