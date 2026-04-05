@@ -797,8 +797,8 @@ header[id] {
 
 .embed--compact {
   aspect-ratio: 4 / 5;
-  max-width: 340px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
   background: #ffffff;
 }
 
@@ -1290,7 +1290,7 @@ html.js .reveal.is-visible {
 
   .embed--compact {
     width: 100%;
-    max-width: 340px;
+    max-width: 100%;
     transform: none;
   }
 
