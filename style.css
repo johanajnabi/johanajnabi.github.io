@@ -1278,7 +1278,8 @@ body.beyond-page .capture-gallery .media-card {
   width: 100%;
   margin: 0 0 1.25rem;
   border-radius: 28px;
-  overflow: clip;
+  overflow: hidden;
+  break-inside: avoid;
   border-color: rgba(19, 36, 61, 0.08);
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 24px 56px rgba(19, 36, 61, 0.08);
@@ -1371,7 +1372,21 @@ body.beyond-page .capture-gallery .capture-detail {
   }
 
   body.beyond-page .capture-gallery {
-    column-count: 1;
+    display: grid;
+    column-count: auto;
+    column-gap: 0;
+    gap: 1.25rem;
+  }
+
+  body.beyond-page .capture-gallery .media-card {
+    display: block;
+    margin: 0;
+  }
+
+  body.beyond-page .capture-gallery .media-card img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   .beyond-photo-strip {
