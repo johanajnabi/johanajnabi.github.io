@@ -1272,12 +1272,14 @@ body.beyond-page .capture-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
+  align-items: start;
 }
 
 body.beyond-page .capture-gallery .media-card {
   display: block;
   width: 100%;
   margin: 0;
+  align-self: start;
   border-radius: 28px;
   overflow: hidden;
   border-color: rgba(19, 36, 61, 0.08);
