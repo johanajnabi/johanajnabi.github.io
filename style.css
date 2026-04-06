@@ -1269,20 +1269,26 @@ body.beyond-page .section-nav .pill:hover::after {
 }
 
 body.beyond-page .capture-gallery {
-  column-count: 2;
-  column-gap: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
 body.beyond-page .capture-gallery .media-card {
-  display: inline-block;
+  display: block;
   width: 100%;
-  margin: 0 0 1.25rem;
+  margin: 0;
   border-radius: 28px;
   overflow: hidden;
-  break-inside: avoid;
   border-color: rgba(19, 36, 61, 0.08);
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 24px 56px rgba(19, 36, 61, 0.08);
+}
+
+body.beyond-page .capture-gallery .media-card img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 body.beyond-page .capture-gallery .media-card:hover {
@@ -1372,21 +1378,7 @@ body.beyond-page .capture-gallery .capture-detail {
   }
 
   body.beyond-page .capture-gallery {
-    display: grid;
-    column-count: auto;
-    column-gap: 0;
-    gap: 1.25rem;
-  }
-
-  body.beyond-page .capture-gallery .media-card {
-    display: block;
-    margin: 0;
-  }
-
-  body.beyond-page .capture-gallery .media-card img {
-    display: block;
-    width: 100%;
-    height: auto;
+    grid-template-columns: 1fr;
   }
 
   .beyond-photo-strip {
