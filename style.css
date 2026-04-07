@@ -1041,6 +1041,10 @@ body.beyond-page .section-nav {
   -webkit-backdrop-filter: blur(14px);
 }
 
+body.beyond-page section[id] {
+  scroll-margin-top: calc(var(--nav-height) + 5rem);
+}
+
 body.beyond-page .section-nav .pill {
   position: relative;
   min-height: auto;
@@ -1375,6 +1379,10 @@ body.beyond-page .capture-gallery .capture-detail {
   body.beyond-page .section-nav {
     top: calc(var(--nav-height) + 0.4rem);
     padding: 0.7rem 0;
+  }
+
+  body.beyond-page section[id] {
+    scroll-margin-top: calc(var(--nav-height) + 4.4rem);
   }
 
   body.beyond-page .capture-gallery {
