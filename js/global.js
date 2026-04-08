@@ -3,14 +3,13 @@
 ========================= */
 
 document.addEventListener("DOMContentLoaded", async () => {
-  document.documentElement.classList.add("js");
-
   const body = document.body;
   const nav = document.querySelector(".site-nav");
   const toggle = document.querySelector(".menu-toggle");
   const menu = document.getElementById("mobileMenu");
   const overlay = document.getElementById("menuOverlay");
   const backToTop = document.getElementById("back-to-top");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* =========================
      NAV + MOBILE MENU
@@ -87,27 +86,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   ========================= */
 
   const revealTargets = [...document.querySelectorAll(".reveal")];
-
-  if ("IntersectionObserver" in window && revealTargets.length) {
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.16,
-        rootMargin: "0px 0px -40px 0px"
-      }
-    );
-
-    revealTargets.forEach((target) => revealObserver.observe(target));
-  } else {
-    revealTargets.forEach((target) => target.classList.add("is-visible"));
-  }
+  revealTargets.forEach((target) => target.classList.add("is-visible"));
+  document.documentElement.classList.add("js");
 
   /* =========================
      SECTION NAV ACTIVE STATE
@@ -124,8 +104,29 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (!sections.length) return;
 
+    const getScrollOffset = () => {
+      const navHeight = nav?.offsetHeight || 0;
+      const navStyles = window.getComputedStyle(navElement);
+      const stickyTop = Number.parseFloat(navStyles.top);
+
+      if (navStyles.position === "sticky" && Number.isFinite(stickyTop)) {
+        return stickyTop + navElement.offsetHeight + 16;
+      }
+
+      return navHeight + 20;
+    };
+
+    const scrollToSection = (target) => {
+      const top = window.scrollY + target.getBoundingClientRect().top - getScrollOffset();
+
+      window.scrollTo({
+        top: Math.max(0, top),
+        behavior: prefersReducedMotion ? "auto" : "smooth"
+      });
+    };
+
     const updateActiveLink = () => {
-      const marker = window.scrollY + 160;
+      const marker = window.scrollY + getScrollOffset();
       let current = sections[0];
 
       sections.forEach((item) => {
@@ -140,6 +141,19 @@ document.addEventListener("DOMContentLoaded", async () => {
         link.classList.toggle("is-active", isActive);
       });
     };
+
+    links.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const hash = link.getAttribute("href");
+        const target = hash ? document.querySelector(hash) : null;
+        if (!target) return;
+
+        event.preventDefault();
+        scrollToSection(target);
+        window.history.pushState(null, "", hash);
+        updateActiveLink();
+      });
+    });
 
     updateActiveLink();
     window.addEventListener("scroll", updateActiveLink, { passive: true });
@@ -163,17 +177,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     const maxItems = Number.parseInt(captureGallery.dataset.maxItems || "24", 10) || 24;
 
     let metadataEntries = [];
-    let metadataMap = new Map();
 
     if (galleryData) {
       try {
         metadataEntries = JSON.parse(galleryData.textContent || "[]");
-        metadataMap = new Map(
-          metadataEntries.map((item) => [
-            String(item.file || "").replace(/\.[^.]+$/, ""),
-            item
-          ])
-        );
       } catch (error) {
         console.warn("Beyond gallery metadata could not be parsed.", error);
       }
@@ -209,37 +216,22 @@ document.addEventListener("DOMContentLoaded", async () => {
       tryNext();
     });
 
-    const galleryTargets = metadataEntries.length
-      ? metadataEntries.map((item, originalIndex) => ({
-          stem: String(item.file || `${originalIndex + 1}`).replace(/\.[^.]+$/, ""),
-          index: originalIndex + 1
-        }))
-      : Array.from({ length: maxItems }, (_, offset) => ({
-          stem: String(offset + 1),
-          index: offset + 1
-        }));
+    const getKnownImageSource = (file) => {
+      const value = String(file || "").trim();
+      if (!value) return null;
+      if (/^(?:https?:)?\/\//i.test(value) || value.startsWith("/")) return value;
+      if (/\.[^.]+$/i.test(value)) return `${basePath}/${value}`;
+      return null;
+    };
 
-    const resolvedTargets = await Promise.all(
-      galleryTargets.map(async (target) => ({
-        ...target,
-        src: await findImageSource(target.stem)
-      }))
-    );
-
-    const fragment = document.createDocumentFragment();
-    let foundCount = 0;
-
-    for (const target of resolvedTargets) {
-      const { stem, index, src } = target;
-      if (!src) continue;
-
-      foundCount += 1;
-
-      const metadata = metadataMap.get(stem) || {};
+    const createGalleryFrame = (target, src) => {
+      const { index, metadata = {} } = target;
       const commonName = String(metadata.common || "").trim();
       const scientificName = String(metadata.scientific || "").trim();
       const location = String(metadata.location || "").trim();
       const note = String(metadata.note || "").trim();
+      const width = Number.parseInt(metadata.width, 10);
+      const height = Number.parseInt(metadata.height, 10);
       const frameLabel = `Frame ${String(index).padStart(2, "0")}`;
       const speciesLabel = commonName || frameLabel;
       const captionHtml = commonName
@@ -265,6 +257,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         : `Wildlife photograph ${index} by Johan Ajnabi`;
       image.loading = "lazy";
       image.decoding = "async";
+      if (Number.isFinite(width) && width > 0) image.width = width;
+      if (Number.isFinite(height) && height > 0) image.height = height;
 
       caption.className = "media-card__caption";
       caption.innerHTML = captionHtml;
@@ -279,11 +273,48 @@ document.addEventListener("DOMContentLoaded", async () => {
         frame.appendChild(detail);
       }
 
-      fragment.appendChild(frame);
+      return frame;
+    };
+
+    const galleryTargets = metadataEntries.length
+      ? metadataEntries.map((item, originalIndex) => ({
+          file: String(item.file || "").trim(),
+          metadata: item,
+          stem: String(item.file || `${originalIndex + 1}`).replace(/\.[^.]+$/, ""),
+          index: originalIndex + 1
+        }))
+      : Array.from({ length: maxItems }, (_, offset) => ({
+          file: "",
+          metadata: {},
+          stem: String(offset + 1),
+          index: offset + 1
+        }));
+
+    let foundCount = 0;
+    const unresolvedTargets = [];
+
+    galleryTargets.forEach((target) => {
+      const src = getKnownImageSource(target.file);
+      if (src) {
+        captureGallery.appendChild(createGalleryFrame(target, src));
+        emptyState?.setAttribute("hidden", "");
+        foundCount += 1;
+        return;
+      }
+
+      unresolvedTargets.push(target);
+    });
+
+    for (const target of unresolvedTargets) {
+      const src = await findImageSource(target.stem);
+      if (!src) continue;
+
+      captureGallery.appendChild(createGalleryFrame(target, src));
+      emptyState?.setAttribute("hidden", "");
+      foundCount += 1;
     }
 
     if (foundCount > 0) {
-      captureGallery.appendChild(fragment);
       emptyState?.setAttribute("hidden", "");
     } else {
       emptyState?.removeAttribute("hidden");
@@ -414,7 +445,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       bindLightboxTriggers();
     });
 
-    galleryObserver.observe(document.body, {
+    galleryObserver.observe(captureGallery || document.body, {
       childList: true,
       subtree: true
     });
