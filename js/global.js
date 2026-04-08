@@ -230,8 +230,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       const scientificName = String(metadata.scientific || "").trim();
       const location = String(metadata.location || "").trim();
       const note = String(metadata.note || "").trim();
-      const width = Number.parseInt(metadata.width, 10);
-      const height = Number.parseInt(metadata.height, 10);
       const frameLabel = `Frame ${String(index).padStart(2, "0")}`;
       const speciesLabel = commonName || frameLabel;
       const captionHtml = commonName
@@ -257,8 +255,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         : `Wildlife photograph ${index} by Johan Ajnabi`;
       image.loading = "lazy";
       image.decoding = "async";
-      if (Number.isFinite(width) && width > 0) image.width = width;
-      if (Number.isFinite(height) && height > 0) image.height = height;
 
       caption.className = "media-card__caption";
       caption.innerHTML = captionHtml;
