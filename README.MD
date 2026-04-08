@@ -47,6 +47,28 @@ https://johanajnabi.com
 
 ---
 
+## Site Build
+
+The deployable HTML in the repo root can now be regenerated from `site_src/`.
+
+Run:
+
+```powershell
+python tools/build_site.py
+```
+
+Edit shared values in:
+- `site_src/data/site.json`
+- `site_src/data/pages.json`
+
+Structured data now lives in:
+- `site_src/data/jsonld/`
+
+Edit page source templates in:
+- `site_src/pages/`
+
+---
+
 ## Contact
 
 Email: johanajnabi@gmail.com  

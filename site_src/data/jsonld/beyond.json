@@ -1,0 +1,57 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://johanajnabi.com/beyond/#webpage",
+      "url": "https://johanajnabi.com/beyond/",
+      "name": "Beyond Research | Johan Ajnabi",
+      "description": "A personal page on piano performance and wildlife photography by Johan Ajnabi.",
+      "isPartOf": {
+        "@id": "https://johanajnabi.com/#website"
+      },
+      "about": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-04-08",
+      "hasPart": [
+        {
+          "@id": "https://johanajnabi.com/beyond/#piano"
+        },
+        {
+          "@id": "https://johanajnabi.com/beyond/#wildlife"
+        },
+        {
+          "@id": "https://johanajnabi.com/beyond/#practice"
+        }
+      ]
+    },
+    {
+      "@type": "MusicGroup",
+      "@id": "https://johanajnabi.com/beyond/#piano",
+      "name": "@jopianotes",
+      "url": "https://www.youtube.com/@jopianotes",
+      "genre": [
+        "Classical",
+        "Contemporary Piano"
+      ],
+      "sameAs": [
+        "https://www.youtube.com/@jopianotes",
+        "https://www.instagram.com/jopianotes/"
+      ],
+      "creator": {
+        "@id": "https://johanajnabi.com/#johan"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://johanajnabi.com/beyond/#wildlife",
+      "name": "Wildlife Photography - @jopxls",
+      "url": "https://www.instagram.com/jopxls/",
+      "creator": {
+        "@id": "https://johanajnabi.com/#johan"
+      }
+    }
+  ]
+}

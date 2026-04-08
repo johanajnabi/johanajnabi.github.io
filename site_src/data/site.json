@@ -1,0 +1,72 @@
+{
+  "site_name": "Johan Ajnabi",
+  "site_url": "https://johanajnabi.com",
+  "author": "Johan Ajnabi",
+  "copyright_year": "2026",
+  "location": "Bengaluru, India",
+  "cv_url": "/assets/JA_CV2026.pdf",
+  "theme_color": "#ffffff",
+  "color_scheme": "light dark",
+  "referrer": "strict-origin-when-cross-origin",
+  "favicon": "/assets/favicon.svg",
+  "stylesheet": "/style.css",
+  "global_script": "/js/global.js",
+  "default_og_image": {
+    "url": "https://johanajnabi.com/assets/profile.webp",
+    "width": "1200",
+    "height": "630",
+    "alt": "Portrait of Johan Ajnabi"
+  },
+  "csp_directives": [
+    "default-src 'self'",
+    "img-src 'self' https: data:",
+    "script-src 'self'",
+    "style-src 'self' 'unsafe-inline'",
+    "connect-src 'self'",
+    "font-src 'self' https:",
+    "frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.instagram.com",
+    "object-src 'none'"
+  ],
+  "nav": [
+    {
+      "key": "home",
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "key": "academic",
+      "label": "Academic",
+      "url": "/academic/"
+    },
+    {
+      "key": "projects",
+      "label": "Projects",
+      "url": "/projects/"
+    },
+    {
+      "key": "beyond",
+      "label": "Beyond",
+      "url": "/beyond/"
+    },
+    {
+      "key": "cv",
+      "label": "CV",
+      "url": "/assets/JA_CV2026.pdf",
+      "external": true
+    }
+  ],
+  "shared_links": {
+    "email": "mailto:johanajnabi@gmail.com",
+    "scholar": "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
+    "orcid": "https://orcid.org/0000-0002-9437-9300",
+    "linkedin": "https://in.linkedin.com/in/johanajnabi",
+    "github": "https://github.com/johanajnabi",
+    "bluesky": "https://bsky.app/profile/johanajnabi.com",
+    "researchgate": "https://www.researchgate.net/profile/Johan-Ajnabi",
+    "x": "https://x.com/jo_ajnabi",
+    "twitter_handle": "@jo_ajnabi",
+    "youtube_jopianotes": "https://www.youtube.com/@jopianotes",
+    "instagram_jopianotes": "https://www.instagram.com/jopianotes/",
+    "instagram_jopxls": "https://www.instagram.com/jopxls/"
+  }
+}

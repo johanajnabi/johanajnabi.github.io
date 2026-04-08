@@ -1,0 +1,114 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ResearchOrganization",
+      "@id": "https://johanajnabi.com/#instem",
+      "name": "BRIC-Institute for Stem Cell Science and Regenerative Medicine (inStem)",
+      "url": "https://instem.res.in/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bengaluru",
+        "addressCountry": "India"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://johanajnabi.com/"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://johanajnabi.com/#johan",
+      "name": "Johan Ajnabi",
+      "givenName": "Johan",
+      "familyName": "Ajnabi",
+      "alternateName": "J. Ajnabi",
+      "email": "mailto:johanajnabi@gmail.com",
+      "description": "PhD candidate in mechanobiology and epigenetic regulation studying wound healing and translational skin regeneration at inStem, India.",
+      "worksFor": {
+        "@id": "https://johanajnabi.com/#instem"
+      },
+      "affiliation": {
+        "@id": "https://johanajnabi.com/#instem"
+      },
+      "memberOf": {
+        "@id": "https://johanajnabi.com/#instem"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://johanajnabi.com/#webpage"
+      },
+      "url": "https://johanajnabi.com/",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://johanajnabi.com/assets/profile.webp"
+      },
+      "jobTitle": "PhD Candidate",
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Biomedical Researcher"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ORCID",
+        "value": "0000-0002-9437-9300",
+        "url": "https://orcid.org/0000-0002-9437-9300"
+      },
+      "sameAs": [
+        "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
+        "https://orcid.org/0000-0002-9437-9300",
+        "https://in.linkedin.com/in/johanajnabi",
+        "https://bsky.app/profile/johanajnabi.com",
+        "https://github.com/johanajnabi",
+        "https://www.researchgate.net/profile/Johan-Ajnabi",
+        "https://x.com/jo_ajnabi"
+      ],
+      "knowsAbout": [
+        "Mechanobiology",
+        "Epigenetic regulation",
+        "Cutaneous wound healing",
+        "Skin regeneration",
+        "Mechanotransduction"
+      ],
+      "subjectOf": {
+        "@type": "WebPage",
+        "@id": "https://johanajnabi.com/academic/#webpage"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://johanajnabi.com/#website",
+      "url": "https://johanajnabi.com/",
+      "name": "Johan Ajnabi",
+      "publisher": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://johanajnabi.com/#webpage",
+      "url": "https://johanajnabi.com/",
+      "name": "Johan Ajnabi | Skin Mechanobiology and Wound Repair",
+      "about": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "isPartOf": {
+        "@id": "https://johanajnabi.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://johanajnabi.com/assets/profile.webp"
+      },
+      "inLanguage": "en",
+      "dateModified": "2026-04-08"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://johanajnabi.com/projects/keratinocyte-stemness/#webpage",
+      "url": "https://johanajnabi.com/projects/keratinocyte-stemness/",
+      "name": "Keratinocyte Stemness and Mindin-Integrin-STAT3 Signaling | Johan Ajnabi",
+      "description": "A research project on how extracellular context, integrin trafficking, and downstream transcriptional programs help maintain keratinocyte stemness.",
+      "inLanguage": "en",
+      "dateModified": "2026-04-08"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://johanajnabi.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Projects",
+          "item": "https://johanajnabi.com/projects/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Keratinocyte Stemness and Mindin-Integrin-STAT3 Signaling",
+          "item": "https://johanajnabi.com/projects/keratinocyte-stemness/"
+        }
+      ]
+    }
+  ]
+}
