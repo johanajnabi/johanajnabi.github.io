@@ -42,14 +42,15 @@
         "@id": "https://johanajnabi.com/#instem"
       },
       "mainEntityOfPage": {
-        "@type": "WebPage",
+        "@type": "ProfilePage",
         "@id": "https://johanajnabi.com/#webpage"
       },
       "url": "https://johanajnabi.com/",
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://johanajnabi.com/assets/profile.webp"
-      },
+      "image": [
+        "https://johanajnabi.com/assets/social/profile-1x1.jpg",
+        "https://johanajnabi.com/assets/social/profile-4x3.jpg",
+        "https://johanajnabi.com/assets/social/profile-16x9.jpg"
+      ],
       "jobTitle": "PhD Candidate",
       "hasOccupation": {
         "@type": "Occupation",
@@ -93,11 +94,14 @@
       "inLanguage": "en"
     },
     {
-      "@type": "WebPage",
+      "@type": "ProfilePage",
       "@id": "https://johanajnabi.com/#webpage",
       "url": "https://johanajnabi.com/",
       "name": "Johan Ajnabi | Skin Mechanobiology and Wound Repair",
       "about": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "mainEntity": {
         "@id": "https://johanajnabi.com/#johan"
       },
       "isPartOf": {
@@ -105,7 +109,14 @@
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://johanajnabi.com/assets/profile.webp"
+        "url": "https://johanajnabi.com/assets/social/profile-1x1.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      "image": [
+        "https://johanajnabi.com/assets/social/profile-1x1.jpg",
+        "https://johanajnabi.com/assets/social/profile-4x3.jpg",
+        "https://johanajnabi.com/assets/social/profile-16x9.jpg"
       },
       "inLanguage": "en",
       "dateModified": "2026-04-08"

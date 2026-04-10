@@ -12,9 +12,9 @@
   "stylesheet": "/style.css",
   "global_script": "/js/global.js",
   "default_og_image": {
-    "url": "https://johanajnabi.com/assets/profile.webp",
+    "url": "https://johanajnabi.com/assets/social/profile-16x9.jpg",
     "width": "1200",
-    "height": "630",
+    "height": "675",
     "alt": "Portrait of Johan Ajnabi"
   },
   "csp_directives": [
