@@ -1874,7 +1874,7 @@ html.js .reveal.is-visible {
 
   .home .social-links {
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 0.35rem;
   }
 
