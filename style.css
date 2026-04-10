@@ -571,7 +571,7 @@ header[id] {
 
 .social-links {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 0.85rem;
   margin: 1.4rem 0 0.8rem;
@@ -592,6 +592,7 @@ header[id] {
 .social-link:hover {
   color: var(--accent);
   border-color: var(--border-strong);
+  transform: translateY(-1px);
 }
 
 .social-link svg {
@@ -1873,8 +1874,6 @@ html.js .reveal.is-visible {
   }
 
   .home .social-links {
-    flex-wrap: nowrap;
-    justify-content: center;
     gap: 0.35rem;
   }
 
