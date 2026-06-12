@@ -1,5 +1,14 @@
 [
   {
+    "authors": "Dam, B., Ajnabi, J., Saha, T., Shrivastava, A., Badarinathan, K., Hegde, A., Dutta, A., Jasoria, S., Kataria, S., Singh, A., Jamora, C.",
+    "title": "Mindin-mediated αM-integrin endocytosis activates STAT3 to maintain keratinocyte stemness",
+    "journal": "Cell Communication and Signaling",
+    "year": "2026",
+    "link": "https://doi.org/10.1186/s12964-026-02970-5",
+    "summary": "This study shows how Mindin promotes integrin endocytosis and endosomal activation of STAT3 to sustain keratinocyte stemness.",
+    "abstract": "The study defines how extracellular Mindin signaling is converted into a stemness-supporting response in keratinocytes. The F-Spondin domain of Mindin binds αMβ2 integrin and promotes Src-dependent receptor endocytosis. Acidification in early endosomes then shifts the integrin into a signaling-competent state that activates STAT3. The same trafficking-dependent mechanism also supports stem-like properties in a cancer model, highlighting endosomal localization as an important regulator of integrin signaling."
+  },
+  {
     "authors": "Ajnabi, J., Dam, B., Gupta, E., Saha, T., Dutta, A., Kumar, S., Gupta, A., Palakodeti, D., Jamora, C.",
     "title": "Actin-dependent mechanotransduction controls nucleocytoplasmic partitioning of DNMT3a through ERK1/2 signaling during cutaneous wound healing",
     "journal": "bioRxiv (preprint)",
@@ -17,15 +26,6 @@
   "summary": "This study employs spatial transcriptomic approaches to resolve immune cell states in vitiligo patient skin before and after narrowband UV-B therapy, revealing treatment-induced remodeling of the cutaneous immune landscape.",
   "abstract": "Objectives: Vitiligo is an autoimmune disorder characterised by the presence of depigmented lesions on the skin. The autoreactive cytotoxic T cells at the epidermal-dermal junction of the skin facilitate the targeted destruction of epidermal melanocytes, leading to the development of vitiligo lesions. Narrow-band UVB (NBUVB) phototherapy is a widely used non-invasive treatment that promotes transient repigmentation of lesions. However, the specific effects of NBUVB on skin dermal T cells in vitiligo patients remain largely unexplored. Insights into the mechanism of action of NBUVB phototherapy can guide therapies against cytotoxic T cells, enabling effective and sustained remission of vitiligo lesions. Methods: Indian patients with active vitiligo lesions underwent 3 months of NBUVB phototherapy, thereby leading to successful repigmentation of vitiligo lesions. Spatial transcriptomic and histological analyses were employed to investigate the gene expression profiles of dermal T cells at the epidermal-dermal junction, both before and after treatment. Results: Comprehensive spatial transcriptome analysis of skin dermal T cells revealed that NBUVB phototherapy leads to the overall suppression of inflammatory genes and immune regulatory pathways that are upregulated in vitiligo patients before treatment. Consequently, tissue-resident innate and adaptive immune cells significantly decrease post-UVB phototherapy. Interestingly, we observe an increase in naïve CD4+ T cells post-UVB phototherapy. Conclusion:NBUVB phototherapy effectively suppresses the innate and adaptive immune cell populations and immune regulatory pathways while promoting an increase in naïve CD4+ T cells. These findings underscore a previously unrecognised immunomodulatory role of NBUVB phototherapy in vitiligo patients."
 },
-  {
-    "authors": "Dam, B., Ajnabi, J., Saha, T., Shrivastava, A., Badarinathan, K., Hegde, A., Dutta, A., Jasoria, S., Kataria, S., Singh, A., et al.",
-    "title": "Mindin mediated αM-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness",
-    "journal": "bioRxiv (preprint)",
-    "year": "2025",
-    "link": "https://doi.org/10.1101/2025.08.24.669246",
-    "summary": "This work uncovers a Mindin–integrin–STAT3 signaling axis that sustains keratinocyte stemness through integrin endocytosis and downstream transcriptional activation.",
-    "abstract": "Signalling networks rely not only on specific protein interactions but also on the subcellular locales at which these occur. Such spatial control is fundamental to cellular behaviour in both physiological and pathological scenarios. In studying keratinocyte stemness, we previously identified a Mindin–αMβ2 (CD11b/CD18) interaction that triggers STAT3 activation. Here, we delineate the mechanism underlying this response and show that the F-Spondin domain of Mindin constitutes the minimal integrin-binding module required to initiate downstream signalling. F-Spondin binding to the integrin at the plasma membrane does not elicit the full activation state of the integrin. Instead, it promotes Src-kinase dependent endocytosis of the integrin receptor to the early endosomes. Analysis of integrin conformational dynamics reveals that this compartmental shift is essential as the acidic environment of early endosomes drives the transition into a signalling-competent state. This mechanism extends to pathological contexts, as we demonstrate a requirement for endocytosis in activating STAT3 signalling and preserving stem-like properties in a cancer stem cell model. Together, these findings highlight a previously unrecognized layer of spatial control in integrin signalling, confirming endosomal trafficking as a critical determinant of stem cell behaviour and offering new conceptual and therapeutic opportunities across regenerative biology and cancer."
-  },
   {
     "authors": "Dutta, S., Islam, Z., Das, S., Barman, A., Chowdhury, M., Mondal, B. P., Ajnabi, J., Manna, D.",
     "title": "Harmonizing plant resilience: unveiling the symphony of membrane lipid dynamics in response to abiotic stresses",
