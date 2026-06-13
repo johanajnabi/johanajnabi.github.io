@@ -161,6 +161,36 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   /* =========================
+     CLICK-TO-LOAD EMBEDS
+  ========================= */
+
+  document.querySelectorAll(".embed-facade[data-embed-src]").forEach((facade) => {
+    facade.addEventListener("click", () => {
+      const embed = facade.closest(".embed");
+      const src = facade.dataset.embedSrc;
+
+      if (!embed || !src) return;
+
+      const iframe = document.createElement("iframe");
+
+      iframe.src = src;
+      iframe.title = facade.dataset.embedTitle || "Embedded media";
+      iframe.loading = "eager";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+
+      if (facade.dataset.embedAllow) {
+        iframe.setAttribute("allow", facade.dataset.embedAllow);
+      }
+
+      if (facade.dataset.embedAllowfullscreen === "true") {
+        iframe.setAttribute("allowfullscreen", "");
+      }
+
+      embed.replaceChildren(iframe);
+    }, { once: true });
+  });
+
+  /* =========================
      BEYOND GALLERY
   ========================= */
 
@@ -255,6 +285,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         : `Wildlife photograph ${index} by Johan Ajnabi`;
       image.loading = "lazy";
       image.decoding = "async";
+
+      const width = Number.parseInt(metadata.width, 10);
+      const height = Number.parseInt(metadata.height, 10);
+
+      if (width > 0 && height > 0) {
+        image.width = width;
+        image.height = height;
+      }
 
       caption.className = "media-card__caption";
       caption.innerHTML = captionHtml;
@@ -351,6 +389,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       window.setTimeout(() => {
         lightboxImg.src = item.image.src;
         lightboxImg.alt = item.image.alt || "";
+        lightboxImg.width = item.image.naturalWidth || item.image.width;
+        lightboxImg.height = item.image.naturalHeight || item.image.height;
         lightboxCaption.innerHTML = item.caption;
         lightboxImg.style.opacity = "1";
       }, 100);
