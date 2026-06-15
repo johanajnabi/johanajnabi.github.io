@@ -36,7 +36,6 @@ Selected work includes:
 - Snail maintains the stem/progenitor state of skin epithelial cells (Cell Reports, 2022)
 
 Full list available on:
-Google Scholar
 ORCID: 0000-0002-9437-9300  
 
 ---
