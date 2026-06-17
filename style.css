@@ -1472,6 +1472,33 @@ body.beyond-page .capture-gallery .capture-detail {
   list-style: none;
 }
 
+.contact-hero-panel {
+  align-self: stretch;
+  padding: 1.45rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(233, 240, 255, 0.78));
+}
+
+.contact-hero-panel p:not(.eyebrow) {
+  color: var(--text-muted);
+}
+
+.contact-hero-email {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 800;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.contact-hero-panel .pills {
+  margin-top: 1.15rem;
+}
+
 .contact-list a {
   display: flex;
   align-items: center;
