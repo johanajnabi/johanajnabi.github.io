@@ -74,13 +74,124 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
+      "@type": [
+        "CollectionPage",
+        "WebPage"
+      ],
       "@id": "https://johanajnabi.com/projects/#webpage",
       "url": "https://johanajnabi.com/projects/",
       "name": "Flagship Research Projects | Johan Ajnabi",
       "description": "Research portfolio pages highlighting flagship work in mechanobiology, spatial transcriptomics, and epidermal stemness.",
       "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://johanajnabi.com/#website"
+      },
+      "creator": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "about": [
+        {
+          "@id": "https://johanajnabi.com/#johan"
+        },
+        "Skin mechanobiology",
+        "Spatial transcriptomics",
+        "Keratinocyte stemness"
+      ],
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://johanajnabi.com/assets/social/projects-og.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "@id": "https://johanajnabi.com/projects/#project-list",
+        "name": "Flagship research projects by Johan Ajnabi",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://johanajnabi.com/projects/dnmt3a-mechanotransduction/#project"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "https://johanajnabi.com/projects/vitiligo-spatial-transcriptomics/#project"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@id": "https://johanajnabi.com/projects/keratinocyte-stemness/#project"
+            }
+          }
+        ]
+      },
       "dateModified": "2026-06-12"
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://johanajnabi.com/projects/dnmt3a-mechanotransduction/#project",
+      "name": "DNMT3A mechanotransduction during cutaneous wound repair",
+      "url": "https://johanajnabi.com/projects/dnmt3a-mechanotransduction/",
+      "description": "A research project on how wound-induced mechanical cues regulate DNMT3A localization and epigenetic control during epidermal repair.",
+      "creator": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "keywords": [
+        "DNMT3A",
+        "mechanotransduction",
+        "ERK1/2 signaling",
+        "actin cytoskeleton",
+        "cutaneous wound healing"
+      ],
+      "citation": {
+        "@id": "https://doi.org/10.64898/2026.01.15.699481"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://johanajnabi.com/projects/vitiligo-spatial-transcriptomics/#project",
+      "name": "Spatial transcriptomics of the immune landscape in vitiligo skin",
+      "url": "https://johanajnabi.com/projects/vitiligo-spatial-transcriptomics/",
+      "description": "A research project on how NB-UVB treatment reshapes immune cell states in vitiligo skin using spatial transcriptomic analysis.",
+      "creator": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "keywords": [
+        "vitiligo",
+        "spatial transcriptomics",
+        "NB-UVB",
+        "skin immunology",
+        "immune landscape"
+      ],
+      "citation": {
+        "@id": "https://doi.org/10.1002/cti2.70080"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://johanajnabi.com/projects/keratinocyte-stemness/#project",
+      "name": "Mindin-integrin-STAT3 signaling and keratinocyte stemness",
+      "url": "https://johanajnabi.com/projects/keratinocyte-stemness/",
+      "description": "A research project on Mindin-integrin endocytosis, STAT3 activation, and the maintenance of keratinocyte stemness.",
+      "creator": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "keywords": [
+        "keratinocyte stemness",
+        "Mindin",
+        "integrin signaling",
+        "STAT3",
+        "epidermal plasticity"
+      ],
+      "citation": {
+        "@id": "https://doi.org/10.1186/s12964-026-02970-5"
+      }
     },
     {
       "@type": "BreadcrumbList",
