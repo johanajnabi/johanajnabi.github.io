@@ -119,10 +119,7 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-button,
-input,
-textarea,
-select {
+button {
   font: inherit;
 }
 
@@ -130,8 +127,7 @@ h1,
 h2,
 h3,
 p,
-ul,
-ol {
+ul {
   margin-top: 0;
 }
 
@@ -563,8 +559,7 @@ header[id] {
 }
 
 .pill:hover,
-.pill.active,
-.pill.is-active {
+.pill.active {
   background: var(--accent);
   color: #ffffff;
 }
@@ -1074,14 +1069,12 @@ body.beyond-page .section-nav .pill::after {
 }
 
 body.beyond-page .section-nav .pill:hover,
-body.beyond-page .section-nav .pill.active,
-body.beyond-page .section-nav .pill.is-active {
+body.beyond-page .section-nav .pill.active {
   background: none;
   color: var(--beyond-ink);
 }
 
 body.beyond-page .section-nav .pill.active::after,
-body.beyond-page .section-nav .pill.is-active::after,
 body.beyond-page .section-nav .pill:hover::after {
   transform: scaleX(1);
 }
@@ -1206,8 +1199,7 @@ body.beyond-page .beyond-media-links .pill {
 }
 
 body.beyond-page .beyond-media-links .pill:hover,
-body.beyond-page .beyond-media-links .pill.active,
-body.beyond-page .beyond-media-links .pill.is-active {
+body.beyond-page .beyond-media-links .pill.active {
   background: var(--beyond-ink);
   color: #ffffff;
 }
@@ -1465,8 +1457,7 @@ body.beyond-page .capture-gallery .capture-detail {
   object-fit: contain;
 }
 
-.media-card__caption,
-.talk-caption {
+.media-card__caption {
   display: block;
   padding: 0.78rem 0.9rem 0.82rem;
   color: var(--text-main);
@@ -1929,8 +1920,7 @@ html.js .reveal.is-visible {
     border-radius: 16px;
   }
 
-  .media-grid .media-card__caption,
-  .media-grid .talk-caption {
+  .media-grid .media-card__caption {
     padding: 0.72rem 0.8rem 0.76rem;
     font-size: 0.9rem;
   }
