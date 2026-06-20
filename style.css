@@ -1628,6 +1628,10 @@ body.beyond-page .capture-gallery .capture-detail {
   margin-bottom: 1rem;
 }
 
+.contact-cta-card p:last-child {
+  margin-bottom: 0;
+}
+
 .contact-cta-actions {
   display: grid;
   gap: 0.75rem;
@@ -1635,6 +1639,20 @@ body.beyond-page .capture-gallery .capture-detail {
 
 .contact-cta-actions .btn {
   width: 100%;
+}
+
+.academic-contact-cta {
+  align-items: center;
+}
+
+.academic-contact-email {
+  margin: 0;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.academic-contact-actions {
+  align-self: center;
 }
 
 /* =========================
