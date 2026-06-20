@@ -464,6 +464,33 @@ header[id] {
   font-weight: 600;
 }
 
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 1rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid rgba(0, 122, 86, 0.2);
+  border-radius: 999px;
+  background: rgba(0, 122, 86, 0.08);
+  color: #075f45;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.status-badge::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 999px;
+  background: #0f9f6e;
+  box-shadow: 0 0 0 4px rgba(15, 159, 110, 0.14);
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -1485,9 +1512,16 @@ body.beyond-page .capture-gallery .capture-detail {
   color: var(--text-muted);
 }
 
+.contact-hero-title {
+  margin: 0 0 0.9rem;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+}
+
 .contact-hero-email {
-  display: inline-block;
-  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 1.1rem;
   color: var(--accent);
   font-size: clamp(1.15rem, 2vw, 1.4rem);
   font-weight: 800;
@@ -1495,8 +1529,22 @@ body.beyond-page .capture-gallery .capture-detail {
   overflow-wrap: anywhere;
 }
 
-.contact-hero-panel .pills {
-  margin-top: 1.15rem;
+.contact-interest-label {
+  margin: 0 0 0.45rem;
+  color: var(--text-main);
+  font-weight: 800;
+}
+
+.contact-interest-list {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--text-muted);
+}
+
+.contact-hero-actions {
+  margin-top: 1.25rem;
 }
 
 .contact-list a {
