@@ -387,19 +387,11 @@ header[id] {
 }
 
 .hero-kicker {
-  margin: -0.15rem 0 0.9rem;
+  margin: 0 0 0.9rem;
   color: var(--accent);
   font-size: clamp(1rem, 2vw, 1.25rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.35;
-}
-
-body.academic-page .hero h1 {
-  margin-bottom: 0.85rem;
-}
-
-body.academic-page .hero-kicker {
-  margin-top: 0;
 }
 
 .hero-recognition {
