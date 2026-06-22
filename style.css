@@ -394,6 +394,35 @@ header[id] {
   line-height: 1.35;
 }
 
+.featured-recognition {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.15rem 1.25rem;
+  border-color: var(--border-strong);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(233, 240, 255, 0.72));
+}
+
+.featured-recognition p:not(.eyebrow) {
+  max-width: 54rem;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.featured-recognition-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.featured-recognition-actions .btn {
+  flex: 0 0 auto;
+}
+
 /* =========================
    6. COMPONENTS
 ========================= */
@@ -1996,6 +2025,15 @@ html.js .reveal.is-visible {
   .split,
   .selected-publications {
     grid-template-columns: 1fr;
+  }
+
+  .featured-recognition {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .featured-recognition-actions {
+    justify-content: flex-start;
   }
 
   /* ---------- Typography ---------- */
