@@ -772,32 +772,33 @@ header[id] {
 
 .experience-card {
   display: grid;
-  grid-template-columns: minmax(11rem, 0.32fr) minmax(0, 1fr);
-  gap: clamp(1rem, 3vw, 1.5rem);
+  grid-template-columns: minmax(9.5rem, 0.24fr) minmax(0, 1fr);
+  gap: clamp(0.85rem, 2.4vw, 1.25rem);
   align-items: start;
+  padding: clamp(1.2rem, 2.2vw, 1.4rem);
 }
 
 .experience-stamp {
   display: grid;
-  gap: 0.55rem;
+  gap: 0.42rem;
 }
 
 .experience-stamp span {
   display: inline-flex;
   width: fit-content;
-  padding: 0.45rem 0.68rem;
+  padding: 0.38rem 0.62rem;
   border: 1px solid var(--border-strong);
   border-radius: 999px;
   background: rgba(21, 87, 214, 0.08);
   color: var(--accent);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 900;
   line-height: 1.2;
 }
 
 .experience-stamp strong {
   color: var(--text-main);
-  font-size: 1.02rem;
+  font-size: 0.98rem;
 }
 
 .experience-body h3 {
@@ -805,7 +806,7 @@ header[id] {
 }
 
 .experience-meta {
-  margin: 0 0 1rem;
+  margin: 0 0 0.85rem;
   color: var(--text-muted);
   font-weight: 600;
 }
@@ -813,7 +814,7 @@ header[id] {
 .experience-focus-grid,
 .experience-highlight-stack {
   display: grid;
-  gap: 0.8rem;
+  gap: 0.7rem;
 }
 
 .experience-focus-grid {
@@ -822,7 +823,7 @@ header[id] {
 
 .experience-focus-grid > div,
 .experience-highlight {
-  padding: 0.9rem;
+  padding: 0.78rem 0.85rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.72);
