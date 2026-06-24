@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Home -->
   <url>
     <loc>https://johanajnabi.com/</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,25 +12,25 @@
   <!-- Top-level sections -->
   <url>
     <loc>https://johanajnabi.com/academic/</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://johanajnabi.com/projects/</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://johanajnabi.com/beyond/</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://johanajnabi.com/contact/</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -38,19 +38,19 @@
   <!-- Project sub-pages -->
   <url>
     <loc>https://johanajnabi.com/projects/dnmt3a-mechanotransduction/</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://johanajnabi.com/projects/vitiligo-spatial-transcriptomics/</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://johanajnabi.com/projects/keratinocyte-stemness/</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -58,7 +58,7 @@
   <!-- CV PDF (prominently linked, publicly indexable) -->
   <url>
     <loc>https://johanajnabi.com/assets/JA_CV2026.pdf</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
