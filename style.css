@@ -690,6 +690,83 @@ header[id] {
   flex-direction: column;
 }
 
+.publication-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.publication-card-top .eyebrow {
+  margin-bottom: 0;
+}
+
+.publication-source {
+  --source-accent: var(--accent);
+  --source-bg: rgba(21, 87, 214, 0.06);
+  --source-logo-width: 5.6rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.55rem;
+  max-width: 100%;
+  min-height: 2.85rem;
+  padding: 0.42rem 0.7rem;
+  border: 1px solid rgba(16, 23, 38, 0.1);
+  border-radius: 0.9rem;
+  background:
+    linear-gradient(135deg, var(--source-bg), rgba(255, 255, 255, 0.88) 58%),
+    rgba(255, 255, 255, 0.88);
+  color: var(--text-main);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.25;
+  box-shadow: 0 0.55rem 1.4rem rgba(15, 23, 42, 0.06);
+}
+
+.publication-source__logo {
+  display: block;
+  width: var(--source-logo-width);
+  max-width: 100%;
+  max-height: 1.75rem;
+  object-fit: contain;
+}
+
+.publication-source__name {
+  min-width: 0;
+  max-width: 12.5rem;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  overflow-wrap: normal;
+}
+
+.publication-source--biorxiv {
+  --source-accent: #a84b12;
+  --source-bg: rgba(168, 75, 18, 0.08);
+  --source-logo-width: 4.9rem;
+}
+
+.publication-source--cti {
+  --source-accent: #0f766e;
+  --source-bg: rgba(15, 118, 110, 0.08);
+  --source-logo-width: 3.9rem;
+}
+
+.publication-source--ccs {
+  --source-accent: #4656c8;
+  --source-bg: rgba(70, 86, 200, 0.08);
+  --source-logo-width: 5.6rem;
+}
+
+.publication-source--cell-reports {
+  --source-accent: #202938;
+  --source-bg: rgba(32, 41, 56, 0.08);
+  --source-logo-width: 5.7rem;
+}
+
 .research-pillar-card .card-links,
 .selected-publication-card .card-links {
   margin-top: auto;
