@@ -1,0 +1,5 @@
+# These profile services often reject automated checks despite working normally in a browser.
+^https://(www\.)?linkedin\.com/
+^https://in\.linkedin\.com/
+^https://scholar\.google\.com/
+^https://(www\.)?researchgate\.net/
