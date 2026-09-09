@@ -3,3 +3,9 @@
 ^https://in\.linkedin\.com/
 ^https://scholar\.google\.com/
 ^https://(www\.)?researchgate\.net/
+
+# Wiley blocks this valid article DOI after its redirect from doi.org.
+^https://doi\.org/10\.1002/cti2\.70080$
+
+# YouTube returns a bot-specific 404 for this public embedded playlist.
+^https://www\.youtube\.com/embed/videoseries\?list=PLaWJAthnVk-7YN0nSukZZ2ZHeVaY5iyYD$
