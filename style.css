@@ -119,6 +119,28 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.9rem;
+  left: 0.9rem;
+  z-index: 1000;
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: var(--text-main);
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.2;
+  transform: translateY(-160%);
+  transition: transform 0.18s ease;
+}
+
+.skip-link:focus-visible {
+  color: #ffffff;
+  outline-color: #ffffff;
+  outline-offset: 3px;
+  transform: translateY(0);
+}
+
 button {
   font: inherit;
 }
