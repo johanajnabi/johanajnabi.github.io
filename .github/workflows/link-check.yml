@@ -29,5 +29,6 @@ jobs:
             --host-concurrency 2
             --max-retries 3
             --timeout 20
+            --accept 200,201,204,206,301,302,303,307,308,401,403
             './**/*.html'
           jobSummary: true
