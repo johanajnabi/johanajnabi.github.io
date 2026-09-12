@@ -815,6 +815,7 @@ header[id] {
 
 .project-figure__visual {
   margin: 0;
+  align-self: start;
   padding: clamp(0.75rem, 2vw, 1.25rem);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -841,7 +842,11 @@ header[id] {
 }
 
 .project-figure__visual img {
+  display: block;
   width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   margin: 0 auto;
 }
 
