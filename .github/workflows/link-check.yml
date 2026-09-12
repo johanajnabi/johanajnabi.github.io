@@ -30,5 +30,6 @@ jobs:
             --max-retries 3
             --timeout 20
             --accept 200,201,204,206,301,302,303,307,308,401,403
+            --exclude "instagram.com"
             './**/*.html'
           jobSummary: true
