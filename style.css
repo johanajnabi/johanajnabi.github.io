@@ -835,7 +835,7 @@ header[id] {
 
 .project-figure__comparison--single {
   grid-template-columns: minmax(0, 1fr);
-  max-width: 60rem;
+  width: 100%;
 }
 
 .project-figure__visual {
