@@ -31,5 +31,6 @@ jobs:
             --timeout 20
             --accept 200,201,204,206,301,302,303,307,308,401,403
             --exclude "instagram.com"
+            --exclude "be.iisc.ac.in/conference-mechanobiology-in-translational-research-bioforces-to-bedside/"
             './**/*.html'
           jobSummary: true
