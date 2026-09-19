@@ -819,7 +819,7 @@ header[id] {
 }
 
 .project-figure__intro {
-  max-width: 52rem;
+  width: 100%;
 }
 
 .project-figure__intro .lead {
