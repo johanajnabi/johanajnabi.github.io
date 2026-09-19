@@ -740,8 +740,6 @@ header[id] {
 }
 
 .publication-source {
-  --source-accent: var(--accent);
-  --source-bg: rgba(21, 87, 214, 0.05);
   --source-logo-width: 3rem;
   display: inline-flex;
   align-items: center;
@@ -777,26 +775,18 @@ header[id] {
 }
 
 .publication-source--biorxiv {
-  --source-accent: #a84b12;
-  --source-bg: rgba(168, 75, 18, 0.05);
   --source-logo-width: 2.85rem;
 }
 
 .publication-source--cti {
-  --source-accent: #0f766e;
-  --source-bg: rgba(15, 118, 110, 0.05);
   --source-logo-width: 2.15rem;
 }
 
 .publication-source--ccs {
-  --source-accent: #4656c8;
-  --source-bg: rgba(70, 86, 200, 0.05);
   --source-logo-width: 3.1rem;
 }
 
 .publication-source--cell-reports {
-  --source-accent: #202938;
-  --source-bg: rgba(32, 41, 56, 0.05);
   --source-logo-width: 3.25rem;
 }
 
@@ -809,10 +799,6 @@ header[id] {
   display: grid;
   gap: clamp(1.5rem, 3vw, 2.4rem);
   align-items: start;
-}
-
-.project-figure__intro {
-  width: 100%;
 }
 
 .project-figure__intro .lead {
@@ -1271,8 +1257,6 @@ header[id] {
 
 .embed--compact {
   aspect-ratio: 1 / 1;
-  max-width: 100%;
-  margin: 0;
   background: #ffffff;
 }
 
@@ -1293,8 +1277,6 @@ header[id] {
 ========================= */
 
 body.beyond-page {
-  --beyond-paper: #f5efe4;
-  --beyond-paper-strong: rgba(255, 251, 245, 0.92);
   --beyond-ink: #13243d;
   --beyond-muted: #49566d;
   --beyond-rule: rgba(19, 36, 61, 0.14);
@@ -1324,10 +1306,6 @@ body.beyond-page .site-footer {
 
 body.beyond-page .page-stack {
   padding-top: 2.75rem;
-}
-
-body.beyond-page .lead {
-  color: var(--beyond-muted);
 }
 
 body.beyond-page .eyebrow {
@@ -1384,7 +1362,10 @@ body.beyond-page .section-divider {
   align-items: end;
 }
 
-.beyond-cover__copy {
+.beyond-cover__copy,
+.beyond-cover__visual,
+.beyond-story__copy,
+.beyond-photo-layout {
   display: grid;
   gap: 1rem;
 }
@@ -1426,11 +1407,6 @@ body.beyond-page .section-divider {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-}
-
-.beyond-cover__visual {
-  display: grid;
-  gap: 1rem;
 }
 
 .beyond-cover__photo,
@@ -1592,11 +1568,6 @@ body.beyond-page .section-nav .pill:hover::after {
   grid-template-columns: minmax(320px, 0.96fr) minmax(0, 1.04fr);
 }
 
-.beyond-story__copy {
-  display: grid;
-  gap: 1rem;
-}
-
 .beyond-story__copy p {
   margin: 0;
 }
@@ -1694,11 +1665,6 @@ body.beyond-page .beyond-media-links .pill.active {
 .beyond-caption {
   margin: 0 0 0.85rem;
   font-size: 0.92rem;
-}
-
-.beyond-photo-layout {
-  display: grid;
-  gap: 1rem;
 }
 
 .beyond-photo-layout__lead img {
@@ -1975,10 +1941,6 @@ body.beyond-page .capture-gallery .capture-detail {
   border-radius: var(--radius-lg);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(233, 240, 255, 0.78));
-}
-
-.contact-hero-panel p:not(.eyebrow) {
-  color: var(--text-muted);
 }
 
 .contact-hero-title {
