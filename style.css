@@ -823,7 +823,7 @@ header[id] {
 
 .project-figure__comparison {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 32rem), 1fr));
   gap: clamp(1rem, 2.5vw, 1.6rem);
   align-items: start;
 }
