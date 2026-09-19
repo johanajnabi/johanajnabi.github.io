@@ -5,12 +5,9 @@
 :root {
   --accent: #1557d6;
   --accent-strong: #0f3e9e;
-  --accent-soft: #e9f0ff;
   --text-main: #101726;
   --text-muted: #4a5568;
   --text-subtle: #6b7484;
-  --bg-page: #f7faff;
-  --surface: rgba(255, 255, 255, 0.96);
   --surface-soft: rgba(246, 249, 255, 0.92);
   --surface-strong: #ffffff;
   --border: rgba(16, 23, 38, 0.08);
@@ -21,14 +18,10 @@
   --radius-md: 20px;
   --radius-lg: 28px;
   --radius-xl: 36px;
-  --space-1: 0.5rem;
-  --space-2: 0.75rem;
-  --space-3: 1rem;
   --space-4: 1.25rem;
   --space-5: 1.75rem;
   --space-6: 2.5rem;
   --space-7: 3.5rem;
-  --space-8: 5rem;
   --nav-height: 74px;
 }
 
@@ -823,6 +816,8 @@ header[id] {
 }
 
 .project-figure__intro .lead {
+  width: 100%;
+  max-width: none;
   margin-bottom: 0;
 }
 
@@ -831,11 +826,6 @@ header[id] {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(1rem, 2.5vw, 1.6rem);
   align-items: start;
-}
-
-.project-figure__comparison--single {
-  grid-template-columns: minmax(0, 1fr);
-  width: 100%;
 }
 
 .project-figure__visual {
@@ -851,7 +841,6 @@ header[id] {
 .project-figure__label {
   margin: 0 0 0.75rem;
   color: var(--accent);
-  font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -2145,7 +2134,7 @@ body.beyond-page .capture-gallery .capture-detail {
 }
 
 /* =========================
-   9. UTILITIES
+   10. UTILITIES
 ========================= */
 
 .site-footer {
@@ -2285,7 +2274,7 @@ html.js .reveal.is-visible {
 }
 
 /* =========================
-   10. RESPONSIVE
+   11. RESPONSIVE
 ========================= */
 
 @media (max-width: 980px) {
@@ -2301,10 +2290,6 @@ html.js .reveal.is-visible {
 
   .toolkit-group {
     grid-template-columns: 1fr;
-  }
-
-  .project-figure__intro {
-    max-width: none;
   }
 
   .project-figure__comparison {
@@ -2368,7 +2353,6 @@ html.js .reveal.is-visible {
 }
 
 @media (max-width: 720px) {
-
   /* ---------- Layout ---------- */
   .shell,
   .shell--wide {
