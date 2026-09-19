@@ -42,3 +42,21 @@ https://creativecommons.org/licenses/by-nc-nd/4.0/
 
 The site reproduces the figure without modification for non-commercial academic
 portfolio use. The project page carries the same attribution and licence link.
+
+The vitiligo project page references the canonical Wiley-hosted graphical abstract from:
+
+Dutta, A., Gupta, D., Ajnabi, J., et al. "Spatial transcriptomic analysis of the
+immune landscape following NB-UVB treatment of vitiligo skin." *Clinical &amp;
+Translational Immunology* 15, e70080 (2026).
+https://doi.org/10.1002/cti2.70080
+
+Canonical image source:
+https://onlinelibrary.wiley.com/cms/asset/da665272-e092-4fd8-b243-b5192ebdbd82/cti270080-toc-0001-m.jpg
+
+Copyright 2026 The Author(s). The article is licensed under the Creative Commons
+Attribution-NonCommercial-NoDerivatives 4.0 International License:
+https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+The page displays the publisher-hosted figure without modification for non-commercial
+academic portfolio use. The vitiligo project page carries the same attribution and licence
+link; the image is not stored in this directory.

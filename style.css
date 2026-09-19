@@ -833,6 +833,11 @@ header[id] {
   align-items: start;
 }
 
+.project-figure__comparison--single {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 60rem;
+}
+
 .project-figure__visual {
   margin: 0;
   align-self: start;
