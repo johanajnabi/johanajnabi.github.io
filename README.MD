@@ -29,50 +29,27 @@ Bengaluru, India
 Selected work includes:
 
 - Actin-dependent mechanotransduction controls nucleocytoplasmic partitioning of DNMT3a through ERK1/2 signaling during cutaneous wound healing (bioRxiv, 2026)
-- Mindin mediated αM-Integrin endocytosis activates STAT3 to maintain keratinocyte stemness (bioRxiv, 2025)
-- Niacinamide enhances cathelicidin mediated SARS-CoV-2 membrane disruption (Frontiers in Immunology, 2023)
+- Mindin-mediated αM-integrin endocytosis activates STAT3 to maintain keratinocyte stemness (Cell Communication and Signaling, 2026)
+- Spatial transcriptomic analysis of the immune landscape following NB-UVB treatment of vitiligo skin (Clinical & Translational Immunology, 2026)
+- Niacinamide enhances cathelicidin-mediated SARS-CoV-2 membrane disruption (Frontiers in Immunology, 2023)
 - Mindin (SPON2) is essential for cutaneous fibrogenesis (Journal of Investigative Dermatology, 2023)
 - Snail maintains the stem/progenitor state of skin epithelial cells (Cell Reports, 2022)
 
 Full list available on:
-- Google Scholar
-- ORCID
+ORCID: 0000-0002-9437-9300  
 
 ---
 
 ## Website
 
 Academic profile:  
-https://johanajnabi.com
-
----
-
-## Site Build
-
-The deployable HTML in the repo root can now be regenerated from `site_src/`.
-
-Run:
-
-```powershell
-python tools/build_site.py
-```
-
-Edit shared values in:
-- `site_src/data/site.json`
-- `site_src/data/pages.json`
-
-Structured data now lives in:
-- `site_src/data/jsonld/`
-
-Edit page source templates in:
-- `site_src/pages/`
+https://johanajnabi.com/
 
 ---
 
 ## Contact
 
-Email: johanajnabi@gmail.com  
-ORCID: 0000-0002-9437-9300  
+Email: contact@johanajnabi.com
 
 ---
 

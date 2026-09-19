@@ -138,7 +138,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       links.forEach((link) => {
         const isActive = current && link === current.link;
         link.classList.toggle("active", isActive);
-        link.classList.toggle("is-active", isActive);
       });
     };
 
@@ -336,7 +335,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         trigger,
         image: trigger.querySelector("img"),
         caption: trigger.dataset.lightboxCaption
-          || trigger.querySelector(".media-card__caption, .talk-caption")?.innerHTML
+          || trigger.querySelector(".media-card__caption")?.innerHTML
           || ""
       }))
       .filter((item) => item.image);

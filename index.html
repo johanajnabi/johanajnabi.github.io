@@ -1,69 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="/assets/favicon.svg">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 
   <!-- =====================
        CORE META
   ====================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="color-scheme" content="light dark">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-
-  <!-- =====================
-       CONTENT SECURITY POLICY
-  ====================== -->
-    <meta http-equiv="Content-Security-Policy"
-        content="
-          default-src 'self';
-          img-src 'self' https: data:;
-          script-src 'self';
-          style-src 'self' 'unsafe-inline';
-          connect-src 'self';
-          font-src 'self' https:;
-          frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.instagram.com;
-          object-src 'none';
-        ">
-
-  <!-- =====================
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+<!-- =====================
        SEO
   ====================== -->
-    <title>Johan Ajnabi | Skin Mechanobiology and Wound Repair</title>
+  <title>Johan Ajnabi | Skin Mechanobiology and Wound Repair</title>
 
   <meta name="author" content="Johan Ajnabi">
-    <meta name="description" content="Johan Ajnabi is a PhD candidate at inStem studying skin mechanobiology, epigenetic regulation, and epidermal wound repair. Explore research, publications, and contact information.">
+  <meta name="description"
+        content="Johan Ajnabi is a PhD candidate at inStem studying skin mechanobiology, epigenetic regulation, and epidermal wound repair. Explore research, publications, and contact information.">
 
-    <link rel="canonical" href="https://johanajnabi.com/">
+  <link rel="canonical" href="https://johanajnabi.com/">
 
   <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Johan Ajnabi">
-    <meta property="og:title" content="Johan Ajnabi | Skin Mechanobiology and Wound Repair">
-    <meta property="og:description" content="Johan Ajnabi is a PhD candidate at inStem studying skin mechanobiology, epigenetic regulation, and epidermal wound repair. Explore research, publications, and contact information.">
-    <meta property="og:url" content="https://johanajnabi.com/">
-    <meta property="og:image" content="https://johanajnabi.com/assets/social/profile-16x9.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="675">
-    <meta property="og:image:alt" content="Portrait of Johan Ajnabi">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Johan Ajnabi">
+  <meta property="og:title" content="Johan Ajnabi | Skin Mechanobiology and Wound Repair">
+  <meta property="og:description"
+        content="Research on wound healing, mechanobiology, and epigenetic regulation in skin biology at inStem.">
+  <meta property="og:url" content="https://johanajnabi.com/">
+  <meta property="og:image"
+        content="https://johanajnabi.com/assets/social/home-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Social preview card for Johan Ajnabi's skin mechanobiology and wound repair website">
 
   <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Johan Ajnabi | Skin Mechanobiology and Wound Repair">
-    <meta name="twitter:description" content="Johan Ajnabi is a PhD candidate at inStem studying skin mechanobiology, epigenetic regulation, and epidermal wound repair. Explore research, publications, and contact information.">
-    <meta name="twitter:image" content="https://johanajnabi.com/assets/social/profile-16x9.jpg">
-    <meta name="twitter:image:alt" content="Portrait of Johan Ajnabi">
-    <meta name="twitter:creator" content="@jo_ajnabi">
-    <meta name="twitter:site" content="@jo_ajnabi">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Johan Ajnabi | Skin Mechanobiology and Wound Repair">
+  <meta name="twitter:description"
+        content="PhD candidate studying skin mechanobiology, epigenetic regulation, and epidermal wound repair at inStem.">
+  <meta name="twitter:image"
+        content="https://johanajnabi.com/assets/social/home-og.jpg">
+  <meta name="twitter:image:alt" content="Social preview card for Johan Ajnabi's skin mechanobiology and wound repair website">
+  <meta name="twitter:creator" content="@jo_ajnabi">
+  <meta name="twitter:site" content="@jo_ajnabi">
 
-    <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css">
 
   <!-- =====================
        STRUCTURED DATA
   ====================== -->
-    <script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -77,6 +66,12 @@
         "addressLocality": "Bengaluru",
         "addressCountry": "India"
       }
+    },
+    {
+      "@type": "ResearchOrganization",
+      "@id": "https://johanajnabi.com/#iari",
+      "name": "ICAR - Indian Agricultural Research Institute",
+      "url": "https://www.iari.res.in/"
     },
     {
       "@type": "BreadcrumbList",
@@ -96,27 +91,24 @@
       "givenName": "Johan",
       "familyName": "Ajnabi",
       "alternateName": "J. Ajnabi",
-      "email": "mailto:johanajnabi@gmail.com",
+      "email": "mailto:contact@johanajnabi.com",
       "description": "PhD candidate in mechanobiology and epigenetic regulation studying wound healing and translational skin regeneration at inStem, India.",
-      "worksFor": {
-        "@id": "https://johanajnabi.com/#instem"
-      },
-      "affiliation": {
-        "@id": "https://johanajnabi.com/#instem"
-      },
-      "memberOf": {
-        "@id": "https://johanajnabi.com/#instem"
+      "worksFor": { "@id": "https://johanajnabi.com/#instem" },
+      "affiliation": { "@id": "https://johanajnabi.com/#instem" },
+      "memberOf": { "@id": "https://johanajnabi.com/#instem" },
+      "alumniOf": { "@id": "https://johanajnabi.com/#iari" },
+      "contactPoint": {
+        "@id": "https://johanajnabi.com/contact/#professional-contact"
       },
       "mainEntityOfPage": {
-        "@type": "ProfilePage",
+        "@type": "WebPage",
         "@id": "https://johanajnabi.com/#webpage"
       },
       "url": "https://johanajnabi.com/",
-      "image": [
-        "https://johanajnabi.com/assets/social/profile-1x1.jpg",
-        "https://johanajnabi.com/assets/social/profile-4x3.jpg",
-        "https://johanajnabi.com/assets/social/profile-16x9.jpg"
-      ],
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://johanajnabi.com/assets/profile.webp"
+      },
       "jobTitle": "PhD Candidate",
       "hasOccupation": {
         "@type": "Occupation",
@@ -128,6 +120,13 @@
         "value": "0000-0002-9437-9300",
         "url": "https://orcid.org/0000-0002-9437-9300"
       },
+      "award": [
+        "Paeonia Travel Award, MBI Conference 2023",
+        "ICMR Junior Research Fellowship in Life Sciences, 2019",
+        "DBT-BCIL Junior Research Fellowship in Biotechnology, 2019",
+        "GATE-XL Life Sciences, All India Rank 8, 2019",
+        "AIEEA-PG Scholarship for Plant Biotechnology, All India Rank 1, 2017"
+      ],
       "sameAs": [
         "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
         "https://orcid.org/0000-0002-9437-9300",
@@ -142,50 +141,69 @@
         "Epigenetic regulation",
         "Cutaneous wound healing",
         "Skin regeneration",
-        "Mechanotransduction"
+        "Mechanotransduction",
+        "Chromatin remodeling",
+        "Keratinocyte stem cell biology",
+        "Cytoskeletal dynamics",
+        "Integrin signaling",
+        "Spatial transcriptomics",
+        "Translational skin biology"
       ],
-      "subjectOf": {
-        "@type": "WebPage",
-        "@id": "https://johanajnabi.com/academic/#webpage"
-      }
+      "subjectOf": [
+        {
+          "@type": "WebPage",
+          "@id": "https://johanajnabi.com/academic/#webpage"
+        },
+        {
+          "@id": "https://doi.org/10.64898/2026.01.15.699481"
+        },
+        {
+          "@id": "https://doi.org/10.1002/cti2.70080"
+        },
+        {
+          "@id": "https://doi.org/10.1186/s12964-026-02970-5"
+        },
+        {
+          "@id": "https://johanajnabi.com/projects/dnmt3a-mechanotransduction/#project"
+        },
+        {
+          "@id": "https://johanajnabi.com/projects/vitiligo-spatial-transcriptomics/#project"
+        },
+        {
+          "@id": "https://johanajnabi.com/projects/keratinocyte-stemness/#project"
+        }
+      ]
     },
     {
       "@type": "WebSite",
       "@id": "https://johanajnabi.com/#website",
       "url": "https://johanajnabi.com/",
       "name": "Johan Ajnabi",
-      "publisher": {
-        "@id": "https://johanajnabi.com/#johan"
-      },
+      "publisher": { "@id": "https://johanajnabi.com/#johan" },
       "inLanguage": "en"
     },
     {
-      "@type": "ProfilePage",
+      "@type": "ContactPoint",
+      "@id": "https://johanajnabi.com/contact/#professional-contact",
+      "contactType": "professional inquiries",
+      "email": "contact@johanajnabi.com",
+      "url": "https://johanajnabi.com/contact/",
+      "areaServed": "Worldwide",
+      "availableLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
       "@id": "https://johanajnabi.com/#webpage",
       "url": "https://johanajnabi.com/",
       "name": "Johan Ajnabi | Skin Mechanobiology and Wound Repair",
-      "about": {
-        "@id": "https://johanajnabi.com/#johan"
-      },
-      "mainEntity": {
-        "@id": "https://johanajnabi.com/#johan"
-      },
-      "isPartOf": {
-        "@id": "https://johanajnabi.com/#website"
-      },
+      "about": { "@id": "https://johanajnabi.com/#johan" },
+      "isPartOf": { "@id": "https://johanajnabi.com/#website" },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://johanajnabi.com/assets/social/profile-1x1.jpg",
-        "width": 1200,
-        "height": 1200
-      },
-      "image": [
-        "https://johanajnabi.com/assets/social/profile-1x1.jpg",
-        "https://johanajnabi.com/assets/social/profile-4x3.jpg",
-        "https://johanajnabi.com/assets/social/profile-16x9.jpg"
+        "url": "https://johanajnabi.com/assets/profile.webp"
       },
       "inLanguage": "en",
-      "dateModified": "2026-04-08"
+      "dateModified": "2026-07-29"
     }
   ]
 }
@@ -194,7 +212,8 @@
   <link rel="preload" as="image" href="/assets/profile.webp">
 </head>
 <body id="top" class="home">
-<main class="shell shell--home">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<main id="main-content" tabindex="-1" class="shell shell--home">
   <!-- =====================
        HERO
   ====================== -->
@@ -212,7 +231,7 @@
     </p>
    
    <div class="social-links" aria-label="Contact links">
-      <a href="mailto:johanajnabi@gmail.com"
+      <a href="mailto:contact@johanajnabi.com"
          class="social-link"
          aria-label="Email">
         <svg viewBox="0 0 24 24">
@@ -221,7 +240,7 @@
         </svg>
       </a>
 
-      <a href="https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en"
+      <a href="https://scholar.google.com/citations?user=4yT9DRcAAAAJ"
          target="_blank" rel="noopener noreferrer"
          class="social-link"
          aria-label="Google Scholar">
@@ -283,6 +302,7 @@
       <a href="/academic/" class="btn btn--primary">Academic Profile</a>
       <a href="/projects/" class="btn btn--secondary">Flagship Projects</a>
       <a href="/beyond/" class="btn btn--secondary">Beyond Research</a>
+      <a href="/contact/" class="btn btn--secondary">Contact</a>
     </div>
  
 
@@ -290,7 +310,7 @@
        FOOTER
   ====================== -->
   <footer class="site-footer site-footer--compact">
-    &copy; 2026 Johan Ajnabi &middot; Bengaluru, India &middot; Last updated April 8, 2026
+    &copy; 2026 Johan Ajnabi &middot; Bengaluru, India &middot; <a href="/contact/">Contact</a> &middot; Last updated July 29, 2026
   </footer>
 </section>
 </main>

@@ -7,77 +7,175 @@
   ====================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="color-scheme" content="light dark">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-
-  <!-- =====================
-       CONTENT SECURITY POLICY
-  ====================== -->
-    <meta http-equiv="Content-Security-Policy"
-        content="
-          default-src 'self';
-          img-src 'self' https: data:;
-          script-src 'self';
-          style-src 'self' 'unsafe-inline';
-          connect-src 'self';
-          font-src 'self' https:;
-          frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.instagram.com;
-          object-src 'none';
-        ">
-
-  <!-- =====================
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+<!-- =====================
        SEO
   ====================== -->
-    <title>Flagship Research Projects | Johan Ajnabi</title>
-    <meta name="description" content="Flagship research projects by Johan Ajnabi spanning skin mechanobiology, spatial transcriptomics, keratinocyte stemness, and regenerative skin biology.">
-    <link rel="canonical" href="https://johanajnabi.com/projects/">
+  <title>Flagship Research Projects | Johan Ajnabi</title>
+  <meta name="description"
+        content="Flagship research projects by Johan Ajnabi spanning skin mechanobiology, spatial transcriptomics, keratinocyte stemness, and regenerative skin biology.">
+  <link rel="canonical" href="https://johanajnabi.com/projects/">
 
   <!-- =====================
        OPEN GRAPH
   ====================== -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Johan Ajnabi">
-    <meta property="og:title" content="Flagship Research Projects | Johan Ajnabi">
-    <meta property="og:description" content="Flagship research projects by Johan Ajnabi spanning skin mechanobiology, spatial transcriptomics, keratinocyte stemness, and regenerative skin biology.">
-    <meta property="og:url" content="https://johanajnabi.com/projects/">
-    <meta property="og:image" content="https://johanajnabi.com/assets/social/profile-16x9.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="675">
-    <meta property="og:image:alt" content="Portrait of Johan Ajnabi">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Johan Ajnabi">
+  <meta property="og:title" content="Flagship Research Projects | Johan Ajnabi">
+  <meta property="og:description"
+        content="Detailed research pages covering mechanotransduction, vitiligo spatial transcriptomics, and keratinocyte stemness.">
+  <meta property="og:url" content="https://johanajnabi.com/projects/">
+  <meta property="og:image" content="https://johanajnabi.com/assets/social/projects-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Social preview card for Johan Ajnabi's flagship research projects">
 
   <!-- =====================
        TWITTER
   ====================== -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Flagship Research Projects | Johan Ajnabi">
-    <meta name="twitter:description" content="Flagship research projects by Johan Ajnabi spanning skin mechanobiology, spatial transcriptomics, keratinocyte stemness, and regenerative skin biology.">
-    <meta name="twitter:image" content="https://johanajnabi.com/assets/social/profile-16x9.jpg">
-    <meta name="twitter:image:alt" content="Portrait of Johan Ajnabi">
-    <meta name="twitter:creator" content="@jo_ajnabi">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Flagship Research Projects | Johan Ajnabi">
+  <meta name="twitter:description"
+        content="Detailed research pages covering mechanotransduction, vitiligo spatial transcriptomics, and keratinocyte stemness.">
+  <meta name="twitter:image" content="https://johanajnabi.com/assets/social/projects-og.jpg">
+  <meta name="twitter:image:alt" content="Social preview card for Johan Ajnabi's flagship research projects">
+  <meta name="twitter:creator" content="@jo_ajnabi">
 
   <!-- =====================
        ICON + STYLES
   ====================== -->
-    <link rel="icon" href="/assets/favicon.svg">
-    <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
 
   <!-- =====================
        STRUCTURED DATA
   ====================== -->
-    <script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
+      "@type": [
+        "CollectionPage",
+        "WebPage"
+      ],
       "@id": "https://johanajnabi.com/projects/#webpage",
       "url": "https://johanajnabi.com/projects/",
       "name": "Flagship Research Projects | Johan Ajnabi",
       "description": "Research portfolio pages highlighting flagship work in mechanobiology, spatial transcriptomics, and epidermal stemness.",
       "inLanguage": "en",
-      "dateModified": "2026-04-08"
+      "isPartOf": {
+        "@id": "https://johanajnabi.com/#website"
+      },
+      "creator": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "about": [
+        {
+          "@id": "https://johanajnabi.com/#johan"
+        },
+        "Skin mechanobiology",
+        "Spatial transcriptomics",
+        "Keratinocyte stemness"
+      ],
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://johanajnabi.com/assets/social/projects-og.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "@id": "https://johanajnabi.com/projects/#project-list",
+        "name": "Flagship research projects by Johan Ajnabi",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://johanajnabi.com/projects/dnmt3a-mechanotransduction/#project"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "https://johanajnabi.com/projects/vitiligo-spatial-transcriptomics/#project"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@id": "https://johanajnabi.com/projects/keratinocyte-stemness/#project"
+            }
+          }
+        ]
+      },
+      "dateModified": "2026-07-29"
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://johanajnabi.com/projects/dnmt3a-mechanotransduction/#project",
+      "name": "DNMT3A mechanotransduction during cutaneous wound repair",
+      "url": "https://johanajnabi.com/projects/dnmt3a-mechanotransduction/",
+      "description": "A research project on how wound-induced mechanical cues regulate DNMT3A localization and epigenetic control during epidermal repair.",
+      "creator": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "keywords": [
+        "DNMT3A",
+        "mechanotransduction",
+        "ERK1/2 signaling",
+        "actin cytoskeleton",
+        "cutaneous wound healing"
+      ],
+      "citation": {
+        "@id": "https://doi.org/10.64898/2026.01.15.699481"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://johanajnabi.com/projects/vitiligo-spatial-transcriptomics/#project",
+      "name": "Spatial transcriptomics of the immune landscape in vitiligo skin",
+      "url": "https://johanajnabi.com/projects/vitiligo-spatial-transcriptomics/",
+      "description": "A research project on how NB-UVB treatment reshapes immune cell states in vitiligo skin using spatial transcriptomic analysis.",
+      "creator": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "keywords": [
+        "vitiligo",
+        "spatial transcriptomics",
+        "NB-UVB",
+        "skin immunology",
+        "immune landscape"
+      ],
+      "citation": {
+        "@id": "https://doi.org/10.1002/cti2.70080"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://johanajnabi.com/projects/keratinocyte-stemness/#project",
+      "name": "Mindin-integrin-STAT3 signaling and keratinocyte stemness",
+      "url": "https://johanajnabi.com/projects/keratinocyte-stemness/",
+      "description": "A research project on Mindin-integrin endocytosis, STAT3 activation, and the maintenance of keratinocyte stemness.",
+      "creator": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "keywords": [
+        "keratinocyte stemness",
+        "Mindin",
+        "integrin signaling",
+        "STAT3",
+        "epidermal plasticity"
+      ],
+      "citation": {
+        "@id": "https://doi.org/10.1186/s12964-026-02970-5"
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -102,6 +200,7 @@
 
 </head>
 <body id="top" class="project-page">
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <!-- =====================
      SITE NAV
@@ -117,8 +216,9 @@
     <nav class="site-links" aria-label="Primary">
       <a href="/">Home</a>
       <a href="/academic/">Academic</a>
-      <a href="/projects/" class="active">Projects</a>
+      <a href="/projects/" class="active" aria-current="page">Projects</a>
       <a href="/beyond/">Beyond</a>
+      <a href="/contact/">Contact</a>
       <a href="/assets/JA_CV2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
     </nav>
   </div>
@@ -127,14 +227,15 @@
 <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
   <a href="/">Home</a>
   <a href="/academic/">Academic</a>
-  <a href="/projects/" class="active">Projects</a>
+  <a href="/projects/" class="active" aria-current="page">Projects</a>
   <a href="/beyond/">Beyond</a>
+  <a href="/contact/">Contact</a>
   <a href="/assets/JA_CV2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
 </nav>
 
 <div class="menu-overlay" id="menuOverlay"></div>
 
-<main class="shell shell--wide page-stack">
+<main id="main-content" tabindex="-1" class="shell shell--wide page-stack">
 
   <!-- =====================
        HERO
@@ -158,7 +259,7 @@
       <div class="actions">
         <a href="/academic/" class="btn btn--primary">Academic Profile</a>
         <a href="/academic/#publications" class="btn btn--secondary">Selected Publications</a>
-        <a href="/academic/#links" class="btn btn--secondary">Contact</a>
+      <a href="/contact/" class="btn btn--secondary">Contact</a>
       </div>
     </div>
 
@@ -224,7 +325,7 @@
         </p>
         <div class="card-links">
           <a href="/projects/keratinocyte-stemness/">Open project page</a>
-          <a href="https://doi.org/10.1101/2025.08.24.669246" target="_blank" rel="noopener noreferrer" class="secondary-link">Associated preprint</a>
+          <a href="https://doi.org/10.1186/s12964-026-02970-5" target="_blank" rel="noopener noreferrer" class="secondary-link">Associated article</a>
         </div>
       </article>
     </div>
@@ -292,7 +393,7 @@
        FOOTER
   ====================== -->
   <footer class="site-footer">
-    &copy; 2026 Johan Ajnabi &middot; Last updated April 8, 2026
+    &copy; 2026 Johan Ajnabi &middot; <a href="/contact/">Contact</a> &middot; Last updated July 29, 2026
   </footer>
 </main>
 
