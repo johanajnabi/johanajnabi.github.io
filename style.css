@@ -669,13 +669,24 @@ header[id] {
   transform: translateY(-1px);
 }
 
-.social-link svg,
 .hero-note,
 .home-signature {
   max-width: 42rem;
   margin: 1.3rem auto 0;
   color: var(--text-muted);
   font-size: 0.96rem;
+}
+
+.social-link svg,
+.contact-icon svg {
+  display: block;
+  width: 1.3rem;
+  height: 1.3rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .card-links {
