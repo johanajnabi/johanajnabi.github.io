@@ -677,16 +677,24 @@ header[id] {
   font-size: 0.96rem;
 }
 
-.social-link svg,
-.contact-icon svg {
-  display: block;
-  width: 1.3rem;
-  height: 1.3rem;
-  fill: none;
+.social-link svg {
+  width: 1.35rem;
+  height: 1.35rem;
   stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.8;
+}
+
+.contact-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
 }
 
 .card-links {
