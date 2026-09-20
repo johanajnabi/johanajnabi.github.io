@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       overlay.classList.remove("active");
       body.classList.remove("no-scroll");
       toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
     };
 
     const openMenu = () => {
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       overlay.classList.add("active");
       body.classList.add("no-scroll");
       toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close menu");
     };
 
     toggle.addEventListener("click", () => {
@@ -329,6 +331,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (lightbox && lightboxImg && lightboxCaption) {
     let currentIndex = 0;
+    let activeTrigger = null;
+
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-modal", "true");
+    lightbox.setAttribute("aria-label", "Image viewer");
 
     const collectItems = () => [...document.querySelectorAll(".lightbox-trigger")]
       .map((trigger) => ({
@@ -360,16 +367,20 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (!items.length) return;
 
       currentIndex = index;
+      activeTrigger = items[index]?.trigger || null;
       showImage(currentIndex);
       lightbox.classList.add("active");
       body.classList.add("no-scroll");
       lightbox.setAttribute("aria-hidden", "false");
+      lightboxClose?.focus();
     };
 
     const closeLightbox = () => {
       lightbox.classList.remove("active");
       body.classList.remove("no-scroll");
       lightbox.setAttribute("aria-hidden", "true");
+      activeTrigger?.focus();
+      activeTrigger = null;
     };
 
     const nextImage = () => {
@@ -430,6 +441,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.addEventListener("keydown", (event) => {
       if (!lightbox.classList.contains("active")) return;
+
+      if (event.key === "Tab") {
+        const focusable = [...lightbox.querySelectorAll("button:not([disabled])")];
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (!first || !last) return;
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
 
       if (event.key === "Escape") closeLightbox();
       if (event.key === "ArrowRight") nextImage();
