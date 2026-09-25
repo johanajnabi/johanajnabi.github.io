@@ -239,8 +239,8 @@ header[id] {
   gap: var(--space-4);
 }
 
-.grid--3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid > *,
