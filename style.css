@@ -2200,7 +2200,8 @@ html.js .reveal.is-visible {
     margin-top: 0;
   }
 
-  .grid--3 {
+  .grid--3,
+  .grid--4 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -2329,6 +2330,7 @@ html.js .reveal.is-visible {
 
   /* ---------- Grid -> Stack ---------- */
   .grid--3,
+  .grid--4,
   .split,
   .selected-publications,
   .recognition-grid {
