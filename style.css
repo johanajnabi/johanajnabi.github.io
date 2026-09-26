@@ -502,6 +502,12 @@ header[id] {
     linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(244, 248, 255, 0.96));
 }
 
+.hero-side {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
 .avatar {
   width: clamp(7.5rem, 18vw, 9.25rem);
   height: clamp(7.5rem, 18vw, 9.25rem);
@@ -513,24 +519,40 @@ header[id] {
 }
 
 .tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  margin: 1.2rem 0 0;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 0.55rem 0.8rem;
+  margin: 0;
 }
 
 .tag,
 .tag-list span {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem 0.9rem;
-  border-radius: 999px;
-  background: rgba(21, 87, 214, 0.08);
-  color: var(--text-main);
-  font-size: 0.86rem;
+  padding: 0.38rem 0.75rem 0.38rem 0.95rem;
+  background: #fff;
+  color: var(--text-muted);
+  font-size: 0.76rem;
   font-weight: 600;
+  line-height: 1.25;
+  border: 1px solid var(--border);
+  border-radius: 0 6px 6px 0;
 }
 
+.tag::before,
+.tag-list span::before {
+  content: "";
+  position: absolute;
+  left: -0.45rem;
+  top: 50%;
+  width: 0.85rem;
+  height: 0.85rem;
+  transform: translateY(-50%) rotate(45deg);
+  background: #fff;
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
 .status-badge {
   display: inline-flex;
   align-items: center;
