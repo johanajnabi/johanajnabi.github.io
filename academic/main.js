@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const enhancePublicationDetails = () => {
     publicationGroups.forEach(({ items }) => {
       items.forEach(({ element }, index) => {
-        const details = [...element.children].find((child) => child.tagName === "P");
+        const details = [...element.children].find((child) => child.classList.contains("pub-expanded"));
 
         if (!details || details.classList.contains("pub-details")) return;
 
@@ -49,17 +49,32 @@ document.addEventListener("DOMContentLoaded", () => {
         details.id = detailsId;
         details.style.display = "none";
 
+        const label = document.createElement("span");
+        const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        const iconPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+
+        label.className = "pub-toggle__label";
+        label.textContent = "Show details";
+
+        icon.setAttribute("class", "pub-toggle__icon");
+        icon.setAttribute("viewBox", "0 0 24 24");
+        icon.setAttribute("aria-hidden", "true");
+        icon.setAttribute("focusable", "false");
+        iconPath.setAttribute("d", "M6 9l6 6 6-6");
+        icon.appendChild(iconPath);
+
         toggle.type = "button";
         toggle.className = "pub-toggle";
-        toggle.textContent = "Show details";
         toggle.setAttribute("aria-controls", detailsId);
         toggle.setAttribute("aria-expanded", "false");
+        toggle.appendChild(label);
+        toggle.appendChild(icon);
 
         toggle.addEventListener("click", () => {
           const isOpen = details.style.display === "block";
 
           details.style.display = isOpen ? "none" : "block";
-          toggle.textContent = isOpen ? "Show details" : "Hide details";
+          label.textContent = isOpen ? "Show details" : "Hide details";
           toggle.setAttribute("aria-expanded", String(!isOpen));
         });
 

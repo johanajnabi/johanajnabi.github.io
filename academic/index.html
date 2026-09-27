@@ -228,7 +228,7 @@
         "@type": "ImageObject",
         "url": "https://johanajnabi.com/assets/profile.webp"
       },
-      "dateModified": "2026-09-15"
+      "dateModified": "2026-09-27"
     },
     {
       "@type": "BreadcrumbList",
@@ -646,7 +646,12 @@
       "endDate": "2023-09-29",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "eventStatus": "https://schema.org/EventCompleted",
-      "image": "https://johanajnabi.com/assets/MBIconference_participants.jpg",
+      "image": [
+        "https://johanajnabi.com/assets/johan_giving_flash_talk.webp",
+        "https://johanajnabi.com/assets/johan_presenting_poster.webp",
+        "https://johanajnabi.com/assets/johan_with_poster.webp",
+        "https://johanajnabi.com/assets/johan_with_other_awardees.webp"
+      ],
       "location": {
         "@type": "Place",
         "name": "National University of Singapore",
@@ -736,7 +741,6 @@
       "endDate": "2022-06-04",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "eventStatus": "https://schema.org/EventCompleted",
-      "image": "https://johanajnabi.com/assets/johan_presenting_poster.jpg",
       "location": {
         "@type": "Place",
         "name": "Hyderabad",
@@ -771,7 +775,6 @@
       "endDate": "2019-02-23",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "eventStatus": "https://schema.org/EventCompleted",
-      "image": "https://johanajnabi.com/assets/johan_presenting_poster.jpg",
       "location": {
         "@type": "Place",
         "name": "Delhi",
@@ -1077,7 +1080,12 @@
     <div class="toolkit-groups" aria-label="Technical toolkit">
       <article class="toolkit-group">
         <div class="toolkit-group__header">
-          <span class="toolkit-index">01</span>
+          <span class="toolkit-index">
+            <svg class="toolkit-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </span>
           <div>
             <h3>Imaging and biophysics</h3>
             <p>Dynamic readouts of localization, movement, and tissue architecture.</p>
@@ -1096,7 +1104,13 @@
 
       <article class="toolkit-group">
         <div class="toolkit-group__header">
-          <span class="toolkit-index">02</span>
+          <span class="toolkit-index">
+            <svg class="toolkit-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M9 3h6"></path>
+              <path d="M10 3v6.5L4.8 17.4A2 2 0 0 0 6.5 20.5h11a2 2 0 0 0 1.7-3.1L14 9.5V3"></path>
+              <path d="M7.5 15h9"></path>
+            </svg>
+          </span>
           <div>
             <h3>Cell and molecular biology</h3>
             <p>Experimental systems for perturbing signaling, chromatin, and epithelial states.</p>
@@ -1118,7 +1132,13 @@
 
       <article class="toolkit-group">
         <div class="toolkit-group__header">
-          <span class="toolkit-index">03</span>
+          <span class="toolkit-index">
+            <svg class="toolkit-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M4 20V10"></path>
+              <path d="M12 20V4"></path>
+              <path d="M20 20v-7"></path>
+            </svg>
+          </span>
           <div>
             <h3>Analysis and visualization</h3>
             <p>Quantitative interpretation, image analysis, and publication-ready data display.</p>
@@ -1130,6 +1150,7 @@
           <span>GraphPad Prism</span>
           <span>Bioinformatics interpretation</span>
           <span>Basic R and Python</span>
+          <span>Basic web development (HTML/CSS/JS)</span>
         </div>
       </article>
     </div>
@@ -1428,9 +1449,20 @@
           </em>
           <br>
           Cell Communication and Signaling, 2026
-          <p>
-            This study shows how Mindin promotes integrin endocytosis and endosomal activation of STAT3 to sustain keratinocyte stemness.
-          </p>
+          <div class="pub-expanded">
+            <p class="pub-details-heading">Abstract</p>
+            <p><strong>Background:</strong> Keratinocyte stem cells are essential for maintaining epidermal homeostasis and enabling efficient tissue repair. Regulation of their self-renewal and differentiation is critical, as its disruption can impair regeneration and drive pathological conditions such as chronic wounds and cancer. We previously identified the matricellular protein Mindin as a key regulator of keratinocyte stemness through its interaction with the &alpha;M&beta;2 (CD11b/CD18) integrin and subsequent activation of the transcription factor STAT3. However, the mechanism connecting Mindin and integrin at the cell surface to the intracellular activation of STAT3 remained undefined.</p>
+            <p><strong>Methods:</strong> We employ biochemical and imaging analysis along with molecular dynamics simulations to dissect Mindin&ndash;integrin&ndash;STAT3 signalling in primary mouse keratinocytes. Stemness of epidermal keratinocytes are assessed using bulk RNA sequencing, quantitative PCR, and cell-based assays.</p>
+            <p><strong>Results:</strong> Our work demonstrates that the F-Spondin domain of Mindin constitutes the minimal integrin-binding module required to initiate downstream signalling. F-Spondin binding to the integrin at the plasma membrane does not elicit the full activation state of the integrin. Instead, it promotes Src-kinase dependent endocytosis of the integrin receptor to the early endosomes. Analysis of integrin conformational dynamics reveals that the acidic environment of early endosomes is essential to achieve a signalling-competent state. This mechanism extends to pathological contexts, as we demonstrate a requirement for endocytosis in activating STAT3 signalling and preserving stem-like properties in a cancer stem cell model.</p>
+            <p><strong>Conclusions:</strong> These findings highlight a previously unrecognized layer of spatial control in integrin signalling, confirming endosomal trafficking as a critical determinant of stem cell behaviour and offering new conceptual and therapeutic opportunities across regenerative biology and cancer.</p>
+            <p class="pub-details-heading">My contribution</p>
+            <p>I performed the confocal imaging and its analysis, and carried out the western blotting for this study.</p>
+            <p class="pub-details-heading">Techniques</p>
+            <div class="pub-tags">
+              <span>Confocal imaging</span>
+              <span>Western blotting</span>
+            </div>
+          </div>
         </div>
         <div class="pub">
           <strong>Ajnabi, J.</strong>, Dam, B., Gupta, E., Saha, T., Dutta, A., Kumar, S., Gupta, A., Palakodeti, D., Jamora, C.
@@ -1443,9 +1475,19 @@
           </em>
           <br>
           bioRxiv (preprint), 2026
-          <p>
-            This study demonstrates how wound-induced mechanical cues regulate DNMT3a nucleocytoplasmic localization through actin remodeling and ERK1/2 signaling, revealing a mechanotransduction-driven epigenetic control mechanism during cutaneous wound healing.
-          </p>
+          <div class="pub-expanded">
+            <p class="pub-details-heading">Abstract</p>
+            <p>Cutaneous wound healing is a multifaceted physiological process that requires a cell state transition from homeostasis to tissue repair. An important contributor to this reprogramming is the wound-induced mechanical cues that are perceived by epidermal keratinocytes. Previously we identified that the nuclear translocation of the de novo DNA methyltransferase 3A (DNMT3a) upon wounding as an important regulator of this cell-state transition. However, the molecular mechanisms linking mechanotransduction to epigenetic regulation remain incompletely understood. Here we show that under homeostasis, active ERK1/2 phosphorylates DNMT3a, intramolecularly masking its nuclear localization signal (NLS), resulting in its cytoplasmic sequestration. Upon wounding, actin cytoskeleton remodeling leads to the downregulation of the Extracellular Signal-Related Kinase 1/2 (ERK1/2) pathway. Wound-induced ERK1/2 inactivation unmasks the NLS, enabling DNMT3a nuclear translocation. Collectively, these findings define a mechanotransduction-driven signaling axis linking cytoskeletal dynamics to epigenetic regulation and confirms an active role for differentiated keratinocytes in initiating early wound repair programs.</p>
+            <p class="pub-details-heading">My contribution</p>
+            <p>As first author, I led this study and performed all of the experimental work except the molecular dynamics simulations.</p>
+            <p class="pub-details-heading">Techniques</p>
+            <div class="pub-tags">
+              <span>Immunofluorescence</span>
+              <span>Confocal imaging</span>
+              <span>Western blotting</span>
+              <span>Mechanobiology assays</span>
+            </div>
+          </div>
         </div>
         <div class="pub">
           Dutta, A., Gupta, D., <strong>Ajnabi, J.</strong>, Dam, B., P, S., Jamora, C.
@@ -1457,9 +1499,22 @@
           </em>
           <br>
           Clinical &amp; Translational Immunology, 2026
-          <p>
-            This study employs spatial transcriptomic approaches to resolve immune cell states in vitiligo patient skin before and after narrowband UV-B therapy, revealing treatment-induced remodeling of the cutaneous immune landscape.
-          </p>
+          <div class="pub-expanded">
+            <p class="pub-details-heading">Abstract</p>
+            <p><strong>Objectives:</strong> Vitiligo is an autoimmune disorder characterised by the presence of depigmented lesions on the skin. The autoreactive cytotoxic T cells at the epidermal-dermal junction of the skin facilitate the targeted destruction of epidermal melanocytes, leading to the development of vitiligo lesions. Narrow-band UVB (NBUVB) phototherapy is a widely used non-invasive treatment that promotes transient repigmentation of lesions. However, the specific effects of NBUVB on skin dermal T cells in vitiligo patients remain largely unexplored. Insights into the mechanism of action of NBUVB phototherapy can guide therapies against cytotoxic T cells, enabling effective and sustained remission of vitiligo lesions.</p>
+            <p><strong>Methods:</strong> Indian patients with active vitiligo lesions underwent 3 months of NBUVB phototherapy, thereby leading to successful repigmentation of vitiligo lesions. Spatial transcriptomic and histological analyses were employed to investigate the gene expression profiles of dermal T cells at the epidermal-dermal junction, both before and after treatment.</p>
+            <p><strong>Results:</strong> Comprehensive spatial transcriptome analysis of skin dermal T cells revealed that NBUVB phototherapy leads to the overall suppression of inflammatory genes and immune regulatory pathways that are upregulated in vitiligo patients before treatment. Consequently, tissue-resident innate and adaptive immune cells significantly decrease post-UVB phototherapy. Interestingly, we observe an increase in na&iuml;ve CD4+ T cells post-UVB phototherapy.</p>
+            <p><strong>Conclusion:</strong> NBUVB phototherapy effectively suppresses the innate and adaptive immune cell populations and immune regulatory pathways while promoting an increase in na&iuml;ve CD4+ T cells. These findings underscore a previously unrecognised immunomodulatory role of NBUVB phototherapy in vitiligo patients.</p>
+            <p class="pub-details-heading">My contribution</p>
+            <p>I performed the immunofluorescence and confocal imaging, quantification and analysis, and the immunohistochemistry for this study.</p>
+            <p class="pub-details-heading">Techniques</p>
+            <div class="pub-tags">
+              <span>Immunofluorescence</span>
+              <span>Confocal imaging</span>
+              <span>Immunohistochemistry</span>
+              <span>Tissue-section analysis</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1475,9 +1530,12 @@
           </em>
           <br>
           Discover Plants, 2025
-          <p>
-            A comprehensive review of membrane lipid remodeling in plants under abiotic stress, highlighting lipid-mediated signaling mechanisms that contribute to stress tolerance.
-          </p>
+          <div class="pub-expanded">
+            <p class="pub-details-heading">Abstract</p>
+            <p>This review synthesizes how plants respond to abiotic stresses such as drought, heat and cold, high salinity, and heavy metal toxicity through changes in membrane lipid composition and organization. It surveys how fatty acid composition and the degree of unsaturation help maintain membrane integrity and fluidity under stress, describes the tools available to study these dynamics, and argues that a better understanding of these tolerance mechanisms can help researchers develop more stress-resilient crop varieties to support a sustainable food supply.</p>
+            <p class="pub-details-heading">My contribution</p>
+            <p>I contributed to the literature review and writing of this article.</p>
+          </div>
         </div>
       </div>
 
@@ -1493,9 +1551,18 @@
           </em>
           <br>
           Journal of Investigative Dermatology, 2023
-          <p>
-            This paper establishes Mindin as a critical regulator of dermal fibrogenesis, demonstrating its requirement for extracellular matrix remodeling in systemic sclerosis.
-          </p>
+          <div class="pub-expanded">
+            <p class="pub-details-heading">Abstract</p>
+            <p>Systemic sclerosis is a fibrotic disease that initiates in the skin and progresses to internal organs, leading to a poor prognosis. Unraveling the etiology of a chronic, multifactorial disease such as systemic sclerosis has been aided by various animal models that recapitulate certain aspects of the human pathology. We found that the transcription factor SNAI1 is overexpressed in the epidermis of patients with systemic sclerosis, and a transgenic mouse recapitulating this expression pattern is sufficient to induce many clinical features of the human disease. Using this mouse model as a discovery platform, we have uncovered a critical role for the matricellular protein Mindin (SPON2) in fibrogenesis. Mindin is produced by SNAI1 transgenic skin keratinocytes and aids fibrogenesis by inducing early inflammatory cytokine production and collagen secretion in resident dermal fibroblasts. Given the dispensability of Mindin in normal tissue physiology, targeting this protein holds promise as an effective therapy for fibrosis.</p>
+            <p class="pub-details-heading">My contribution</p>
+            <p>I performed the western blotting and its analysis, and handled mouse colony management and genotyping for this study.</p>
+            <p class="pub-details-heading">Techniques</p>
+            <div class="pub-tags">
+              <span>Western blotting</span>
+              <span>Mouse models</span>
+              <span>Mouse genotyping</span>
+            </div>
+          </div>
         </div>
         <div class="pub">
           Bhatt, T., Dam, B., Khedkar, S. U., Lall, S., Pandey, S., Kataria, S., <strong>Ajnabi, J.</strong>, Gulzar, S.-E.-J., Dias, P. M., Waskar, M., et al.
@@ -1507,9 +1574,18 @@
           </em>
           <br>
           Frontiers in Immunology, 2023
-          <p>
-            This study shows that niacinamide potentiates cathelicidin-mediated antiviral activity by enhancing membrane disruption of SARS-CoV-2, providing mechanistic insight into host defense enhancement.
-          </p>
+          <div class="pub-expanded">
+            <p class="pub-details-heading">Abstract</p>
+            <p>The continual emergence of SARS-CoV-2 variants threatens to compromise the effectiveness of worldwide vaccination programs, and highlights the need for complementary strategies for a sustainable containment plan. An effective approach is to mobilize the body's own antimicrobial peptides (AMPs), to combat SARS-CoV-2 infection and propagation. We have found that human cathelicidin (LL37), an AMP found at epithelial barriers as well as in various bodily fluids, has the capacity to neutralise multiple strains of SARS-CoV-2. Biophysical and computational studies indicate that LL37's mechanism of action is through the disruption of the viral membrane. This antiviral activity of LL37 is enhanced by the hydrotropic action of niacinamide, which may increase the bioavailability of the AMP. Interestingly, we observed an inverse correlation between LL37 levels and disease severity of COVID-19 positive patients, suggesting enhancement of AMP response as a potential therapeutic avenue to mitigate disease severity. The combination of niacinamide and LL37 is a potent antiviral formulation that targets viral membranes of various variants and can be an effective strategy to overcome vaccine escape.</p>
+            <p class="pub-details-heading">My contribution</p>
+            <p>I generated pseudovirus, performed lentiviral transfection and transduction, flow cytometry, and cell culture for this study.</p>
+            <p class="pub-details-heading">Techniques</p>
+            <div class="pub-tags">
+              <span>Flow cytometry</span>
+              <span>Pseudovirus/lentiviral production</span>
+              <span>Cell culture</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1525,9 +1601,17 @@
           </em>
           <br>
           Cell Reports, 2022
-          <p>
-            This study identifies an autocrine Snail&ndash;Mindin signaling loop that sustains epithelial stemness in both normal skin and carcinoma contexts.
-          </p>
+          <div class="pub-expanded">
+            <p class="pub-details-heading">Abstract</p>
+            <p>Preservation of a small population of cancer stem cells (CSCs) within a heterogeneous carcinoma serves as a paradigm to understand how select cells in a tissue maintain their undifferentiated status. In both embryogenesis and cancer, Snail has been correlated with stemness, but the molecular underpinning of this phenomenon remains largely ill-defined. In models of cutaneous squamous cell carcinoma (cSCC), we discovered a non-epithelial-mesenchymal transition function for the transcription factor Snail in maintaining the stemness of epidermal keratinocytes. Snail-expressing cells secrete the matricellular protein Mindin, which functions in an autocrine fashion to activate a Src-STAT3 pathway to reinforce their stem/progenitor phenotype. This pathway is activated by the engagement of Mindin with the leukocyte-specific integrin, CD11b (ITGAM), which is also unexpectedly expressed by epidermal keratinocytes. Interestingly, disruption of this signaling module in human cSCC attenuates tumorigenesis, suggesting that targeting Mindin would be a promising therapeutic approach to hinder cancer recurrence.</p>
+            <p class="pub-details-heading">My contribution</p>
+            <p>I performed the western blotting, qPCR, and their analysis for this study.</p>
+            <p class="pub-details-heading">Techniques</p>
+            <div class="pub-tags">
+              <span>Western blotting</span>
+              <span>qPCR validation</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1543,9 +1627,18 @@
           </em>
           <br>
           MSc Thesis, ICAR &ndash; Indian Agricultural Research Institute, 2019
-          <p>
-            Master's thesis identifying cis-regulatory elements controlling PM19 gene expression in wheat, contributing to understanding of stress-responsive transcriptional regulation in plants.
-          </p>
+          <div class="pub-expanded">
+            <p class="pub-details-heading">Abstract</p>
+            <p>PM19 is an ABA-induced plasma membrane protein involved in seed dormancy, embryo development, and influx of ABA in plants. Preliminary studies on the PM19 gene from wheat in our lab showed that it is an early drought-responsive gene with significantly higher expression in roots under drought stress. A ~2.5 kb promoter of the PM19 gene was cloned from wheat genotype Raj3765. In this study, to identify the cis-regulatory regions regulating PM19 expression, four promoter deletion fragments (PM19p1 [-1481], PM19p2 [-672], PM19p3 [-301], and PM19p4 [PM19p3 with a 66 bp 5' UTR]) were fused to a GUS reporter gene. The response of these promoter fragments to hormones (ABA, IAA) and osmotic stress (15% PEG) was analysed at two time points (2 h and 16 h) via transient expression in N. benthamiana leaves. PM19p1 and PM19p2 showed GUS activity after 2 h of treatment, which increased significantly by 16 h; PM19p3 and PM19p4 showed very low activity at 2 h with only moderate staining by 16 h, and significantly lower activity overall than PM19p1 and PM19p2. This suggested that the region between -302 and -1481 bp is responsible for the gene's higher and earlier expression, with the -301 bp region upstream of the 5' UTR likely representing the minimal promoter. Further functional characterization would clarify the role of these cis-regulatory regions in the spatio-temporal and abiotic-stress-mediated regulation of PM19 in wheat.</p>
+            <p class="pub-details-heading">My contribution</p>
+            <p>Sole author of this thesis; I carried out all of the plant molecular biology work, including cloning and plant transformation.</p>
+            <p class="pub-details-heading">Techniques</p>
+            <div class="pub-tags">
+              <span>Molecular cloning</span>
+              <span>Plant transformation</span>
+              <span>GUS reporter assays</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1706,7 +1799,7 @@
        FOOTER
   ====================== -->
   <footer class="site-footer">
-    &copy; 2026 Johan Ajnabi &middot; <a href="/contact/">Contact</a> &middot; Last updated September 25, 2026
+    &copy; 2026 Johan Ajnabi &middot; <a href="/contact/">Contact</a> &middot; Last updated September 27, 2026
   </footer>
 
 </main>
