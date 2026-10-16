@@ -43,7 +43,7 @@ https://creativecommons.org/licenses/by-nc-nd/4.0/
 The site reproduces the figure without modification for non-commercial academic
 portfolio use. The project page carries the same attribution and licence link.
 
-The vitiligo project page references the canonical Wiley-hosted graphical abstract from:
+`cti270080-toc-0001-m.jpg` is an unmodified local copy of the graphical abstract from:
 
 Dutta, A., Gupta, D., Ajnabi, J., et al. "Spatial transcriptomic analysis of the
 immune landscape following NB-UVB treatment of vitiligo skin." *Clinical &amp;
@@ -57,6 +57,18 @@ Copyright 2026 The Author(s). The article is licensed under the Creative Commons
 Attribution-NonCommercial-NoDerivatives 4.0 International License:
 https://creativecommons.org/licenses/by-nc-nd/4.0/
 
-The page displays the publisher-hosted figure without modification for non-commercial
-academic portfolio use. The vitiligo project page carries the same attribution and licence
-link; the image is not stored in this directory.
+The site reproduces the figure without modification for non-commercial academic
+portfolio use. The vitiligo project page carries the same attribution and licence link.
+
+`ajnabi-et-al-2026-model.jpg` is original work, not a third-party reproduction. It is the
+working-model schematic from my own first-author preprint:
+
+Ajnabi, J., Dam, B., Gupta, E., Saha, T., et al. "Actin-dependent mechanotransduction
+controls nucleocytoplasmic partitioning of DNMT3a through ERK1/2 signaling during
+cutaneous wound healing." *bioRxiv* (2026, preprint).
+https://doi.org/10.64898/2026.01.15.699481
+
+As an author of the preprint, no third-party licence applies; the DNMT3A project page
+credits it as "from my first-author preprint" and links to the DOI rather than citing a
+Creative Commons licence (unlike the three reproductions above, which are each other
+researchers' published figures).
