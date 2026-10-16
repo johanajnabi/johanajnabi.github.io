@@ -1,5 +1,9 @@
 /* =========================
-   ACADEMIC PAGE JS
+   PUBLICATION RECORD JS
+   Enhances the full publication record ("#publications" or
+   "#publication-record") with detail toggles plus filter/sort
+   controls. Loaded on the Publications page; kept at this path
+   since it originated as the Academic page's publications script.
 ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
