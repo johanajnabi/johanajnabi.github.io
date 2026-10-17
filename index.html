@@ -74,6 +74,18 @@
       "url": "https://www.iari.res.in/"
     },
     {
+      "@type": "CollegeOrUniversity",
+      "@id": "https://johanajnabi.com/#bckv",
+      "name": "Bidhan Chandra Krishi Viswavidyalaya",
+      "url": "https://www.bckv.edu.in/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mohanpur",
+        "addressRegion": "West Bengal",
+        "addressCountry": "India"
+      }
+    },
+    {
       "@type": "BreadcrumbList",
       "itemListElement": [
         {
@@ -92,11 +104,21 @@
       "familyName": "Ajnabi",
       "alternateName": "J. Ajnabi",
       "email": "mailto:contact@johanajnabi.com",
+      "nationality": {
+        "@type": "Country",
+        "name": "India"
+      },
       "description": "PhD candidate in mechanobiology and epigenetic regulation studying wound healing and translational skin regeneration at inStem, India.",
-      "worksFor": { "@id": "https://johanajnabi.com/#instem" },
       "affiliation": { "@id": "https://johanajnabi.com/#instem" },
-      "memberOf": { "@id": "https://johanajnabi.com/#instem" },
-      "alumniOf": { "@id": "https://johanajnabi.com/#iari" },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "PhD",
+        "recognizedBy": { "@id": "https://johanajnabi.com/#instem" }
+      },
+      "alumniOf": [
+        { "@id": "https://johanajnabi.com/#iari" },
+        { "@id": "https://johanajnabi.com/#bckv" }
+      ],
       "contactPoint": {
         "@id": "https://johanajnabi.com/contact/#professional-contact"
       },
@@ -122,10 +144,13 @@
       },
       "award": [
         "Paeonia Travel Award, MBI Conference 2023",
-        "ICMR Junior Research Fellowship in Life Sciences, 2019",
-        "DBT-BCIL Junior Research Fellowship in Biotechnology, 2019",
-        "GATE-XL Life Sciences, All India Rank 8, 2019",
-        "AIEEA-PG Scholarship for Plant Biotechnology, All India Rank 1, 2017"
+        "ICMR Junior Research Fellowship in Life Sciences, Indian Council of Medical Research, India, 2019",
+        "DBT-BCIL Junior Research Fellowship in Biotechnology, Department of Biotechnology, Government of India, through BCIL, 2019",
+        "CSIR-NET Junior Research Fellowship in Life Sciences, Council of Scientific and Industrial Research, India, All India Rank 20, 2019",
+        "ASRB-NET in Agricultural Biotechnology, Agricultural Scientists Recruitment Board, India, 2020",
+        "GATE XL Life Sciences, Graduate Aptitude Test in Engineering, administered nationally by IITs/IISc, All India Rank 8, 2019",
+        "ICAR AICE-JRF/SRF Agricultural Biotechnology, Indian Council of Agricultural Research, India, All India Rank 3, 2019",
+        "ICAR AIEEA-PG Plant Biotechnology, Indian Council of Agricultural Research, India, All India Rank 1, 2017"
       ],
       "sameAs": [
         "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
@@ -151,10 +176,6 @@
       ],
       "subjectOf": [
         {
-          "@type": "WebPage",
-          "@id": "https://johanajnabi.com/academic/#webpage"
-        },
-        {
           "@id": "https://doi.org/10.64898/2026.01.15.699481"
         },
         {
@@ -171,6 +192,21 @@
         },
         {
           "@id": "https://johanajnabi.com/projects/keratinocyte-stemness/#project"
+        },
+        {
+          "@id": "https://link.springer.com/article/10.1007/s44372-025-00152-0"
+        },
+        {
+          "@id": "https://doi.org/10.3389/fimmu.2023.1255478"
+        },
+        {
+          "@id": "https://doi.org/10.1016/j.jid.2022.10.011"
+        },
+        {
+          "@id": "https://doi.org/10.1016/j.celrep.2022.111390"
+        },
+        {
+          "@id": "https://krishikosh.egranth.ac.in/handle/1/5810146216"
         }
       ]
     },
