@@ -12,6 +12,51 @@ document.addEventListener("DOMContentLoaded", async () => {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* =========================
+     THEME TOGGLE
+  ========================= */
+
+  const themeToggle = document.querySelector(".theme-toggle");
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+  const prefersDarkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+  const getEffectiveTheme = () => {
+    const stored = document.documentElement.getAttribute("data-theme");
+    if (stored === "dark" || stored === "light") return stored;
+    return prefersDarkQuery.matches ? "dark" : "light";
+  };
+
+  const syncThemeColor = () => {
+    if (!themeColorMeta) return;
+    themeColorMeta.setAttribute(
+      "content",
+      getEffectiveTheme() === "dark" ? "#0b1120" : "#ffffff"
+    );
+  };
+
+  syncThemeColor();
+  prefersDarkQuery.addEventListener("change", syncThemeColor);
+
+  if (themeToggle) {
+    themeToggle.setAttribute(
+      "aria-label",
+      getEffectiveTheme() === "dark" ? "Switch to light mode" : "Switch to dark mode"
+    );
+
+    themeToggle.addEventListener("click", () => {
+      const next = getEffectiveTheme() === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try {
+        localStorage.setItem("theme", next);
+      } catch (e) {}
+      syncThemeColor();
+      themeToggle.setAttribute(
+        "aria-label",
+        next === "dark" ? "Switch to light mode" : "Switch to dark mode"
+      );
+    });
+  }
+
+  /* =========================
      NAV + MOBILE MENU
   ========================= */
 
