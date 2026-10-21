@@ -904,9 +904,13 @@ header[id] {
 
 .publication-source__logo {
   display: block;
+  box-sizing: border-box;
   width: var(--source-logo-width);
   max-width: 100%;
   max-height: 1rem;
+  padding: 0.12rem 0.22rem;
+  border-radius: 0.3rem;
+  background: #fff;
   object-fit: contain;
 }
 
@@ -932,6 +936,22 @@ header[id] {
 
 .publication-source--cell-reports {
   --source-logo-width: 3.25rem;
+}
+
+.publication-source--discover {
+  --source-logo-width: 3rem;
+}
+
+.publication-source--jid {
+  --source-logo-width: 3.1rem;
+}
+
+.publication-source--frontiers {
+  --source-logo-width: 2.3rem;
+}
+
+.publication-source--frontiers .publication-source__logo {
+  max-height: 1.9rem;
 }
 
 .research-pillar-card .card-links,
@@ -1448,6 +1468,15 @@ header[id] {
   margin-left: 0.45rem;
   color: var(--text-subtle);
   font-size: 0.86rem;
+}
+
+.pub-venue-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.15rem;
+  color: var(--text-muted);
 }
 
 .pub-toggle {
