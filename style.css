@@ -26,8 +26,8 @@
   --space-7: 3.5rem;
   --nav-height: 74px;
   --shell-gutter: 2.25rem;
-  --shell-max: 1200px;
-  --shell-wide-max: 1280px;
+  --shell-max: 1080px;
+  --shell-wide-max: 1200px;
   --transition-fast: 0.18s ease;
   --transition-base: 0.2s ease;
 }
