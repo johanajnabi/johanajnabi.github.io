@@ -885,7 +885,6 @@ header[id] {
 }
 
 .publication-source {
-  --source-logo-width: 3rem;
   display: inline-flex;
   align-items: center;
   flex: 0 0 auto;
@@ -905,9 +904,9 @@ header[id] {
 .publication-source__logo {
   display: block;
   box-sizing: border-box;
-  width: var(--source-logo-width);
-  max-width: 100%;
-  max-height: 1rem;
+  height: 1rem;
+  width: auto;
+  max-width: 5.5rem;
   padding: 0.12rem 0.22rem;
   border-radius: 0.3rem;
   background: #fff;
@@ -922,37 +921,12 @@ header[id] {
   font-weight: 800;
 }
 
-.publication-source--biorxiv {
-  --source-logo-width: 2.85rem;
-}
 
-.publication-source--cti {
-  --source-logo-width: 2.15rem;
-}
 
-.publication-source--ccs {
-  --source-logo-width: 3.1rem;
-}
 
-.publication-source--cell-reports {
-  --source-logo-width: 3.25rem;
-}
 
-.publication-source--discover {
-  --source-logo-width: 3rem;
-}
 
-.publication-source--jid {
-  --source-logo-width: 3.1rem;
-}
 
-.publication-source--frontiers {
-  --source-logo-width: 2.3rem;
-}
-
-.publication-source--frontiers .publication-source__logo {
-  max-height: 1.9rem;
-}
 
 .research-pillar-card .card-links,
 .selected-publication-card .card-links {
