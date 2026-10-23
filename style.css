@@ -1242,16 +1242,15 @@ header[id] {
   margin-top: 2rem;
 }
 
-.timeline {
-  border-top: 1px solid var(--border);
-}
-
 .timeline-entry {
   display: grid;
   grid-template-columns: 9.5rem minmax(0, 1fr);
   gap: clamp(1rem, 2.5vw, 1.8rem);
   padding: 1.25rem 0;
-  border-bottom: 1px solid var(--border);
+}
+
+.timeline-entry + .timeline-entry {
+  border-top: 1px solid var(--border);
 }
 
 .timeline-date {
