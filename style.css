@@ -870,31 +870,79 @@ header[id] {
   align-items: stretch;
 }
 
-.stat-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin: 1.1rem 0 0;
-}
-
-.stat-chip {
-  display: inline-flex;
+/* Academic page hero: no card; text on the left, confocal image on the right. */
+.academic-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.5rem 0.85rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: rgba(var(--surface-rgb), 0.82);
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  font-weight: 600;
-  line-height: 1.2;
+  margin-bottom: var(--space-7);
+  padding-block: clamp(0.5rem, 2.5vw, 2rem);
 }
 
-.stat-chip strong {
-  color: var(--accent);
-  font-size: 0.95rem;
-  font-weight: 800;
+.academic-hero__text {
+  display: grid;
+  justify-items: start;
+  min-width: 0;
+}
+
+.academic-hero .status-badge {
+  margin-bottom: 1.2rem;
+}
+
+.academic-hero h1 {
+  margin-bottom: 0.9rem;
+}
+
+.academic-hero__question {
+  margin: 0 0 1rem;
+  max-width: 34ch;
+  color: var(--text-main);
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.academic-hero__lead {
+  margin: 0 0 1.6rem;
+  max-width: 36rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.academic-hero__figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.academic-hero__figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hero);
+}
+
+.academic-hero__figure figcaption {
+  margin-top: 0.65rem;
+  color: var(--text-subtle);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 980px) {
+  .academic-hero {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .academic-hero__figure img {
+    aspect-ratio: 16 / 10;
+  }
 }
 
 .pillar-icon {
