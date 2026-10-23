@@ -2201,6 +2201,41 @@ body.beyond-page {
   line-height: 1.45;
 }
 
+/* Talk photos (media grids): caption sits on the photo as a frosted-glass
+   strip, shown only on hover / keyboard focus. On touch devices the caption
+   is still reachable: tapping a photo opens the lightbox, which shows it. */
+.media-grid .media-card {
+  position: relative;
+}
+
+.media-grid .media-card__caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0.6rem 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(10, 14, 22, 0.42);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  backdrop-filter: blur(10px) saturate(140%);
+  color: #ffffff;
+  font-size: 0.84rem;
+  line-height: 1.35;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(0.4rem);
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.media-grid .media-card:hover .media-card__caption,
+.media-grid .media-card:focus-visible .media-card__caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .capture-detail {
   display: block;
   padding: 0 1rem 1rem;
