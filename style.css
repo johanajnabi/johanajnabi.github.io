@@ -241,6 +241,10 @@ header[id] {
   gap: var(--space-4);
 }
 
+.grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .grid--3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -785,11 +789,9 @@ header[id] {
 }
 
 .hero-note,
-.home-signature {
-  max-width: 42rem;
-  margin: 1.3rem auto 0;
-  color: var(--text-muted);
-  font-size: 0.96rem;
+/* "See all" button under a section's highlight cards. */
+.actions.section-more {
+  margin-top: 1.5rem;
 }
 
 .social-link svg {
@@ -2575,7 +2577,8 @@ body.beyond-page {
 }
 
 @media (max-width: 720px) {
-  .contact-list {
+  .contact-list,
+  .grid--2 {
     grid-template-columns: 1fr;
   }
 }
