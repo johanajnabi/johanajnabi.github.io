@@ -1171,8 +1171,6 @@ header[id] {
 .training-group {
   scroll-margin-top: calc(var(--nav-height) + 1.5rem);
   margin-top: 2.2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
 }
 
 .training-group__heading {
