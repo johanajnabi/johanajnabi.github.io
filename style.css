@@ -1088,23 +1088,22 @@ header[id] {
    9. ACADEMIC COMPONENTS
 ========================= */
 
+/* Toolkit: spec-sheet rows (no cards). Group header on the left,
+   techniques as a dot-separated line on the right, a divider between rows. */
 .toolkit-groups {
   display: grid;
-  gap: 0.9rem;
 }
 
 .toolkit-group {
   display: grid;
-  grid-template-columns: minmax(16rem, 0.9fr) minmax(0, 1.4fr);
+  grid-template-columns: minmax(15rem, 0.8fr) minmax(0, 1.5fr);
   gap: clamp(1rem, 3vw, 1.7rem);
-  align-items: center;
-  padding: 1.1rem 1.2rem 1.1rem 1.35rem;
-  border: 1px solid var(--border);
-  border-left: 5px solid var(--accent);
-  border-radius: var(--radius-lg);
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(244, 248, 255, 0.9));
-  box-shadow: var(--shadow-card);
+  align-items: start;
+  padding: 1.35rem 0;
+}
+
+.toolkit-group + .toolkit-group {
+  border-top: 1px solid var(--border);
 }
 
 .toolkit-group__header {
@@ -1149,23 +1148,22 @@ header[id] {
 }
 
 .toolkit-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
+  padding-top: 0.15rem;
+  line-height: 1.9;
 }
 
 .toolkit-grid span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.55rem;
-  padding: 0.58rem 0.85rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: rgba(var(--surface-rgb), 0.78);
   color: var(--text-main);
-  font-size: 0.9rem;
-  font-weight: 700;
-  box-shadow: 0 10px 22px rgba(16, 23, 38, 0.04);
+  font-size: 0.97rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.toolkit-grid span:not(:last-child)::after {
+  content: "\00B7";
+  margin: 0 0.5rem 0 0.55rem;
+  color: var(--accent);
+  font-weight: 800;
 }
 
 .training-group {
@@ -2587,6 +2585,7 @@ html.js .reveal.is-visible {
 
   .toolkit-group {
     grid-template-columns: 1fr;
+    gap: 0.8rem;
   }
 
   .project-figure__comparison {
@@ -2907,11 +2906,6 @@ html.js .reveal.is-visible {
       linear-gradient(180deg, rgba(27, 37, 61, 0.96), rgba(17, 24, 41, 0.92));
   }
 
-  .toolkit-group {
-    background:
-      linear-gradient(135deg, rgba(27, 37, 61, 0.95), rgba(17, 24, 41, 0.88));
-  }
-
   .recognition-card--community {
     background:
       linear-gradient(135deg, rgba(110, 168, 255, 0.1), rgba(19, 27, 46, 0.94));
@@ -3185,16 +3179,6 @@ html.js .reveal.is-visible {
   background:
     radial-gradient(circle at top right, rgba(21, 87, 214, 0.12), transparent 30%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(244, 248, 255, 0.96));
-}
-
-[data-theme="dark"] .toolkit-group {
-  background:
-    linear-gradient(135deg, rgba(27, 37, 61, 0.95), rgba(17, 24, 41, 0.88));
-}
-
-[data-theme="light"] .toolkit-group {
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(244, 248, 255, 0.9));
 }
 
 [data-theme="dark"] .recognition-card--community {
