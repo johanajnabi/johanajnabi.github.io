@@ -1254,6 +1254,34 @@ header[id] {
   border-bottom: 1px solid var(--border);
 }
 
+.career-timeline--selected .career-record {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.career-timeline--selected .career-record:first-child {
+  padding-top: 0;
+}
+
+.career-timeline--selected .career-record:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.career-timeline--selected .career-entry {
+  padding: 0;
+  border-bottom: none;
+  margin-bottom: 1rem;
+}
+
+.career-timeline--selected .career-content p + p {
+  margin-top: 0.3rem;
+}
+
+.career-timeline--selected .media-grid {
+  margin: 0 0 0.9rem;
+}
+
 .career-date {
   display: grid;
   align-content: start;
