@@ -1215,7 +1215,7 @@ header[id] {
 }
 
 .education-entry h4,
-.career-content h4 {
+.timeline-content h4 {
   margin: 0;
   color: var(--text-main);
   font-size: 1rem;
@@ -1242,11 +1242,11 @@ header[id] {
   margin-top: 2rem;
 }
 
-.career-timeline {
+.timeline {
   border-top: 1px solid var(--border);
 }
 
-.career-entry {
+.timeline-entry {
   display: grid;
   grid-template-columns: 9.5rem minmax(0, 1fr);
   gap: clamp(1rem, 2.5vw, 1.8rem);
@@ -1254,35 +1254,7 @@ header[id] {
   border-bottom: 1px solid var(--border);
 }
 
-.career-timeline--selected .career-record {
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.career-timeline--selected .career-record:first-child {
-  padding-top: 0;
-}
-
-.career-timeline--selected .career-record:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.career-timeline--selected .career-entry {
-  padding: 0;
-  border-bottom: none;
-  margin-bottom: 1rem;
-}
-
-.career-timeline--selected .career-content p + p {
-  margin-top: 0.3rem;
-}
-
-.career-timeline--selected .media-grid {
-  margin: 0 0 0.9rem;
-}
-
-.career-date {
+.timeline-date {
   display: grid;
   align-content: start;
   gap: 0.22rem;
@@ -1294,24 +1266,24 @@ header[id] {
   line-height: 1.4;
 }
 
-.career-date span {
+.timeline-date span {
   color: var(--text-subtle);
   font-size: 0.78rem;
   font-weight: 600;
 }
 
-.career-content {
+.timeline-content {
   min-width: 0;
 }
 
-.career-heading {
+.timeline-heading {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
 }
 
-.career-institution {
+.timeline-institution {
   margin: 0.2rem 0 0;
   color: var(--text-muted);
   font-size: 0.92rem;
@@ -1319,15 +1291,15 @@ header[id] {
   line-height: 1.5;
 }
 
-.career-meta,
-.career-supervisor {
+.timeline-meta,
+.timeline-supervisor {
   margin: 0.3rem 0 0;
   color: var(--text-subtle);
   font-size: 0.84rem;
   line-height: 1.5;
 }
 
-.career-summary {
+.timeline-summary {
   margin: 0.7rem 0 0;
   color: var(--text-muted);
   line-height: 1.6;
@@ -1354,7 +1326,7 @@ header[id] {
 }
 
 .research-output-list a,
-.career-supervisor a {
+.timeline-supervisor a {
   font-weight: 700;
 }
 
@@ -2766,18 +2738,18 @@ html.js .reveal.is-visible {
   }
 
   .training-group__heading,
-  .career-heading {
+  .timeline-heading {
     align-items: flex-start;
     flex-direction: column;
     gap: 0.25rem;
   }
 
-  .career-entry {
+  .timeline-entry {
     grid-template-columns: 1fr;
     gap: 0.7rem;
   }
 
-  .career-date {
+  .timeline-date {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
@@ -2785,7 +2757,7 @@ html.js .reveal.is-visible {
     padding-left: 0.6rem;
   }
 
-  .career-date span {
+  .timeline-date span {
     font-size: 0.84rem;
   }
 
