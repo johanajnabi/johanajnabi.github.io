@@ -2905,6 +2905,10 @@ html.js .reveal.is-visible {
     grid-template-columns: 1fr;
   }
 
+  .toolkit-grid span {
+    white-space: normal;
+  }
+
   .toolkit-group {
     grid-template-columns: 1fr;
     gap: 0.8rem;
@@ -3068,6 +3072,10 @@ html.js .reveal.is-visible {
   .actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .page-hero__text .actions {
+    justify-self: stretch;
   }
 
   .btn {
