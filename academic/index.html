@@ -69,76 +69,34 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ResearchOrganization",
-      "@id": "https://johanajnabi.com/#instem",
-      "name": "BRIC-Institute for Stem Cell Science and Regenerative Medicine (inStem)",
-      "url": "https://instem.res.in/",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bengaluru",
-        "addressCountry": "India"
-      }
-    },
-    {
-      "@type": "ResearchOrganization",
-      "@id": "https://johanajnabi.com/#iari",
-      "name": "ICAR - Indian Agricultural Research Institute",
-      "url": "https://www.iari.res.in/"
-    },
-    {
-      "@type": "CollegeOrUniversity",
-      "@id": "https://johanajnabi.com/#bckv",
-      "name": "Bidhan Chandra Krishi Viswavidyalaya",
-      "url": "https://www.bckv.edu.in/",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Mohanpur",
-        "addressRegion": "West Bengal",
-        "addressCountry": "India"
-      }
-    },
-    {
       "@type": "Person",
       "@id": "https://johanajnabi.com/#johan",
       "name": "Johan Ajnabi",
       "givenName": "Johan",
       "familyName": "Ajnabi",
-      "alternateName": "J. Ajnabi",
-      "nationality": {
-        "@type": "Country",
-        "name": "India"
-      },
+      "alternateName": [
+        "J. Ajnabi",
+        "Ajnabi J"
+      ],
       "url": "https://johanajnabi.com/",
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://johanajnabi.com/assets/profile.webp"
-      },
       "email": "mailto:contact@johanajnabi.com",
-      "contactPoint": {
-        "@id": "https://johanajnabi.com/contact/#professional-contact"
+      "image": {
+        "@id": "https://johanajnabi.com/#portrait"
       },
+      "description": "PhD candidate in the Jamora laboratory at BRIC-inStem studying how injured skin turns mechanical force into gene regulation, with a focus on DNMT3A-driven epigenetic programs during epidermal wound repair.",
       "jobTitle": "PhD Candidate",
       "hasOccupation": {
         "@type": "Occupation",
         "name": "Biomedical Researcher"
       },
-      "hasCredential": {
-        "@type": "EducationalOccupationalCredential",
-        "credentialCategory": "PhD",
-        "recognizedBy": {
+      "affiliation": [
+        {
           "@id": "https://johanajnabi.com/#instem"
+        },
+        {
+          "@id": "https://johanajnabi.com/#shiv-nadar"
         }
-      },
-      "description": "PhD candidate in mechanobiology and epigenetic regulation studying wound healing and translational skin regeneration at inStem, India.",
-      "identifier": {
-        "@type": "PropertyValue",
-        "propertyID": "ORCID",
-        "value": "0000-0002-9437-9300",
-        "url": "https://orcid.org/0000-0002-9437-9300"
-      },
-      "affiliation": {
-        "@id": "https://johanajnabi.com/#instem"
-      },
+      ],
       "alumniOf": [
         {
           "@id": "https://johanajnabi.com/#iari"
@@ -147,86 +105,149 @@
           "@id": "https://johanajnabi.com/#bckv"
         }
       ],
-      "mainEntityOfPage": {
-        "@id": "https://johanajnabi.com/academic/#webpage"
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "M.Sc. in Molecular Biology and Biotechnology",
+          "credentialCategory": "degree",
+          "educationalLevel": "Master's degree",
+          "dateCreated": "2019",
+          "recognizedBy": {
+            "@id": "https://johanajnabi.com/#iari"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "B.Sc. (Hons.) in Agriculture",
+          "credentialCategory": "degree",
+          "educationalLevel": "Bachelor's degree",
+          "dateCreated": "2017",
+          "recognizedBy": {
+            "@id": "https://johanajnabi.com/#bckv"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "ASRB-NET, Agricultural Biotechnology (Lectureship)",
+          "credentialCategory": "certification",
+          "dateCreated": "2020",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Agricultural Scientists Recruitment Board (ASRB)"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Joint CSIR-UGC NET, Life Sciences (All India Rank 20)",
+          "credentialCategory": "certification",
+          "dateCreated": "2019",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Council of Scientific and Industrial Research (CSIR) and University Grants Commission (UGC)"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "GATE XL, Life Sciences (All India Rank 8)",
+          "credentialCategory": "certification",
+          "dateCreated": "2019",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Graduate Aptitude Test in Engineering (GATE)"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "ICAR AICE-JRF/SRF, Agricultural Biotechnology (All India Rank 3)",
+          "credentialCategory": "certification",
+          "dateCreated": "2019",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Indian Council of Agricultural Research (ICAR)"
+          }
+        }
+      ],
+      "award": [
+        "Paeonia Foundation Travel Award, MBI Conference: Mechanobiology in Health and Disease, National University of Singapore (2023)",
+        "ICMR Junior Research Fellowship, Life Sciences, Indian Council of Medical Research (2019)",
+        "DBT-BCIL Junior Research Fellowship, Biotechnology, Department of Biotechnology, Government of India (2019)",
+        "CSIR Junior Research Fellowship, Life Sciences, Council of Scientific and Industrial Research, All India Rank 20 (2019)",
+        "ICAR AIEEA-PG Scholarship, Plant Biotechnology, Indian Council of Agricultural Research, All India Rank 1 (2017)"
+      ],
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ORCID",
+        "value": "0000-0002-9437-9300",
+        "url": "https://orcid.org/0000-0002-9437-9300"
       },
+      "sameAs": [
+        "https://orcid.org/0000-0002-9437-9300",
+        "https://scholar.google.com/citations?user=4yT9DRcAAAAJ",
+        "https://www.researchgate.net/profile/Johan-Ajnabi",
+        "https://in.linkedin.com/in/johanajnabi",
+        "https://github.com/johanajnabi",
+        "https://bsky.app/profile/johanajnabi.com",
+        "https://x.com/jo_ajnabi"
+      ],
       "knowsAbout": [
         "Mechanobiology",
+        "Mechanotransduction",
         "Epigenetic regulation",
+        "DNMT3A",
         "Cutaneous wound healing",
         "Skin regeneration",
-        "Mechanotransduction",
-        "Chromatin remodeling",
         "Keratinocyte stem cell biology",
         "Cytoskeletal dynamics",
         "Integrin signaling",
+        "Chromatin regulation",
         "Spatial transcriptomics",
         "Translational skin biology"
       ],
-      "sameAs": [
-        "https://scholar.google.com/citations?user=4yT9DRcAAAAJ&hl=en",
-        "https://orcid.org/0000-0002-9437-9300",
-        "https://in.linkedin.com/in/johanajnabi",
-        "https://bsky.app/profile/johanajnabi.com",
-        "https://github.com/johanajnabi",
-        "https://x.com/jo_ajnabi",
-        "https://www.researchgate.net/profile/Johan-Ajnabi"
-      ],
-      "award": [
-        "Paeonia Travel Award, MBI Conference 2023",
-        "ICMR Junior Research Fellowship in Life Sciences, Indian Council of Medical Research, India, 2019",
-        "DBT-BCIL Junior Research Fellowship in Biotechnology, Department of Biotechnology, Government of India, through BCIL, 2019",
-        "CSIR-NET Junior Research Fellowship in Life Sciences, Council of Scientific and Industrial Research, India, All India Rank 20, 2019",
-        "ASRB-NET in Agricultural Biotechnology, Agricultural Scientists Recruitment Board, India, 2020",
-        "GATE XL Life Sciences, Graduate Aptitude Test in Engineering, administered nationally by IITs/IISc, All India Rank 8, 2019",
-        "ICAR AICE-JRF/SRF Agricultural Biotechnology, Indian Council of Agricultural Research, India, All India Rank 3, 2019",
-        "ICAR AIEEA-PG Plant Biotechnology, Indian Council of Agricultural Research, India, All India Rank 1, 2017"
-      ],
-      "subjectOf": [
-        {
-          "@id": "https://doi.org/10.64898/2026.01.15.699481"
+      "subjectOf": {
+        "@type": "SocialMediaPosting",
+        "headline": "Research Spotlight: Featured by Epithelial Mechanics Fan Club",
+        "url": "https://bsky.app/profile/epimechfc.bsky.social/post/3mmlfary5722s",
+        "datePublished": "2026",
+        "author": {
+          "@type": "Organization",
+          "name": "Epithelial Mechanics Fan Club",
+          "url": "https://bsky.app/profile/epimechfc.bsky.social"
         },
-        {
-          "@id": "https://doi.org/10.1002/cti2.70080"
-        },
-        {
-          "@id": "https://doi.org/10.1186/s12964-026-02970-5"
-        },
-        {
-          "@id": "https://johanajnabi.com/projects/dnmt3a-mechanotransduction/#project"
-        },
-        {
-          "@id": "https://johanajnabi.com/projects/vitiligo-spatial-transcriptomics/#project"
-        },
-        {
-          "@id": "https://johanajnabi.com/projects/keratinocyte-stemness/#project"
-        },
-        {
-          "@id": "https://link.springer.com/article/10.1007/s44372-025-00152-0"
-        },
-        {
-          "@id": "https://doi.org/10.3389/fimmu.2023.1255478"
-        },
-        {
-          "@id": "https://doi.org/10.1016/j.jid.2022.10.011"
-        },
-        {
-          "@id": "https://doi.org/10.1016/j.celrep.2022.111390"
-        },
-        {
-          "@id": "https://krishikosh.egranth.ac.in/handle/1/5810146216"
+        "about": {
+          "@id": "https://johanajnabi.com/#johan"
         }
-      ]
+      },
+      "nationality": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "contactPoint": {
+        "@id": "https://johanajnabi.com/contact/#professional-contact"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://johanajnabi.com/#webpage"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://johanajnabi.com/#portrait",
+      "url": "https://johanajnabi.com/assets/profile.webp",
+      "contentUrl": "https://johanajnabi.com/assets/profile.webp",
+      "width": 919,
+      "height": 919,
+      "caption": "Johan Ajnabi"
     },
     {
       "@type": "WebSite",
-      "about": {
-        "@id": "https://johanajnabi.com/#johan"
-      },
       "@id": "https://johanajnabi.com/#website",
       "url": "https://johanajnabi.com/",
       "name": "Johan Ajnabi",
+      "alternateName": "johanajnabi.com",
+      "description": "Research website of Johan Ajnabi: skin mechanobiology, epigenetic regulation, and wound repair.",
       "publisher": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "about": {
         "@id": "https://johanajnabi.com/#johan"
       },
       "inLanguage": "en"
@@ -234,17 +255,71 @@
     {
       "@type": "ContactPoint",
       "@id": "https://johanajnabi.com/contact/#professional-contact",
-      "contactType": "professional inquiries",
+      "contactType": "research and collaboration inquiries",
       "email": "contact@johanajnabi.com",
       "url": "https://johanajnabi.com/contact/",
-      "areaServed": "Worldwide",
-      "availableLanguage": "en"
+      "availableLanguage": [
+        "en"
+      ]
     },
     {
-      "@type": "WebPage",
+      "@type": "ResearchOrganization",
+      "@id": "https://johanajnabi.com/#instem",
+      "name": "BRIC-Institute for Stem Cell Science and Regenerative Medicine (inStem)",
+      "alternateName": "inStem",
+      "url": "https://instem.res.in/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bengaluru",
+        "addressRegion": "Karnataka",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "@id": "https://johanajnabi.com/#shiv-nadar",
+      "name": "Shiv Nadar Institution of Eminence",
+      "url": "https://snu.edu.in/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Greater Noida",
+        "addressRegion": "Uttar Pradesh",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": [
+        "CollegeOrUniversity",
+        "ResearchOrganization"
+      ],
+      "@id": "https://johanajnabi.com/#iari",
+      "name": "ICAR-Indian Agricultural Research Institute",
+      "alternateName": "IARI",
+      "url": "https://www.iari.res.in/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New Delhi",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "@id": "https://johanajnabi.com/#bckv",
+      "name": "Bidhan Chandra Krishi Viswavidyalaya",
+      "alternateName": "BCKV",
+      "url": "https://www.bckv.edu.in/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mohanpur",
+        "addressRegion": "West Bengal",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "ProfilePage",
       "@id": "https://johanajnabi.com/academic/#webpage",
       "url": "https://johanajnabi.com/academic/",
-      "name": "Johan Ajnabi | Academic Research",
+      "name": "Johan Ajnabi | Mechanotransduction & Epigenetic Regulation",
       "isPartOf": {
         "@id": "https://johanajnabi.com/#website"
       },
@@ -253,10 +328,13 @@
       },
       "inLanguage": "en",
       "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://johanajnabi.com/assets/profile.webp"
+        "@id": "https://johanajnabi.com/#portrait"
       },
-      "dateModified": "2026-10-24"
+      "dateModified": "2026-10-24",
+      "mainEntity": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "description": "Academic profile of Johan Ajnabi: flagship research, publications, technical toolkit, education and experience, awards, and talks."
     },
     {
       "@type": "BreadcrumbList",
@@ -279,7 +357,6 @@
       "@type": "Event",
       "@id": "https://johanajnabi.com/academic/#mbi2023",
       "name": "MBI Conference 2023: Mechanobiology in Health and Disease",
-      "additionalType": "https://schema.org/PresentationDigitalDocument",
       "startDate": "2023-09-26",
       "endDate": "2023-09-29",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -292,11 +369,11 @@
       ],
       "location": {
         "@type": "Place",
-        "name": "National University of Singapore",
+        "name": "National University of Singapore (NUS)",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Singapore",
-          "addressCountry": "Singapore"
+          "addressCountry": "SG"
         }
       },
       "organizer": {
@@ -304,14 +381,11 @@
         "name": "Mechanobiology Institute, National University of Singapore",
         "url": "https://www.mbi.nus.edu.sg/"
       },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://johanajnabi.com/academic/#talks",
-        "price": "0",
-        "priceCurrency": "SGD"
-      },
       "performer": {
-        "@id": "https://johanajnabi.com/#johan"
+        "@type": "Person",
+        "@id": "https://johanajnabi.com/#johan",
+        "name": "Johan Ajnabi",
+        "url": "https://johanajnabi.com/"
       },
       "description": "Poster presentation: Epigenetic and mechanical regulation of the cutaneous wound healing response."
     },
@@ -319,7 +393,6 @@
       "@type": "Event",
       "@id": "https://johanajnabi.com/academic/#iisc-mechanobiology2025",
       "name": "Mechanobiology in Translational Research: Bioforces to Bedside",
-      "additionalType": "https://schema.org/PresentationDigitalDocument",
       "startDate": "2025-10-14",
       "endDate": "2025-10-14",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -342,7 +415,10 @@
       },
       "url": "https://be.iisc.ac.in/conference-mechanobiology-in-translational-research-bioforces-to-bedside/",
       "performer": {
-        "@id": "https://johanajnabi.com/#johan"
+        "@type": "Person",
+        "@id": "https://johanajnabi.com/#johan",
+        "name": "Johan Ajnabi",
+        "url": "https://johanajnabi.com/"
       },
       "description": "Poster presentation: Mechanoregulation of DNMT3a in the cutaneous wound healing response."
     },
@@ -350,7 +426,6 @@
       "@type": "Event",
       "@id": "https://johanajnabi.com/academic/#icmmb2026",
       "name": "ICMMB 2026: International Conference on Mechanics in Medicine and Biology",
-      "additionalType": "https://schema.org/PresentationDigitalDocument",
       "startDate": "2026-10-06T15:45:00+08:00",
       "endDate": "2026-10-06T16:00:00+08:00",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -361,7 +436,7 @@
       ],
       "location": {
         "@type": "Place",
-        "name": "Singapore",
+        "name": "Academia, Singapore General Hospital",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Singapore",
@@ -370,7 +445,10 @@
       },
       "url": "https://icmmb2026.org/detailed-program/",
       "performer": {
-        "@id": "https://johanajnabi.com/#johan"
+        "@type": "Person",
+        "@id": "https://johanajnabi.com/#johan",
+        "name": "Johan Ajnabi",
+        "url": "https://johanajnabi.com/"
       },
       "description": "Oral presentation: Mechanical control of an epigenetic switch: Mechanoregulation of DNMT3a during wound healing. Session: Engineered Tissue Microenvironments & Mechanobiology, Room L1-S1."
     },
@@ -378,7 +456,6 @@
       "@type": "Event",
       "@id": "https://johanajnabi.com/academic/#lasa2022",
       "name": "10th International Conference of Laboratory Animal Scientists' Association (LASA)",
-      "additionalType": "https://schema.org/PresentationDigitalDocument",
       "startDate": "2022-06-03",
       "endDate": "2022-06-04",
       "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
@@ -389,7 +466,7 @@
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Hyderabad",
-          "addressCountry": "India"
+          "addressCountry": "IN"
         }
       },
       "organizer": [
@@ -407,14 +484,11 @@
           "name": "National Animal Resource Facility for Biomedical Research (NARFBR)"
         }
       ],
-      "offers": {
-        "@type": "Offer",
-        "url": "https://johanajnabi.com/academic/#talks",
-        "price": "0",
-        "priceCurrency": "INR"
-      },
       "performer": {
-        "@id": "https://johanajnabi.com/#johan"
+        "@type": "Person",
+        "@id": "https://johanajnabi.com/#johan",
+        "name": "Johan Ajnabi",
+        "url": "https://johanajnabi.com/"
       },
       "description": "Poster presentation: Understanding the role of DNMT3A in the cutaneous wound healing response using a mouse model."
     },
@@ -422,7 +496,6 @@
       "@type": "Event",
       "@id": "https://johanajnabi.com/academic/#nasc2019",
       "name": "14th Agricultural Science Congress",
-      "additionalType": "https://schema.org/PresentationDigitalDocument",
       "startDate": "2019-02-20",
       "endDate": "2019-02-23",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -433,7 +506,7 @@
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "New Delhi",
-          "addressCountry": "India"
+          "addressCountry": "IN"
         }
       },
       "organizer": [
@@ -447,14 +520,11 @@
           "name": "ICAR-Indian Agricultural Research Institute (IARI)"
         }
       ],
-      "offers": {
-        "@type": "Offer",
-        "url": "https://johanajnabi.com/academic/#talks",
-        "price": "0",
-        "priceCurrency": "INR"
-      },
       "performer": {
-        "@id": "https://johanajnabi.com/#johan"
+        "@type": "Person",
+        "@id": "https://johanajnabi.com/#johan",
+        "name": "Johan Ajnabi",
+        "url": "https://johanajnabi.com/"
       },
       "description": "Poster presentation: Identification and characterization of stress responsive PM19 promoter from wheat."
     }

@@ -75,52 +75,160 @@
       "@id": "https://johanajnabi.com/beyond/#webpage",
       "url": "https://johanajnabi.com/beyond/",
       "name": "Beyond Research | Johan Ajnabi",
-      "description": "A personal page on piano performance and wildlife photography by Johan Ajnabi.",
+      "description": "Beyond the lab, Johan Ajnabi shares piano performances and wildlife photography.",
       "isPartOf": {
         "@id": "https://johanajnabi.com/#website"
       },
       "about": {
-        "@id": "https://johanajnabi.com/#johan"
+        "@type": "Person",
+        "@id": "https://johanajnabi.com/#johan",
+        "name": "Johan Ajnabi",
+        "url": "https://johanajnabi.com/"
       },
       "inLanguage": "en",
-      "dateModified": "2026-10-24",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://johanajnabi.com/assets/social/beyond-og.jpg",
+        "width": 1200,
+        "height": 630
+      },
       "hasPart": [
         {
           "@id": "https://johanajnabi.com/beyond/#piano"
         },
         {
           "@id": "https://johanajnabi.com/beyond/#wildlife"
-        },
-        {
-          "@id": "https://johanajnabi.com/beyond/#practice"
         }
-      ]
+      ],
+      "dateModified": "2026-10-24"
     },
     {
-      "@type": "MusicGroup",
+      "@type": "CreativeWorkSeries",
       "@id": "https://johanajnabi.com/beyond/#piano",
-      "name": "@jopianotes",
+      "name": "jopianotes",
+      "description": "Piano performances by Johan Ajnabi.",
       "url": "https://www.youtube.com/@jopianotes",
       "genre": [
         "Classical",
-        "Contemporary Piano"
+        "Contemporary piano"
       ],
       "sameAs": [
         "https://www.youtube.com/@jopianotes",
         "https://www.instagram.com/jopianotes/"
       ],
       "creator": {
-        "@id": "https://johanajnabi.com/#johan"
+        "@type": "Person",
+        "@id": "https://johanajnabi.com/#johan",
+        "name": "Johan Ajnabi",
+        "url": "https://johanajnabi.com/"
       }
     },
     {
-      "@type": "CreativeWork",
+      "@type": "ImageGallery",
       "@id": "https://johanajnabi.com/beyond/#wildlife",
-      "name": "Wildlife Photography - @jopxls",
-      "url": "https://www.instagram.com/jopxls/",
+      "name": "Wildlife photography by Johan Ajnabi",
+      "url": "https://johanajnabi.com/beyond/#captures",
+      "sameAs": "https://www.instagram.com/jopxls/",
       "creator": {
+        "@type": "Person",
+        "@id": "https://johanajnabi.com/#johan",
+        "name": "Johan Ajnabi",
+        "url": "https://johanajnabi.com/"
+      },
+      "image": [
+        {
+          "@type": "ImageObject",
+          "contentUrl": "https://johanajnabi.com/assets/beyond/8.webp",
+          "width": 2560,
+          "height": 1707,
+          "caption": "White-eared catbird photographed at Mandai Wildlife Reserve, Singapore",
+          "creator": {
+            "@type": "Person",
+            "@id": "https://johanajnabi.com/#johan",
+            "name": "Johan Ajnabi",
+            "url": "https://johanajnabi.com/"
+          },
+          "creditText": "Photograph by Johan Ajnabi",
+          "copyrightNotice": "© Johan Ajnabi"
+        },
+        {
+          "@type": "ImageObject",
+          "contentUrl": "https://johanajnabi.com/assets/beyond/1.webp",
+          "width": 2560,
+          "height": 1707,
+          "caption": "Spot-billed pelican photographed at Ranganathittu Bird Sanctuary, Karnataka",
+          "creator": {
+            "@type": "Person",
+            "@id": "https://johanajnabi.com/#johan",
+            "name": "Johan Ajnabi",
+            "url": "https://johanajnabi.com/"
+          },
+          "creditText": "Photograph by Johan Ajnabi",
+          "copyrightNotice": "© Johan Ajnabi"
+        },
+        {
+          "@type": "ImageObject",
+          "contentUrl": "https://johanajnabi.com/assets/beyond/5.webp",
+          "width": 2560,
+          "height": 1707,
+          "caption": "Bali myna photographed at Mandai Wildlife Reserve, Singapore",
+          "creator": {
+            "@type": "Person",
+            "@id": "https://johanajnabi.com/#johan",
+            "name": "Johan Ajnabi",
+            "url": "https://johanajnabi.com/"
+          },
+          "creditText": "Photograph by Johan Ajnabi",
+          "copyrightNotice": "© Johan Ajnabi"
+        },
+        {
+          "@type": "ImageObject",
+          "contentUrl": "https://johanajnabi.com/assets/beyond/9.webp",
+          "width": 1919,
+          "height": 2560,
+          "caption": "Ornate lorikeet photographed at Mandai Wildlife Reserve, Singapore",
+          "creator": {
+            "@type": "Person",
+            "@id": "https://johanajnabi.com/#johan",
+            "name": "Johan Ajnabi",
+            "url": "https://johanajnabi.com/"
+          },
+          "creditText": "Photograph by Johan Ajnabi",
+          "copyrightNotice": "© Johan Ajnabi"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://johanajnabi.com/#website",
+      "url": "https://johanajnabi.com/",
+      "name": "Johan Ajnabi",
+      "alternateName": "johanajnabi.com",
+      "description": "Research website of Johan Ajnabi: skin mechanobiology, epigenetic regulation, and wound repair.",
+      "publisher": {
         "@id": "https://johanajnabi.com/#johan"
-      }
+      },
+      "about": {
+        "@id": "https://johanajnabi.com/#johan"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://johanajnabi.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Beyond",
+          "item": "https://johanajnabi.com/beyond/"
+        }
+      ]
     }
   ]
 }
