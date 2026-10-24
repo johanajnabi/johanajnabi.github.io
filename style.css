@@ -2902,7 +2902,16 @@ html.js .reveal.is-visible {
     grid-template-columns: 1fr;
   }
 
+  /* Each method wraps as a whole unit, so a line never breaks
+     mid-phrase and the dots still separate items. */
+  .toolkit-grid {
+    line-height: 1.7;
+  }
+
   .toolkit-grid span {
+    display: inline-block;
+    max-width: 100%;
+    font-size: 0.92rem;
     white-space: normal;
   }
 
