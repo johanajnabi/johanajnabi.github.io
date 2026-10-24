@@ -2836,13 +2836,9 @@ html.js .reveal.is-visible {
     aspect-ratio: 16 / 10;
   }
 
+  /* Portrait hidden once the hero stacks; the name and text carry the hero. */
   .page-hero__figure--portrait {
-    justify-self: start;
-    max-width: 18rem;
-  }
-
-  .page-hero__figure--portrait img {
-    aspect-ratio: 1;
+    display: none;
   }
 
   .page-hero__panel {
