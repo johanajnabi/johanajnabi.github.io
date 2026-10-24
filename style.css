@@ -905,9 +905,9 @@ section[id] {
 }
 
 /* Feature card: the one card used for every highlight grid on the site
-   (flagship, pillars, publications, alignment, awards, related projects).
-   Optional parts, in order: icon or eyebrow row, h3 title, meta line,
-   text, card-links (pinned to the bottom so cards in a row line up). */
+   (flagship, pillars, publications, alignment, related projects).
+   Optional parts, in order: icon or eyebrow row, h3 title, text,
+   card-links (pinned to the bottom so cards in a row line up). */
 .feature-card {
   display: flex;
   flex-direction: column;
@@ -917,17 +917,50 @@ section[id] {
   margin-bottom: 0.6rem;
 }
 
-.feature-card__meta {
-  margin: -0.2rem 0 0.7rem;
-  color: var(--text-subtle);
-  font-size: 0.88rem;
-  font-weight: 600;
-  line-height: 1.45;
-}
-
 .feature-card > .card-links {
   margin-top: auto;
   padding-top: 1rem;
+}
+
+/* Compact card: small record card (Education, Awards & Recognition).
+   Parts, in order: date line, title (h3/h4), org line, meta and detail lines. */
+.compact-card {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(var(--surface-rgb), 0.68);
+}
+
+.compact-card__date {
+  margin: 0 0 0.45rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.compact-card h3,
+.compact-card h4 {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.compact-card__org {
+  margin: 0.4rem 0 0;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.compact-card__meta,
+.compact-card__detail {
+  margin: 0.35rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
 }
 
 .lift-card {
@@ -1512,43 +1545,11 @@ section[id] {
   gap: 0.8rem;
 }
 
-.education-entry {
-  min-width: 0;
-  padding: 1rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: rgba(var(--surface-rgb), 0.68);
-}
-
-.education-entry__date {
-  margin: 0 0 0.45rem;
-  color: var(--accent);
-  font-size: 0.8rem;
-  font-weight: 800;
-}
-
-.education-entry h4,
 .timeline-content h4 {
   margin: 0;
   color: var(--text-main);
   font-size: 1rem;
   line-height: 1.4;
-}
-
-.education-entry__institution {
-  margin: 0.4rem 0 0;
-  color: var(--text-main);
-  font-size: 0.9rem;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
-.education-entry__meta,
-.education-entry__detail {
-  margin: 0.35rem 0 0;
-  color: var(--text-muted);
-  font-size: 0.88rem;
-  line-height: 1.55;
 }
 
 .timeline-entry {
