@@ -1930,7 +1930,6 @@ body.beyond-page {
 }
 
 .beyond-page p,
-.beyond-page li,
 .beyond-page .site-footer {
   color: var(--beyond-muted);
 }
@@ -1951,11 +1950,6 @@ body.beyond-page {
 
 .beyond-page .btn--primary:hover {
   background: #0d1a2d;
-}
-
-.beyond-page .btn--secondary {
-  border-color: rgba(19, 36, 61, 0.12);
-  background: rgba(255, 255, 255, 0.78);
 }
 
 .beyond-page .section-divider {
