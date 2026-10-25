@@ -1133,8 +1133,8 @@ section[id] {
    8. PAGE HERO
 ========================= */
 
-/* Page hero (all main pages): no card; text on the left, an image or a flat
-   text panel on the right. */
+/* Page hero (every page except Home and Beyond): no card; text on the
+   left, an image or a flat text panel on the right. */
 .page-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
@@ -1207,7 +1207,7 @@ section[id] {
 }
 
 /* Flat text panel used as the hero's right column (key finding, unifying
-   question, contact summary). */
+   question, publications at a glance, contact summary, 404 quick links). */
 .page-hero__panel {
   display: grid;
   gap: 0.9rem;
@@ -1492,8 +1492,9 @@ section[id] {
   font-weight: 800;
 }
 
-/* Education & Experience: education cards, then the timeline (also used
-   by the Talks section). */
+/* Education & Experience: group headings, the education grid (its cards
+   are .compact-card, section 7) and the timeline, which the Talks section
+   also uses. */
 
 .training-group {
   scroll-margin-top: calc(var(--nav-height) + 1.5rem);
@@ -2109,7 +2110,7 @@ body.beyond-page {
 }
 
 /* From 981px the Beyond nav joins the shared left sidebar, styled as a
-   printed contents list: numbered entries on a thin rule, gold when active. */
+   printed contents list: numbered entries on a thin rule, bronze when active. */
 @media (min-width: 981px) {
   .beyond-page section[id] {
     scroll-margin-top: calc(var(--nav-height) + 20px);
