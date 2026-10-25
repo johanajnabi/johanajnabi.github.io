@@ -2196,6 +2196,66 @@ body.beyond-page {
   transform: scaleX(1);
 }
 
+/* From 981px the Beyond nav joins the shared left sidebar, styled as a
+   printed contents list: numbered entries on a thin rule, gold when active. */
+@media (min-width: 981px) {
+  .beyond-page section[id] {
+    scroll-margin-top: calc(var(--nav-height) + 20px);
+  }
+
+  .beyond-page .section-nav--outline {
+    counter-reset: beyond-contents;
+    z-index: auto;
+    padding: 0;
+    border: 0;
+    background: none;
+    overflow: visible;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .beyond-page .section-nav--outline .section-nav__label {
+    margin-bottom: 0.9rem;
+    color: var(--beyond-accent);
+  }
+
+  .beyond-page .section-nav--outline .pill {
+    display: flex;
+    gap: 0.7rem;
+    align-items: baseline;
+    justify-content: flex-start;
+    padding: 0.7rem 0 0.7rem 1rem;
+    border-left: 1px solid var(--beyond-rule);
+    color: var(--beyond-muted);
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+
+  .beyond-page .section-nav--outline .pill::before {
+    counter-increment: beyond-contents;
+    content: counter(beyond-contents, decimal-leading-zero);
+    color: var(--beyond-accent);
+    font-family: var(--beyond-display);
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .beyond-page .section-nav--outline .pill::after {
+    display: none;
+  }
+
+  .beyond-page .section-nav--outline .pill:hover,
+  .beyond-page .section-nav--outline .pill.active {
+    border-left-color: var(--beyond-accent);
+    color: var(--beyond-ink);
+  }
+
+  .beyond-page .section-nav--outline .pill.active {
+    box-shadow: inset 1px 0 0 var(--beyond-accent);
+  }
+}
+
 .beyond-story,
 .beyond-gallery-section {
   display: grid;

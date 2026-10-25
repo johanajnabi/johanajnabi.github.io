@@ -194,6 +194,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
       });
 
+      // The last section is often too short to reach the marker, so once the
+      // page is scrolled to the bottom, highlight the last link.
+      const atBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      if (atBottom) {
+        current = sections[sections.length - 1];
+      }
+
       links.forEach((link) => {
         const isActive = current && link === current.link;
         link.classList.toggle("active", isActive);
