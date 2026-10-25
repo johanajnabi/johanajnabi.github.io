@@ -391,10 +391,6 @@ section[id] {
   align-items: start;
 }
 
-.split--main-aside {
-  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.95fr);
-}
-
 .split--project {
   grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.85fr);
 }
@@ -1733,20 +1729,6 @@ section[id] {
   font-size: 1.12rem;
 }
 
-.academic-contact-cta {
-  align-items: center;
-}
-
-.academic-contact-email {
-  margin: 0;
-  color: var(--text-muted);
-  font-weight: 700;
-}
-
-.academic-contact-actions {
-  align-self: center;
-}
-
 /* =========================
    12. PUBLICATIONS PAGE
 ========================= */
@@ -2801,15 +2783,6 @@ body.beyond-page {
   text-transform: uppercase;
 }
 
-.contact-cta-actions {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.contact-cta-actions .btn {
-  width: 100%;
-}
-
 /* =========================
    16. FOOTER AND UTILITIES
 ========================= */
@@ -2951,7 +2924,6 @@ html.js .reveal.is-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .split--main-aside,
   .split--project,
   .split--contact {
     grid-template-columns: 1fr;
