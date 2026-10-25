@@ -753,8 +753,23 @@ section[id] {
 }
 
 /* "See all" button under a section's highlight cards. */
-.actions.section-more {
-  margin-top: 1.5rem;
+/* Centred sentence under a card grid pointing to the full page, with the
+   destination as the link (Academic: Flagship Work, Selected publications). */
+.view-all-row {
+  margin: 1.75rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.view-all {
+  font-size: 0.95rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.view-all:hover {
+  text-decoration: underline;
 }
 
 .btn {
