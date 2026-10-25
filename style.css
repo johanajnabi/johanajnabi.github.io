@@ -1912,7 +1912,7 @@ body.beyond-page {
   --beyond-ink: #13243d;
   --beyond-muted: #49566d;
   --beyond-rule: rgba(19, 36, 61, 0.14);
-  --beyond-accent: #a97231;
+  --beyond-accent: #8a5a1f;
   --beyond-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   background:
     radial-gradient(circle at 12% 12%, rgba(169, 114, 49, 0.16), transparent 24%),
@@ -1924,7 +1924,6 @@ body.beyond-page {
 .beyond-page h2,
 .beyond-page h3,
 .beyond-page .beyond-quote-card p,
-.beyond-page .beyond-pullquote,
 .beyond-page .beyond-cover__kicker {
   font-family: var(--beyond-display);
   color: var(--beyond-ink);
@@ -1941,7 +1940,7 @@ body.beyond-page {
 }
 
 .beyond-page .eyebrow {
-  color: #385bd1;
+  color: var(--beyond-accent);
   letter-spacing: 0.22em;
 }
 
@@ -1991,13 +1990,12 @@ body.beyond-page {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
   gap: clamp(1.5rem, 4vw, 3rem);
-  align-items: end;
+  align-items: center;
 }
 
 .beyond-cover__copy,
 .beyond-cover__visual,
-.beyond-story__copy,
-.beyond-photo-layout {
+.beyond-story__copy {
   display: grid;
   gap: 1rem;
 }
@@ -2023,13 +2021,6 @@ body.beyond-page {
   line-height: 1.8;
 }
 
-.beyond-cover__standfirst {
-  max-width: 34rem;
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
 .beyond-cover__meta {
   display: flex;
   flex-wrap: wrap;
@@ -2041,15 +2032,11 @@ body.beyond-page {
   text-transform: uppercase;
 }
 
-.beyond-cover__photo,
-.beyond-photo-layout__lead,
-.beyond-photo-strip figure {
+.beyond-cover__photo {
   margin: 0;
 }
 
-.beyond-cover__photo img,
-.beyond-photo-layout__lead img,
-.beyond-photo-strip img {
+.beyond-cover__photo img {
   width: 100%;
   object-fit: cover;
   border-radius: 30px;
@@ -2070,44 +2057,6 @@ body.beyond-page {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-}
-
-.beyond-cover__side-note {
-  padding: 1.15rem 1.2rem;
-  border-top: 1px solid var(--beyond-rule);
-  background: rgba(255, 255, 255, 0.58);
-  border-radius: 22px;
-}
-
-.beyond-cover__side-note p {
-  margin: 0;
-}
-
-.beyond-cover__notes {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.beyond-note {
-  padding: 1.25rem 1.15rem;
-  border-top: 1px solid var(--beyond-rule);
-  background: rgba(255, 255, 255, 0.58);
-  border-radius: 22px;
-}
-
-.beyond-note span {
-  display: block;
-  margin-bottom: 0.55rem;
-  color: var(--beyond-ink);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.beyond-note p {
-  margin: 0;
 }
 
 .beyond-page .section-nav {
@@ -2237,9 +2186,7 @@ body.beyond-page {
   max-width: 52rem;
 }
 
-.beyond-story__heading h2,
-.beyond-gallery-head h2,
-.beyond-return__intro h2 {
+.beyond-story__heading h2 {
   margin-bottom: 0;
   font-size: clamp(2.25rem, 4vw, 3.75rem);
   line-height: 0.98;
@@ -2252,51 +2199,22 @@ body.beyond-page {
   align-items: start;
 }
 
-.beyond-feature-grid--music {
-  grid-template-columns: minmax(0, 0.94fr) minmax(360px, 1.06fr);
-}
-
+.beyond-feature-grid--music,
 .beyond-feature-grid--wildlife {
-  grid-template-columns: minmax(320px, 0.96fr) minmax(0, 1.04fr);
+  grid-template-columns: minmax(0, 0.94fr) minmax(360px, 1.06fr);
 }
 
 .beyond-story__copy p {
   margin: 0;
 }
 
-.beyond-notes-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.85rem;
-}
-
-.beyond-notes-list li {
-  position: relative;
-  padding-left: 1.15rem;
-}
-
-.beyond-notes-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.72rem;
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 50%;
-  background: var(--beyond-accent);
-}
-
 .beyond-quote-card {
   margin: 0;
-  padding: 1.25rem 1.3rem;
+  padding: 0.2rem 0 0.2rem 1.3rem;
   border-left: 2px solid var(--beyond-accent);
-  background: rgba(255, 255, 255, 0.74);
-  border-radius: 0 24px 24px 0;
 }
 
-.beyond-feature-grid--music .beyond-quote-card {
+.beyond-story__copy .beyond-quote-card {
   margin: 0.15rem 0 0.2rem;
 }
 
@@ -2323,14 +2241,15 @@ body.beyond-page {
   border-radius: 30px;
 }
 
-.beyond-feature-grid--music .beyond-media-stack {
+.beyond-media-stack {
   display: grid;
   gap: 0.9rem;
   align-content: start;
   margin-top: clamp(1.15rem, 3vw, 1.9rem);
 }
 
-.beyond-feature-grid--music .beyond-media-card {
+.beyond-media-card,
+.beyond-instagram-panel {
   padding: 1.15rem;
 }
 
@@ -2344,6 +2263,18 @@ body.beyond-page {
   color: #ffffff;
 }
 
+.beyond-page .external-link a,
+.beyond-return__closing a {
+  color: var(--beyond-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--beyond-accent);
+}
+
+.beyond-page .external-link a:hover,
+.beyond-return__closing a:hover {
+  color: var(--beyond-accent);
+}
+
 .beyond-media-label {
   margin: 0 0 0.85rem;
   color: var(--beyond-muted);
@@ -2351,73 +2282,6 @@ body.beyond-page {
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-}
-
-.beyond-caption {
-  margin: 0 0 0.85rem;
-  font-size: 0.92rem;
-}
-
-.beyond-photo-layout__lead img {
-  aspect-ratio: 4 / 5;
-}
-
-.beyond-photo-layout__lead figcaption,
-.beyond-photo-strip figcaption {
-  display: grid;
-  gap: 0.2rem;
-  margin-top: 0.7rem;
-}
-
-.beyond-photo-layout__lead figcaption span,
-.beyond-photo-strip figcaption span {
-  color: var(--beyond-muted);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.beyond-photo-layout__lead figcaption strong,
-.beyond-photo-strip figcaption strong {
-  color: var(--beyond-ink);
-  font-size: 1rem;
-}
-
-.beyond-photo-layout__lead figcaption em,
-.beyond-photo-strip figcaption em {
-  font-style: normal;
-  font-size: 0.9rem;
-}
-
-.beyond-photo-strip {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.beyond-photo-strip img {
-  aspect-ratio: 1 / 1;
-}
-
-.beyond-instagram-panel {
-  max-width: 27rem;
-}
-
-.beyond-gallery-head,
-.beyond-return__intro {
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  gap: clamp(1.25rem, 4vw, 2.5rem);
-  align-items: end;
-}
-
-.beyond-pullquote {
-  margin: 0;
-  padding-left: 1.3rem;
-  border-left: 2px solid var(--beyond-accent);
-  font-size: clamp(1.45rem, 2.6vw, 2rem);
-  line-height: 1.25;
 }
 
 .beyond-page .capture-gallery {
@@ -2428,37 +2292,51 @@ body.beyond-page {
 .beyond-page .capture-gallery .media-card {
   display: inline-block;
   width: 100%;
-  margin: 0 0 1.25rem;
+  margin: 0 0 2.25rem;
   break-inside: avoid;
-  border-radius: 28px;
-  overflow: hidden;
-  border-color: rgba(19, 36, 61, 0.08);
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 24px 56px rgba(19, 36, 61, 0.08);
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
 }
 
 .beyond-page .capture-gallery .media-card img {
   width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(19, 36, 61, 0.14);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .beyond-page .capture-gallery .media-card:hover {
-  transform: translateY(-3px);
+  transform: none;
+  box-shadow: none;
+}
+
+.beyond-page .capture-gallery .media-card:hover img,
+.beyond-page .capture-gallery .media-card:focus-visible img {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 52px rgba(19, 36, 61, 0.2);
 }
 
 .beyond-page .capture-gallery .media-card__caption {
-  padding: 1rem 1.1rem 0.35rem;
+  padding: 0.95rem 0.15rem 0.3rem;
+  color: var(--beyond-ink);
+  font-family: var(--beyond-display);
+  font-size: 1.08rem;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
 .beyond-page .capture-gallery .capture-detail {
-  padding: 0 1.1rem 1.1rem;
+  padding: 0 0.15rem;
+  font-size: 0.92rem;
   line-height: 1.65;
 }
 
 .beyond-return {
-  padding: clamp(1.5rem, 4vw, 2.35rem);
-  border: 1px solid rgba(19, 36, 61, 0.08);
-  border-radius: 34px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 242, 232, 0.92));
+  display: grid;
+  gap: 1.5rem;
 }
 
 .beyond-return__grid {
@@ -2484,7 +2362,7 @@ body.beyond-page {
 
 .beyond-return__closing {
   max-width: 48rem;
-  margin: 1.5rem 0 0;
+  margin: 0;
   color: var(--beyond-ink);
   font-size: 1rem;
 }
@@ -2892,22 +2770,15 @@ html.js .reveal.is-visible {
 
   .beyond-cover__body,
   .beyond-feature-grid--music,
-  .beyond-feature-grid--wildlife,
-  .beyond-gallery-head,
-  .beyond-return__intro {
+  .beyond-feature-grid--wildlife {
     grid-template-columns: 1fr;
   }
 
-  .beyond-cover__notes,
   .beyond-return__grid {
     grid-template-columns: 1fr;
   }
 
-  .beyond-instagram-panel {
-    max-width: 100%;
-  }
-
-  .beyond-feature-grid--music .beyond-media-stack {
+  .beyond-media-stack {
     margin-top: 0;
   }
 
@@ -3046,11 +2917,7 @@ html.js .reveal.is-visible {
 
   .beyond-page .capture-gallery .media-card {
     display: block;
-    margin: 0;
-  }
-
-  .beyond-photo-strip {
-    grid-template-columns: 1fr;
+    margin: 0 0 0.75rem;
   }
 
   /* ---------- Layout ---------- */
