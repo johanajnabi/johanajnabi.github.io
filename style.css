@@ -830,6 +830,27 @@ section[id] {
   border-bottom: 1px solid var(--border);
 }
 
+/* Chip list: rounded chips for techniques (Academic toolkit, the
+   techniques under each paper on Publications). */
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.chip-list span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(var(--surface-rgb), 0.78);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 .status-badge {
   display: inline-flex;
   align-items: center;
@@ -1415,7 +1436,8 @@ section[id] {
 ========================= */
 
 /* Toolkit: spec-sheet rows (no cards). Group header on the left,
-   techniques as a dot-separated line on the right, a divider between rows. */
+   techniques as chips (.chip-list, section 6) on the right, a divider
+   between rows. */
 .toolkit-groups {
   display: grid;
 }
@@ -1471,25 +1493,6 @@ section[id] {
   color: var(--text-muted);
   font-size: 0.93rem;
   line-height: 1.55;
-}
-
-.toolkit-grid {
-  padding-top: 0.15rem;
-  line-height: 1.9;
-}
-
-.toolkit-grid span {
-  color: var(--text-main);
-  font-size: 0.97rem;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.toolkit-grid span:not(:last-child)::after {
-  content: "·";
-  margin: 0 0.5rem 0 0.55rem;
-  color: var(--accent);
-  font-weight: 800;
 }
 
 /* Education & Experience: group headings, the education grid (its cards
@@ -1882,25 +1885,6 @@ section[id] {
 
 .pub .pub-details-heading + p {
   margin-top: 0;
-}
-
-.pub-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.35rem;
-}
-
-.pub-tags span {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.35rem 0.7rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: rgba(var(--surface-rgb), 0.78);
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  font-weight: 600;
 }
 
 /* =========================
@@ -2785,19 +2769,6 @@ html.js .reveal.is-visible {
   .split--project,
   .split--contact {
     grid-template-columns: 1fr;
-  }
-
-  /* Each method wraps as a whole unit, so a line never breaks
-     mid-phrase and the dots still separate items. */
-  .toolkit-grid {
-    line-height: 1.7;
-  }
-
-  .toolkit-grid span {
-    display: inline-block;
-    max-width: 100%;
-    font-size: 0.92rem;
-    white-space: normal;
   }
 
   .toolkit-group {
