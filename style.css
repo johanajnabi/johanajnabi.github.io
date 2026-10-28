@@ -2436,11 +2436,6 @@ body.beyond-page {
   font-size: 0.92rem;
 }
 
-.capture-gallery {
-  column-count: 3;
-  column-gap: 1rem;
-}
-
 .capture-empty {
   margin-bottom: 1rem;
 }
@@ -2828,25 +2823,20 @@ html.js .reveal.is-visible {
     font-weight: 600;
   }
 
-  #contributions .tag-list {
-    flex-wrap: wrap;
-  }
-
   .mobile-menu a:hover,
   .mobile-menu a.active {
     background: rgba(21, 87, 214, 0.08);
     color: var(--accent);
+  }
+
+  #contributions .tag-list {
+    flex-wrap: wrap;
   }
 }
 
 @media (max-width: 720px) {
   .pub-year-group {
     grid-template-columns: 1fr;
-  }
-
-  .pub-year-group > h3 {
-    grid-row: auto;
-    margin-bottom: 0.8rem;
   }
 
   .contact-list,
@@ -2877,13 +2867,11 @@ html.js .reveal.is-visible {
 
   .beyond-page .capture-gallery {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 1.25rem;
   }
 
   .beyond-page .capture-gallery .media-card {
-    display: block;
-    margin: 0 0 0.75rem;
+    margin-bottom: 0.75rem;
   }
 
   /* ---------- Layout ---------- */
@@ -2929,15 +2917,10 @@ html.js .reveal.is-visible {
   /* ---------- Buttons & Pills ---------- */
   .actions {
     flex-direction: column;
-    align-items: stretch;
   }
 
   .page-hero__text .actions {
     justify-self: stretch;
-  }
-
-  .btn {
-    width: 100%;
   }
 
   .pills {
@@ -2946,19 +2929,11 @@ html.js .reveal.is-visible {
     padding-bottom: 0.25rem;
   }
 
-  .pill {
-    flex: 0 0 auto;
-  }
-
   .home .social-links {
     gap: 0.35rem;
   }
 
   /* ---------- Gallery ---------- */
-  .capture-gallery {
-    column-count: 1;
-  }
-
   .media-grid {
     gap: 0.8rem;
   }
@@ -3026,10 +3001,6 @@ html.js .reveal.is-visible {
     bottom: 5.5rem;
     transform: none;
   }
-
-  .lightbox-prev { left: 1rem; }
-
-  .lightbox-next { right: 1rem; }
 
   /* ---------- Floating UI ---------- */
   .back-to-top {
