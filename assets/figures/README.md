@@ -72,12 +72,3 @@ As an author of the preprint, no third-party licence applies; the DNMT3A project
 credits it as "from my first-author preprint" and links to the DOI rather than citing a
 Creative Commons licence (unlike the three reproductions above, which are each other
 researchers' published figures).
-
-## Card-sized copies
-
-`ajnabi-et-al-2026-model-card.webp`, `cti270080-toc-0001-m-card.webp` and
-`dam-et-al-2026-fig-7-card.webp` are the same three figures scaled down (WebP, at most
-720 px wide) for the Flagship cards on the Academic page. They are resized only: not
-cropped, recoloured or otherwise altered, and keep their original aspect ratios. Each card
-shows a credit line (authors, year and licence for the two CC BY-NC-ND figures) and links to
-the project page, which carries the full attribution described above.
