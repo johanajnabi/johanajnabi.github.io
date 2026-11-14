@@ -979,27 +979,6 @@ section[id] {
   box-shadow: var(--shadow-card-hover);
 }
 
-.pillar-icon {
-  display: inline-grid;
-  place-items: center;
-  width: 2.55rem;
-  height: 2.55rem;
-  margin-bottom: 0.9rem;
-  border-radius: 999px;
-  background: rgba(21, 87, 214, 0.1);
-  color: var(--accent);
-}
-
-.pillar-icon svg {
-  width: 1.3rem;
-  height: 1.3rem;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
 .publication-card-top {
   display: flex;
   flex-wrap: nowrap;
@@ -1432,7 +1411,8 @@ section[id] {
 
 /* Toolkit: spec-sheet rows (no cards). Group header on the left,
    techniques as chips (.chip-list, section 6) on the right, a divider
-   between rows. */
+   between rows. The group header (icon beside a heading) is also used
+   by the Research Pillars columns. */
 .toolkit-groups {
   display: grid;
 }
