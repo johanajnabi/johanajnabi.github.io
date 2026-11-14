@@ -909,8 +909,8 @@ section[id] {
 }
 
 /* Feature card: the one card used for every highlight grid on the site
-   (flagship, pillars, publications, alignment, related projects).
-   Optional parts, in order: icon or eyebrow row, h3 title, text,
+   (flagship, publications, related projects).
+   Optional parts, in order: eyebrow row, h3 title, text,
    card-links (pinned to the bottom so cards in a row line up). */
 .feature-card {
   display: flex;
@@ -1081,11 +1081,6 @@ section[id] {
   font-size: 0.76rem;
   font-weight: 700;
   line-height: 1.25;
-}
-
-.pillar-grid,
-.fit-grid {
-  align-items: stretch;
 }
 
 /* Flat layouts that replace stacks of cards: open columns, side notes,
