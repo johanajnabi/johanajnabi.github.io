@@ -1201,6 +1201,12 @@ section[id] {
   max-width: 25rem;
 }
 
+/* Small round copy of the portrait beside the name, shown only once the
+   hero stacks and the large portrait is hidden (section 17). */
+.page-hero__avatar {
+  display: none;
+}
+
 /* Flat text panel used as the hero's right column (key finding, unifying
    question, publications at a glance, contact summary, 404 quick links). */
 .page-hero__panel {
@@ -2682,9 +2688,34 @@ html.js .reveal.is-visible {
     aspect-ratio: 16 / 10;
   }
 
-  /* Portrait hidden once the hero stacks; the name and text carry the hero. */
+  /* Large portrait hidden once the hero stacks; a small round one sits
+     beside the name instead. */
   .page-hero__figure--portrait {
     display: none;
+  }
+
+  .page-hero__name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    justify-self: stretch;
+    margin-bottom: 0.9rem;
+  }
+
+  .page-hero__name h1 {
+    margin: 0;
+  }
+
+  .page-hero__avatar {
+    display: block;
+    flex: none;
+    width: 4.5rem;
+    height: 4.5rem;
+    border: 3px solid var(--avatar-ring);
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: var(--shadow-card);
   }
 
   .page-hero__panel {
