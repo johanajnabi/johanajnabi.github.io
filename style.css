@@ -910,8 +910,9 @@ section[id] {
 
 /* Feature card: the one card used for every highlight grid on the site
    (flagship, publications, related projects).
-   Optional parts, in order: eyebrow row, h3 title, text,
-   card-links (pinned to the bottom so cards in a row line up). */
+   Optional parts, in order: media (figure at the top), eyebrow row,
+   h3 title, text, card-links (pinned to the bottom so cards in a row
+   line up). */
 .feature-card {
   display: flex;
   flex-direction: column;
@@ -924,6 +925,36 @@ section[id] {
 .feature-card > .card-links {
   margin-top: auto;
   padding-top: 1rem;
+}
+
+/* Card media: a figure across the top of the card, bleeding to its edges.
+   --figure shows the whole image on white (published figures under
+   CC BY-NC-ND must not be cropped); the caption carries the credit. */
+.feature-card__media {
+  margin: -1.55rem -1.55rem 1.2rem;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.feature-card__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+
+.feature-card__media--figure img {
+  object-fit: contain;
+  padding: 0.6rem;
+}
+
+.feature-card__media figcaption {
+  padding: 0.45rem 1.55rem 0;
+  color: var(--text-subtle);
+  font-size: 0.72rem;
+  line-height: 1.4;
 }
 
 /* Compact card: small record card (Education, Awards & Recognition).
@@ -2893,6 +2924,15 @@ html.js .reveal.is-visible {
   .card {
     padding: 1.2rem;
     border-radius: var(--radius-md);
+  }
+
+  .feature-card__media {
+    margin: -1.2rem -1.2rem 1rem;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  .feature-card__media figcaption {
+    padding-inline: 1.2rem;
   }
 
   /* ---------- Grid -> Stack ---------- */
