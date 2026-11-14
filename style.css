@@ -1417,7 +1417,8 @@ section[id] {
 
 /* Toolkit: spec-sheet rows (no cards). Group header on the left,
    techniques as chips (.chip-list, section 6) on the right, a divider
-   between rows. */
+   between rows. The group header (icon beside a heading) is also used
+   by the Research Alignment columns. */
 .toolkit-groups {
   display: grid;
 }
