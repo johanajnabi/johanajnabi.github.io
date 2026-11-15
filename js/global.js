@@ -151,6 +151,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (!sections.length) return;
 
+    let lastActive = null;
+
     // A left-sidebar "outline" nav sits beside the content column, not above
     // it, so its own (often tall) height must not be added to the scroll
     // offset the way a horizontal sticky bar's height is.
@@ -206,6 +208,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         const isActive = current && link === current.link;
         link.classList.toggle("active", isActive);
       });
+
+      // Below the sidebar breakpoint the menu is a horizontal row: keep the
+      // current section's link in view as the reader scrolls.
+      if (current && current.link !== lastActive) {
+        lastActive = current.link;
+        if (!isSidebarOutline() && navElement.scrollWidth > navElement.clientWidth) {
+          const linkBox = current.link.getBoundingClientRect();
+          const navBox = navElement.getBoundingClientRect();
+          const left = navElement.scrollLeft + linkBox.left - navBox.left - (navBox.width - linkBox.width) / 2;
+          navElement.scrollTo({ left: Math.max(0, left), behavior: prefersReducedMotion ? "auto" : "smooth" });
+        }
+      }
     };
 
     links.forEach((link) => {
