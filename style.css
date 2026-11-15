@@ -2626,6 +2626,11 @@ body.beyond-page {
   margin-top: 2rem;
 }
 
+/* Keeps a short phrase on one line (e.g. "the" with the button after it). */
+.nowrap {
+  white-space: nowrap;
+}
+
 .back-to-top {
   position: fixed;
   right: 1.25rem;
@@ -2988,9 +2993,39 @@ html.js .reveal.is-visible {
     gap: 0.35rem;
   }
 
+  /* Card links: a taller invisible tap area (about 44px) on phones; the
+     negative margins keep the layout unchanged. */
+  .card-links a {
+    padding-block: 0.55rem;
+    margin-block: -0.55rem;
+  }
+
+  /* Touch screens have no hover, so secondary card links take the link
+     colour to read as links. */
+  .card-links .secondary-link {
+    color: var(--accent);
+  }
+
+  /* Journal name beside the publisher logo, readable on phones; the logo
+     badge drops under the card label when the row is full. */
+  .publication-card-top {
+    flex-wrap: wrap;
+  }
+
+  .publication-source__name {
+    max-width: none;
+    font-size: 0.72rem;
+  }
+
   /* ---------- Gallery ---------- */
+  /* Talk photos two per row; an odd last photo takes the full row. */
   .media-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.8rem;
+  }
+
+  .media-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 
   .media-grid .media-card {
