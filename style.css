@@ -559,7 +559,7 @@ section[id] {
     align-items: start;
   }
 
-  .section-nav--outline {
+  .section-nav {
     flex-direction: column;
     align-items: stretch;
     gap: 0.1rem;
@@ -575,12 +575,12 @@ section[id] {
     scrollbar-width: thin;
   }
 
-  .section-nav--outline::-webkit-scrollbar {
+  .section-nav::-webkit-scrollbar {
     width: 4px;
     display: block;
   }
 
-  .section-nav--outline::-webkit-scrollbar-thumb {
+  .section-nav::-webkit-scrollbar-thumb {
     background: var(--border-strong);
     border-radius: 999px;
   }
@@ -589,7 +589,7 @@ section[id] {
     display: block;
   }
 
-  .section-nav--outline .pill {
+  .section-nav .pill {
     display: block;
     width: 100%;
     min-height: auto;
@@ -604,13 +604,13 @@ section[id] {
     white-space: normal;
   }
 
-  .section-nav--outline .pill:hover,
-  .section-nav--outline .pill.active {
+  .section-nav .pill:hover,
+  .section-nav .pill.active {
     border-left-color: var(--accent);
     color: var(--accent-strong);
   }
 
-  .section-nav--outline .pill.active {
+  .section-nav .pill.active {
     font-weight: 700;
   }
 }
@@ -913,7 +913,7 @@ section[id] {
 }
 
 /* Compact card: small record card (Education, Awards & Recognition).
-   Parts, in order: date line, title (h3/h4), org line, meta and detail lines. */
+   Parts, in order: date line, title (h3/h4), org line, detail lines. */
 .compact-card {
   min-width: 0;
   padding: 1rem;
@@ -946,7 +946,6 @@ section[id] {
   line-height: 1.5;
 }
 
-.compact-card__meta,
 .compact-card__detail {
   margin: 0.35rem 0 0;
   font-size: 0.88rem;
@@ -1011,15 +1010,13 @@ section[id] {
   font-size: 0.62rem;
 }
 
-.overview-points,
-.project-summary-list {
+.overview-points {
   margin: 0;
   padding-left: 1.15rem;
   color: var(--text-muted);
 }
 
-.overview-points li + li,
-.project-summary-list li + li {
+.overview-points li + li {
   margin-top: 0.75rem;
 }
 
@@ -1227,20 +1224,18 @@ section[id] {
    9. HOME PAGE
 ========================= */
 
+/* Home card (the element is also a .card). */
 .hero {
-  padding: clamp(1.65rem, 4vw, 2.75rem);
-  border-radius: var(--radius-xl);
-}
-
-.hero--home {
   max-width: 54rem;
   margin: 0 auto;
+  padding: clamp(1.65rem, 4vw, 2.75rem);
+  border-radius: var(--radius-xl);
   text-align: center;
   background: var(--hero-home-bg);
   box-shadow: var(--shadow-hero);
 }
 
-.hero--home .theme-toggle {
+.hero .theme-toggle {
   position: absolute;
   top: 1.1rem;
   right: 1.1rem;
@@ -2007,7 +2002,7 @@ body.beyond-page {
     scroll-margin-top: calc(var(--nav-height) + 20px);
   }
 
-  .beyond-page .section-nav--outline {
+  .beyond-page .section-nav {
     counter-reset: beyond-contents;
     z-index: auto;
     padding: 0;
@@ -2018,11 +2013,11 @@ body.beyond-page {
     -webkit-backdrop-filter: none;
   }
 
-  .beyond-page .section-nav--outline .section-nav__label {
+  .beyond-page .section-nav .section-nav__label {
     margin-bottom: 0.9rem;
   }
 
-  .beyond-page .section-nav--outline .pill {
+  .beyond-page .section-nav .pill {
     display: flex;
     gap: 0.7rem;
     align-items: baseline;
@@ -2033,7 +2028,7 @@ body.beyond-page {
     line-height: 1.45;
   }
 
-  .beyond-page .section-nav--outline .pill::before {
+  .beyond-page .section-nav .pill::before {
     counter-increment: beyond-contents;
     content: counter(beyond-contents, decimal-leading-zero);
     color: var(--beyond-accent);
@@ -2043,16 +2038,16 @@ body.beyond-page {
     letter-spacing: 0;
   }
 
-  .beyond-page .section-nav--outline .pill::after {
+  .beyond-page .section-nav .pill::after {
     display: none;
   }
 
-  .beyond-page .section-nav--outline .pill:hover,
-  .beyond-page .section-nav--outline .pill.active {
+  .beyond-page .section-nav .pill:hover,
+  .beyond-page .section-nav .pill.active {
     border-left-color: var(--beyond-accent);
   }
 
-  .beyond-page .section-nav--outline .pill.active {
+  .beyond-page .section-nav .pill.active {
     box-shadow: inset 1px 0 0 var(--beyond-accent);
   }
 }
@@ -2079,13 +2074,9 @@ body.beyond-page {
 
 .beyond-feature-grid {
   display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(360px, 1.06fr);
   gap: clamp(1.35rem, 4vw, 2.5rem);
   align-items: start;
-}
-
-.beyond-feature-grid--music,
-.beyond-feature-grid--wildlife {
-  grid-template-columns: minmax(0, 0.94fr) minmax(360px, 1.06fr);
 }
 
 .beyond-story__copy p {
@@ -2120,8 +2111,7 @@ body.beyond-page {
   font-size: 0.78rem;
 }
 
-.beyond-media-card,
-.beyond-instagram-panel {
+.beyond-media-card {
   border-color: rgba(19, 36, 61, 0.1);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(249, 244, 236, 0.96));
   border-radius: 30px;
@@ -2641,8 +2631,7 @@ html.js .reveal.is-visible {
 
   /* Two- and three-column layouts stack. */
   .beyond-cover__body,
-  .beyond-feature-grid--music,
-  .beyond-feature-grid--wildlife,
+  .beyond-feature-grid,
   .beyond-return__grid,
   .split--project,
   .split--contact,
@@ -2722,12 +2711,12 @@ html.js .reveal.is-visible {
 }
 
 @media (hover: none) and (min-width: 981px) {
-  .section-nav--outline .pill:hover:not(.active) {
+  .section-nav .pill:hover:not(.active) {
     border-left-color: var(--border);
     color: var(--text-muted);
   }
 
-  .beyond-page .section-nav--outline .pill:hover:not(.active) {
+  .beyond-page .section-nav .pill:hover:not(.active) {
     border-left-color: var(--beyond-rule);
   }
 }

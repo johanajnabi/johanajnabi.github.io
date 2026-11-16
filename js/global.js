@@ -159,12 +159,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     let settleTimer = 0;
     let corrections = 0;
 
-    // A left-sidebar "outline" nav sits beside the content column, not above
-    // it, so its own (often tall) height must not be added to the scroll
-    // offset the way a horizontal sticky bar's height is.
-    const isSidebarOutline = () =>
-      navElement.classList.contains("section-nav--outline") &&
-      window.matchMedia("(min-width: 981px)").matches;
+    // From 981px the section nav is a left sidebar beside the content column,
+    // not above it, so its own (often tall) height must not be added to the
+    // scroll offset the way a horizontal sticky bar's height is.
+    const isSidebarOutline = () => window.matchMedia("(min-width: 981px)").matches;
 
     const getScrollOffset = () => {
       const navHeight = nav?.offsetHeight || 0;
