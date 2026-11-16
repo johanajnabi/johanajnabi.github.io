@@ -271,7 +271,6 @@ button:focus-visible {
 .skip-link:focus-visible {
   color: #ffffff;
   outline-color: #ffffff;
-  outline-offset: 3px;
   transform: translateY(0);
 }
 
@@ -347,8 +346,7 @@ section[id] {
   padding: 2rem 0 4rem;
 }
 
-.section,
-.hero {
+.section {
   margin-bottom: var(--space-7);
 }
 
@@ -462,8 +460,7 @@ section[id] {
   border-radius: 999px;
   background: var(--accent);
   transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.2s ease;
+  transition: transform var(--transition-base);
 }
 
 .site-links a:hover,
@@ -475,8 +472,9 @@ section[id] {
   transform: scaleX(1);
 }
 
-.menu-toggle {
-  display: none;
+/* Round buttons in the top bar: phone menu and light/dark toggle. */
+.menu-toggle,
+.theme-toggle {
   align-items: center;
   justify-content: center;
   width: 2.9rem;
@@ -485,6 +483,10 @@ section[id] {
   border-radius: 999px;
   background: rgba(var(--surface-rgb), 0.92);
   color: var(--text-main);
+}
+
+.menu-toggle {
+  display: none;
   font-size: 1.25rem;
 }
 
@@ -499,7 +501,7 @@ section[id] {
   background: rgba(16, 23, 38, 0.36);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.18s ease;
+  transition: opacity var(--transition-fast);
 }
 
 .menu-overlay.active {
@@ -511,8 +513,9 @@ section[id] {
   overflow: hidden;
 }
 
-/* Section nav: horizontal pills on narrow screens, an "On this page"
-   outline in a left sidebar from 981px up. */
+/* Section nav: a tab row on narrow screens (section 17), an "On this page"
+   outline in a left sidebar from 981px up. .pill is the shared link box;
+   each menu sets its own colours. */
 
 .pills {
   display: flex;
@@ -528,22 +531,13 @@ section[id] {
   padding: 0.62rem 1rem;
   border: 1px solid transparent;
   border-radius: 999px;
-  background: rgba(21, 87, 214, 0.07);
-  color: var(--text-main);
   font-size: 0.9rem;
   font-weight: 600;
   white-space: nowrap;
 }
 
-.pill:hover,
-.pill.active {
-  background: var(--accent);
-  color: #ffffff;
-}
-
 .section-nav {
   margin-bottom: var(--space-6);
-  padding-bottom: 1.2rem;
   border-bottom: 1px solid var(--border);
   overflow-x: auto;
   scrollbar-width: none;
@@ -566,7 +560,6 @@ section[id] {
   }
 
   .section-nav--outline {
-    display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 0.1rem;
@@ -577,7 +570,6 @@ section[id] {
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     background: var(--surface-soft);
-    overflow-x: visible;
     overflow-y: auto;
     max-height: calc(100vh - var(--nav-height) - 3rem);
     scrollbar-width: thin;
@@ -605,10 +597,8 @@ section[id] {
     border: 0;
     border-left: 2px solid var(--border);
     border-radius: 0;
-    background: none;
     color: var(--text-muted);
     font-size: 0.86rem;
-    font-weight: 600;
     line-height: 1.35;
     text-align: left;
     white-space: normal;
@@ -617,7 +607,6 @@ section[id] {
   .section-nav--outline .pill:hover,
   .section-nav--outline .pill.active {
     border-left-color: var(--accent);
-    background: none;
     color: var(--accent-strong);
   }
 
@@ -626,19 +615,12 @@ section[id] {
   }
 }
 
-/* Light/dark toggle (in the top bar; top-right corner of the home card). */
+/* Light/dark toggle (in the top bar; top-right corner of the home card).
+   Its round-button look is shared with the menu toggle above. */
 
 .theme-toggle {
   display: inline-flex;
   flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  width: 2.9rem;
-  height: 2.9rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: rgba(var(--surface-rgb), 0.92);
-  color: var(--text-main);
   transition:
     background-color var(--transition-fast),
     border-color var(--transition-fast),
@@ -702,7 +684,6 @@ section[id] {
 .subtitle {
   margin-bottom: 1rem;
   font-size: 1.02rem;
-  color: var(--text-muted);
 }
 
 .lead {
@@ -710,7 +691,6 @@ section[id] {
   margin-bottom: 1.25rem;
   font-size: 1.05rem;
   line-height: 1.8;
-  color: var(--text-muted);
 }
 
 .lead--compact {
@@ -781,28 +761,23 @@ section[id] {
 
 .btn--secondary:hover {
   border-color: var(--border-strong);
-  color: var(--accent-strong);
 }
 
 .tag-list {
-  display: grid;
-  grid-template-columns: max-content max-content;
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.55rem 0.8rem;
-  margin: 0;
 }
 
+/* Tag rows on the Projects cards stay on one line until the phone menu
+   breakpoint (section 17). */
 #contributions .tag-list {
-  display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: flex-start;
   gap: 0.55rem;
-  margin: 0;
 }
 
-.tag,
-.tag-list span {
+.tag {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -816,8 +791,7 @@ section[id] {
   border-radius: 0 6px 6px 0;
 }
 
-.tag::before,
-.tag-list span::before {
+.tag::before {
   content: "";
   position: absolute;
   left: -0.45rem;
@@ -828,6 +802,18 @@ section[id] {
   background: var(--surface-strong);
   border-left: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+}
+
+/* Line icons: stroke only, in the current text colour. Each use sets its
+   own size and stroke width. */
+.social-link svg,
+.contact-icon svg,
+.toolkit-icon,
+.pub-toggle__icon {
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 /* Chip list: rounded chips for techniques (Academic toolkit, the
@@ -857,7 +843,7 @@ section[id] {
   gap: 0.5rem;
   width: fit-content;
   max-width: 100%;
-  margin: 0 0 1rem;
+  margin: 0 0 1.2rem;
   padding: 0.55rem 0.85rem;
   border: 1px solid var(--status-border);
   border-radius: 999px;
@@ -943,10 +929,11 @@ section[id] {
   font-weight: 800;
 }
 
+/* Record titles: compact cards and timeline entries (section 11). */
 .compact-card h3,
-.compact-card h4 {
+.compact-card h4,
+.timeline-content h4 {
   margin: 0;
-  color: var(--text-main);
   font-size: 1rem;
   line-height: 1.4;
 }
@@ -962,7 +949,6 @@ section[id] {
 .compact-card__meta,
 .compact-card__detail {
   margin: 0.35rem 0 0;
-  color: var(--text-muted);
   font-size: 0.88rem;
   line-height: 1.55;
 }
@@ -981,7 +967,6 @@ section[id] {
 
 .publication-card-top {
   display: flex;
-  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   gap: 0.55rem;
@@ -1007,12 +992,9 @@ section[id] {
   font-size: 0.66rem;
   font-weight: 800;
   line-height: 1.25;
-  box-shadow: none;
 }
 
 .publication-source__logo {
-  display: block;
-  box-sizing: border-box;
   height: 1rem;
   width: auto;
   max-width: 5.5rem;
@@ -1027,7 +1009,6 @@ section[id] {
   max-width: 7.6rem;
   color: var(--text-muted);
   font-size: 0.62rem;
-  font-weight: 800;
 }
 
 .overview-points,
@@ -1069,7 +1050,6 @@ section[id] {
 }
 
 .flat-cols > * {
-  min-width: 0;
   padding-top: 1.1rem;
   border-top: 1px solid var(--border-strong);
 }
@@ -1109,7 +1089,6 @@ section[id] {
 
 .trajectory > * {
   position: relative;
-  min-width: 0;
 }
 
 .trajectory > *::before {
@@ -1145,10 +1124,6 @@ section[id] {
   min-width: 0;
 }
 
-.page-hero .status-badge {
-  margin-bottom: 1.2rem;
-}
-
 .page-hero h1 {
   margin-bottom: 0.9rem;
 }
@@ -1167,7 +1142,6 @@ section[id] {
 .page-hero__lead {
   margin: 0 0 1.6rem;
   max-width: 36rem;
-  color: var(--text-muted);
   font-size: 1.05rem;
   line-height: 1.75;
 }
@@ -1178,7 +1152,6 @@ section[id] {
 }
 
 .page-hero__figure img {
-  display: block;
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
@@ -1244,12 +1217,6 @@ section[id] {
   color: var(--text-main);
 }
 
-.page-hero__panel .tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
 /* The same panel used on its own below a hero that carries an image
    (DNMT3A project page: key finding). */
 .page-hero__panel--standalone {
@@ -1292,13 +1259,11 @@ section[id] {
 .hero-note {
   max-width: 42rem;
   margin: 1.3rem auto 0;
-  color: var(--text-muted);
   font-size: 0.96rem;
 }
 
 .social-links {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: center;
   gap: 0.85rem;
   margin: 1.4rem 0 0.8rem;
@@ -1326,11 +1291,7 @@ section[id] {
 .contact-icon svg {
   width: 1.35rem;
   height: 1.35rem;
-  stroke: currentColor;
-  fill: none;
   stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
 /* =========================
@@ -1407,10 +1368,6 @@ section[id] {
   color: var(--text-main);
 }
 
-.figure-attribution span {
-  display: block;
-}
-
 /* =========================
    11. ACADEMIC PAGE
 ========================= */
@@ -1457,11 +1414,7 @@ section[id] {
 .toolkit-icon {
   width: 1.3rem;
   height: 1.3rem;
-  stroke: currentColor;
-  fill: none;
   stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
 .toolkit-group h3 {
@@ -1471,7 +1424,6 @@ section[id] {
 
 .toolkit-group p {
   margin: 0;
-  color: var(--text-muted);
   font-size: 0.93rem;
   line-height: 1.55;
 }
@@ -1485,11 +1437,15 @@ section[id] {
   margin-top: 2.2rem;
 }
 
-.training-group__heading {
+.training-group__heading,
+.timeline-heading {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.training-group__heading {
   margin-bottom: 1rem;
 }
 
@@ -1513,13 +1469,6 @@ section[id] {
   gap: 0.8rem;
 }
 
-.timeline-content h4 {
-  margin: 0;
-  color: var(--text-main);
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
 .timeline-entry {
   display: grid;
   grid-template-columns: 9.5rem minmax(0, 1fr);
@@ -1531,15 +1480,20 @@ section[id] {
   border-top: 1px solid var(--border);
 }
 
+/* Accent rail beside a date (timeline) or a year (Publications, section 12). */
+.timeline-date,
+.pub-year-group > h3 {
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--accent);
+  color: var(--accent);
+  font-weight: 800;
+}
+
 .timeline-date {
   display: grid;
   align-content: start;
   gap: 0.22rem;
-  padding-left: 0.8rem;
-  border-left: 2px solid var(--accent);
-  color: var(--accent);
   font-size: 0.84rem;
-  font-weight: 800;
   line-height: 1.4;
 }
 
@@ -1553,16 +1507,8 @@ section[id] {
   min-width: 0;
 }
 
-.timeline-heading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
 .timeline-institution {
   margin: 0.2rem 0 0;
-  color: var(--text-muted);
   font-size: 0.92rem;
   font-weight: 600;
   line-height: 1.5;
@@ -1578,7 +1524,6 @@ section[id] {
 
 .timeline-summary {
   margin: 0.7rem 0 0;
-  color: var(--text-muted);
   line-height: 1.6;
 }
 
@@ -1635,7 +1580,6 @@ section[id] {
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border);
   font-size: 1.1rem;
-  letter-spacing: 0;
 }
 
 .recognition-record .recognition-list li:first-child {
@@ -1669,8 +1613,6 @@ section[id] {
 .recognition-list strong {
   display: block;
   margin-bottom: 0.25rem;
-  color: var(--text-main);
-  font-size: 1rem;
   line-height: 1.35;
 }
 
@@ -1752,8 +1694,8 @@ section[id] {
   gap: 0;
 }
 
-/* Year rail: the year sits in a left column (like the timeline dates),
-   with that year's papers as rows on the right. */
+/* Year rail: the year sits in a left column (styled with the timeline
+   dates, section 11), with that year's papers as rows on the right. */
 .pub-year-group {
   display: grid;
   grid-template-columns: 6.5rem minmax(0, 1fr);
@@ -1770,11 +1712,7 @@ section[id] {
   grid-row: 1 / span 20;
   align-self: start;
   margin: 0;
-  padding-left: 0.8rem;
-  border-left: 2px solid var(--accent);
-  color: var(--accent);
   font-size: 0.95rem;
-  font-weight: 800;
   line-height: 1.5;
 }
 
@@ -1785,7 +1723,6 @@ section[id] {
 .pub {
   padding: 1rem 0;
   border-top: 1px solid var(--border);
-  color: var(--text-main);
 }
 
 .pub p {
@@ -1819,7 +1756,6 @@ section[id] {
   color: var(--accent);
   font-size: 0.86rem;
   font-weight: 700;
-  cursor: pointer;
   transition:
     background-color var(--transition-fast),
     border-color var(--transition-fast);
@@ -1833,11 +1769,7 @@ section[id] {
 .pub-toggle__icon {
   width: 0.85rem;
   height: 0.85rem;
-  stroke: currentColor;
-  fill: none;
   stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
   transition: transform var(--transition-fast);
 }
 
@@ -1976,7 +1908,6 @@ body.beyond-page {
 .beyond-cover__dek {
   max-width: 36rem;
   margin: 0;
-  color: var(--beyond-ink);
   font-size: 1.08rem;
   line-height: 1.8;
 }
@@ -1998,12 +1929,9 @@ body.beyond-page {
 
 .beyond-cover__photo img {
   width: 100%;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 30px;
-}
-
-.beyond-cover__photo img {
-  aspect-ratio: 4 / 5;
   box-shadow: 0 30px 70px rgba(19, 36, 61, 0.16);
 }
 
@@ -2042,7 +1970,6 @@ body.beyond-page {
   padding: 0.35rem 0;
   border: 0;
   border-radius: 0;
-  background: none;
   color: var(--beyond-muted);
   font-size: 0.82rem;
   font-weight: 800;
@@ -2059,13 +1986,11 @@ body.beyond-page {
   height: 2px;
   background: var(--beyond-accent);
   transform: scaleX(0);
-  transform-origin: center;
   transition: transform var(--transition-fast);
 }
 
 .beyond-page .section-nav .pill:hover,
 .beyond-page .section-nav .pill.active {
-  background: none;
   color: var(--beyond-accent);
 }
 
@@ -2095,7 +2020,6 @@ body.beyond-page {
 
   .beyond-page .section-nav--outline .section-nav__label {
     margin-bottom: 0.9rem;
-    color: var(--beyond-accent);
   }
 
   .beyond-page .section-nav--outline .pill {
@@ -2105,7 +2029,6 @@ body.beyond-page {
     justify-content: flex-start;
     padding: 0.7rem 0 0.7rem 1rem;
     border-left: 1px solid var(--beyond-rule);
-    color: var(--beyond-muted);
     font-size: 0.74rem;
     line-height: 1.45;
   }
@@ -2127,7 +2050,6 @@ body.beyond-page {
   .beyond-page .section-nav--outline .pill:hover,
   .beyond-page .section-nav--outline .pill.active {
     border-left-color: var(--beyond-accent);
-    color: var(--beyond-accent);
   }
 
   .beyond-page .section-nav--outline .pill.active {
@@ -2136,7 +2058,8 @@ body.beyond-page {
 }
 
 .beyond-story,
-.beyond-gallery-section {
+.beyond-gallery-section,
+.beyond-return {
   display: grid;
   gap: 1.5rem;
 }
@@ -2170,29 +2093,31 @@ body.beyond-page {
 }
 
 .beyond-quote-card {
-  margin: 0;
+  margin: 0.15rem 0 0.2rem;
   padding: 0.2rem 0 0.2rem 1.3rem;
   border-left: 2px solid var(--beyond-accent);
 }
 
-.beyond-story__copy .beyond-quote-card {
-  margin: 0.15rem 0 0.2rem;
-}
-
 .beyond-quote-card p {
-  margin: 0;
   font-size: 1.5rem;
   line-height: 1.28;
+}
+
+/* Small-caps labels: quote credit, media card label, closing-card number. */
+.beyond-quote-card span,
+.beyond-media-label,
+.beyond-return-card__index {
+  color: var(--beyond-muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .beyond-quote-card span {
   display: block;
   margin-top: 0.85rem;
-  color: var(--beyond-muted);
   font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
 }
 
 .beyond-media-card,
@@ -2207,11 +2132,6 @@ body.beyond-page {
   gap: 0.9rem;
   align-content: start;
   margin-top: clamp(1.15rem, 3vw, 1.9rem);
-}
-
-.beyond-media-card,
-.beyond-instagram-panel {
-  padding: 1.15rem;
 }
 
 .beyond-page .beyond-media-links .pill {
@@ -2238,11 +2158,6 @@ body.beyond-page {
 
 .beyond-media-label {
   margin: 0 0 0.85rem;
-  color: var(--beyond-muted);
-  font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
 }
 
 .beyond-page .capture-gallery {
@@ -2263,7 +2178,6 @@ body.beyond-page {
 }
 
 .beyond-page .capture-gallery .media-card img {
-  width: 100%;
   border-radius: 18px;
   box-shadow: 0 18px 40px rgba(19, 36, 61, 0.14);
   transition: transform var(--transition-base), box-shadow var(--transition-base);
@@ -2271,7 +2185,6 @@ body.beyond-page {
 
 .beyond-page .capture-gallery .media-card:hover {
   transform: none;
-  box-shadow: none;
 }
 
 .beyond-page .capture-gallery .media-card:hover img,
@@ -2285,19 +2198,15 @@ body.beyond-page {
   color: var(--beyond-ink);
   font-family: var(--beyond-display);
   font-size: 1.08rem;
-  font-weight: 400;
   line-height: 1.4;
 }
 
-.beyond-page .capture-gallery .capture-detail {
+.capture-detail {
+  display: block;
   padding: 0 0.15rem;
+  color: var(--text-muted);
   font-size: 0.92rem;
   line-height: 1.65;
-}
-
-.beyond-return {
-  display: grid;
-  gap: 1.5rem;
 }
 
 .beyond-return__grid {
@@ -2314,18 +2223,11 @@ body.beyond-page {
 .beyond-return-card__index {
   display: block;
   margin-bottom: 0.8rem;
-  color: var(--beyond-muted);
-  font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
 }
 
 .beyond-return__closing {
   max-width: 48rem;
   margin: 0;
-  color: var(--beyond-ink);
-  font-size: 1rem;
 }
 
 /* =========================
@@ -2361,15 +2263,6 @@ body.beyond-page {
   width: 100%;
 }
 
-.media-card__caption {
-  display: block;
-  padding: 0.78rem 0.9rem 0.82rem;
-  color: var(--text-main);
-  font-size: 0.92rem;
-  font-weight: 700;
-  line-height: 1.45;
-}
-
 /* Photo grid inside a timeline entry (Selected presentations):
    keep a consistent gap between the entry text and its photos. */
 .timeline-content > .media-grid {
@@ -2395,6 +2288,7 @@ body.beyond-page {
   backdrop-filter: blur(10px) saturate(140%);
   color: #ffffff;
   font-size: 0.84rem;
+  font-weight: 700;
   line-height: 1.35;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -2409,13 +2303,6 @@ body.beyond-page {
 .media-grid .media-card:focus-visible .media-card__caption {
   opacity: 1;
   transform: translateY(0);
-}
-
-.capture-detail {
-  display: block;
-  padding: 0 1rem 1rem;
-  color: var(--text-muted);
-  font-size: 0.92rem;
 }
 
 .capture-empty {
@@ -2535,7 +2422,6 @@ body.beyond-page {
   align-items: center;
   gap: 0.55rem;
   margin-bottom: 1.1rem;
-  color: var(--accent);
   font-size: clamp(1.15rem, 2vw, 1.4rem);
   font-weight: 800;
   line-height: 1.25;
@@ -2652,9 +2538,9 @@ body.beyond-page {
   pointer-events: none;
   transform: translateY(10px);
   transition:
-    opacity 0.2s ease,
-    transform 0.2s ease,
-    background-color 0.2s ease;
+    opacity var(--transition-base),
+    transform var(--transition-base),
+    background-color var(--transition-base);
 }
 
 .back-to-top.visible {
@@ -2748,19 +2634,19 @@ html.js .reveal.is-visible {
     display: none;
   }
 
-  .flat-cols > *,
   .trajectory > * {
     padding-top: 1.1rem;
     border-top: 1px solid var(--border-strong);
   }
 
+  /* Two- and three-column layouts stack. */
   .beyond-cover__body,
   .beyond-feature-grid--music,
-  .beyond-feature-grid--wildlife {
-    grid-template-columns: 1fr;
-  }
-
-  .beyond-return__grid {
+  .beyond-feature-grid--wildlife,
+  .beyond-return__grid,
+  .split--project,
+  .split--contact,
+  .project-figure__comparison {
     grid-template-columns: 1fr;
   }
 
@@ -2769,26 +2655,14 @@ html.js .reveal.is-visible {
   }
 
   .grid--3,
-  .grid--4 {
+  .grid--4,
+  .education-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .split--project,
-  .split--contact {
-    grid-template-columns: 1fr;
   }
 
   .toolkit-group {
     grid-template-columns: 1fr;
     gap: 0.8rem;
-  }
-
-  .project-figure__comparison {
-    grid-template-columns: 1fr;
-  }
-
-  .education-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   /* Section menu below the sidebar breakpoint: a slim tab row pinned under
@@ -2816,7 +2690,6 @@ html.js .reveal.is-visible {
     border: 0;
     border-bottom: 2px solid transparent;
     border-radius: 0;
-    background: none;
     color: var(--text-muted);
     font-size: 0.86rem;
   }
@@ -2824,7 +2697,6 @@ html.js .reveal.is-visible {
   body:not(.beyond-page) .section-nav .pill:hover,
   body:not(.beyond-page) .section-nav .pill.active {
     border-bottom-color: var(--accent);
-    background: none;
     color: var(--accent);
   }
 }
@@ -2886,8 +2758,8 @@ html.js .reveal.is-visible {
     pointer-events: none;
     transform: translateY(-8px);
     transition:
-      opacity 0.18s ease,
-      transform 0.18s ease;
+      opacity var(--transition-fast),
+      transform var(--transition-fast);
   }
 
   .mobile-menu.open {
@@ -2915,12 +2787,15 @@ html.js .reveal.is-visible {
 }
 
 @media (max-width: 720px) {
-  .pub-year-group {
-    grid-template-columns: 1fr;
-  }
-
+  /* ---------- Grid -> Stack ---------- */
+  .pub-year-group,
   .contact-list,
-  .grid--2 {
+  .grid--2,
+  .grid--3,
+  .grid--4,
+  .selected-publications,
+  .recognition-grid,
+  .education-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2964,19 +2839,9 @@ html.js .reveal.is-visible {
   }
 
   /* ---------- Spacing ---------- */
-  .hero,
   .card {
     padding: 1.2rem;
     border-radius: var(--radius-md);
-  }
-
-  /* ---------- Grid -> Stack ---------- */
-  .grid--3,
-  .grid--4,
-  .split,
-  .selected-publications,
-  .recognition-grid {
-    grid-template-columns: 1fr;
   }
 
   /* ---------- Typography ---------- */
@@ -3068,10 +2933,6 @@ html.js .reveal.is-visible {
     font-size: 0.9rem;
   }
 
-  .education-grid {
-    grid-template-columns: 1fr;
-  }
-
   .training-group__heading,
   .timeline-heading {
     align-items: flex-start;
@@ -3131,10 +2992,6 @@ html.js .reveal.is-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {
