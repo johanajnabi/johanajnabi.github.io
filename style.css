@@ -3055,7 +3055,7 @@ html.js .reveal.is-visible {
     gap: 0.8rem;
   }
 
-  .media-grid > :last-child:nth-child(odd) {
+  .media-grid > :first-child:nth-last-child(odd) {
     grid-column: 1 / -1;
   }
 
