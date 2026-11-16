@@ -18,6 +18,7 @@
    15. Contact
    16. Footer and utilities
    17. Responsive + reduced motion
+   18. Print
 
    Dark mode is handled entirely by tokens (section 1): components only
    use var(--…) for theme-dependent colours, so there are no per-component
@@ -94,8 +95,9 @@ body.beyond-page {
 
 /* Theme tokens, dark values: from the OS setting unless the visitor chose
    light with the toggle, and always when they chose dark. Keep the two
-   blocks identical. */
-@media (prefers-color-scheme: dark) {
+   blocks identical. Both are screen-only, so print (section 18) always
+   uses the light values. */
+@media screen and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --accent: #6ea8ff;
     --accent-strong: #9cc4ff;
@@ -140,47 +142,49 @@ body.beyond-page {
   }
 }
 
-:root[data-theme="dark"] {
-  --accent: #6ea8ff;
-  --accent-strong: #9cc4ff;
-  --text-main: #e8edf7;
-  --text-muted: #aab4c8;
-  --text-subtle: #8690a6;
-  --surface-soft: rgba(23, 32, 54, 0.75);
-  --surface-strong: #141b2e;
-  --surface-rgb: 23, 32, 54;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(110, 168, 255, 0.32);
-  --shadow-card: 0 18px 38px rgba(0, 0, 0, 0.45);
-  --shadow-card-hover: 0 24px 48px rgba(0, 0, 0, 0.55);
-  --shadow-hero: 0 30px 80px rgba(0, 0, 0, 0.5);
+@media screen {
+  :root[data-theme="dark"] {
+    --accent: #6ea8ff;
+    --accent-strong: #9cc4ff;
+    --text-main: #e8edf7;
+    --text-muted: #aab4c8;
+    --text-subtle: #8690a6;
+    --surface-soft: rgba(23, 32, 54, 0.75);
+    --surface-strong: #141b2e;
+    --surface-rgb: 23, 32, 54;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(110, 168, 255, 0.32);
+    --shadow-card: 0 18px 38px rgba(0, 0, 0, 0.45);
+    --shadow-card-hover: 0 24px 48px rgba(0, 0, 0, 0.55);
+    --shadow-hero: 0 30px 80px rgba(0, 0, 0, 0.5);
 
-  --page-bg:
-    radial-gradient(circle at top left, rgba(110, 168, 255, 0.14), transparent 28%),
-    radial-gradient(circle at bottom right, rgba(110, 168, 255, 0.1), transparent 25%),
-    linear-gradient(180deg, #0b1120 0%, #0d1526 36%, #0a0f1d 100%);
-  --page-bg-home:
-    radial-gradient(circle at 14% 18%, rgba(110, 168, 255, 0.16), transparent 26%),
-    radial-gradient(circle at 82% 62%, rgba(110, 168, 255, 0.12), transparent 24%),
-    linear-gradient(180deg, #0a0f1d 0%, #0d1526 58%, #0a0f1d 100%);
-  --page-bg-academic:
-    radial-gradient(circle at 12% 14%, rgba(110, 168, 255, 0.1), transparent 24%),
-    radial-gradient(circle at 88% 20%, rgba(110, 168, 255, 0.08), transparent 22%),
-    linear-gradient(180deg, #0b1120 0%, #0d1526 42%, #0a0f1d 100%);
-  --page-bg-project:
-    radial-gradient(circle at top left, rgba(110, 168, 255, 0.1), transparent 24%),
-    radial-gradient(circle at 84% 30%, rgba(110, 168, 255, 0.09), transparent 22%),
-    linear-gradient(180deg, #0a1120 0%, #0d1526 40%, #0a1120 100%);
-  --card-bg: linear-gradient(180deg, rgba(27, 37, 61, 0.92), rgba(19, 27, 46, 0.94));
-  --hero-home-bg: linear-gradient(145deg, rgba(27, 37, 61, 0.95), rgba(17, 24, 41, 0.94));
-  --avatar-ring: rgba(255, 255, 255, 0.18);
-  --embed-bg: #0d1629;
-  --rule-dashed: rgba(255, 255, 255, 0.12);
-  --status-border: rgba(57, 255, 138, 0.4);
-  --status-bg: rgba(57, 255, 138, 0.12);
-  --status-text: #6dffa8;
-  --status-dot: #39ff8a;
-  --status-dot-glow: 0 0 0 4px rgba(57, 255, 138, 0.22), 0 0 10px rgba(57, 255, 138, 0.6);
+    --page-bg:
+      radial-gradient(circle at top left, rgba(110, 168, 255, 0.14), transparent 28%),
+      radial-gradient(circle at bottom right, rgba(110, 168, 255, 0.1), transparent 25%),
+      linear-gradient(180deg, #0b1120 0%, #0d1526 36%, #0a0f1d 100%);
+    --page-bg-home:
+      radial-gradient(circle at 14% 18%, rgba(110, 168, 255, 0.16), transparent 26%),
+      radial-gradient(circle at 82% 62%, rgba(110, 168, 255, 0.12), transparent 24%),
+      linear-gradient(180deg, #0a0f1d 0%, #0d1526 58%, #0a0f1d 100%);
+    --page-bg-academic:
+      radial-gradient(circle at 12% 14%, rgba(110, 168, 255, 0.1), transparent 24%),
+      radial-gradient(circle at 88% 20%, rgba(110, 168, 255, 0.08), transparent 22%),
+      linear-gradient(180deg, #0b1120 0%, #0d1526 42%, #0a0f1d 100%);
+    --page-bg-project:
+      radial-gradient(circle at top left, rgba(110, 168, 255, 0.1), transparent 24%),
+      radial-gradient(circle at 84% 30%, rgba(110, 168, 255, 0.09), transparent 22%),
+      linear-gradient(180deg, #0a1120 0%, #0d1526 40%, #0a1120 100%);
+    --card-bg: linear-gradient(180deg, rgba(27, 37, 61, 0.92), rgba(19, 27, 46, 0.94));
+    --hero-home-bg: linear-gradient(145deg, rgba(27, 37, 61, 0.95), rgba(17, 24, 41, 0.94));
+    --avatar-ring: rgba(255, 255, 255, 0.18);
+    --embed-bg: #0d1629;
+    --rule-dashed: rgba(255, 255, 255, 0.12);
+    --status-border: rgba(57, 255, 138, 0.4);
+    --status-bg: rgba(57, 255, 138, 0.12);
+    --status-text: #6dffa8;
+    --status-dot: #39ff8a;
+    --status-dot-glow: 0 0 0 4px rgba(57, 255, 138, 0.22), 0 0 10px rgba(57, 255, 138, 0.6);
+  }
 }
 
 /* =========================
@@ -2993,5 +2997,105 @@ html.js .reveal.is-visible {
   .lift-card:hover,
   .lift-card:focus-within {
     transform: none;
+  }
+}
+
+/* =========================
+   18. PRINT
+========================= */
+
+/* Paper and "Save as PDF". A4 and Letter pages are about 690 to 820px
+   wide to the browser, so they print in the tablet or phone layout
+   (section 17). */
+@page {
+  margin: 14mm;
+}
+
+@media print {
+  /* Controls, overlays and embeds that mean nothing on paper. */
+  .skip-link,
+  .site-nav,
+  .mobile-menu,
+  .menu-overlay,
+  .section-nav,
+  .theme-toggle,
+  .btn,
+  .pub-controls,
+  button.pub-toggle,
+  .embed,
+  .lightbox,
+  .back-to-top {
+    display: none !important;
+  }
+
+  body {
+    background: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-shadow: none !important;
+  }
+
+  .page-stack {
+    padding-top: 0;
+  }
+
+  /* No scroll-in effect: everything is visible. */
+  html.js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Keep blocks whole, and headings with what follows them. */
+  .card,
+  .compact-card,
+  .toolkit-group,
+  .timeline-entry,
+  .pub,
+  .recognition-list li,
+  .research-output-list li,
+  .beyond-quote-card,
+  figure {
+    break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .eyebrow {
+    break-after: avoid;
+  }
+
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Web address after links that leave the site. */
+  main a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    color: var(--text-subtle);
+    font-size: 0.85em;
+    font-weight: 400;
+    overflow-wrap: anywhere;
+  }
+
+  /* Not after icon links, pill links, contact rows or linked figures. */
+  main a.social-link::after,
+  main a.pill::after,
+  main .contact-list a::after,
+  main .project-figure__visual > a::after {
+    content: none;
+  }
+
+  /* The footer's Contact link is no use on paper: print the addresses. */
+  .site-footer::after {
+    content: "johanajnabi.com \00B7  contact@johanajnabi.com";
+    display: block;
+    margin-top: 0.3rem;
   }
 }
