@@ -152,6 +152,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!sections.length) return;
 
     let lastActive = null;
+    // The section picked from the menu stays current until the reader
+    // scrolls by hand. Images load during the smooth scroll and push
+    // sections down, so once the scroll settles it is corrected.
+    let pinned = null;
+    let settleTimer = 0;
+    let corrections = 0;
 
     // A left-sidebar "outline" nav sits beside the content column, not above
     // it, so its own (often tall) height must not be added to the scroll
@@ -204,6 +210,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         current = sections[sections.length - 1];
       }
 
+      if (pinned) {
+        current = pinned;
+      }
+
       links.forEach((link) => {
         const isActive = current && link === current.link;
         link.classList.toggle("active", isActive);
@@ -229,15 +239,42 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!target) return;
 
         event.preventDefault();
+        pinned = sections.find((item) => item.link === link) || null;
+        corrections = 0;
         scrollToSection(target);
         window.history.pushState(null, "", hash);
         updateActiveLink();
       });
     });
 
+    const settle = () => {
+      if (!pinned || corrections >= 3) return;
+      const maxY = document.documentElement.scrollHeight - window.innerHeight;
+      const top = Math.min(maxY, Math.max(0, window.scrollY + pinned.target.getBoundingClientRect().top - getScrollOffset()));
+      if (Math.abs(top - window.scrollY) > 2) {
+        corrections += 1;
+        window.scrollTo({ top, behavior: prefersReducedMotion ? "auto" : "smooth" });
+      }
+    };
+
+    const release = () => {
+      pinned = null;
+    };
+
     updateActiveLink();
-    window.addEventListener("scroll", updateActiveLink, { passive: true });
-    window.addEventListener("hashchange", updateActiveLink);
+    window.addEventListener("scroll", () => {
+      updateActiveLink();
+      window.clearTimeout(settleTimer);
+      settleTimer = window.setTimeout(settle, 150);
+    }, { passive: true });
+    window.addEventListener("hashchange", () => {
+      release();
+      updateActiveLink();
+    });
+    window.addEventListener("popstate", release);
+    ["wheel", "touchstart", "keydown"].forEach((type) => {
+      window.addEventListener(type, release, { passive: true });
+    });
   });
 
   /* =========================
