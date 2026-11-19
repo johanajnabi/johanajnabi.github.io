@@ -917,29 +917,25 @@ section[id] {
 }
 
 /* Row variant (Flagship): eyebrow on top, image on the left, text on
-   the right; links pinned to the bottom. Stacks on phones. */
+   the right. Stacks on phones. */
 .feature-card--row {
   display: grid;
-  grid-template-columns: 15rem minmax(0, 1fr);
-  grid-template-rows: auto 1fr;
+  grid-template-columns: 12rem minmax(0, 1fr);
   grid-template-areas:
     "media eyebrow"
     "media body";
-  column-gap: 1.75rem;
+  grid-template-rows: auto 1fr;
+  column-gap: 1.5rem;
+  align-items: start;
 }
 
 .feature-card--row > .eyebrow { grid-area: eyebrow; }
 .feature-card--row > .feature-card__media { grid-area: media; }
+.feature-card--row > .feature-card__body { grid-area: body; }
 
-.feature-card--row > .feature-card__body {
-  grid-area: body;
-  display: flex;
-  flex-direction: column;
-}
-
-.feature-card__body > .card-links {
-  margin-top: auto;
-  padding-top: 1rem;
+.feature-card__media .figure-attribution {
+  margin-bottom: 0;
+  font-size: 0.75rem;
 }
 
 @media (max-width: 600px) {
@@ -950,6 +946,11 @@ section[id] {
       "eyebrow"
       "media"
       "body";
+  }
+
+  .feature-card--row > .feature-card__media {
+    max-width: 15rem;
+    margin-bottom: 1rem;
   }
 }
 
