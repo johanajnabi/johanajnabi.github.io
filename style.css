@@ -938,9 +938,10 @@ section[id] {
 }
 .feature-card--row > .feature-card__body { grid-area: body; }
 
-.feature-card__body > .figure-attribution {
-  margin: 0.75rem 0 0;
-  font-size: 0.75rem;
+.feature-card__media > .figure-attribution {
+  margin: 0.3rem 0 0;
+  font-size: 0.68rem;
+  line-height: 1.35;
 }
 
 @media (max-width: 600px) {
