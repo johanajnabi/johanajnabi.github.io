@@ -927,10 +927,15 @@ section[id] {
   grid-template-rows: auto 1fr;
   column-gap: 1.5rem;
   align-items: start;
+  padding-block: 1.2rem;
 }
 
 .feature-card--row > .eyebrow { grid-area: eyebrow; }
-.feature-card--row > .feature-card__media { grid-area: media; }
+
+.feature-card--row > .feature-card__media {
+  grid-area: media;
+  align-self: center;
+}
 .feature-card--row > .feature-card__body { grid-area: body; }
 
 .feature-card__body > .figure-attribution {
