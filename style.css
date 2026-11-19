@@ -933,8 +933,8 @@ section[id] {
 .feature-card--row > .feature-card__media { grid-area: media; }
 .feature-card--row > .feature-card__body { grid-area: body; }
 
-.feature-card__media .figure-attribution {
-  margin-bottom: 0;
+.feature-card__body > .figure-attribution {
+  margin: 0.75rem 0 0;
   font-size: 0.75rem;
 }
 
