@@ -917,7 +917,7 @@ section[id] {
 }
 
 /* Row variant (Flagship): eyebrow on top, image on the left, text on
-   the right. Stacks on phones. */
+   the right. On phones: eyebrow, full-width image, then text. */
 .feature-card--row {
   display: grid;
   grid-template-columns: 12rem minmax(0, 1fr);
@@ -936,7 +936,12 @@ section[id] {
   grid-area: media;
   align-self: center;
 }
+
 .feature-card--row > .feature-card__body { grid-area: body; }
+
+.feature-card__media > img {
+  border-radius: calc(var(--radius-sm) - 4px);
+}
 
 .feature-card__media > .figure-attribution {
   margin: 0.3rem 0 0;
@@ -956,7 +961,6 @@ section[id] {
   }
 
   .feature-card--row > .feature-card__media {
-    max-width: 15rem;
     margin-bottom: 1rem;
   }
 }
